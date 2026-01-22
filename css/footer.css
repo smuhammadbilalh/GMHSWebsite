@@ -1,0 +1,190 @@
+﻿/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --sky-blue: #0284c7;
+    --sky-blue-light: #7dd3fc;
+    --black: #000000;
+    --white: #ffffff;
+    --text-gray: #334155;
+    /* Social Media Brand Colors */
+    --whatsapp: #25D366;
+    --facebook: #1877F2;
+    --linkedin: #0A66C2;
+}
+
+/* =========================================
+   2. MAIN FOOTER CONTAINER
+   ========================================= */
+.modern-footer {
+    background: #ffffff;
+    color: #334155;
+    padding: 60px 0 0;
+    font-size: 0.95rem;
+    width: 100%;
+    border-top: 2px solid var(--sky-blue); /* Sky blue top border */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. GRID LAYOUT
+   ========================================= */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #000000;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--sky-blue);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+.footer-col p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* =========================================
+   4. SOCIAL ICONS (Black Border, Black Icons)
+   ========================================= */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    color: var(--black);
+    transition: all 0.3s ease;
+}
+
+    .social-link svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* WhatsApp Brand Hover */
+    .social-link.whatsapp:hover {
+        background: var(--whatsapp);
+        border-color: var(--whatsapp);
+        color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Facebook Brand Hover */
+    .social-link.facebook:hover {
+        background: var(--facebook);
+        border-color: var(--facebook);
+        color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+    }
+
+    /* LinkedIn Brand Hover */
+    .social-link.linkedin:hover {
+        background: var(--linkedin);
+        border-color: var(--linkedin);
+        color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(10, 102, 194, 0.4);
+    }
+
+/* =========================================
+   5. CONTACT LIST
+   ========================================= */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+    .contact-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #1e293b;
+        font-weight: 500;
+    }
+
+.icon-contact {
+    width: 20px;
+    height: 20px;
+    color: var(--black);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   6. DIVIDER LINES - REMOVED (Sky blue borders on ticker instead)
+   ========================================= */
+.footer-divider {
+    display: none; /* Hidden - no longer needed */
+}
+
+/* =========================================
+   7. DEVELOPER TICKER CUSTOMIZATION
+   ========================================= */
+.footer-developer-ticker {
+    background: #ffffff !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-footer {
+        padding: 40px 0 0;
+    }
+
+    .footer-col h3 {
+        font-size: 1.1rem;
+    }
+
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+}
