@@ -1,0 +1,21 @@
+﻿/* Sports Page Specific Styles */
+.sports-page {
+    background: #ffffff;
+}
+
+    .sports-page h1 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #0284c7;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .sports-page p {
+        font-size: 1.1rem;
+        color: #475569;
+        line-height: 1.8;
+    }
+
+/* Future sports content styling will go here */

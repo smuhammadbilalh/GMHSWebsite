@@ -6,8 +6,12 @@ function toggleMobileMenu() {
     mobileNav.classList.toggle('active');
     mobileOverlay.classList.toggle('active');
 
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    // Use class instead of inline style for better control
+    if (mobileNav.classList.contains('active')) {
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.classList.remove('menu-open');
+    }
 }
 
 function closeMobileMenu() {
@@ -16,7 +20,7 @@ function closeMobileMenu() {
 
     mobileNav.classList.remove('active');
     mobileOverlay.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
 }
 
 // Active Link Detection
@@ -59,10 +63,24 @@ function setActiveLink() {
 document.addEventListener('DOMContentLoaded', function () {
     setActiveLink();
 
+    // Ensure body overflow is correct on page load
+    document.body.classList.remove('menu-open');
+
     // Close mobile menu on escape key
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             closeMobileMenu();
         }
+    });
+
+    // Close mobile menu on window resize (if open)
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            if (window.innerWidth > 1024) {
+                closeMobileMenu();
+            }
+        }, 250);
     });
 });

@@ -1,25 +1,19 @@
-﻿/* =========================================
-   NEWS TICKER - Sky Blue Accent Theme
-   ========================================= */
-
-/* Container: White Background, Fixed Height */
-.news-ticker-bar {
+﻿.news-ticker-bar {
     display: flex;
     background-color: #ffffff;
     height: 50px;
     align-items: center;
-    border-top: 2px solid #0284c7; /* Sky Blue top border */
-    border-bottom: 2px solid #0284c7; /* Sky Blue bottom border */
+    border-top: 2px solid #0284c7;
+    border-bottom: 2px solid #0284c7;
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
     margin: 0;
 }
 
-/* Label: Sky Blue Background, White Text */
 .ticker-label {
-    background-color: #0284c7; /* Sky Blue */
-    color: #ffffff; /* White Text */
+    background-color: #0284c7;
+    color: #ffffff;
     padding: 0 25px;
     height: 100%;
     display: flex;
@@ -30,10 +24,9 @@
     z-index: 5;
     white-space: nowrap;
     min-width: 140px;
-    box-shadow: 4px 0 10px rgba(2, 132, 199, 0.3); /* Sky blue shadow */
+    box-shadow: 4px 0 10px rgba(2, 132, 199, 0.3);
 }
 
-/* Content: Black Text */
 .ticker-content {
     flex: 1;
     height: 100%;
@@ -45,7 +38,6 @@
     align-items: center;
 }
 
-/* Marquee Items */
 .ticker-item {
     margin-right: 50px;
     display: inline-flex;
@@ -54,32 +46,22 @@
     white-space: nowrap;
 }
 
-/* SVG Icons - Black Color */
 .icon-inline {
     width: 20px;
     height: 20px;
-    stroke: #000000; /* Black stroke */
+    stroke: #000000;
     fill: none;
     stroke-width: 2;
     vertical-align: middle;
     flex-shrink: 0;
 }
 
-/* Bold Text - Black Color */
 .ticker-item strong {
     color: #000000;
     font-weight: 800;
     text-transform: uppercase;
 }
 
-/* Normal Text - Black Color */
-.ticker-item {
-    color: #000000;
-}
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
 @media (max-width: 768px) {
     .ticker-label {
         min-width: 100px;
@@ -94,35 +76,5 @@
     .icon-inline {
         width: 16px;
         height: 16px;
-    }
-
-    .ticker-item {
-        margin-right: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .news-ticker-bar {
-        height: 45px;
-    }
-
-    .ticker-label {
-        min-width: 90px;
-        padding: 0 12px;
-        font-size: 0.8rem;
-    }
-
-    .ticker-content {
-        font-size: 0.85rem;
-    }
-
-    .icon-inline {
-        width: 14px;
-        height: 14px;
-    }
-
-    .ticker-item {
-        margin-right: 35px;
-        gap: 8px;
     }
 }

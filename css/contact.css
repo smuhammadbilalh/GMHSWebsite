@@ -1,0 +1,21 @@
+﻿/* Contact Page Specific Styles */
+.contact-page {
+    background: #ffffff;
+}
+
+    .contact-page h1 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #0284c7;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .contact-page p {
+        font-size: 1.1rem;
+        color: #475569;
+        line-height: 1.8;
+    }
+
+/* Future contact form styling will go here */
