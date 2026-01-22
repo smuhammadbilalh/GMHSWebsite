@@ -1,0 +1,28 @@
+﻿{
+    "slides": [
+        {
+            "imageUrl": "images/hero/slide1.jpg",
+            "badgeText": "EXCELLENCE IN EDUCATION",
+            "title": "Building Future Leaders",
+            "description": "Empowering students with quality education and strong moral values since 1950.",
+            "buttonText": "Explore Academics",
+            "buttonLink": "academics.html"
+        },
+        {
+            "imageUrl": "images/hero/slide2.jpg",
+            "badgeText": "SPORTS & FITNESS",
+            "title": "Champions in Making",
+            "description": "Nurturing athletic excellence alongside academic achievement.",
+            "buttonText": "View Sports",
+            "buttonLink": "sports.html"
+        },
+        {
+            "imageUrl": "images/hero/slide3.jpg",
+            "badgeText": "MODERN FACILITIES",
+            "title": "State-of-the-Art Learning",
+            "description": "Equipped with modern labs, library, and digital classrooms.",
+            "buttonText": "Contact Us",
+            "buttonLink": "contact.html"
+        }
+    ]
+}

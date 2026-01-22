@@ -1,0 +1,6 @@
+﻿{
+    "videoPath": "videos/vedio1.mp4",
+    "autoplay": true,
+    "muted": true,
+    "loop": true
+}

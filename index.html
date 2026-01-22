@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govt Model High School - Sarai Alamgir</title>
+    <title>Govt Model High School - GT Road Sarai Alamgir</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/newsticker.css">
@@ -142,11 +142,87 @@
 
     <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-        <h1>Welcome to GMHS Sarai Alamgir</h1>
-        <p>Your page content goes here...</p>
-    </main>
+
+
+
+
+    <!-- HOME PAGE CONTENT -->
+    <div class="home-wrapper">
+
+        <!-- HERO SLIDER SECTION -->
+        <section class="hero-slider">
+            <div class="slider-container" id="heroSliderContainer">
+                <!-- Slides will be loaded from JSON -->
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls-wrapper" id="sliderControls" style="display: none;">
+                <button class="slider-arrow" onclick="previousSlide()">❮</button>
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be generated dynamically -->
+                </div>
+                <button class="slider-arrow" onclick="nextSlide()">❯</button>
+            </div>
+
+            <!-- NEWS TICKER AT BOTTOM OF HERO -->
+            <div class="ticker-bottom-anchor">
+                <div class="news-ticker-bar">
+                    <div class="ticker-label" id="newsTickerLabel">LATEST NEWS</div>
+                    <div class="ticker-content">
+                        <marquee behavior="scroll" direction="left" scrollamount="6" id="newsTickerContent">
+                            <!-- Ticker items will be loaded from JSON -->
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS BAR SECTION -->
+        <section class="stats-bar">
+            <div class="container stats-grid" id="statsContainer">
+                <!-- Stats will be loaded from JSON -->
+            </div>
+        </section>
+
+        <!-- VIDEO CAROUSEL SECTION (COMMENTED - NOT BUILT YET) -->
+        <!-- <div class="animate-on-scroll">
+            <div class="video-carousel-section">
+                Video Carousel Component Will Go Here
+            </div>
+        </div> -->
+        <!-- DUAL PROFILE CAROUSELS (COMMENTED - NOT BUILT YET) -->
+        <!-- <div class="container animate-on-scroll">
+            <div class="dual-carousel-row">
+                <div class="carousel-half">
+                    Faculty Profile Carousel Will Go Here
+                </div>
+                <div class="carousel-half">
+                    Contributors Profile Carousel Will Go Here
+                </div>
+            </div>
+        </div> -->
+        <!-- VIDEO HERO SECTION -->
+        <section class="video-hero" id="videoHeroSection">
+            <!-- Video and ticker will be loaded from JSON -->
+        </section>
+
+        <!-- DIGITAL CAMPUS PORTALS SECTION -->
+        <section class="portals-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header" id="portalsHeader">
+                    <!-- Header will be loaded from JSON -->
+                </div>
+
+                <div class="square-grid" id="portalsGrid">
+                    <!-- Portal cards will be loaded from JSON -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
 
     <!-- FOOTER -->
     <footer class="modern-footer">
@@ -218,5 +294,6 @@
     </footer>
 
     <script src="js/navmenu.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

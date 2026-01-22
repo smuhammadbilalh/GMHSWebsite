@@ -1,0 +1,144 @@
+﻿{
+    "pageTitle": "School Gallery",
+    "categories": [
+        {
+            "id": "all",
+            "name": "All Photos",
+            "slug": "all"
+        },
+        {
+            "id": "faculty",
+            "name": "Retired Faculty",
+            "slug": "retired-faculty"
+        },
+        {
+            "id": "sports",
+            "name": "Sports Achievements",
+            "slug": "sports-achievements"
+        },
+        {
+            "id": "alumni",
+            "name": "Alumni Memories",
+            "slug": "alumni-memories"
+        },
+        {
+            "id": "events",
+            "name": "School Events",
+            "slug": "school-events"
+        }
+    ],
+    "photos": [
+        {
+            "id": 1,
+            "category": "faculty",
+            "title": "Mr. Ahmed Retired 2020",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 2,
+            "category": "faculty",
+            "title": "Mrs. Fatima Farewell 2019",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 3,
+            "category": "sports",
+            "title": "Cricket Champions 2025",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 4,
+            "category": "sports",
+            "title": "Football Tournament Winners",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 5,
+            "category": "alumni",
+            "title": "Batch 2010 Reunion",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 6,
+            "category": "alumni",
+            "title": "Class of 1995",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 7,
+            "category": "events",
+            "title": "Annual Day Celebration",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 8,
+            "category": "events",
+            "title": "Science Fair 2025",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 9,
+            "category": "faculty",
+            "title": "Sir Bilal Retirement Ceremony",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 10,
+            "category": "sports",
+            "title": "Athletics Gold Medal 2024",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 11,
+            "category": "alumni",
+            "title": "Alumni Meetup 2024",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 12,
+            "category": "events",
+            "title": "Independence Day 2025",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 13,
+            "category": "faculty",
+            "title": "Teacher's Day Event 2023",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 14,
+            "category": "sports",
+            "title": "Basketball Championship",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 15,
+            "category": "alumni",
+            "title": "Golden Jubilee Batch",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        },
+        {
+            "id": 16,
+            "category": "events",
+            "title": "Quran Competition 2024",
+            "thumbnail": "images/schoollogo.svg",
+            "fullImage": "images/schoollogo.svg"
+        }
+    ]
+}

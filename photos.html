@@ -145,11 +145,59 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content photos-page">
-        <div class="container">
-            <h1>Photos</h1>
-            <p>Photo gallery content will be added here...</p>
+
+        <!-- PAGE TITLE (EDGE-TO-EDGE) -->
+        <section class="page-title-section">
+            <h1 class="page-title" id="pageTitle">School Gallery</h1>
+        </section>
+
+        <!-- CATEGORY TABS -->
+        <div class="category-tabs-wrapper">
+            <div class="category-tabs" id="categoryTabs">
+                <!-- Tabs will be loaded from JSON -->
+            </div>
         </div>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Photos will be loaded here -->
+            </div>
+
+            <!-- SHOW MORE BUTTON (Bottom) -->
+            <div class="gallery-actions">
+                <button class="btn-show-more hidden" id="btnShowMore">
+                    <span>Show More</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
     </main>
+
+    <!-- STICKY SHOW LESS BUTTON (Top Right) -->
+    <button class="btn-show-less hidden" id="btnShowLess">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+        <span>Show Less</span>
+    </button>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+    </div>
+
 
     <!-- FOOTER -->
     <footer class="modern-footer">
@@ -221,5 +269,6 @@
     </footer>
 
     <script src="js/navmenu.js"></script>
+    <script src="js/photos.js"></script>
 </body>
 </html>

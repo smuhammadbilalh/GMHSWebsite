@@ -1,0 +1,20 @@
+﻿{
+    "label": "ABOUT SCHOOL",
+    "items": [
+        {
+            "iconSvg": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"></path><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"></path>",
+            "boldText": "History:",
+            "normalText": "Established in 1950, serving the community for over 75 years."
+        },
+        {
+            "iconSvg": "<path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path>",
+            "boldText": "Community:",
+            "normalText": "A proud institution serving thousands of families in Sarai Alamgir."
+        },
+        {
+            "iconSvg": "<polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline>",
+            "boldText": "Excellence:",
+            "normalText": "Consistent top performance in board examinations."
+        }
+    ]
+}
