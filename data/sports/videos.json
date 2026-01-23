@@ -1,0 +1,32 @@
+﻿{
+    "videos": [
+        {
+            "title": "District Cricket Final 2025",
+            "description": "The winning moment against City High School.",
+            "thumbnail": "images/sports/cricket-thumb.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=placeholder1",
+            "duration": "WINNING MOMENT"
+        },
+        {
+            "title": "Ahmed Ali's Record Sprint",
+            "description": "Breaking the 100m division record.",
+            "thumbnail": "images/sports/athletics-thumb.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=placeholder2",
+            "duration": "GOLD MEDAL"
+        },
+        {
+            "title": "Football Semi-Final Goal",
+            "description": "A stunning free-kick that qualified us for regionals.",
+            "thumbnail": "images/sports/football-thumb.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=placeholder3",
+            "duration": "HIGHLIGHT"
+        },
+        {
+            "title": "Volleyball Team Defense",
+            "description": "Great defensive play during the division finals.",
+            "thumbnail": "images/sports/volleyball-thumb.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=placeholder4",
+            "duration": "SILVER"
+        }
+    ]
+}

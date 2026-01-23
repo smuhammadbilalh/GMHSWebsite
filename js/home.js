@@ -38,10 +38,10 @@ async function loadHeroSlides() {
             <div class="slide-bg" style="background-image: url('${slide.imageUrl}')"></div>
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                ${slide.badgeText ? `<span class="badge">${slide.badgeText}</span>` : ''}
+                ${slide.badgeText ? `<span class="badge" style="background: #000000; color: #ffffff;">${slide.badgeText}</span>` : ''}
                 <h1>${slide.title}</h1>
                 <p>${slide.description}</p>
-                ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary">${slide.buttonText}</a>` : ''}
+                ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary" style="background: #000000; border-color: #000000; color: #ffffff;">${slide.buttonText}</a>` : ''}
             </div>
         `;
         container.appendChild(slideDiv);
@@ -73,8 +73,8 @@ async function loadStats() {
         statDiv.className = `stat-item ${stat.highlight ? 'highlight' : ''}`;
         statDiv.setAttribute('data-counter', stat.value);
         statDiv.innerHTML = `
-            <strong class="counter-value">0</strong>
-            <span>${stat.label}</span>
+            <strong class="counter-value" style="color: #000000;">0</strong>
+            <span style="color: #000000;">${stat.label}</span>
         `;
         container.appendChild(statDiv);
     });
@@ -92,10 +92,11 @@ async function loadNewsTicker() {
     const marquee = document.getElementById('newsTickerContent');
     marquee.innerHTML = data.items.map(item => `
         <span class="ticker-item">
-            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">
                 ${item.iconSvg}
             </svg>
-            <strong>${item.boldText}</strong> ${item.normalText}
+            <strong style="color: #000000;">${item.boldText}</strong> 
+            <span style="color: #000000;">${item.normalText}</span>
         </span>
     `).join('');
 }
@@ -117,10 +118,11 @@ async function loadAboutTicker() {
                     <marquee behavior="scroll" direction="left" scrollamount="6">
                         ${data.items.map(item => `
                             <span class="ticker-item">
-                                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">
                                     ${item.iconSvg}
                                 </svg>
-                                <strong>${item.boldText}</strong> ${item.normalText}
+                                <strong style="color: #000000;">${item.boldText}</strong> 
+                                <span style="color: #000000;">${item.normalText}</span>
                             </span>
                         `).join('')}
                     </marquee>
@@ -149,29 +151,29 @@ async function loadVideo() {
 }
 
 // =========================================
-// LOAD PORTALS
+// LOAD PORTALS (FIXED: STRICT BLACK TEXT)
 // =========================================
 async function loadPortals() {
     const response = await fetch('data/home/portals.json');
     const data = await response.json();
 
-    // Set header
+    // Set header - Enforcing inline black color
     const header = document.getElementById('portalsHeader');
     header.innerHTML = `
-        <h2>${data.title} <span class="accent-text">${data.accent}</span></h2>
-        <div class="header-line"></div>
+        <h2 style="color: #000000;">${data.title} <span class="accent-text" style="color: #000000;">${data.accent}</span></h2>
+        <div class="header-line" style="background-color: #000000;"></div>
     `;
 
-    // Set cards
+    // Set cards - Enforcing inline black color for text and icons
     const grid = document.getElementById('portalsGrid');
     grid.innerHTML = data.cards.map(card => `
-        <a href="${card.url}" target="${card.target}" class="square-card">
-            <div class="card-icon">
+        <a href="${card.url}" target="${card.target}" class="square-card" style="color: #000000;">
+            <div class="card-icon" style="color: #000000;">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     ${card.iconSvg}
                 </svg>
             </div>
-            <h3>${card.title}</h3>
+            <h3 style="color: #000000;">${card.title}</h3>
         </a>
     `).join('');
 }

@@ -1,10 +1,10 @@
 ﻿:root {
-    --sky-blue: #0284c7;
+    --sky-blue: #000000;
     --black: #000000;
     --white: #ffffff;
-    --whatsapp: #25D366;
-    --facebook: #1877F2;
-    --linkedin: #0A66C2;
+    --whatsapp: #000000;
+    --facebook: #000000;
+    --linkedin: #000000;
 }
 
 .modern-footer {
@@ -73,7 +73,7 @@
         border-color: var(--whatsapp);
         color: var(--white);
         transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
     .social-link.facebook:hover {
@@ -81,7 +81,7 @@
         border-color: var(--facebook);
         color: var(--white);
         transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
     .social-link.linkedin:hover {
@@ -89,7 +89,7 @@
         border-color: var(--linkedin);
         color: var(--white);
         transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(10, 102, 194, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
 .contact-list {

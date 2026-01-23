@@ -1,5 +1,5 @@
 ﻿/* =========================================
-   SPORTS PAGE STYLING - SKY BLUE THEME
+   SPORTS PAGE STYLING - BLACK & WHITE THEME
    ========================================= */
 
 .sports-page {
@@ -12,12 +12,13 @@
    PAGE TITLE SECTION (EDGE-TO-EDGE)
    ========================================= */
 .page-title-section {
-    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    background: #000000; /* Strict Black */
     padding: 120px 20px 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
     margin-top: 0;
+    border-bottom: 1px solid #333;
 }
 
     /* Animated background pattern */
@@ -49,7 +50,7 @@
     margin: 0;
     position: relative;
     z-index: 1;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
     animation: titleFadeIn 1s ease-out;
 }
 
@@ -69,11 +70,12 @@
    SPORTS NEWS TICKER
    ========================================= */
 .sports-news-ticker {
-    background: #000;
-    padding: 15px 0;
+    background: #ffffff; /* White background */
+    padding: 0;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-bottom: 2px solid #000000;
+    height: 50px;
 }
 
 .ticker-label-sports {
@@ -81,26 +83,30 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background: #0284c7;
+    background: #000000; /* Black Label */
     padding: 0 25px;
     display: flex;
     align-items: center;
     font-weight: 800;
-    color: #fff;
+    color: #fff; /* White Text */
     font-size: 0.9rem;
     letter-spacing: 1px;
     z-index: 2;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
 }
 
 .ticker-content-sports {
     padding-left: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
 }
 
     .ticker-content-sports marquee {
-        color: #fff;
+        color: #000000; /* Black Text */
         font-weight: 600;
         font-size: 1rem;
+        line-height: 50px;
     }
 
 .sports-ticker-item {
@@ -114,35 +120,9 @@
     .sports-ticker-item svg {
         width: 18px;
         height: 18px;
-        stroke: #0ea5e9;
+        stroke: #000000; /* Black Icons */
         fill: none;
         stroke-width: 2;
-    }
-
-/* =========================================
-   CAROUSEL SECTION
-   ========================================= */
-.carousel-section {
-    padding: 70px 20px;
-    background: #f8fafc;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-    .section-header h2 {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #000;
-        margin: 0 0 15px 0;
-    }
-
-    .section-header p {
-        font-size: 1.1rem;
-        color: #64748b;
-        margin: 0;
     }
 
 /* =========================================
@@ -150,7 +130,7 @@
    ========================================= */
 .categories-section {
     padding: 70px 20px;
-    background: #fff;
+    background: #f8fafc; /* Very light gray/white */
 }
 
 .categories-grid {
@@ -163,7 +143,7 @@
 
 .category-card {
     background: #fff;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #000000; /* Black border */
     border-radius: 16px;
     padding: 35px 25px;
     text-align: center;
@@ -180,18 +160,18 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
-        transition: left 0.5s ease;
+        background: #000000; /* Black hover fill */
+        transition: left 0.4s ease;
+        z-index: 0;
     }
 
     .category-card:hover::before {
-        left: 100%;
+        left: 0;
     }
 
     .category-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(14, 165, 233, 0.2);
-        border-color: #0ea5e9;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
 .category-icon {
@@ -199,16 +179,21 @@
     height: 70px;
     border-radius: 50%;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    background: #000000; /* Black Icon Background */
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    border: 2px solid #000;
 }
 
 .category-card:hover .category-icon {
     transform: scale(1.1) rotate(5deg);
+    background: #fff; /* Invert on hover */
+    color: #000;
 }
 
 .category-icon svg {
@@ -221,13 +206,25 @@
     color: #000;
     margin: 0 0 10px 0;
     font-weight: 800;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
 }
 
 .category-card p {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #333;
     margin: 0;
     font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+}
+
+/* Text color change on hover */
+.category-card:hover h3,
+.category-card:hover p {
+    color: #fff;
 }
 
 /* =========================================
@@ -235,7 +232,7 @@
    ========================================= */
 .achievements-section {
     padding: 70px 20px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    background: #fff;
 }
 
 .achievements-grid {
@@ -250,21 +247,21 @@
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid #000;
 }
 
     .achievement-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(14, 165, 233, 0.2);
-        border-color: #0ea5e9;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        background: #000;
     }
 
 .achievement-image {
     width: 100%;
     height: 220px;
-    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    background: #000; /* Black placeholder */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,6 +270,7 @@
     font-weight: 900;
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid #000;
 }
 
     .achievement-image img {
@@ -280,6 +278,7 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
+        filter: grayscale(100%); /* Force B&W images */
     }
 
 .achievement-card:hover .achievement-image img {
@@ -300,22 +299,24 @@
     font-size: 0.85rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     z-index: 2;
-    border: 3px solid #fff;
+    border: 2px solid #000;
 }
 
+    /* Grayscale Medals for strict B&W theme */
     .medal-badge.gold {
-        background: #fbbf24;
-        color: #78350f;
+        background: #ffffff;
+        color: #000000;
+        border: 4px solid #000000;
     }
 
     .medal-badge.silver {
-        background: #d1d5db;
-        color: #1f2937;
+        background: #d4d4d4; /* Light Gray */
+        color: #000000;
     }
 
     .medal-badge.bronze {
-        background: #f97316;
-        color: #7c2d12;
+        background: #525252; /* Dark Gray */
+        color: #ffffff;
     }
 
 .achievement-content {
@@ -324,13 +325,19 @@
 
 .achievement-year {
     display: inline-block;
-    background: #0ea5e9;
+    background: #000000;
     color: #fff;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 700;
     margin-bottom: 15px;
+    border: 1px solid #000;
+}
+
+.achievement-card:hover .achievement-year {
+    background: #fff;
+    color: #000;
 }
 
 .achievement-content h3 {
@@ -338,13 +345,20 @@
     color: #000;
     margin: 0 0 12px 0;
     font-weight: 800;
+    transition: color 0.3s;
 }
 
 .achievement-content p {
     font-size: 0.95rem;
-    color: #475569;
+    color: #333;
     line-height: 1.6;
     margin: 0;
+    transition: color 0.3s;
+}
+
+.achievement-card:hover h3,
+.achievement-card:hover p {
+    color: #fff;
 }
 
 /* =========================================
@@ -372,7 +386,6 @@
         grid-template-columns: 1fr;
     }
 
-    .carousel-section,
     .categories-section,
     .achievements-section {
         padding: 60px 20px;
@@ -409,7 +422,6 @@
         grid-template-columns: 1fr;
     }
 
-    .carousel-section,
     .categories-section,
     .achievements-section {
         padding: 50px 15px;
