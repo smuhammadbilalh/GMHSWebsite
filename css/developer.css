@@ -1,7 +1,6 @@
 ﻿/* =========================================
-   DEVELOPER PAGE - BLACK & WHITE THEME
+   DEVELOPER PAGE - THEME
    ========================================= */
-
 .developer-page {
     background: #fff;
     color: #1e293b;
@@ -9,7 +8,7 @@
 }
 
 /* =========================================
-   HERO SECTION - TWO COLUMN LAYOUT
+   HERO SECTION
    ========================================= */
 .hero-section {
     min-height: 90vh;
@@ -22,7 +21,7 @@
     padding: 100px 20px 50px;
 }
 
-/* Animated Background Particles (Gray) */
+/* Background Particles */
 .hero-background {
     position: absolute;
     top: 0;
@@ -35,7 +34,7 @@
 
 .particle {
     position: absolute;
-    background: rgba(0, 0, 0, 0.05); /* Faint gray */
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     animation: float 20s infinite ease-in-out;
 }
@@ -45,7 +44,6 @@
         height: 100px;
         top: 10%;
         left: 10%;
-        animation-delay: 0s;
     }
 
     .particle:nth-child(2) {
@@ -78,23 +76,13 @@
         opacity: 0.15;
     }
 
-    25% {
-        transform: translate(50px, -50px) scale(1.2);
-        opacity: 0.25;
-    }
-
     50% {
         transform: translate(100px, 50px) scale(0.8);
         opacity: 0.15;
     }
-
-    75% {
-        transform: translate(-50px, 100px) scale(1.1);
-        opacity: 0.2;
-    }
 }
 
-/* Hero Content - Two Column */
+/* Hero Content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -106,7 +94,7 @@
     align-items: center;
 }
 
-/* Left Column - Profile & Social */
+/* Left Column */
 .hero-left {
     display: flex;
     flex-direction: column;
@@ -140,16 +128,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4.5rem;
-    font-weight: 900;
-    color: #fff;
 }
 
     .hero-profile img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%);
     }
 
 @keyframes profilePulse {
@@ -164,10 +148,11 @@
     }
 }
 
-/* Social Links - HORIZONTAL CIRCLES */
+/* =========================================
+   SOCIAL LINKS - BRAND COLORS (ACCURACY FIX)
+   ========================================= */
 .social-links {
     display: flex;
-    flex-direction: row; /* Horizontal */
     gap: 15px;
     justify-content: center;
     width: 100%;
@@ -176,42 +161,53 @@
 .social-link {
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Circular */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    background: #000; /* Strict Black */
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid #000;
+    background: #000; /* Fallback */
+    border: 2px solid transparent;
 }
 
+    /* BRAND COLORS - EXACT HEX CODES */
+    /* These match the JSON "name" converted to lowercase */
+
+    .social-link.github {
+        background-color: #333333 !important; /* GitHub Dark */
+        border-color: #333333 !important;
+    }
+
+    .social-link.linkedin {
+        background-color: #0077b5 !important; /* LinkedIn Blue */
+        border-color: #0077b5 !important;
+    }
+
+    .social-link.email {
+        background-color: #ea4335 !important; /* Gmail Red */
+        border-color: #ea4335 !important;
+    }
+
+    .social-link.whatsapp {
+        background-color: #25D366 !important; /* WhatsApp Green */
+        border-color: #25D366 !important;
+    }
+
     .social-link:hover {
-        background: #fff;
-        color: #000;
         transform: translateY(-5px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.1);
     }
-
-    /* Override individual colors for strict B&W */
-    .social-link:nth-child(n) {
-        background: #000;
-    }
-
-        .social-link:nth-child(n):hover {
-            background: #fff;
-        }
 
     .social-link svg {
         width: 22px;
         height: 22px;
-        position: relative;
-        z-index: 1;
     }
 
-/* Right Column - Text Content */
+/* Right Column */
 .hero-right {
     text-align: left;
     opacity: 0;
@@ -297,7 +293,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #000; /* Black */
+    background: #000;
     color: #fff;
     border: 2px solid #000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -321,11 +317,11 @@
     }
 
 /* =========================================
-   SKILLS SECTION - B&W
+   SKILLS SECTION
    ========================================= */
 .skills-section {
     padding: 70px 20px;
-    background: #f8f8f8; /* Light Gray */
+    background: #f8f8f8;
     border-top: 1px solid #e5e5e5;
 }
 
@@ -363,7 +359,7 @@
 .skill-category {
     background: #fff;
     border: 2px solid #000;
-    border-radius: 0; /* Sharp for brutalist/clean look */
+    border-radius: 0;
     padding: 28px;
     opacity: 0;
     transform: translateY(30px);
@@ -403,13 +399,7 @@
     margin-bottom: 7px;
 }
 
-.skill-name {
-    font-size: 0.92rem;
-    color: #000;
-    font-weight: 700;
-}
-
-.skill-percentage {
+.skill-name, .skill-percentage {
     font-size: 0.92rem;
     color: #000;
     font-weight: 700;
@@ -426,12 +416,11 @@
 
 .skill-progress {
     height: 100%;
-    background: #000; /* Solid Black */
+    background: #000;
     border-radius: 0;
     width: 0;
     transition: width 1.5s ease;
     position: relative;
-    overflow: hidden;
 }
 
 /* =========================================
