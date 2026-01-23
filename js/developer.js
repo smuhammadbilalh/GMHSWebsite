@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('data/developer/profile.json');
         developerData = await response.json();
 
-        // Load all sections
+        // Load specific sections
         loadHero();
-        loadAbout();
         loadSkills();
-        loadJourney();
 
         // Start typing animation
         startTypingAnimation();
@@ -43,7 +41,7 @@ function loadHero() {
         profile.textContent = initials;
     }
 
-    // Load social links with accurate SVG icons
+    // Load social links with SVG icons
     const socialContainer = document.getElementById('socialLinks');
 
     const socialIcons = [
@@ -116,14 +114,6 @@ function startTypingAnimation() {
 }
 
 // =========================================
-// LOAD ABOUT SECTION
-// =========================================
-function loadAbout() {
-    const about = developerData.about;
-    document.getElementById('aboutDescription').textContent = about.description;
-}
-
-// =========================================
 // LOAD SKILLS SECTION
 // =========================================
 function loadSkills() {
@@ -158,32 +148,6 @@ function loadSkills() {
 }
 
 // =========================================
-// LOAD JOURNEY SECTION
-// =========================================
-function loadJourney() {
-    const journeyGrid = document.getElementById('journeyGrid');
-
-    developerData.journey.forEach(item => {
-        const journeyCard = document.createElement('div');
-        journeyCard.className = 'journey-card';
-
-        journeyCard.innerHTML = `
-            <div class="journey-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    ${item.icon}
-                </svg>
-            </div>
-            <div class="journey-year">${item.year}</div>
-            <h3>${item.title}</h3>
-            <div class="journey-company">${item.company}</div>
-            <p>${item.description}</p>
-        `;
-
-        journeyGrid.appendChild(journeyCard);
-    });
-}
-
-// =========================================
 // SCROLL ANIMATIONS
 // =========================================
 function setupScrollAnimations() {
@@ -212,7 +176,7 @@ function setupScrollAnimations() {
     }, observerOptions);
 
     // Observe all animatable elements
-    document.querySelectorAll('.section-title, .about-text, .skill-category, .journey-card').forEach(el => {
+    document.querySelectorAll('.section-title, .skill-category').forEach(el => {
         observer.observe(el);
     });
 }

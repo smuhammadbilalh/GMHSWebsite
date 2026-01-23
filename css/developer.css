@@ -1,5 +1,5 @@
 ﻿/* =========================================
-   DEVELOPER PAGE - OPTIMIZED LIGHT THEME
+   DEVELOPER PAGE - BLACK & WHITE THEME
    ========================================= */
 
 .developer-page {
@@ -12,17 +12,17 @@
    HERO SECTION - TWO COLUMN LAYOUT
    ========================================= */
 .hero-section {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #f8fafc 100%);
+    background: #fff;
     overflow: hidden;
     padding: 100px 20px 50px;
 }
 
-/* Animated Background Particles */
+/* Animated Background Particles (Gray) */
 .hero-background {
     position: absolute;
     top: 0;
@@ -30,11 +30,12 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .particle {
     position: absolute;
-    background: rgba(2, 132, 199, 0.12);
+    background: rgba(0, 0, 0, 0.05); /* Faint gray */
     border-radius: 50%;
     animation: float 20s infinite ease-in-out;
 }
@@ -127,15 +128,15 @@
 }
 
 .hero-profile {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    margin-bottom: 25px;
-    border: 5px solid #0284c7;
-    box-shadow: 0 10px 40px rgba(2, 132, 199, 0.3);
+    margin-bottom: 30px;
+    border: 5px solid #000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     animation: profilePulse 3s ease-in-out infinite;
     overflow: hidden;
-    background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,89 +149,59 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        filter: grayscale(100%);
     }
 
 @keyframes profilePulse {
     0%, 100% {
-        box-shadow: 0 10px 40px rgba(2, 132, 199, 0.3);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         transform: scale(1);
     }
 
     50% {
-        box-shadow: 0 15px 60px rgba(2, 132, 199, 0.5);
+        box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
         transform: scale(1.03);
     }
 }
 
-/* Social Links - Vertical Stack */
+/* Social Links - HORIZONTAL CIRCLES */
 .social-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Horizontal */
     gap: 15px;
+    justify-content: center;
     width: 100%;
 }
 
 .social-link {
-    width: 100%;
-    height: 52px;
-    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular */
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+    background: #000; /* Strict Black */
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-    border: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #000;
 }
 
-    /* GitHub - Dark */
-    .social-link:nth-child(1) {
-        background: #181717;
+    .social-link:hover {
+        background: #fff;
+        color: #000;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-        .social-link:nth-child(1):hover {
-            background: #000;
-            transform: translateX(5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-    /* LinkedIn - Blue */
-    .social-link:nth-child(2) {
-        background: #0A66C2;
+    /* Override individual colors for strict B&W */
+    .social-link:nth-child(n) {
+        background: #000;
     }
 
-        .social-link:nth-child(2):hover {
-            background: #004182;
-            transform: translateX(5px);
-            box-shadow: 0 6px 20px rgba(10, 102, 194, 0.35);
-        }
-
-    /* Email - Red */
-    .social-link:nth-child(3) {
-        background: #EA4335;
-    }
-
-        .social-link:nth-child(3):hover {
-            background: #c5221f;
-            transform: translateX(5px);
-            box-shadow: 0 6px 20px rgba(234, 67, 53, 0.35);
-        }
-
-    /* WhatsApp - Green */
-    .social-link:nth-child(4) {
-        background: #25D366;
-    }
-
-        .social-link:nth-child(4):hover {
-            background: #128C7E;
-            transform: translateX(5px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+        .social-link:nth-child(n):hover {
+            background: #fff;
         }
 
     .social-link svg {
@@ -239,10 +210,6 @@
         position: relative;
         z-index: 1;
     }
-
-.social-link-text {
-    display: none;
-}
 
 /* Right Column - Text Content */
 .hero-right {
@@ -265,26 +232,25 @@
 
 .hero-greeting {
     font-size: 1.2rem;
-    color: #0284c7;
+    color: #000;
     font-weight: 700;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-name {
     font-size: 4rem;
     font-weight: 900;
     margin: 0 0 15px 0;
-    background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #000;
     line-height: 1.1;
 }
 
 .hero-roles {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #475569;
+    color: #444;
     margin-bottom: 20px;
     height: 55px;
     display: flex;
@@ -292,14 +258,14 @@
 }
 
 .typing-text {
-    border-right: 3px solid #0284c7;
+    border-right: 3px solid #000;
     padding-right: 5px;
     animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
     0%, 50% {
-        border-color: #0284c7;
+        border-color: #000;
     }
 
     51%, 100% {
@@ -309,13 +275,13 @@
 
 .hero-description {
     font-size: 1.08rem;
-    color: #64748b;
+    color: #555;
     line-height: 1.7;
     margin-bottom: 30px;
     max-width: 600px;
 }
 
-/* Read More Button */
+/* CTA Button */
 .hero-cta {
     display: flex;
     gap: 15px;
@@ -331,15 +297,17 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    background: #000; /* Black */
     color: #fff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+    border: 2px solid #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
     .btn-read-more:hover {
+        background: #fff;
+        color: #000;
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(2, 132, 199, 0.4);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
     }
 
     .btn-read-more svg {
@@ -353,12 +321,12 @@
     }
 
 /* =========================================
-   ABOUT SECTION - OPTIMIZED SPACING
+   SKILLS SECTION - B&W
    ========================================= */
-.about-section {
+.skills-section {
     padding: 70px 20px;
-    background: #fff;
-    position: relative;
+    background: #f8f8f8; /* Light Gray */
+    border-top: 1px solid #e5e5e5;
 }
 
 .section-container {
@@ -371,10 +339,7 @@
     font-weight: 900;
     text-align: center;
     margin-bottom: 40px;
-    background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #000;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
@@ -384,39 +349,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-
-.about-content {
-    text-align: center;
-}
-
-.about-text {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-    .about-text.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .about-text p {
-        font-size: 1.08rem;
-        line-height: 1.8;
-        color: #475569;
-        margin-bottom: 0;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-/* =========================================
-   SKILLS SECTION - OPTIMIZED SPACING
-   ========================================= */
-.skills-section {
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
-}
 
 .skills-grid {
     display: grid;
@@ -430,13 +362,13 @@
 
 .skill-category {
     background: #fff;
-    border: 2px solid #e2e8f0;
-    border-radius: 14px;
+    border: 2px solid #000;
+    border-radius: 0; /* Sharp for brutalist/clean look */
     padding: 28px;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    box-shadow: 5px 5px 0px rgba(0,0,0,1);
 }
 
     .skill-category.visible {
@@ -445,16 +377,16 @@
     }
 
     .skill-category:hover {
-        border-color: #0284c7;
-        box-shadow: 0 8px 30px rgba(2, 132, 199, 0.12);
-        transform: translateY(-4px);
+        transform: translateY(-2px);
+        box-shadow: 8px 8px 0px rgba(0,0,0,1);
     }
 
     .skill-category h3 {
         font-size: 1.2rem;
-        color: #0f172a;
+        color: #000;
         margin-bottom: 22px;
         font-weight: 800;
+        text-transform: uppercase;
     }
 
 .skill-item {
@@ -473,165 +405,33 @@
 
 .skill-name {
     font-size: 0.92rem;
-    color: #475569;
+    color: #000;
     font-weight: 700;
 }
 
 .skill-percentage {
     font-size: 0.92rem;
-    color: #0284c7;
+    color: #000;
     font-weight: 700;
 }
 
 .skill-bar {
-    height: 7px;
-    background: #e2e8f0;
-    border-radius: 10px;
+    height: 8px;
+    background: #e5e5e5;
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
+    border: 1px solid #000;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #0284c7 0%, #06b6d4 100%);
-    border-radius: 10px;
+    background: #000; /* Solid Black */
+    border-radius: 0;
     width: 0;
     transition: width 1.5s ease;
     position: relative;
     overflow: hidden;
-}
-
-    .skill-progress::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        animation: shimmer 2s infinite;
-    }
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* =========================================
-   JOURNEY SECTION - OPTIMIZED SPACING
-   ========================================= */
-.journey-section {
-    padding: 70px 20px;
-    background: #fff;
-}
-
-.journey-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.journey-card {
-    background: #fff;
-    border: 2px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 32px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-    position: relative;
-    overflow: hidden;
-}
-
-    .journey-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .journey-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.05), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .journey-card:hover::before {
-        left: 100%;
-    }
-
-    .journey-card:hover {
-        transform: translateY(-6px);
-        border-color: #0284c7;
-        box-shadow: 0 12px 40px rgba(2, 132, 199, 0.15);
-    }
-
-.journey-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.journey-card:hover .journey-icon {
-    transform: scale(1.08) rotate(5deg);
-}
-
-.journey-icon svg {
-    width: 35px;
-    height: 35px;
-}
-
-.journey-year {
-    font-size: 0.85rem;
-    color: #0284c7;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-}
-
-.journey-card h3 {
-    font-size: 1.25rem;
-    color: #0f172a;
-    margin-bottom: 6px;
-    font-weight: 800;
-    line-height: 1.3;
-}
-
-.journey-company {
-    font-size: 0.95rem;
-    color: #64748b;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-.journey-card p {
-    font-size: 0.92rem;
-    color: #475569;
-    line-height: 1.65;
-    text-align: left;
-    margin: 0;
 }
 
 /* =========================================
@@ -670,8 +470,8 @@
     }
 
     .hero-profile {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
         font-size: 3.5rem;
     }
 
@@ -679,16 +479,6 @@
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
-    }
-
-    .social-link {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-
-    .social-link-text {
-        display: none;
     }
 
     .hero-name {
@@ -710,100 +500,26 @@
         justify-content: center;
     }
 
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 35px;
-    }
-
-    .about-section,
-    .skills-section,
-    .journey-section {
-        padding: 60px 20px;
-    }
-
-    .skills-grid,
-    .journey-grid {
+    .skills-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 }
 
 @media (max-width: 600px) {
-    .hero-section {
-        padding: 80px 15px 40px;
-    }
-
     .hero-profile {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
         font-size: 3rem;
         margin-bottom: 20px;
-    }
-
-    .social-links {
-        gap: 12px;
-    }
-
-    .social-link {
-        width: 46px;
-        height: 46px;
-    }
-
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-        }
-
-    .hero-greeting {
-        font-size: 1.05rem;
     }
 
     .hero-name {
         font-size: 2.2rem;
     }
 
-    .hero-roles {
-        font-size: 1.25rem;
-        height: 42px;
+    .social-link {
+        width: 45px;
+        height: 45px;
     }
-
-    .hero-description {
-        font-size: 1rem;
-        margin-bottom: 25px;
-    }
-
-    .btn-read-more {
-        padding: 12px 28px;
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-
-    .about-section,
-    .skills-section,
-    .journey-section {
-        padding: 50px 15px;
-    }
-
-    .about-text p {
-        font-size: 1.02rem;
-    }
-
-    .skill-category,
-    .journey-card {
-        padding: 24px;
-    }
-
-    .journey-icon {
-        width: 65px;
-        height: 65px;
-    }
-
-        .journey-icon svg {
-            width: 32px;
-            height: 32px;
-        }
 }
