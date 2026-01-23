@@ -2,13 +2,13 @@
     "hero": {
         "name": "Muhammad Bilal",
         "roles": [
-            "Full Stack Developer",
-            "Native App Specialist",
-            ".NET Expert",
-            "Cross-Platform Developer"
+            "IT Support Specialist",
+            "Software Developer",
+            "Tech Entrepreneur",
+            "Problem Solver"
         ],
-        "tagline": "Building Native & Cross-Platform Solutions",
-        "description": "Passionate developer specializing in Windows Native, Android, Blazor, MAUI, and Kotlin. Creating high-performance applications with modern technologies.",
+        "tagline": "Building Innovative Solutions, One Step at a Time",
+        "description": "A business-minded developer passionate about creating innovative software solutions. Currently building applications with .NET, Blazor, and modern technologies while growing my IT services business.",
         "profileImage": "images/developer/profile.jpg",
         "resumeLink": "#"
     },
@@ -36,131 +36,99 @@
     ],
     "about": {
         "title": "About Me",
-        "description": "I'm a passionate developer with expertise in building native and cross-platform applications. My journey in software development has led me to master modern frameworks and technologies, creating efficient and scalable solutions.",
-        "stats": [
-            {
-                "value": "5+",
-                "label": "Years Experience"
-            },
-            {
-                "value": "50+",
-                "label": "Projects Completed"
-            },
-            {
-                "value": "30+",
-                "label": "Happy Clients"
-            },
-            {
-                "value": "24/7",
-                "label": "Support"
-            }
-        ]
+        "description": "I'm a business-minded individual with a passion for technology and innovation. My journey started with learning IT fundamentals through Google's IT Support course, and has evolved into building custom software solutions. I believe in learning by doing - creating real applications that solve real problems. Currently focusing on .NET technologies, Blazor, WinUI, and cross-platform development while providing IT support and growing my software business."
     },
     "skills": [
         {
-            "category": "Native Development",
+            "category": "Desktop & Native",
             "technologies": [
                 {
                     "name": "WinUI 3",
-                    "level": 95
+                    "level": 85
                 },
                 {
-                    "name": "Kotlin",
-                    "level": 90
+                    "name": "C# / .NET",
+                    "level": 88
                 },
                 {
-                    "name": "C#",
-                    "level": 98
+                    "name": "Blazor Hybrid",
+                    "level": 82
                 }
             ]
         },
         {
-            "category": "Cross-Platform",
+            "category": "Web Development",
             "technologies": [
                 {
-                    "name": "Blazor",
-                    "level": 95
+                    "name": "Blazor WebAssembly",
+                    "level": 80
                 },
                 {
-                    "name": ".NET MAUI",
-                    "level": 92
+                    "name": "ASP.NET Core",
+                    "level": 78
                 },
                 {
-                    "name": "React",
+                    "name": "HTML/CSS/JS",
                     "level": 85
                 }
             ]
         },
         {
-            "category": "Backend & Database",
+            "category": "Mobile & Cross-Platform",
             "technologies": [
                 {
-                    "name": "ASP.NET Core",
-                    "level": 93
+                    "name": ".NET MAUI",
+                    "level": 75
                 },
                 {
+                    "name": "Kotlin",
+                    "level": 70
+                },
+                {
+                    "name": "Android Development",
+                    "level": 72
+                }
+            ]
+        },
+        {
+            "category": "Database & Backend",
+            "technologies": [
+                {
                     "name": "MongoDB",
-                    "level": 88
+                    "level": 80
                 },
                 {
                     "name": "SQL Server",
-                    "level": 90
+                    "level": 82
+                },
+                {
+                    "name": "REST APIs",
+                    "level": 85
                 }
             ]
         }
     ],
-    "projects": [
+    "journey": [
         {
-            "id": 1,
-            "title": "AttendFlow",
-            "description": "Modern attendance management system with real-time tracking and analytics",
-            "tech": [ "Blazor", "MongoDB", "ASP.NET Core" ],
-            "image": "images/projects/attendflow.jpg",
-            "link": "#"
+            "year": "2023 - 2024",
+            "title": "Google IT Support Professional Certificate",
+            "company": "Google (Coursera)",
+            "description": "Successfully completed comprehensive IT support training covering troubleshooting, customer service, networking, operating systems, system administration, and security fundamentals.",
+            "icon": "<path d=\"M22 10v6M2 10l10-5 10 5-10 5z\"></path><path d=\"M6 12v5c3 3 9 3 12 0v-5\"></path>"
         },
-        {
-            "id": 2,
-            "title": "POS System",
-            "description": "Complete Point of Sale solution built with WinUI 3 for retail management",
-            "tech": [ "WinUI 3", "C#", "SQL Server" ],
-            "image": "images/projects/pos.jpg",
-            "link": "#"
-        },
-        {
-            "id": 3,
-            "title": "School Management System",
-            "description": "Comprehensive ERP for educational institutions with multi-module support",
-            "tech": [ ".NET MAUI", "Blazor", "MongoDB" ],
-            "image": "images/projects/school.jpg",
-            "link": "#"
-        },
-        {
-            "id": 4,
-            "title": "Cross-Platform Mobile App",
-            "description": "Native performance mobile app for Android and iOS using Kotlin Multiplatform",
-            "tech": [ "Kotlin", "Compose", "Firebase" ],
-            "image": "images/projects/mobile.jpg",
-            "link": "#"
-        }
-    ],
-    "experience": [
         {
             "year": "2024 - Present",
-            "title": "Senior Full Stack Developer",
-            "company": "Freelance",
-            "description": "Building modern applications using .NET, Blazor, and native technologies"
+            "title": "IT Support Specialist",
+            "company": "University of Gujrat",
+            "description": "Providing technical support to university students, helping resolve hardware and software issues, network connectivity problems, and guiding them through various technical challenges.",
+            "icon": "<path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path>"
         },
         {
-            "year": "2022 - 2024",
-            "title": "Native App Developer",
-            "company": "Tech Solutions",
-            "description": "Developed Windows and Android applications with focus on performance"
-        },
-        {
-            "year": "2020 - 2022",
-            "title": "Software Developer",
-            "company": "Digital Agency",
-            "description": "Created web and desktop applications using modern frameworks"
+            "year": "2024 - Present",
+            "title": "Software Developer & Entrepreneur",
+            "company": "Self-Employed",
+            "description": "Building innovative software solutions for my growing IT business. Developing desktop applications with WinUI 3, web apps with Blazor, and learning modern technologies to create efficient, user-friendly solutions for real-world problems.",
+            "icon": "<polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline>"
         }
     ]
 }

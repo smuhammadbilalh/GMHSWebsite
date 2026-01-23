@@ -152,37 +152,39 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-profile" id="heroProfile">MB</div>
-            <p class="hero-greeting">Hello, I'm</p>
-            <h1 class="hero-name" id="heroName">Muhammad Bilal</h1>
-            <div class="hero-roles">
-                <span class="typing-text" id="typingText"></span>
-            </div>
-            <p class="hero-tagline" id="heroTagline">Building Native & Cross-Platform Solutions</p>
+            <!-- LEFT COLUMN: Profile & Social -->
+            <div class="hero-left">
+                <div class="hero-profile" id="heroProfile">MB</div>
 
-            <div class="social-links" id="socialLinks">
-                <!-- Social links will be loaded from JSON -->
+                <div class="social-links" id="socialLinks">
+                    <!-- Social links will be loaded from JSON -->
+                </div>
             </div>
 
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">
-                    View Projects
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-                <a href="#contact" class="btn-secondary">Get In Touch</a>
-            </div>
-        </div>
+            <!-- RIGHT COLUMN: Text Content -->
+            <div class="hero-right">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name" id="heroName">Muhammad Bilal</h1>
+                <div class="hero-roles">
+                    <span class="typing-text" id="typingText"></span>
+                </div>
+                <p class="hero-description" id="heroDescription">
+                    A business-minded developer passionate about creating innovative software solutions. Currently building applications with .NET, Blazor, and modern technologies while growing my IT services business.
+                </p>
 
-        <div class="scroll-indicator">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
+                <div class="hero-cta">
+                    <a href="#about" class="btn-read-more">
+                        Read More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <!-- ABOUT SECTION -->
     <section class="about-section" id="about">
@@ -191,9 +193,6 @@
             <div class="about-content">
                 <div class="about-text">
                     <p id="aboutDescription"></p>
-                </div>
-                <div class="about-stats" id="aboutStats">
-                    <!-- Stats will be loaded from JSON -->
                 </div>
             </div>
         </div>
@@ -209,22 +208,12 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects-section" id="projects">
+    <!-- JOURNEY SECTION -->
+    <section class="journey-section" id="journey">
         <div class="section-container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded from JSON -->
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section class="experience-section" id="experience">
-        <div class="section-container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline" id="timeline">
-                <!-- Timeline will be loaded from JSON -->
+            <h2 class="section-title">My Journey</h2>
+            <div class="journey-grid" id="journeyGrid">
+                <!-- Journey will be loaded from JSON -->
             </div>
         </div>
     </section>

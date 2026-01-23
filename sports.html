@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports - GMHS Sarai Alamgir</title>
+    <title>Sports & Achievements - GMHS Sarai Alamgir</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/newsticker.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/sports.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
-    <!-- NAVIGATION MENU (Same as academics.html) -->
+    <!-- NAVIGATION MENU -->
     <div class="glass-nav-container">
         <nav class="glass-navbar">
             <div class="nav-brand">
@@ -88,14 +89,13 @@
         </nav>
     </div>
 
-    <!-- MOBILE NAVIGATION (Same as academics.html) -->
+    <!-- MOBILE NAVIGATION -->
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-header">
             <img src="images/schoollogo.svg" alt="GMHS Logo" class="mobile-logo" />
             <span class="mobile-brand-text">GMHS</span>
             <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
         </div>
-
         <a href="index.html" data-page="home" onclick="closeMobileMenu()">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -145,13 +145,83 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content sports-page">
-        <div class="container">
-            <h1>Sports</h1>
-            <p>Sports content will be added here...</p>
+
+        <!-- PAGE TITLE (EDGE-TO-EDGE) -->
+        <section class="page-title-section">
+            <h1 class="page-title" id="pageTitle">Sports & Achievements</h1>
+        </section>
+
+        <!-- SPORTS NEWS TICKER -->
+        <div class="sports-news-ticker">
+            <div class="ticker-label-sports">LATEST NEWS</div>
+            <div class="ticker-content-sports">
+                <marquee behavior="scroll" direction="left" scrollamount="6" id="sportsNewsTicker">
+                    <!-- News will be loaded from JSON -->
+                </marquee>
+            </div>
         </div>
+
+        <!-- CAROUSEL SECTION -->
+        <section class="carousel-section">
+            <div class="section-header">
+                <h2>Highlights & Champions</h2>
+                <p>Celebrating our sports excellence and achievements</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <!-- Slides will be loaded from JSON -->
+                    </div>
+
+                    <button class="carousel-btn carousel-btn-prev" onclick="prevSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <button class="carousel-btn carousel-btn-next" onclick="nextSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <!-- Indicators will be loaded from JSON -->
+                    </div>
+
+                    <div class="carousel-progress" id="carouselProgress"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPORTS CATEGORIES -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2>Our Sports</h2>
+                <p>Discover the various sports we excel in</p>
+            </div>
+
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be loaded from JSON -->
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section class="achievements-section">
+            <div class="section-header">
+                <h2>Recent Achievements</h2>
+                <p>Our proud moments and victories</p>
+            </div>
+
+            <div class="achievements-grid" id="achievementsGrid">
+                <!-- Achievements will be loaded from JSON -->
+            </div>
+        </section>
+
     </main>
 
-    <!-- FOOTER (Same as academics.html) -->
+    <!-- FOOTER -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-grid">
@@ -221,5 +291,7 @@
     </footer>
 
     <script src="js/navmenu.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/sports.js"></script>
 </body>
 </html>

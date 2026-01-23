@@ -1,0 +1,152 @@
+﻿{
+    "pageTitle": "Sports & Achievements",
+    "sportsNews": [
+        {
+            "id": 1,
+            "text": "GMHS wins District Cricket Championship 2025!",
+            "icon": "<path d=\"M5 3l14 9-14 9V3z\"></path>"
+        },
+        {
+            "id": 2,
+            "text": "Football team qualifies for Regional Finals",
+            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path>"
+        },
+        {
+            "id": 3,
+            "text": "Ahmed Ali wins Gold Medal in 100m Sprint at Inter-School Athletics",
+            "icon": "<circle cx=\"12\" cy=\"8\" r=\"7\"></circle><polyline points=\"8.21 13.89 7 23 12 20 17 23 15.79 13.88\"></polyline>"
+        },
+        {
+            "id": 4,
+            "text": "Volleyball team secures 2nd position in Gujrat Division Tournament",
+            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"22\"></line><path d=\"M2 12h20\"></path>"
+        },
+        {
+            "id": 5,
+            "text": "Congratulations to our Badminton team for winning Silver Medal",
+            "icon": "<circle cx=\"12\" cy=\"8\" r=\"7\"></circle><polyline points=\"8.21 13.89 7 23 12 20 17 23 15.79 13.88\"></polyline>"
+        }
+    ],
+    "videoSlides": [
+        {
+            "id": 1,
+            "videoUrl": "videos/cricket-championship.mp4",
+            "thumbnail": "images/sports/cricket-thumb.jpg",
+            "title": "District Cricket Champions 2025",
+            "description": "Our cricket team made history by winning the District Championship",
+            "category": "Cricket"
+        },
+        {
+            "id": 2,
+            "videoUrl": "videos/football-highlights.mp4",
+            "thumbnail": "images/sports/football-thumb.jpg",
+            "title": "Football Excellence",
+            "description": "Regional Football Tournament - Quarter Finalists",
+            "category": "Football"
+        },
+        {
+            "id": 3,
+            "videoUrl": "videos/athletics-meet.mp4",
+            "thumbnail": "images/sports/athletics-thumb.jpg",
+            "title": "Athletic Achievements",
+            "description": "Multiple medals in Inter-School Athletics Meet",
+            "category": "Athletics"
+        },
+        {
+            "id": 4,
+            "videoUrl": "videos/volleyball-finals.mp4",
+            "thumbnail": "images/sports/volleyball-thumb.jpg",
+            "title": "Volleyball Success",
+            "description": "Silver Medal in Division Volleyball Championship",
+            "category": "Volleyball"
+        }
+    ],
+    "sportsCategories": [
+        {
+            "id": 1,
+            "name": "Cricket",
+            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path>",
+            "achievements": "5 District Championships"
+        },
+        {
+            "id": 2,
+            "name": "Football",
+            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path>",
+            "achievements": "3 Regional Titles"
+        },
+        {
+            "id": 3,
+            "name": "Athletics",
+            "icon": "<path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"></path>",
+            "achievements": "15+ Individual Medals"
+        },
+        {
+            "id": 4,
+            "name": "Volleyball",
+            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"22\"></line><path d=\"M2 12h20\"></path>",
+            "achievements": "2 Division Championships"
+        },
+        {
+            "id": 5,
+            "name": "Badminton",
+            "icon": "<line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"6\"></line><line x1=\"12\" y1=\"18\" x2=\"12\" y2=\"22\"></line><line x1=\"4.93\" y1=\"4.93\" x2=\"7.76\" y2=\"7.76\"></line><line x1=\"16.24\" y1=\"16.24\" x2=\"19.07\" y2=\"19.07\"></line><line x1=\"2\" y1=\"12\" x2=\"6\" y2=\"12\"></line><line x1=\"18\" y1=\"12\" x2=\"22\" y2=\"12\"></line><line x1=\"4.93\" y1=\"19.07\" x2=\"7.76\" y2=\"16.24\"></line><line x1=\"16.24\" y1=\"7.76\" x2=\"19.07\" y2=\"4.93\"></line>",
+            "achievements": "Multiple Tournament Wins"
+        },
+        {
+            "id": 6,
+            "name": "Table Tennis",
+            "icon": "<rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"></rect><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path>",
+            "achievements": "Inter-School Champions"
+        }
+    ],
+    "recentAchievements": [
+        {
+            "id": 1,
+            "year": "2025",
+            "title": "District Cricket Championship",
+            "description": "Won the District Cricket Championship by defeating all competitors",
+            "image": "images/sports/achievement1.jpg",
+            "medal": "Gold"
+        },
+        {
+            "id": 2,
+            "year": "2025",
+            "title": "Regional Football Tournament",
+            "description": "Secured position in Quarter Finals of Regional Football Championship",
+            "image": "images/sports/achievement2.jpg",
+            "medal": "Bronze"
+        },
+        {
+            "id": 3,
+            "year": "2024",
+            "title": "Inter-School Athletics",
+            "description": "Ahmed Ali won Gold Medal in 100m Sprint with record timing",
+            "image": "images/sports/achievement3.jpg",
+            "medal": "Gold"
+        },
+        {
+            "id": 4,
+            "year": "2024",
+            "title": "Volleyball Division Championship",
+            "description": "Team secured Silver Medal in highly competitive tournament",
+            "image": "images/sports/achievement4.jpg",
+            "medal": "Silver"
+        },
+        {
+            "id": 5,
+            "year": "2024",
+            "title": "Badminton Tournament",
+            "description": "Doubles team won Silver Medal in Inter-District Competition",
+            "image": "images/sports/achievement5.jpg",
+            "medal": "Silver"
+        },
+        {
+            "id": 6,
+            "year": "2024",
+            "title": "Table Tennis Championship",
+            "description": "Won Inter-School Table Tennis Championship with clean sweep",
+            "image": "images/sports/achievement6.jpg",
+            "medal": "Gold"
+        }
+    ]
+}
