@@ -3,17 +3,15 @@
 // =========================================
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Load all JSON files
         await Promise.all([
             loadHeroSlides(),
             loadStats(),
             loadNewsTicker(),
             loadAboutTicker(),
             loadPortals(),
-            loadVideo()
+            loadVideo(),
+            loadDonors()
         ]);
-
-        // Start slider after loading
         startAutoSlide();
     } catch (error) {
         console.error('Error loading data:', error);
@@ -26,12 +24,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadHeroSlides() {
     const response = await fetch('data/home/hero.json');
     const data = await response.json();
-
     const container = document.getElementById('heroSliderContainer');
     const dotsContainer = document.getElementById('sliderDots');
 
     data.slides.forEach((slide, index) => {
-        // Create slide
         const slideDiv = document.createElement('div');
         slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
         slideDiv.innerHTML = `
@@ -46,14 +42,12 @@ async function loadHeroSlides() {
         `;
         container.appendChild(slideDiv);
 
-        // Create dot
         const dot = document.createElement('button');
         dot.className = index === 0 ? 'active' : '';
         dot.onclick = () => goToSlide(index);
         dotsContainer.appendChild(dot);
     });
 
-    // Show controls if more than 1 slide
     if (data.slides.length > 1) {
         document.getElementById('sliderControls').style.display = 'flex';
     }
@@ -65,7 +59,6 @@ async function loadHeroSlides() {
 async function loadStats() {
     const response = await fetch('data/home/stats.json');
     const data = await response.json();
-
     const container = document.getElementById('statsContainer');
 
     data.stats.forEach(stat => {
@@ -86,15 +79,11 @@ async function loadStats() {
 async function loadNewsTicker() {
     const response = await fetch('data/home/news_ticker.json');
     const data = await response.json();
-
     document.getElementById('newsTickerLabel').textContent = data.label;
-
     const marquee = document.getElementById('newsTickerContent');
     marquee.innerHTML = data.items.map(item => `
         <span class="ticker-item">
-            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">
-                ${item.iconSvg}
-            </svg>
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">${item.iconSvg}</svg>
             <strong style="color: #000000;">${item.boldText}</strong> 
             <span style="color: #000000;">${item.normalText}</span>
         </span>
@@ -107,9 +96,7 @@ async function loadNewsTicker() {
 async function loadAboutTicker() {
     const response = await fetch('data/home/about_ticker.json');
     const data = await response.json();
-
     const videoSection = document.getElementById('videoHeroSection');
-
     const tickerHTML = `
         <div class="ticker-bottom-anchor">
             <div class="news-ticker-bar">
@@ -118,9 +105,7 @@ async function loadAboutTicker() {
                     <marquee behavior="scroll" direction="left" scrollamount="6">
                         ${data.items.map(item => `
                             <span class="ticker-item">
-                                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">
-                                    ${item.iconSvg}
-                                </svg>
+                                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2">${item.iconSvg}</svg>
                                 <strong style="color: #000000;">${item.boldText}</strong> 
                                 <span style="color: #000000;">${item.normalText}</span>
                             </span>
@@ -130,58 +115,141 @@ async function loadAboutTicker() {
             </div>
         </div>
     `;
-
     videoSection.insertAdjacentHTML('beforeend', tickerHTML);
 }
 
 async function loadVideo() {
     const response = await fetch('data/home/video.json');
     const data = await response.json();
-
     const videoSection = document.getElementById('videoHeroSection');
-
     const videoHTML = `
         <video class="video-bg" ${data.autoplay ? 'autoplay' : ''} ${data.muted ? 'muted' : ''} ${data.loop ? 'loop' : ''} playsinline>
             <source src="${data.videoPath}" type="video/mp4" />
         </video>
         <div class="video-overlay"></div>
     `;
-
     videoSection.insertAdjacentHTML('afterbegin', videoHTML);
 }
 
 // =========================================
-// LOAD PORTALS (FIXED: STRICT BLACK TEXT)
+// LOAD PORTALS
 // =========================================
 async function loadPortals() {
     const response = await fetch('data/home/portals.json');
     const data = await response.json();
-
-    // Set header - Enforcing inline black color
     const header = document.getElementById('portalsHeader');
     header.innerHTML = `
         <h2 style="color: #000000;">${data.title} <span class="accent-text" style="color: #000000;">${data.accent}</span></h2>
         <div class="header-line" style="background-color: #000000;"></div>
     `;
-
-    // Set cards - Enforcing inline black color for text and icons
     const grid = document.getElementById('portalsGrid');
     grid.innerHTML = data.cards.map(card => `
         <a href="${card.url}" target="${card.target}" class="square-card" style="color: #000000;">
-            <div class="card-icon" style="color: #000000;">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    ${card.iconSvg}
-                </svg>
-            </div>
+            <div class="card-icon" style="color: #000000;"><svg viewBox="0 0 24 24" fill="currentColor">${card.iconSvg}</svg></div>
             <h3 style="color: #000000;">${card.title}</h3>
         </a>
     `).join('');
 }
 
 // =========================================
+// LOAD DONORS CAROUSEL
+// =========================================
+let donorIndex = 0;
+let donorCardWidth = 330;
+let donorsCount = 0;
+let visibleDonors = 3;
+
+async function loadDonors() {
+    try {
+        const response = await fetch('data/home/donors.json');
+        const data = await response.json();
+
+        // Headers
+        const titleEl = document.getElementById('donorSectionTitle');
+        titleEl.textContent = data.sectionTitle;
+        titleEl.style.color = '#000000';
+        const descEl = document.getElementById('donorSectionDesc');
+        descEl.textContent = data.sectionDescription;
+        descEl.style.color = '#000000';
+
+        const track = document.getElementById('donorTrack');
+        const dotsContainer = document.getElementById('donorDots');
+
+        // Render Cards
+        track.innerHTML = data.donors.map(donor => `
+            <div class="donor-card">
+                <div class="donor-image-wrapper">
+                    <img src="${donor.image}" alt="${donor.name}" onerror="this.src='images/schoollogo.svg'">
+                </div>
+                <h3>${donor.name}</h3>
+                <span class="donor-contribution">${donor.contribution}</span>
+                <p class="donor-message">"${donor.message}"</p>
+            </div>
+        `).join('');
+
+        donorsCount = data.donors.length;
+
+        // Render Dots
+        dotsContainer.innerHTML = '';
+        data.donors.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = index === 0 ? 'active' : '';
+            dot.onclick = () => {
+                donorIndex = index;
+                // Boundary check for groups
+                if (window.innerWidth >= 768 && donorIndex > donorsCount - visibleDonors) {
+                    donorIndex = donorsCount - visibleDonors;
+                }
+                updateDonorPosition();
+            };
+            dotsContainer.appendChild(dot);
+        });
+
+        // Setup Auto Scroll
+        setInterval(() => {
+            moveDonorSlide(1);
+        }, 5000);
+
+    } catch (error) {
+        console.error("Error loading donors:", error);
+    }
+}
+
+function moveDonorSlide(direction) {
+    if (window.innerWidth < 768) {
+        visibleDonors = 1;
+        donorCardWidth = 295;
+    } else {
+        visibleDonors = 3;
+        donorCardWidth = 330;
+    }
+
+    const maxIndex = donorsCount - visibleDonors;
+    donorIndex += direction;
+
+    if (donorIndex > maxIndex) donorIndex = 0;
+    if (donorIndex < 0) donorIndex = maxIndex;
+
+    updateDonorPosition();
+}
+
+function updateDonorPosition() {
+    const track = document.getElementById('donorTrack');
+    const translateVal = -(donorIndex * donorCardWidth);
+    track.style.transform = `translateX(${translateVal}px)`;
+
+    // Update dots active state
+    const dots = document.querySelectorAll('#donorDots button');
+    dots.forEach((dot, index) => {
+        if (index === donorIndex) dot.classList.add('active');
+        else dot.classList.remove('active');
+    });
+}
+
+// =========================================
 // HERO SLIDER FUNCTIONALITY
 // =========================================
-let currentSlide = 0;
+let heroCurrentSlide = 0;
 let slideInterval;
 
 function showSlide(index) {
@@ -190,31 +258,29 @@ function showSlide(index) {
 
     if (slides.length === 0) return;
 
-    if (index >= slides.length) currentSlide = 0;
-    if (index < 0) currentSlide = slides.length - 1;
+    if (index >= slides.length) heroCurrentSlide = 0;
+    else if (index < 0) heroCurrentSlide = slides.length - 1;
+    else heroCurrentSlide = index;
 
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
         if (dots[i]) dots[i].classList.remove('active');
     });
 
-    slides[currentSlide].classList.add('active');
-    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+    slides[heroCurrentSlide].classList.add('active');
+    if (dots[heroCurrentSlide]) dots[heroCurrentSlide].classList.add('active');
 }
 
 function nextSlide() {
-    currentSlide++;
-    showSlide(currentSlide);
+    showSlide(heroCurrentSlide + 1);
 }
 
 function previousSlide() {
-    currentSlide--;
-    showSlide(currentSlide);
+    showSlide(heroCurrentSlide - 1);
 }
 
 function goToSlide(index) {
-    currentSlide = index;
-    showSlide(currentSlide);
+    showSlide(index);
 }
 
 function startAutoSlide() {
@@ -225,37 +291,24 @@ function stopAutoSlide() {
     clearInterval(slideInterval);
 }
 
-// Pause on hover
-document.querySelector('.hero-slider')?.addEventListener('mouseenter', stopAutoSlide);
-document.querySelector('.hero-slider')?.addEventListener('mouseleave', startAutoSlide);
+const heroSlider = document.querySelector('.hero-slider');
+if (heroSlider) {
+    heroSlider.addEventListener('mouseenter', stopAutoSlide);
+    heroSlider.addEventListener('mouseleave', startAutoSlide);
+}
 
 // =========================================
-// SCROLL ANIMATIONS
+// SCROLL & COUNTER ANIMATIONS
 // =========================================
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
 const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
 }, observerOptions);
 
-// Observe after DOM loads
 setTimeout(() => {
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-        scrollObserver.observe(el);
-    });
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => scrollObserver.observe(el));
 }, 100);
 
-// =========================================
-// COUNTER ANIMATIONS
-// =========================================
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -266,48 +319,32 @@ const counterObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-// Observe counters after they're loaded
 setTimeout(() => {
-    document.querySelectorAll('.stat-item').forEach((item) => {
-        counterObserver.observe(item);
-    });
+    document.querySelectorAll('.stat-item').forEach((item) => counterObserver.observe(item));
 }, 500);
 
 function animateCounter(element) {
     const counterValue = element.querySelector('.counter-value');
     const targetText = element.getAttribute('data-counter');
-
     const hasPlus = targetText.includes('+');
     const hasPercent = targetText.includes('%');
     const targetNumber = parseInt(targetText.replace(/[^0-9]/g, ''));
-
     if (isNaN(targetNumber)) return;
-
     const duration = 2000;
     const frameDuration = 1000 / 60;
     const totalFrames = Math.round(duration / frameDuration);
-
     let frame = 0;
-
     const counter = setInterval(() => {
         frame++;
-
-        const progress = easeOutQuad(frame / totalFrames);
+        const progress = frame * (2 - frame / totalFrames) / totalFrames; // simplified easeOutQuad
         const currentCount = Math.round(targetNumber * progress);
-
         let displayText = currentCount.toString();
         if (hasPlus) displayText += '+';
         if (hasPercent) displayText += '%';
-
         counterValue.textContent = displayText;
-
         if (frame === totalFrames) {
             clearInterval(counter);
             counterValue.textContent = targetText;
         }
     }, frameDuration);
-}
-
-function easeOutQuad(t) {
-    return t * (2 - t);
 }

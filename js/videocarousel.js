@@ -74,6 +74,7 @@ function initVideoCarousel() {
     // Initialize
     updateItemsPerView();
     renderVideos();
+    renderVideoDots(); // NEW: Render dots
     updateCarousel();
     startAutoPlay();
 }
@@ -96,16 +97,13 @@ function renderVideos() {
     carouselData.videos.forEach(video => {
         const card = document.createElement('div');
         card.className = 'v-card';
-        // Changed onclick to open in new tab
         card.innerHTML = `
             <div class="v-card-inner" onclick="window.open('${video.videoUrl}', '_blank')">
                 <div class="v-thumbnail-wrapper">
                     <img src="${video.thumbnail}" alt="${video.title}" class="v-thumbnail">
                     <div class="v-play-overlay">
                         <div class="v-play-btn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                     </div>
                     <span class="v-duration">${video.duration}</span>
@@ -120,13 +118,30 @@ function renderVideos() {
     });
 }
 
+function renderVideoDots() {
+    const dotsContainer = document.getElementById('videoDots');
+    dotsContainer.innerHTML = '';
+
+    // We create one dot per video so the user can jump to specific start points
+    carouselData.videos.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = index === 0 ? 'active' : '';
+        dot.onclick = () => {
+            carouselData.currentIndex = index;
+
+            // Adjust index if out of bounds (for group view)
+            if (carouselData.currentIndex > carouselData.videos.length - carouselData.itemsPerView) {
+                carouselData.currentIndex = carouselData.videos.length - carouselData.itemsPerView;
+            }
+
+            updateCarousel();
+            resetAutoPlay();
+        };
+        dotsContainer.appendChild(dot);
+    });
+}
+
 function navigateCarousel(direction) {
-    const totalVideos = carouselData.videos.length;
-    const maxIndex = Math.ceil(totalVideos / carouselData.itemsPerView) - 1; // Correct logic for groups
-
-    // We want to slide one item at a time for smoother auto-play
-    // But keeping your existing logic: moving by 1 unit (100% of item width)
-
     carouselData.currentIndex += direction;
 
     // Loop logic
@@ -150,20 +165,29 @@ function updateCarousel() {
     const cards = track.querySelectorAll('.v-card');
     cards.forEach(card => {
         card.style.flex = `0 0 ${cardWidth}%`;
-        card.style.maxWidth = `${cardWidth}%`; // Ensure strict width
+        card.style.maxWidth = `${cardWidth}%`;
     });
 
     // Slide track
     track.style.transform = `translateX(${translateValue}%)`;
+
+    // Update Dots Active State
+    const dots = document.querySelectorAll('#videoDots button');
+    dots.forEach((dot, index) => {
+        if (index === carouselData.currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
 }
 
-// Auto Play Functions
 function startAutoPlay() {
     carouselData.autoPlayInterval = setInterval(() => {
         if (!carouselData.isPaused) {
             navigateCarousel(1);
         }
-    }, 3000); // Moves every 3 seconds
+    }, 3000);
 }
 
 function resetAutoPlay() {

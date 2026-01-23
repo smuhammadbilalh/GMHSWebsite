@@ -1,0 +1,36 @@
+﻿{
+    "sectionTitle": "Our Generous Contributors",
+    "sectionDescription": "Honoring the visionaries who helped build our infrastructure and solar energy systems.",
+    "donors": [
+        {
+            "name": "Ch. Muhammad Akram",
+            "contribution": "Solar Plant Installation",
+            "image": "images/donors/donor1.jpg",
+            "message": "Investing in energy is investing in the future of education."
+        },
+        {
+            "name": "Haji Riaz Ahmed",
+            "contribution": "Main Hall Renovation",
+            "image": "images/donors/donor2.jpg",
+            "message": "Proud to serve the school that served our community for decades."
+        },
+        {
+            "name": "Mrs. Nasreen Bibi",
+            "contribution": "Library Books & Furniture",
+            "image": "images/donors/donor3.jpg",
+            "message": "Books are the quietest and most constant of friends."
+        },
+        {
+            "name": "Dr. Touseef Khan",
+            "contribution": "Science Lab Equipment",
+            "image": "images/donors/donor4.jpg",
+            "message": "Science is the key to unlocking the potential of our youth."
+        },
+        {
+            "name": "Alumni Batch 1995",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/donor5.jpg",
+            "message": "Giving back to our alma mater with pride."
+        }
+    ]
+}

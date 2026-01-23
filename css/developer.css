@@ -149,7 +149,7 @@
 }
 
 /* =========================================
-   SOCIAL LINKS - BRAND COLORS (ACCURACY FIX)
+   SOCIAL LINKS - BRAND COLORS
    ========================================= */
 .social-links {
     display: flex;
@@ -174,25 +174,23 @@
 }
 
     /* BRAND COLORS - EXACT HEX CODES */
-    /* These match the JSON "name" converted to lowercase */
-
     .social-link.github {
-        background-color: #333333 !important; /* GitHub Dark */
+        background-color: #333333 !important;
         border-color: #333333 !important;
     }
 
     .social-link.linkedin {
-        background-color: #0077b5 !important; /* LinkedIn Blue */
+        background-color: #0077b5 !important;
         border-color: #0077b5 !important;
     }
 
     .social-link.email {
-        background-color: #ea4335 !important; /* Gmail Red */
+        background-color: #ea4335 !important;
         border-color: #ea4335 !important;
     }
 
     .social-link.whatsapp {
-        background-color: #25D366 !important; /* WhatsApp Green */
+        background-color: #25D366 !important;
         border-color: #25D366 !important;
     }
 
@@ -317,24 +315,24 @@
     }
 
 /* =========================================
-   SKILLS SECTION
+   SKILLS SECTION (SMALLER & RESPONSIVE)
    ========================================= */
 .skills-section {
-    padding: 70px 20px;
+    padding: 50px 20px; /* Reduced vertical padding */
     background: #f8f8f8;
     border-top: 1px solid #e5e5e5;
 }
 
 .section-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Slightly smaller title */
     font-weight: 900;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: #000;
     opacity: 0;
     transform: translateY(30px);
@@ -346,11 +344,12 @@
         transform: translateY(0);
     }
 
+/* DESKTOP: 4 Columns (1 Row) */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
+    gap: 20px; /* Tighter gap */
+    margin-top: 30px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -360,11 +359,11 @@
     background: #fff;
     border: 2px solid #000;
     border-radius: 0;
-    padding: 28px;
+    padding: 20px; /* Compact padding (was 28px) */
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
-    box-shadow: 5px 5px 0px rgba(0,0,0,1);
+    box-shadow: 4px 4px 0px rgba(0,0,0,1); /* Slightly smaller shadow */
 }
 
     .skill-category.visible {
@@ -374,19 +373,19 @@
 
     .skill-category:hover {
         transform: translateY(-2px);
-        box-shadow: 8px 8px 0px rgba(0,0,0,1);
+        box-shadow: 6px 6px 0px rgba(0,0,0,1);
     }
 
     .skill-category h3 {
-        font-size: 1.2rem;
+        font-size: 1rem; /* Smaller header (was 1.2rem) */
         color: #000;
-        margin-bottom: 22px;
+        margin-bottom: 15px;
         font-weight: 800;
         text-transform: uppercase;
     }
 
 .skill-item {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
     .skill-item:last-child {
@@ -396,17 +395,17 @@
 .skill-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 .skill-name, .skill-percentage {
-    font-size: 0.92rem;
+    font-size: 0.85rem; /* Smaller text */
     color: #000;
     font-weight: 700;
 }
 
 .skill-bar {
-    height: 8px;
+    height: 6px; /* Thinner bar */
     background: #e5e5e5;
     border-radius: 4px;
     overflow: hidden;
@@ -489,9 +488,10 @@
         justify-content: center;
     }
 
+    /* TABLET: 2 Columns */
     .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
 
@@ -510,5 +510,28 @@
     .social-link {
         width: 45px;
         height: 45px;
+    }
+
+    /* PHONE: 2 Columns (Side by Side) */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+        gap: 10px; /* Tight gap */
+    }
+
+    .skill-category {
+        padding: 12px; /* Very compact padding */
+    }
+
+        .skill-category h3 {
+            font-size: 0.85rem; /* Tiny header to prevent wrapping */
+            margin-bottom: 10px;
+        }
+
+    .skill-name {
+        font-size: 0.75rem; /* Tiny text */
+    }
+
+    .skill-percentage {
+        display: none; /* Optional: Hide % on very small screens to save space */
     }
 }
