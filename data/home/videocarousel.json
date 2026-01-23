@@ -4,50 +4,50 @@
     "videos": [
         {
             "id": 1,
-            "title": "Annual Sports Day 2025 Highlights",
-            "description": "Highlights from our annual sports competition featuring track and field events.",
-            "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "duration": "3:45"
+            "title": "Annual Academics Result 2025",
+            "description": "Highlights from our annual acdemics result with awarding...",
+            "thumbnail": "images/videocarousel/thumbnail1.jpg",
+            "videoUrl": "https://www.facebook.com/share/v/188kv5w4E8/",
+            "duration": "3:00"
         },
         {
             "id": 2,
-            "title": "Science Fair Innovations",
-            "description": "Students showcase their creative projects and scientific models.",
-            "thumbnail": "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+            "title": "A Rainy Day At School.",
+            "description": "See the amazing school nature and a rainy day.",
+            "thumbnail": "images/videocarousel/thumbnail2.png",
+            "videoUrl": "https://www.facebook.com/share/r/18GJ1HrLbb/",
             "duration": "5:20"
         },
         {
             "id": 3,
-            "title": "Cultural Festival Performance",
-            "description": "Celebrating diversity and tradition with student performances.",
-            "thumbnail": "https://img.youtube.com/vi/kJQP7kiw5Fk/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+            "title": "Morning Assembly At School",
+            "description": "Morning Assembly Scence Captures at the School",
+            "thumbnail": "images/videocarousel/thumbnail1.jpg",
+            "videoUrl": "https://www.facebook.com/share/p/1DTo358G3o/",
             "duration": "4:15"
         },
         {
             "id": 4,
-            "title": "New Campus Tour 2026",
+            "title": "Modern Campus Tour 2026",
             "description": "A walk through our modern facilities and classrooms.",
-            "thumbnail": "https://img.youtube.com/vi/LXb3EKWsInQ/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+            "thumbnail": "images/videocarousel/thumbnail4.png",
+            "videoUrl": "https://www.facebook.com/share/p/17sX2Utmbj/",
             "duration": "6:10"
         },
         {
             "id": 5,
-            "title": "Debate Competition Finals",
-            "description": "Students discussing global issues in the final round.",
-            "thumbnail": "https://img.youtube.com/vi/5dsGWM5XGdg/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=5dsGWM5XGdg",
+            "title": "Sports Competition",
+            "description": "Tug War Highlights of the School team...",
+            "thumbnail": "images/videocarousel/thumbnail5.png",
+            "videoUrl": "https://www.facebook.com/share/p/1KztBpanTr/",
             "duration": "8:30"
         },
         {
             "id": 6,
-            "title": "Art Exhibition Opening",
-            "description": "Showcasing student artistic talent and creative works.",
-            "thumbnail": "https://img.youtube.com/vi/1roy4o4tqQM/maxresdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=1roy4o4tqQM",
+            "title": "Principal and School Senio Staff",
+            "description": "Principal Arif Raza Sahib Receiving Donation for School... ",
+            "thumbnail": "images/videocarousel/thumbnail6.png",
+            "videoUrl": "https://www.facebook.com/share/v/1DDLVkQKdf/",
             "duration": "3:50"
         }
     ]

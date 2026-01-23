@@ -1,7 +1,7 @@
 ﻿{
     "slides": [
         {
-            "imageUrl": "images/hero/slide1.jpg",
+            "imageUrl": "images/hero/slide1.png",
             "badgeText": "EXCELLENCE IN EDUCATION",
             "title": "Building Future Leaders",
             "description": "Empowering students with quality education and strong moral values since 1950.",
@@ -9,7 +9,7 @@
             "buttonLink": "academics.html"
         },
         {
-            "imageUrl": "images/hero/slide2.jpg",
+            "imageUrl": "images/hero/slide2.jpeg",
             "badgeText": "SPORTS & FITNESS",
             "title": "Champions in Making",
             "description": "Nurturing athletic excellence alongside academic achievement.",

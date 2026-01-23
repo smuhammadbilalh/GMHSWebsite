@@ -149,14 +149,13 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    opacity: 0.7;
-    filter: grayscale(100%);
+    /* FIX: Removed opacity and grayscale filter */
+    opacity: 1;
+    filter: none;
 }
 
 .v-card-inner:hover .v-thumbnail {
     transform: scale(1.05);
-    opacity: 1;
-    filter: grayscale(0%);
 }
 
 /* Play Button Overlay */
