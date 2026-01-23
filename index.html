@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/newsticker.css">
+    <link rel="stylesheet" href="css/videocarousel.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -184,23 +185,9 @@
             </div>
         </section>
 
-        <!-- VIDEO CAROUSEL SECTION (COMMENTED - NOT BUILT YET) -->
-        <!-- <div class="animate-on-scroll">
-            <div class="video-carousel-section">
-                Video Carousel Component Will Go Here
-            </div>
-        </div> -->
-        <!-- DUAL PROFILE CAROUSELS (COMMENTED - NOT BUILT YET) -->
-        <!-- <div class="container animate-on-scroll">
-            <div class="dual-carousel-row">
-                <div class="carousel-half">
-                    Faculty Profile Carousel Will Go Here
-                </div>
-                <div class="carousel-half">
-                    Contributors Profile Carousel Will Go Here
-                </div>
-            </div>
-        </div> -->
+
+
+
         <!-- VIDEO HERO SECTION -->
         <section class="video-hero" id="videoHeroSection">
             <!-- Video and ticker will be loaded from JSON -->
@@ -221,7 +208,35 @@
 
     </div>
 
+    <section class="video-carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="videoSectionTitle">Latest Videos</h2>
+                <p id="videoSectionDesc">Loading videos...</p>
+            </div>
 
+            <div class="v-carousel-wrapper">
+                <button class="v-nav-btn v-prev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="v-track-container">
+                    <div class="v-track" id="videoTrack">
+                    </div>
+                </div>
+
+                <button class="v-nav-btn v-next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    </div>
 
 
     <!-- FOOTER -->
@@ -295,5 +310,7 @@
 
     <script src="js/navmenu.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/videocarousel.js"></script>
+
 </body>
 </html>

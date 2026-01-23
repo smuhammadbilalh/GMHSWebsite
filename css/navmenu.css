@@ -144,7 +144,7 @@ body {
     height: 36px;
     font-size: 14px;
     font-weight: 600;
-    color: #4b5563;
+    color: #4b5563; /* Dark Gray text */
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -152,16 +152,16 @@ body {
 }
 
     .nav-links a:hover {
-        background: #e0f2fe;
-        color: #0369a1;
+        background: #f3f4f6; /* Light Gray */
+        color: #000000; /* Black */
     }
 
     .nav-links a.active {
-        background: #0284c7;
-        border: 1px solid #0284c7;
-        color: #ffffff;
+        background: #000000; /* Solid Black */
+        border: 1px solid #000000;
+        color: #ffffff; /* White Text */
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Black Shadow */
         transform: translateY(-1px);
     }
 
@@ -263,13 +263,13 @@ body {
 }
 
     .mobile-nav a:hover {
-        background: #e0f2fe;
-        color: #0369a1;
+        background: #f3f4f6; /* Light Gray */
+        color: #000000; /* Black */
     }
 
     .mobile-nav a.active {
-        background: #0284c7;
-        color: #ffffff;
+        background: #000000; /* Solid Black */
+        color: #ffffff; /* White Text */
     }
 
 .mobile-nav .nav-icon {
