@@ -4,10 +4,13 @@
 
 .video-carousel-section {
     padding: 60px 0;
-    background: #000000;
+    /* Force solid black background to fix the neural network overlap */
+    background: #000000 !important;
     color: #ffffff;
     position: relative;
     overflow: hidden;
+    /* Ensure it stays above the global particle container */
+    z-index: 1;
 }
 
     /* Subtle divider at top */
@@ -40,10 +43,10 @@
     }
 
 /* =========================================
-   WHITE CONTROLS & REDUCED MARGIN
+   WHITE CONTROLS
    ========================================= */
 .video-carousel-section .slider-pill-controls {
-    margin: 15px auto 0 auto; /* Reduced top margin */
+    margin: 15px auto 0 auto;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 16px;
@@ -62,7 +65,7 @@
     }
 
 /* =========================================
-   REDUCED SCALE CARDS & THUMBNAIL FIX
+   CARDS & THUMBNAILS
    ========================================= */
 .v-track-container {
     overflow: hidden;
@@ -103,7 +106,6 @@
     overflow: hidden;
 }
 
-/* FIXED THUMBNAIL PROPERTIES */
 .v-thumbnail {
     position: absolute;
     top: 0;
@@ -132,7 +134,6 @@
         line-height: 1.4;
     }
 
-/* Play button overlay */
 .v-play-overlay {
     position: absolute;
     inset: 0;

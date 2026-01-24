@@ -141,7 +141,6 @@ a {
 
 /* ----------------------------------------------------
    SHARED SLIDER CONTROLS (Pill Style)
-   Used by: Hero, Video Carousel, Donors
 ---------------------------------------------------- */
 .slider-pill-controls {
     display: flex;
@@ -156,7 +155,6 @@ a {
     width: fit-content;
 }
 
-/* Position for Hero Slider (Absolute) */
 .hero-controls-pos {
     position: absolute;
     bottom: 120px;
@@ -164,10 +162,9 @@ a {
     transform: translateX(-50%);
 }
 
-/* Position for Content Sections (Relative/Flow) */
 .content-controls-pos {
     margin: 30px auto 0 auto;
-    background: rgba(0,0,0,0.05); /* Lighter background for white sections */
+    background: rgba(0,0,0,0.05);
     border: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -183,7 +180,7 @@ a {
 }
 
 .content-controls-pos .slider-arrow {
-    color: #000; /* Black arrows for white background sections */
+    color: #000;
 }
 
 .slider-arrow:hover {
@@ -195,7 +192,6 @@ a {
     transform: scale(0.9);
 }
 
-/* MODERN DOTS: Pill-Stretch Style */
 .slider-dots {
     display: flex;
     align-items: center;
@@ -213,15 +209,13 @@ a {
         transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
-        /* Hero Section Active Dot */
         .slider-dots button.active {
             background: white;
-            width: 28px; /* Stretches into a pill */
+            width: 28px;
             border-radius: 10px;
             transform: scale(1.05);
         }
 
-/* Content Sections (Donors/Video) Active Dot */
 .content-controls-pos .slider-dots button {
     border-color: #000;
 }
@@ -423,135 +417,18 @@ a {
 }
 
 /* =========================================
-   7. VIDEO CAROUSEL SECTION
+   7. VIDEO CAROUSEL SECTION (See videocarousel.css)
    ========================================= */
-.video-carousel-section {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.v-carousel-wrapper {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.v-track-container {
-    overflow: hidden;
-}
-
-.v-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-.v-card {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-
-.v-card-inner {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    cursor: pointer;
-    border: 1px solid #eee;
-}
-
-    .v-card-inner:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-.v-thumbnail-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-}
-
-.v-thumbnail {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.v-play-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.v-card-inner:hover .v-play-overlay {
-    opacity: 1;
-}
-
-.v-play-btn {
-    width: 50px;
-    height: 50px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-}
-
-    .v-play-btn svg {
-        width: 24px;
-        height: 24px;
-        margin-left: 2px;
-    }
-
-.v-duration {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.v-content {
-    padding: 15px;
-}
-
-    .v-content h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        margin: 0 0 8px 0;
-        color: #000;
-    }
-
-    .v-content p {
-        font-size: 0.85rem;
-        color: #666;
-        margin: 0;
-        line-height: 1.4;
-    }
 
 /* =========================================
-   8. DONORS CAROUSEL SECTION (Premium B&W)
+   8. DONORS CAROUSEL SECTION
    ========================================= */
 .donors-section {
-    padding: 60px 0; /* Reduced padding to remove junk vertical space */
+    padding: 60px 0;
     background: #ffffff;
     overflow: hidden;
 }
 
-    /* Tighten Header Spacing */
     .donors-section .section-header {
         margin-bottom: 30px;
     }
@@ -563,31 +440,28 @@ a {
             text-transform: uppercase;
         }
 
-/* Tighten Track & Remove Blurriness */
 .donor-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 15px; /* Tight, professional spacing */
+    gap: 15px;
     padding: 20px 0;
     align-items: stretch;
-    will-change: transform; /* Performance optimization for sharpness */
+    will-change: transform;
 }
 
-/* Card Styling - High Visibility */
 .donor-card {
-    flex: 0 0 280px; /* Fixed width for consistent spacing */
+    flex: 0 0 280px;
     background: #ffffff;
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Clean shadow, no border */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid #f0f0f0; /* Very subtle edge for definition */
+    border: 1px solid #f0f0f0;
 }
 
-    /* Active Center Card - 100% Sharp Scale */
     .donor-card.active-donor {
-        transform: scale(1.05); /* Minimal scale to prevent text blurring */
+        transform: scale(1.05);
         box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         z-index: 5;
         border-color: #000000;
@@ -606,7 +480,7 @@ a {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%); /* Strict B&W Look */
+        filter: grayscale(100%);
         display: block;
     }
 
@@ -635,11 +509,6 @@ a {
     margin: 0;
 }
 
-/* Tighten Control Bar Margin */
-.donors-section .content-controls-pos {
-    margin-top: 10px; /* Minimal space above indicators */
-}
-
 /* =========================================
    9. RESPONSIVE DESIGN
    ========================================= */
@@ -648,25 +517,12 @@ a {
         font-size: 2.2rem;
     }
 
-    .slide-content {
-        width: 95%;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .square-grid {
+    .stats-grid, .square-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .hero-controls-pos {
         bottom: 100px;
-    }
-
-    .v-card {
-        flex: 0 0 50%;
-        max-width: 50%;
     }
 }
 
@@ -678,29 +534,20 @@ a {
     .donor-track-wrapper {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
     }
 
     .donor-card {
         scroll-snap-align: center;
     }
-
-    .v-card {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
 }
 
-@media (max-width: 600px) {
-    .slide-content h1 {
-        font-size: 1.8rem;
-    }
+/* PARTICLE SYSTEM OVERLAYS */
+/* Removed .video-carousel-section from the transparent list */
+.home-wrapper, .portals-section, .donors-section {
+    background-color: transparent !important;
+}
 
-    .slide-content p {
-        font-size: 1rem;
-    }
-
-    .hero-controls-pos {
-        bottom: 90px;
-    }
+#tsparticles {
+    pointer-events: none;
+    z-index: -1;
 }
