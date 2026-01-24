@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/newsticker.css">
-    <link rel="stylesheet" href="css/sports.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sports.css">
 </head>
 <body>
 
@@ -140,43 +140,55 @@
 
     <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content sports-page">
 
-        <section class="page-title-section">
-            <h1 class="page-title" id="pageTitle">Sports & Achievements</h1>
-            <div class="page-subtitle-decoration"></div>
+        <!-- HERO SECTION -->
+        <section class="sports-hero">
+            <div class="sports-hero-content">
+                <h1 class="sports-hero-title" id="pageTitle">Sports & Athletics</h1>
+                <p class="sports-hero-subtitle">Excellence Beyond the Classroom</p>
+            </div>
         </section>
 
-        <div class="sports-news-ticker">
-            <div class="ticker-label-sports">LATEST NEWS</div>
-            <div class="ticker-content-sports">
+        <!-- NEWS TICKER -->
+        <div class="news-ticker-bar">
+            <div class="ticker-label" id="sportsNewsLabel">LATEST NEWS</div>
+            <div class="ticker-content">
                 <marquee behavior="scroll" direction="left" scrollamount="6" id="sportsNewsTicker">
                 </marquee>
             </div>
         </div>
 
-        <section class="categories-section">
-            <div class="section-header">
-                <h2>Our Sports</h2>
-                <p>Discover the various sports we excel in</p>
-            </div>
-
-            <div class="categories-grid" id="categoriesGrid">
+        <!-- SPORTS CATEGORIES GRID -->
+        <section class="sports-categories">
+            <div class="container">
+                <div class="section-header-modern">
+                    <h2>Our Sports</h2>
+                    <p>Discover excellence across multiple disciplines</p>
+                </div>
+                <div class="categories-grid-modern" id="categoriesGrid">
+                    <!-- Loaded from JSON -->
+                </div>
             </div>
         </section>
 
-        <section class="achievements-section">
-            <div class="section-header">
-                <h2>Recent Achievements</h2>
-                <p>Our proud moments and victories</p>
-            </div>
-
-            <div class="achievements-grid" id="achievementsGrid">
+        <!-- ACHIEVEMENTS TIMELINE -->
+        <section class="achievements-timeline">
+            <div class="container">
+                <div class="section-header-modern">
+                    <h2>Hall of Fame</h2>
+                    <p>Celebrating our sporting victories</p>
+                </div>
+                <div class="timeline-grid" id="achievementsGrid">
+                    <!-- Loaded from JSON -->
+                </div>
             </div>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-grid">

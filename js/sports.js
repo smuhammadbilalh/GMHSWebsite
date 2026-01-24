@@ -1,5 +1,5 @@
 ﻿// =========================================
-// LOAD SPORTS DATA FROM JSON
+// SPORTS PAGE - MODERN REBUILD
 // =========================================
 let sportsData = null;
 
@@ -8,13 +8,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('data/sports/achievements.json');
         sportsData = await response.json();
 
-        // Update Page Title from JSON if needed, or keep HTML default
+        // Update page title if provided
         if (sportsData.pageTitle) {
             document.getElementById('pageTitle').textContent = sportsData.pageTitle;
         }
 
         loadSportsNews();
-        // Video Carousel loader removed
         loadCategories();
         loadAchievements();
 
@@ -30,8 +29,8 @@ function loadSportsNews() {
     const ticker = document.getElementById('sportsNewsTicker');
 
     const newsItems = sportsData.sportsNews.map(news =>
-        `<span class="sports-ticker-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        `<span class="ticker-item">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 ${news.icon}
             </svg>
             ${news.text}
@@ -47,12 +46,13 @@ function loadSportsNews() {
 function loadCategories() {
     const grid = document.getElementById('categoriesGrid');
 
-    sportsData.sportsCategories.forEach(category => {
+    sportsData.sportsCategories.forEach((category, index) => {
         const card = document.createElement('div');
-        card.className = 'category-card';
+        card.className = 'category-card-modern';
+        card.style.animationDelay = `${index * 0.1}s`;
 
         card.innerHTML = `
-            <div class="category-icon">
+            <div class="category-icon-modern">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     ${category.icon}
                 </svg>
@@ -63,6 +63,26 @@ function loadCategories() {
 
         grid.appendChild(card);
     });
+
+    // Add fade-in animation
+    const style = document.createElement('style');
+    style.textContent = `
+        .category-card-modern {
+            opacity: 0;
+            animation: cardFadeIn 0.6s ease-out forwards;
+        }
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // =========================================
@@ -71,17 +91,21 @@ function loadCategories() {
 function loadAchievements() {
     const grid = document.getElementById('achievementsGrid');
 
-    sportsData.recentAchievements.forEach(achievement => {
+    sportsData.recentAchievements.forEach((achievement, index) => {
         const card = document.createElement('div');
-        card.className = 'achievement-card';
+        card.className = 'achievement-card-modern';
+        card.style.animationDelay = `${index * 0.1}s`;
 
         card.innerHTML = `
-            <div class="achievement-image">
-                ${achievement.image ? `<img src="${achievement.image}" alt="${achievement.title}">` : achievement.title.charAt(0)}
-                <div class="medal-badge ${achievement.medal.toLowerCase()}">${achievement.medal}</div>
+            <div class="achievement-image-modern">
+                ${achievement.image
+                ? `<img src="${achievement.image}" alt="${achievement.title}">`
+                : achievement.title.charAt(0)
+            }
+                <div class="achievement-medal-modern ${achievement.medal.toLowerCase()}">${achievement.medal}</div>
             </div>
-            <div class="achievement-content">
-                <span class="achievement-year">${achievement.year}</span>
+            <div class="achievement-content-modern">
+                <span class="achievement-year-modern">${achievement.year}</span>
                 <h3>${achievement.title}</h3>
                 <p>${achievement.description}</p>
             </div>
@@ -89,4 +113,24 @@ function loadAchievements() {
 
         grid.appendChild(card);
     });
+
+    // Add fade-in animation
+    const style = document.createElement('style');
+    style.textContent = `
+        .achievement-card-modern {
+            opacity: 0;
+            animation: achievementFadeIn 0.6s ease-out forwards;
+        }
+        @keyframes achievementFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
 }
