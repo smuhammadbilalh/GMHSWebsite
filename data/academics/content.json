@@ -1,0 +1,92 @@
+﻿{
+    "hero": {
+        "subtitle": "EXCELLENCE IN EDUCATION",
+        "title": "Academic",
+        "highlight": "Excellence",
+        "description": "Building futures through quality education and comprehensive curriculum"
+    },
+    "toppers": [
+        {
+            "rank": "1",
+            "name": "Ahmed Raza",
+            "marks": "1050/1100",
+            "group": "Science Group",
+            "image": "images/hero/slide1.png"
+        },
+        {
+            "rank": "2",
+            "name": "Fatima Khan",
+            "marks": "1045/1100",
+            "group": "Computer Science",
+            "image": "images/hero/slide2.jpeg"
+        },
+        {
+            "rank": "3",
+            "name": "Usman Ali",
+            "marks": "1038/1100",
+            "group": "Arts Group",
+            "image": "images/hero/slide3.jpg"
+        }
+    ],
+    "middleSection": {
+        "description": "Foundation building with comprehensive subjects preparing students for secondary education",
+        "subjects": [
+            "Urdu & English",
+            "Mathematics",
+            "General Science",
+            "Islamiyat & Quran",
+            "History & Geography",
+            "Computer Education",
+            "Art & Drawing",
+            "Physical Education"
+        ]
+    },
+    "secondarySection": {
+        "groups": {
+            "biology": {
+                "title": "Science (Biology)",
+                "description": "For aspiring medical students",
+                "subjects": [
+                    "Physics",
+                    "Chemistry",
+                    "Biology",
+                    "Mathematics",
+                    "Urdu",
+                    "English",
+                    "Islamiyat"
+                ]
+            },
+            "computer": {
+                "title": "Science (Computer)",
+                "description": "Focus on Programming & IT skills",
+                "subjects": [
+                    "Physics",
+                    "Chemistry",
+                    "Computer Science",
+                    "Mathematics",
+                    "Urdu",
+                    "English",
+                    "Islamiyat"
+                ]
+            },
+            "arts": {
+                "title": "Humanities (Arts)",
+                "description": "Liberal arts and social sciences",
+                "subjects": [
+                    "General Science",
+                    "General Math",
+                    "Education",
+                    "Islamic Studies",
+                    "Urdu",
+                    "English",
+                    "Pakistan Studies"
+                ]
+            }
+        }
+    },
+    "digitalLibrary": {
+        "title": "Digital Library",
+        "description": "Download official PTB Textbooks (PDF) and Model Papers",
+        "link": "https://www.ptb.gov.pk"
+    }
+}

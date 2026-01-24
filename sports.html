@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/newsticker.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sports.css">
+    <link rel="stylesheet" href="css/videocarousel.css">
 </head>
 <body>
 
@@ -173,6 +174,28 @@
             </div>
         </section>
 
+        <!-- VIDEO CAROUSEL SECTION -->
+        <section class="video-carousel-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="videoSectionTitle">Sports Highlights</h2>
+                    <p id="videoSectionDesc">Watch our athletes in action</p>
+                </div>
+
+                <div class="v-carousel-wrapper">
+                    <div class="v-track-container">
+                        <div class="v-track" id="videoTrack"></div>
+                    </div>
+                </div>
+
+                <div class="slider-pill-controls content-controls-pos">
+                    <button class="slider-arrow v-prev">❮</button>
+                    <div class="slider-dots" id="videoDots"></div>
+                    <button class="slider-arrow v-next">❯</button>
+                </div>
+            </div>
+        </section>
+
         <!-- ACHIEVEMENTS TIMELINE -->
         <section class="achievements-timeline">
             <div class="container">
@@ -259,5 +282,6 @@
 
     <script src="js/navmenu.js"></script>
     <script src="js/sports.js"></script>
+    <script src="js/videocarousel.js"></script>
 </body>
 </html>

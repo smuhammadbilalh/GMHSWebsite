@@ -1,4 +1,7 @@
-﻿let carouselData = {
+﻿// =========================================
+// VIDEO CAROUSEL - SMART PAGE DETECTION
+// =========================================
+let carouselData = {
     videos: [],
     currentIndex: 0,
     itemsPerView: 3,
@@ -12,14 +15,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadVideoCarouselData() {
     try {
-        const response = await fetch('data/home/videocarousel.json');
+        // Detect which page we're on
+        const currentPage = detectCurrentPage();
+
+        // Determine which JSON file to load
+        let jsonPath = '';
+        if (currentPage === 'sports') {
+            jsonPath = 'data/sports/sportsvideos.json';
+        } else {
+            jsonPath = 'data/home/videocarousel.json';
+        }
+
+        const response = await fetch(jsonPath);
         const data = await response.json();
+
         document.getElementById('videoSectionTitle').textContent = data.sectionTitle;
         document.getElementById('videoSectionDesc').textContent = data.sectionDescription;
         carouselData.videos = data.videos;
         initVideoCarousel();
     } catch (error) {
         console.error('Error loading video data:', error);
+    }
+}
+
+// Detect current page from URL
+function detectCurrentPage() {
+    const path = window.location.pathname;
+    const page = path.split('/').pop();
+
+    if (page === 'sports.html' || page.includes('sports')) {
+        return 'sports';
+    } else {
+        return 'home';
     }
 }
 
@@ -115,5 +142,13 @@ function updateCarousel() {
     }
 }
 
-function startAutoPlay() { carouselData.autoPlayInterval = setInterval(() => { if (!carouselData.isPaused) navigateCarousel(1); }, 3000); }
-function resetAutoPlay() { clearInterval(carouselData.autoPlayInterval); startAutoPlay(); }
+function startAutoPlay() {
+    carouselData.autoPlayInterval = setInterval(() => {
+        if (!carouselData.isPaused) navigateCarousel(1);
+    }, 3000);
+}
+
+function resetAutoPlay() {
+    clearInterval(carouselData.autoPlayInterval);
+    startAutoPlay();
+}

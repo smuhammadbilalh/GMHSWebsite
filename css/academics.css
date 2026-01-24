@@ -1,21 +1,595 @@
-﻿/* Academics Page Specific Styles */
-.academics-page {
-    background: #ffffff;
+﻿/* =========================================
+   ACADEMICS PAGE - BLACK, WHITE & GOLD
+   ========================================= */
+:root {
+    --primary: #000000;
+    --accent: #d97706;
+    --text-dark: #1e293b;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
 }
 
-    .academics-page h1 {
-        font-size: 2.5rem;
+.academics-page {
+    background: #ffffff;
+    padding-top: 0;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.acad-hero {
+    height: 400px;
+    background: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    animation: heroFadeIn 1s ease-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text h5 {
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin: 0 0 15px 0;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.gold-highlight {
+    font-style: italic;
+    color: #fbbf24;
+}
+
+.hero-text p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* =========================================
+   TOPPERS SECTION
+   ========================================= */
+.toppers-section {
+    padding: 80px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.toppers-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 50px 0;
+    color: var(--primary);
+}
+
+    .toppers-section h2 .year {
+        color: var(--accent);
+        border-bottom: 3px solid var(--accent);
+    }
+
+.podium-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.podium-card {
+    background: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+    .podium-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .podium-card.center {
+        width: 320px;
+        padding: 35px;
+        border-top: 5px solid var(--accent);
+        z-index: 2;
+        transform: translateY(-20px);
+    }
+
+        .podium-card.center:hover {
+            transform: translateY(-30px);
+        }
+
+    .podium-card.side {
+        width: 260px;
+        border-top: 5px solid #94a3b8;
+    }
+
+.student-img-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #f1f5f9;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .student-img-box.large {
+        width: 120px;
+        height: 120px;
+        border-color: var(--accent);
+    }
+
+    .student-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.rank-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+    .rank-badge.gold {
+        background: #fbbf24;
+    }
+
+    .rank-badge.silver {
+        background: #94a3b8;
+    }
+
+    .rank-badge.bronze {
+        background: #b45309;
+    }
+
+.crown-icon {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 45px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -10px);
+    }
+}
+
+.podium-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.marks {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 5px 0;
+}
+
+.group {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   CURRICULUM SECTION
+   ========================================= */
+.curriculum-section {
+    background: #f8fafc;
+    padding: 80px 20px;
+}
+
+.row-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.curriculum-box {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-color);
+}
+
+    .curriculum-box.dark {
+        background: #000000;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+.box-header {
+    padding: 25px;
+    border-bottom: 2px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.curriculum-box.dark .box-header {
+    border-bottom: 2px solid #333333;
+}
+
+.box-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.grades {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.box-body {
+    padding: 25px;
+}
+
+.desc {
+    color: #64748b;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 20px;
+}
+
+    .subject-list li {
+        margin-bottom: 12px;
+        font-weight: 500;
+        position: relative;
+        padding-left: 20px;
+        color: #334155;
+    }
+
+        .subject-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+/* GROUP TABS */
+.group-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    flex: 1;
+    background: #333333;
+    border: 1px solid #444444;
+    color: #aaaaaa;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+    .tab.active {
+        background: #ffffff;
         color: #000000;
-        margin-bottom: 20px;
-        border-bottom: 3px solid #0284c7;
-        display: inline-block;
-        padding-bottom: 10px;
+        border-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(255,255,255,0.3);
     }
 
-    .academics-page p {
-        font-size: 1.1rem;
-        color: #475569;
-        line-height: 1.8;
+    .tab:hover {
+        background: #444444;
     }
 
-/* Future content styling will go here */
+    .tab.active:hover {
+        background: #ffffff;
+    }
+
+.group-content {
+    position: relative;
+    min-height: 150px;
+}
+
+.group-panel {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+    .group-panel.active {
+        display: block;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.group-panel h4 {
+    font-size: 1.6rem;
+    margin: 0 0 8px 0;
+    font-weight: 800;
+}
+
+.group-panel p {
+    color: #9ca3af;
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .tags span {
+        background: rgba(255,255,255,0.1);
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+/* DOWNLOAD STRIP */
+.download-strip {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #333333;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.dl-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+    .dl-info svg {
+        width: 45px;
+        height: 45px;
+        color: var(--accent);
+        flex-shrink: 0;
+    }
+
+    .dl-info h4 {
+        margin: 0 0 5px 0;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
+    .dl-info p {
+        margin: 0;
+        color: #9ca3af;
+        font-size: 0.95rem;
+    }
+
+.btn-download {
+    background: #ffffff;
+    color: #000000;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 2px solid #ffffff;
+}
+
+    .btn-download:hover {
+        transform: translateY(-3px);
+        background: var(--accent);
+        color: #ffffff;
+        border-color: var(--accent);
+        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+    }
+
+.icon-sm {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .acad-hero {
+        height: 350px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .podium-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .podium-card.center {
+        order: -1;
+        transform: none;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .podium-card.side {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .row-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-list {
+        columns: 1;
+    }
+
+    .download-strip {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .dl-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .acad-hero {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h5 {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .toppers-section {
+        padding: 60px 15px;
+    }
+
+        .toppers-section h2 {
+            font-size: 2rem;
+        }
+
+    .curriculum-section {
+        padding: 60px 15px;
+    }
+
+    .group-tabs {
+        flex-direction: column;
+    }
+
+    .download-strip {
+        padding: 25px 20px;
+    }
+}

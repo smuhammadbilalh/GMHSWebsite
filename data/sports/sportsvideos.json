@@ -1,0 +1,54 @@
+﻿{
+    "sectionTitle": "SPORTS ACTION HIGHLIGHTS",
+    "sectionDescription": "Watch our athletes compete and triumph in various sporting events.",
+    "videos": [
+        {
+            "id": 1,
+            "title": "Cricket Championship Final 2025",
+            "description": "Thrilling moments from our district cricket championship victory...",
+            "thumbnail": "images/videocarousel/thumbnail1.jpg",
+            "videoUrl": "https://www.facebook.com/share/v/188kv5w4E8/",
+            "duration": "8:45"
+        },
+        {
+            "id": 2,
+            "title": "Football Tournament Highlights",
+            "description": "Best goals and saves from the regional football league...",
+            "thumbnail": "images/videocarousel/thumbnail5.png",
+            "videoUrl": "https://www.facebook.com/share/p/1KztBpanTr/",
+            "duration": "6:30"
+        },
+        {
+            "id": 3,
+            "title": "Athletics Meet 2024 - Record Breaking",
+            "description": "Watch our athletes break records and win gold medals...",
+            "thumbnail": "images/videocarousel/thumbnail2.png",
+            "videoUrl": "https://www.facebook.com/share/r/18GJ1HrLbb/",
+            "duration": "5:15"
+        },
+        {
+            "id": 4,
+            "title": "Volleyball Championship Victory",
+            "description": "Zonal volleyball championship finals - Complete match highlights...",
+            "thumbnail": "images/videocarousel/thumbnail4.png",
+            "videoUrl": "https://www.facebook.com/share/p/17sX2Utmbj/",
+            "duration": "7:20"
+        },
+        {
+            "id": 5,
+            "title": "Basketball Tournament Action",
+            "description": "Intense basketball moments from the district tournament...",
+            "thumbnail": "images/videocarousel/thumbnail6.png",
+            "videoUrl": "https://www.facebook.com/share/v/1DDLVkQKdf/",
+            "duration": "4:50"
+        },
+        {
+            "id": 6,
+            "title": "Annual Sports Day Ceremony",
+            "description": "Complete coverage of our annual sports day with all events...",
+            "thumbnail": "images/videocarousel/thumbnail1.jpg",
+            "videoUrl": "https://www.facebook.com/share/p/1DTo358G3o/",
+            "duration": "12:30"
+        }
+    ]
+}
