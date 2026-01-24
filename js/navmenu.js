@@ -35,6 +35,7 @@ function setActiveLink() {
         'sports.html': 'sports',
         'photos.html': 'photos',
         'contact.html': 'contact',
+        'faculty.html': 'faculty', 
         'developer.html': 'developer'
     };
 

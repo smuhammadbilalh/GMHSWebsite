@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govt Model High School - GT Road Sarai Alamgir</title>
+    <title>Faculty - GHSS Sarai Alamgir</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
-    <link rel="stylesheet" href="css/newsticker.css">
-    <link rel="stylesheet" href="css/videocarousel.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/photos.css">
+    <link rel="stylesheet" href="css/newsticker.css">
+    <link rel="stylesheet" href="css/faculty.css">
 </head>
 <body>
 
@@ -39,92 +40,58 @@
 
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-header">
-            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" style="width: 50px;" />
+            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
             <span class="mobile-brand-text">GHSS Sarai</span>
             <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
         </div>
+        <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
+        <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
+        <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
+        <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos</a>
+        <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty</a>
+        <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
     </div>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
+    <main class="main-content faculty-page">
+        <section class="page-title-section">
+            <h1 class="page-title" id="pageTitle">Our Faculty</h1>
+        </section>
 
-    <div class="home-wrapper">
+        <div class="category-tabs-wrapper">
+            <div class="tabs-container">
+                <button class="scroll-btn left-btn hidden" id="scrollLeftBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-        <section class="hero-slider">
-            <div class="slider-container" id="heroSliderContainer"></div>
-
-            <div class="slider-pill-controls hero-controls-pos" id="sliderControls" style="display: none;">
-                <button class="slider-arrow" onclick="previousSlide()">❮</button>
-                <div class="slider-dots" id="sliderDots"></div>
-                <button class="slider-arrow" onclick="nextSlide()">❯</button>
-            </div>
-
-            <div class="ticker-bottom-anchor">
-                <div class="news-ticker-bar">
-                    <div class="ticker-label" id="newsTickerLabel">LATEST NEWS</div>
-                    <div class="ticker-content">
-                        <marquee behavior="scroll" direction="left" scrollamount="6" id="newsTickerContent"></marquee>
-                    </div>
+                <div class="category-tabs" id="categoryTabs">
                 </div>
-            </div>
-        </section>
 
-        <section class="stats-bar">
-            <div class="container stats-grid" id="statsContainer"></div>
-        </section>
-
-        <section class="video-hero" id="videoHeroSection"></section>
-
-        <section class="portals-section animate-on-scroll">
-            <div class="container">
-                <div class="section-header" id="portalsHeader"></div>
-                <div class="square-grid" id="portalsGrid"></div>
-            </div>
-        </section>
-
-    </div>
-
-    <section class="video-carousel-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="videoSectionTitle">Latest Videos</h2>
-                <p id="videoSectionDesc">Loading videos...</p>
-            </div>
-
-            <div class="v-carousel-wrapper">
-                <div class="v-track-container">
-                    <div class="v-track" id="videoTrack"></div>
-                </div>
-            </div>
-
-            <div class="slider-pill-controls content-controls-pos">
-                <button class="slider-arrow v-prev">❮</button>
-                <div class="slider-dots" id="videoDots"></div>
-                <button class="slider-arrow v-next">❯</button>
+                <button class="scroll-btn right-btn" id="scrollRightBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
-    </section>
 
-    <section class="donors-section animate-on-scroll">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="donorSectionTitle">Our Donors</h2>
-                <p id="donorSectionDesc">Loading contributors...</p>
-                <div class="header-line"></div>
+        <section class="gallery-section">
+            <div class="faculty-grid" id="facultyGrid">
             </div>
 
-            <div class="donor-carousel-container">
-                <div class="donor-track-wrapper">
-                    <div class="donor-track" id="donorTrack"></div>
-                </div>
+            <div class="gallery-actions">
+                <button class="btn-show-more hidden" id="btnShowMore">
+                    <span>Show More Members</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
             </div>
-
-            <div class="slider-pill-controls content-controls-pos">
-                <button class="slider-arrow" onclick="moveDonorSlide(-1)">❮</button>
-                <div class="slider-dots" id="donorDots"></div>
-                <button class="slider-arrow" onclick="moveDonorSlide(1)">❯</button>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
 
     <footer class="modern-footer">
         <div class="container">
@@ -132,30 +99,24 @@
                 <div class="footer-col" id="footer-school-info">
                     <h3>Loading...</h3>
                 </div>
-
                 <div class="footer-col" id="footer-contact-info">
                     <h3>Contact Info</h3>
                     <ul class="contact-list">
-                        <li>Loading contact details...</li>
+                        <li>Loading...</li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="news-ticker-bar footer-developer-ticker">
             <div class="ticker-label">DEVELOPER</div>
             <div class="ticker-content">
-                <marquee behavior="scroll" direction="left" scrollamount="6" id="footer-ticker-content">
-                </marquee>
+                <marquee behavior="scroll" direction="left" scrollamount="6" id="footer-ticker-content"></marquee>
             </div>
         </div>
     </footer>
 
-    <script src="js/footer.js"></script>
-
     <script src="js/navmenu.js"></script>
-    <script src="js/home.js"></script>
-    <script src="js/videocarousel.js"></script>
-
+    <script src="js/footer.js"></script>
+    <script src="js/faculty.js"></script>
 </body>
 </html>

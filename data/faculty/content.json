@@ -1,0 +1,50 @@
+﻿{
+    "pageTitle": "Our Faculty",
+    "categories": [
+        {
+            "id": "all",
+            "name": "All Staff"
+        },
+        {
+            "id": "admin",
+            "name": "Administration"
+        },
+        {
+            "id": "current",
+            "name": "Current Faculty"
+        },
+        {
+            "id": "retired",
+            "name": "Retired Faculty"
+        }
+    ],
+    "staff": [
+        {
+            "id": 1,
+            "category": "admin",
+            "name": "Chaudhary Muhammad Akram",
+            "designation": "Principal",
+            "qualification": "M.A, M.Ed",
+            "phone": "+92 300 1234567",
+            "photo": "images/schoollogo.svg"
+        },
+        {
+            "id": 2,
+            "category": "current",
+            "name": "Muhammad Bilal",
+            "designation": "IT Specialist",
+            "qualification": "BS Computer Science",
+            "phone": "+92 325 5806291",
+            "photo": "images/bilal.jpeg"
+        },
+        {
+            "id": 3,
+            "category": "retired",
+            "name": "Mr. Ahmed Ali",
+            "designation": "Senior Subject Specialist",
+            "qualification": "M.Sc Physics",
+            "phone": "N/A",
+            "photo": "images/schoollogo.svg"
+        }
+    ]
+}

@@ -1,10 +1,11 @@
 ﻿:root {
-    --sky-blue: #000000;
+    --sky-blue: #000000; /* Reverted to Black as per original file */
     --black: #000000;
     --white: #ffffff;
-    --whatsapp: #000000;
-    --facebook: #000000;
-    --linkedin: #000000;
+    /* Official Social Media Brand Colors */
+    --whatsapp: #25D366;
+    --facebook: #1877F2;
+    --linkedin: #0077B5;
 }
 
 .modern-footer {
@@ -57,10 +58,9 @@
     align-items: center;
     justify-content: center;
     background: var(--white);
-    border: 2px solid var(--black);
+    border: 2px solid #e2e8f0; /* Subtle default border */
     border-radius: 50%;
-    color: var(--black);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
     .social-link svg {
@@ -68,29 +68,44 @@
         height: 20px;
     }
 
-    .social-link.whatsapp:hover {
-        background: var(--whatsapp);
+    /* WhatsApp: Official Green */
+    .social-link.whatsapp {
+        color: var(--whatsapp);
         border-color: var(--whatsapp);
-        color: var(--white);
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    .social-link.facebook:hover {
-        background: var(--facebook);
+        .social-link.whatsapp:hover {
+            background: var(--whatsapp);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+
+    /* Facebook: Official Blue */
+    .social-link.facebook {
+        color: var(--facebook);
         border-color: var(--facebook);
-        color: var(--white);
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    .social-link.linkedin:hover {
-        background: var(--linkedin);
+        .social-link.facebook:hover {
+            background: var(--facebook);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+        }
+
+    /* LinkedIn: Official Blue */
+    .social-link.linkedin {
+        color: var(--linkedin);
         border-color: var(--linkedin);
-        color: var(--white);
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
+
+        .social-link.linkedin:hover {
+            background: var(--linkedin);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.4);
+        }
 
 .contact-list {
     list-style: none;
@@ -126,11 +141,7 @@
         gap: 30px;
     }
 
-    .social-icons {
-        justify-content: center;
-    }
-
-    .contact-list li {
+    .social-icons, .contact-list li {
         justify-content: center;
     }
 }
