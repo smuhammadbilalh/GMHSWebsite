@@ -28,7 +28,7 @@ body {
     pointer-events: none;
 }
 
-/* --- NAVBAR (Glassmorphism Applied) --- */
+/* --- NAVBAR (Balanced Glassmorphism) --- */
 .glass-navbar {
     display: flex;
     align-items: center;
@@ -39,15 +39,12 @@ body {
     height: 50px;
     position: relative;
     pointer-events: auto;
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
-    backdrop-filter: blur(12px); /* Frosted glass blur */
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
-
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle "edge" highlight */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08); /* Softer, premium shadow */
-
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
     animation: fadeIn 0.4s ease forwards;
 }
 
@@ -64,16 +61,12 @@ body {
 .brand-link {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     text-decoration: none;
     padding: 6px 8px;
     border-radius: 8px;
     transition: background 0.2s ease;
 }
-
-    .brand-link:hover {
-        background: rgba(0, 0, 0, 0.05); /* Softer hover for glass look */
-    }
 
 .brand-logo {
     width: 28px;
@@ -88,7 +81,7 @@ body {
     letter-spacing: -0.4px;
 }
 
-/* --- LINKS CONTAINER --- */
+/* --- LINKS CONTAINER (Desktop) --- */
 .nav-links {
     display: flex;
     list-style: none;
@@ -105,8 +98,10 @@ body {
         padding: 0;
         opacity: 0;
         animation: fadeIn 0.4s ease forwards;
+        position: relative;
     }
 
+        /* Entrance Delays */
         .nav-links li:nth-child(1) {
             animation-delay: 0.15s;
         }
@@ -131,6 +126,10 @@ body {
             animation-delay: 0.4s;
         }
 
+        .nav-links li:nth-child(7) {
+            animation-delay: 0.45s;
+        }
+
 .nav-icon {
     width: 16px;
     height: 16px;
@@ -138,7 +137,7 @@ body {
     stroke-width: 2.2px;
 }
 
-/* --- LINK ITEMS --- */
+/* --- LINK ITEMS & HOVER LINE --- */
 .nav-links a {
     display: inline-flex;
     align-items: center;
@@ -148,26 +147,45 @@ body {
     height: 36px;
     font-size: 14px;
     font-weight: 600;
-    color: #4b5563;
+    color: #111827;
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid transparent;
+    position: relative;
 }
 
+    /* The Animated Hover Line */
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #000000;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
     .nav-links a:hover {
-        background: rgba(0, 0, 0, 0.04);
         color: #000000;
     }
 
+        .nav-links a:hover::after {
+            width: 60%; /* Line expands to 60% of the button width */
+        }
+
+    /* Active State Styles */
     .nav-links a.active {
         background: #000000;
-        border: 1px solid #000000;
         color: #ffffff;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transform: translateY(-1px);
     }
+
+        .nav-links a.active::after {
+            display: none; /* No line needed for active black button */
+        }
 
 /* --- MOBILE MENU BUTTON --- */
 .mobile-menu-btn {
@@ -183,11 +201,8 @@ body {
     margin-left: 10px;
     background: transparent;
     border: none;
+    pointer-events: auto;
 }
-
-    .mobile-menu-btn:hover {
-        background: rgba(0, 0, 0, 0.05);
-    }
 
     .mobile-menu-btn span {
         width: 18px;
@@ -196,23 +211,22 @@ body {
         border-radius: 2px;
     }
 
-/* --- MOBILE NAVIGATION PANEL (Glassmorphism for Side Panel) --- */
+/* --- MOBILE NAVIGATION PANEL --- */
 .mobile-nav {
     position: fixed;
     top: 0;
     right: -100%;
     width: 300px;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.85); /* Transparent */
-    backdrop-filter: blur(15px); /* Blur behind drawer */
-    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     padding: 24px;
     z-index: 2000;
     transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.05);
+    box-shadow: -4px 0 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
     .mobile-nav.active {
@@ -225,7 +239,7 @@ body {
     gap: 12px;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .mobile-logo {
@@ -243,17 +257,13 @@ body {
 .mobile-close {
     width: 34px;
     height: 34px;
-    background: transparent;
-    border: none;
     font-size: 18px;
     cursor: pointer;
     color: #555;
     border-radius: 8px;
+    border: none;
+    background: transparent;
 }
-
-    .mobile-close:hover {
-        background: rgba(0, 0, 0, 0.05);
-    }
 
 .mobile-nav a {
     display: flex;
@@ -265,34 +275,18 @@ body {
     color: #4b5563;
     text-decoration: none;
     border-radius: 10px;
-    transition: all 0.2s;
 }
-
-    .mobile-nav a:hover {
-        background: rgba(0, 0, 0, 0.03);
-        color: #000000;
-    }
 
     .mobile-nav a.active {
         background: #000000;
         color: #ffffff;
     }
 
-.mobile-nav .nav-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-}
-
 .mobile-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2); /* Lighter overlay for premium feel */
-    backdrop-filter: blur(4px); /* Blur background when menu is open */
-    -webkit-backdrop-filter: blur(4px);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
     z-index: 1999;
     opacity: 0;
     visibility: hidden;
@@ -306,7 +300,6 @@ body {
         pointer-events: auto;
     }
 
-/* --- SIMPLE FADE ANIMATION --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -332,7 +325,6 @@ body {
     }
 
     .glass-navbar {
-        padding: 0 16px;
         height: 48px;
     }
 }
