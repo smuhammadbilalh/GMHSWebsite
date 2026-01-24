@@ -148,7 +148,7 @@ a {
     align-items: center;
     gap: 20px;
     z-index: 20;
-    background: rgba(0,0,0,0.7); /* Dark background for visibility on white */
+    background: rgba(0,0,0,0.7);
     backdrop-filter: blur(5px);
     padding: 8px 20px;
     border-radius: 50px;
@@ -166,7 +166,9 @@ a {
 
 /* Position for Content Sections (Relative/Flow) */
 .content-controls-pos {
-    margin: 30px auto 0 auto; /* Center horizontally with margin */
+    margin: 30px auto 0 auto;
+    background: rgba(0,0,0,0.05); /* Lighter background for white sections */
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
 .slider-arrow {
@@ -177,16 +179,27 @@ a {
     cursor: pointer;
     line-height: 1;
     padding: 0 5px;
-    transition: color 0.3s;
+    transition: transform 0.3s ease, color 0.3s;
 }
 
-    .slider-arrow:hover {
-        color: #ccc;
-    }
+.content-controls-pos .slider-arrow {
+    color: #000; /* Black arrows for white background sections */
+}
 
+.slider-arrow:hover {
+    color: #888;
+    transform: scale(1.2);
+}
+
+.slider-arrow:active {
+    transform: scale(0.9);
+}
+
+/* MODERN DOTS: Pill-Stretch Style */
 .slider-dots {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
 }
 
     .slider-dots button {
@@ -197,13 +210,27 @@ a {
         background: transparent;
         cursor: pointer;
         padding: 0;
-        transition: all 0.3s;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
+        /* Hero Section Active Dot */
         .slider-dots button.active {
             background: white;
-            transform: scale(1.2);
+            width: 28px; /* Stretches into a pill */
+            border-radius: 10px;
+            transform: scale(1.05);
         }
+
+/* Content Sections (Donors/Video) Active Dot */
+.content-controls-pos .slider-dots button {
+    border-color: #000;
+}
+
+    .content-controls-pos .slider-dots button.active {
+        background: #000;
+        width: 28px;
+        border-radius: 10px;
+    }
 
 /* =========================================
    3. SCROLL ANIMATIONS
@@ -419,7 +446,6 @@ a {
     width: 100%;
 }
 
-/* Video Card Styles */
 .v-card {
     flex: 0 0 33.333%;
     max-width: 33.333%;
@@ -525,9 +551,16 @@ a {
     color: #000;
 }
 
+    .donors-section h2 {
+        color: #000 !important; /* Force black title */
+    }
+
+    .donors-section p {
+        color: #444 !important; /* Force darker description */
+    }
+
 .donor-carousel-container {
     position: relative;
-    /* Removed flex centering that depended on side arrows */
     margin-top: 40px;
 }
 
@@ -535,7 +568,7 @@ a {
     overflow: hidden;
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto; /* Center the track */
+    margin: 0 auto;
 }
 
 .donor-track {
@@ -623,12 +656,10 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Hero slider pos update */
     .hero-controls-pos {
         bottom: 100px;
     }
 
-    /* Responsive Video Carousel */
     .v-card {
         flex: 0 0 50%;
         max-width: 50%;
@@ -636,7 +667,6 @@ a {
 }
 
 @media (max-width: 768px) {
-    /* Responsive Donor Carousel */
     .donor-card {
         flex: 0 0 280px;
     }
@@ -651,7 +681,6 @@ a {
         scroll-snap-align: center;
     }
 
-    /* Video Carousel Mobile */
     .v-card {
         flex: 0 0 100%;
         max-width: 100%;

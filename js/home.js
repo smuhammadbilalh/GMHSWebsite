@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // =========================================
-// LOAD HERO SLIDES
+// LOAD HERO SLIDES (Updated with 3-Dot Logic)
 // =========================================
 async function loadHeroSlides() {
     const response = await fetch('data/home/hero.json');
@@ -41,12 +41,20 @@ async function loadHeroSlides() {
             </div>
         `;
         container.appendChild(slideDiv);
-
-        const dot = document.createElement('button');
-        dot.className = index === 0 ? 'active' : '';
-        dot.onclick = () => goToSlide(index);
-        dotsContainer.appendChild(dot);
     });
+
+    // Persistent 3 Dots Logic
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('button');
+        dot.className = i === 0 ? 'active' : '';
+        dot.onclick = () => {
+            const total = document.querySelectorAll('.slide').length;
+            const targetIndex = Math.round((i / 2) * (total - 1));
+            goToSlide(targetIndex);
+        };
+        dotsContainer.appendChild(dot);
+    }
 
     if (data.slides.length > 1) {
         document.getElementById('sliderControls').style.display = 'flex';
@@ -152,7 +160,7 @@ async function loadPortals() {
 }
 
 // =========================================
-// LOAD DONORS CAROUSEL
+// LOAD DONORS CAROUSEL (Updated with 3-Dot Logic)
 // =========================================
 let donorIndex = 0;
 let donorCardWidth = 330;
@@ -164,18 +172,14 @@ async function loadDonors() {
         const response = await fetch('data/home/donors.json');
         const data = await response.json();
 
-        // Headers
         const titleEl = document.getElementById('donorSectionTitle');
         titleEl.textContent = data.sectionTitle;
-        titleEl.style.color = '#000000';
         const descEl = document.getElementById('donorSectionDesc');
         descEl.textContent = data.sectionDescription;
-        descEl.style.color = '#000000';
 
         const track = document.getElementById('donorTrack');
         const dotsContainer = document.getElementById('donorDots');
 
-        // Render Cards
         track.innerHTML = data.donors.map(donor => `
             <div class="donor-card">
                 <div class="donor-image-wrapper">
@@ -189,27 +193,20 @@ async function loadDonors() {
 
         donorsCount = data.donors.length;
 
-        // Render Dots
+        // Render Exactly 3 Dots
         dotsContainer.innerHTML = '';
-        data.donors.forEach((_, index) => {
+        for (let i = 0; i < 3; i++) {
             const dot = document.createElement('button');
-            dot.className = index === 0 ? 'active' : '';
+            dot.className = i === 0 ? 'active' : '';
             dot.onclick = () => {
-                donorIndex = index;
-                // Boundary check for groups
-                if (window.innerWidth >= 768 && donorIndex > donorsCount - visibleDonors) {
-                    donorIndex = donorsCount - visibleDonors;
-                }
+                const maxIndex = donorsCount - visibleDonors;
+                donorIndex = Math.round((i / 2) * maxIndex);
                 updateDonorPosition();
             };
             dotsContainer.appendChild(dot);
-        });
+        }
 
-        // Setup Auto Scroll
-        setInterval(() => {
-            moveDonorSlide(1);
-        }, 5000);
-
+        setInterval(() => moveDonorSlide(1), 5000);
     } catch (error) {
         console.error("Error loading donors:", error);
     }
@@ -238,12 +235,13 @@ function updateDonorPosition() {
     const translateVal = -(donorIndex * donorCardWidth);
     track.style.transform = `translateX(${translateVal}px)`;
 
-    // Update dots active state
     const dots = document.querySelectorAll('#donorDots button');
-    dots.forEach((dot, index) => {
-        if (index === donorIndex) dot.classList.add('active');
-        else dot.classList.remove('active');
-    });
+    if (dots.length === 3) {
+        dots.forEach(d => d.classList.remove('active'));
+        const maxIndex = donorsCount - visibleDonors;
+        const activeDot = Math.min(2, Math.floor((donorIndex / (maxIndex || 1)) * 3));
+        dots[activeDot].classList.add('active');
+    }
 }
 
 // =========================================
@@ -254,7 +252,7 @@ let slideInterval;
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.slider-dots button');
+    const dots = document.querySelectorAll('#sliderDots button');
 
     if (slides.length === 0) return;
 
@@ -262,34 +260,22 @@ function showSlide(index) {
     else if (index < 0) heroCurrentSlide = slides.length - 1;
     else heroCurrentSlide = index;
 
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (dots[i]) dots[i].classList.remove('active');
-    });
-
+    slides.forEach(slide => slide.classList.remove('active'));
     slides[heroCurrentSlide].classList.add('active');
-    if (dots[heroCurrentSlide]) dots[heroCurrentSlide].classList.add('active');
+
+    // Update the 3 Hero Dots
+    if (dots.length === 3) {
+        dots.forEach(d => d.classList.remove('active'));
+        const activeDot = Math.min(2, Math.floor((heroCurrentSlide / slides.length) * 3));
+        dots[activeDot].classList.add('active');
+    }
 }
 
-function nextSlide() {
-    showSlide(heroCurrentSlide + 1);
-}
-
-function previousSlide() {
-    showSlide(heroCurrentSlide - 1);
-}
-
-function goToSlide(index) {
-    showSlide(index);
-}
-
-function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 5000);
-}
-
-function stopAutoSlide() {
-    clearInterval(slideInterval);
-}
+function nextSlide() { showSlide(heroCurrentSlide + 1); }
+function previousSlide() { showSlide(heroCurrentSlide - 1); }
+function goToSlide(index) { showSlide(index); }
+function startAutoSlide() { slideInterval = setInterval(nextSlide, 5000); }
+function stopAutoSlide() { clearInterval(slideInterval); }
 
 const heroSlider = document.querySelector('.hero-slider');
 if (heroSlider) {
@@ -300,27 +286,24 @@ if (heroSlider) {
 // =========================================
 // SCROLL & COUNTER ANIMATIONS
 // =========================================
-const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+const observerOptions = { root: null, threshold: 0.1 };
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
 }, observerOptions);
 
 setTimeout(() => {
     document.querySelectorAll('.animate-on-scroll').forEach((el) => scrollObserver.observe(el));
-}, 100);
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-            entry.target.classList.add('is-visible');
-            entry.target.classList.add('counted');
-            animateCounter(entry.target);
-        }
+    document.querySelectorAll('.stat-item').forEach((item) => {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('is-visible', 'counted');
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counterObserver.observe(item);
     });
-}, { threshold: 0.5 });
-
-setTimeout(() => {
-    document.querySelectorAll('.stat-item').forEach((item) => counterObserver.observe(item));
 }, 500);
 
 function animateCounter(element) {
@@ -330,21 +313,17 @@ function animateCounter(element) {
     const hasPercent = targetText.includes('%');
     const targetNumber = parseInt(targetText.replace(/[^0-9]/g, ''));
     if (isNaN(targetNumber)) return;
-    const duration = 2000;
-    const frameDuration = 1000 / 60;
-    const totalFrames = Math.round(duration / frameDuration);
+
     let frame = 0;
+    const totalFrames = 120;
     const counter = setInterval(() => {
         frame++;
-        const progress = frame * (2 - frame / totalFrames) / totalFrames; // simplified easeOutQuad
-        const currentCount = Math.round(targetNumber * progress);
+        const progress = frame / totalFrames;
+        const currentCount = Math.round(targetNumber * (1 - Math.pow(1 - progress, 3)));
         let displayText = currentCount.toString();
         if (hasPlus) displayText += '+';
         if (hasPercent) displayText += '%';
         counterValue.textContent = displayText;
-        if (frame === totalFrames) {
-            clearInterval(counter);
-            counterValue.textContent = targetText;
-        }
-    }, frameDuration);
+        if (frame === totalFrames) clearInterval(counter);
+    }, 16);
 }

@@ -53,6 +53,26 @@
     }
 
 /* =========================================
+   OVERRIDE SLIDER CONTROLS FOR BLACK BG
+   ========================================= */
+.video-carousel-section .slider-pill-controls {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-carousel-section .slider-arrow {
+    color: #ffffff !important;
+}
+
+.video-carousel-section .slider-dots button {
+    border-color: #ffffff !important;
+}
+
+    .video-carousel-section .slider-dots button.active {
+        background: #ffffff !important;
+    }
+
+/* =========================================
    CAROUSEL WRAPPER & NAVIGATION
    ========================================= */
 .v-carousel-wrapper {
@@ -149,7 +169,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    /* FIX: Removed opacity and grayscale filter */
     opacity: 1;
     filter: none;
 }
