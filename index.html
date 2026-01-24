@@ -12,6 +12,8 @@
 </head>
 <body>
 
+
+
     <div class="glass-nav-container">
         <nav class="glass-navbar">
             <div class="nav-brand">
@@ -39,11 +41,19 @@
 
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-header">
-            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" style="width: 50px;" />
+            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
             <span class="mobile-brand-text">GHSS Sarai</span>
             <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
         </div>
+        <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
+        <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
+        <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
+        <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos</a>
+        <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty</a>
+        <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
     </div>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
 
     <div class="home-wrapper">
