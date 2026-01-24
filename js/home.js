@@ -351,15 +351,9 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Add this inside your DOMContentLoaded listener:
-
-
-
-// ... existing code ...
-
 async function initParticles() {
     await tsParticles.load("tsparticles", {
-        fullScreen: { enable: true, zIndex: -1 }, // Ensure it covers the whole background
+        fullScreen: { enable: true, zIndex: -1 },
         fpsLimit: 120,
         interactivity: {
             events: {
@@ -370,35 +364,35 @@ async function initParticles() {
             },
             modes: {
                 grab: {
-                    distance: 200,
-                    links: { opacity: 0.4 }
+                    distance: 220,
+                    links: { opacity: 0.8 } // Brightens connections on hover
                 }
             }
         },
         particles: {
-            color: { value: "#94a3b8" },
+            color: { value: "#cbd5e1" }, // Lighter slate for better contrast
             links: {
-                color: "#94a3b8",
-                distance: 180,
+                color: "#cbd5e1",
+                distance: 150,
                 enable: true,
-                opacity: 0.2, // Subtle lines
-                width: 1
+                opacity: 0.5, // Increased from 0.2 for much clearer lines
+                width: 1.5    // Slightly thicker lines
             },
             move: {
                 enable: true,
-                speed: 1,
+                speed: 1.4,
                 direction: "none",
                 outModes: { default: "out" }
             },
             number: {
                 density: { enable: true, area: 800 },
-                value: 40
+                value: 60 // Increased density for a fuller "network" look
             },
             opacity: {
-                value: { min: 0.1, max: 0.3 }, // Fainter particles so text is readable
+                value: { min: 0.4, max: 0.7 }, // Increased from 0.3 max for "glowing" nodes
             },
             shape: { type: "circle" },
-            size: { value: { min: 1, max: 3 } }
+            size: { value: { min: 2, max: 5 } } // Larger, more visible nodes
         },
         detectRetina: true
     });
