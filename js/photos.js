@@ -3,9 +3,8 @@
 // =========================================
 let galleryData = null;
 let currentCategory = 'all';
-let displayedCount = 8;
-let allPhotos = [];
 let filteredPhotos = [];
+let currentPointer = 0; // Tracks the next photo to load
 
 // Detect if mobile
 const isMobile = () => window.innerWidth <= 900;
@@ -25,8 +24,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Load categories
         loadCategories();
 
-        // Load initial photos
-        loadPhotos();
+        // Initial load for 'all' category
+        filterByCategory('all', document.querySelector('.tab-btn.active') || null);
 
     } catch (error) {
         console.error('Error loading gallery:', error);
@@ -38,12 +37,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 // =========================================
 function loadCategories() {
     const tabsContainer = document.getElementById('categoryTabs');
+    if (!tabsContainer) return;
 
     galleryData.categories.forEach(category => {
         const btn = document.createElement('button');
         btn.className = `tab-btn ${category.id === 'all' ? 'active' : ''}`;
         btn.textContent = category.name;
-        btn.onclick = () => filterByCategory(category.id, btn);
+        btn.onclick = (e) => filterByCategory(category.id, e.target);
         tabsContainer.appendChild(btn);
     });
 }
@@ -53,79 +53,76 @@ function loadCategories() {
 // =========================================
 function filterByCategory(categoryId, clickedBtn) {
     currentCategory = categoryId;
-    displayedCount = initialLoadCount();
+    currentPointer = 0; // Reset pointer for new category
 
-    // Update active tab
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    clickedBtn.classList.add('active');
+    // Update active tab UI
+    if (clickedBtn) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        clickedBtn.classList.add('active');
+    }
 
-    // Filter and load photos
-    loadPhotos();
-}
-
-// =========================================
-// LOAD PHOTOS
-// =========================================
-function loadPhotos() {
-    // Filter photos based on category
+    // Prepare filtered list
     if (currentCategory === 'all') {
         filteredPhotos = [...galleryData.photos];
     } else {
         filteredPhotos = galleryData.photos.filter(photo => photo.category === currentCategory);
     }
 
-    // Display photos
-    displayPhotos();
+    // Clear grid and load first batch
+    const grid = document.getElementById('galleryGrid');
+    if (grid) grid.innerHTML = '';
+    loadMorePhotos();
+}
 
-    // Update buttons
+// =========================================
+// INCREMENTAL LOADING LOGIC
+// =========================================
+function loadMorePhotos() {
+    const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+
+    const batchSize = initialLoadCount();
+    const nextBatch = filteredPhotos.slice(currentPointer, currentPointer + batchSize);
+
+    // Append ONLY new items to existing grid
+    nextBatch.forEach((photo, index) => {
+        const item = createGalleryItem(photo, index);
+        grid.appendChild(item);
+    });
+
+    // Update state pointer
+    currentPointer += nextBatch.length;
     updateButtons();
 }
 
 // =========================================
-// DISPLAY PHOTOS (WITH LAZY LOADING)
+// CREATE GALLERY ITEM (DOM ELEMENT)
 // =========================================
-function displayPhotos() {
-    const grid = document.getElementById('galleryGrid');
-    grid.innerHTML = '';
+function createGalleryItem(photo, index) {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.style.animationDelay = `${(index % initialLoadCount()) * 0.1}s`;
+    item.classList.add('loading');
 
-    const photosToShow = filteredPhotos.slice(0, displayedCount);
+    // Browser-native lazy loading for performance
+    const img = document.createElement('img');
+    img.alt = photo.title;
+    img.loading = 'lazy';
 
-    photosToShow.forEach((photo, index) => {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-        item.style.animationDelay = `${index * 0.1}s`;
+    img.onload = () => item.classList.remove('loading');
+    img.src = photo.thumbnail;
 
-        // Create placeholder while loading
-        item.classList.add('loading');
+    const overlay = document.createElement('div');
+    overlay.className = 'gallery-overlay';
+    overlay.innerHTML = `<h3>${photo.title}</h3>`;
 
-        // Lazy load image
-        const img = document.createElement('img');
-        img.dataset.src = photo.thumbnail;
-        img.alt = photo.title;
-        img.loading = 'lazy';
+    item.appendChild(img);
+    item.appendChild(overlay);
 
-        // When image loads, remove loading state
-        img.onload = () => {
-            item.classList.remove('loading');
-        };
+    // Lightbox trigger
+    item.onclick = () => openLightbox(photo.fullImage);
 
-        // Set src to trigger loading
-        img.src = img.dataset.src;
-
-        const overlay = document.createElement('div');
-        overlay.className = 'gallery-overlay';
-        overlay.innerHTML = `<h3>${photo.title}</h3>`;
-
-        item.appendChild(img);
-        item.appendChild(overlay);
-
-        // Open lightbox on click
-        item.onclick = () => openLightbox(photo.fullImage);
-
-        grid.appendChild(item);
-    });
+    return item;
 }
 
 // =========================================
@@ -135,52 +132,47 @@ function updateButtons() {
     const btnShowMore = document.getElementById('btnShowMore');
     const btnShowLess = document.getElementById('btnShowLess');
 
-    // Show "Show More" if there are more photos to load
-    if (displayedCount < filteredPhotos.length) {
-        btnShowMore.classList.remove('hidden');
-    } else {
-        btnShowMore.classList.add('hidden');
+    if (btnShowMore) {
+        if (currentPointer < filteredPhotos.length) {
+            btnShowMore.classList.remove('hidden');
+        } else {
+            btnShowMore.classList.add('hidden');
+        }
     }
 
-    // Show "Show Less" if we've loaded more than initial
-    if (displayedCount > initialLoadCount()) {
-        btnShowLess.classList.remove('hidden');
-        // Add pulse effect for first 3 seconds
-        btnShowLess.classList.add('active');
-        setTimeout(() => {
-            btnShowLess.classList.remove('active');
-        }, 3000);
-    } else {
-        btnShowLess.classList.add('hidden');
+    if (btnShowLess) {
+        if (currentPointer > initialLoadCount()) {
+            btnShowLess.classList.remove('hidden');
+        } else {
+            btnShowLess.classList.add('hidden');
+        }
     }
 }
 
 // =========================================
-// SHOW MORE BUTTON
+// BUTTON HANDLERS
 // =========================================
 document.getElementById('btnShowMore').onclick = () => {
-    displayedCount += initialLoadCount();
-    displayPhotos();
-    updateButtons();
+    loadMorePhotos();
 
-    // Smooth scroll to new content
+    // Optional: Smooth scroll to the start of the NEW content
     setTimeout(() => {
-        const lastVisibleItem = document.querySelectorAll('.gallery-item')[displayedCount - initialLoadCount()];
-        if (lastVisibleItem) {
-            lastVisibleItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const items = document.querySelectorAll('.gallery-item');
+        const firstNewItem = items[currentPointer - initialLoadCount()];
+        if (firstNewItem) {
+            firstNewItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    }, 100);
+    }, 50);
 };
 
-// =========================================
-// SHOW LESS BUTTON
-// =========================================
 document.getElementById('btnShowLess').onclick = () => {
-    displayedCount = initialLoadCount();
-    displayPhotos();
-    updateButtons();
+    // Reset to first batch
+    currentPointer = 0;
+    const grid = document.getElementById('galleryGrid');
+    if (grid) grid.innerHTML = '';
+    loadMorePhotos();
 
-    // Scroll back to top of gallery
+    // Scroll back to gallery top
     document.querySelector('.gallery-section').scrollIntoView({ behavior: 'smooth' });
 };
 
@@ -191,53 +183,26 @@ function openLightbox(imageUrl) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
 
-    lightboxImg.src = imageUrl;
-    lightbox.classList.add('active');
-
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+    if (lightbox && lightboxImg) {
+        lightboxImg.src = imageUrl;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
 
-    lightbox.classList.remove('active');
-
-    // Clear image source to save memory
-    setTimeout(() => {
-        lightboxImg.src = '';
-    }, 300);
-
-    // Restore body scroll
+    if (lightbox) lightbox.classList.remove('active');
+    if (lightboxImg) {
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
     document.body.style.overflow = 'auto';
 }
 
-// Close lightbox on ESC key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeLightbox();
-    }
-});
-
-// Prevent lightbox from closing when clicking on image
-document.getElementById('lightbox').addEventListener('click', (e) => {
-    if (e.target.id === 'lightbox') {
-        closeLightbox();
-    }
-});
-
-
-// =========================================
-// RESPONSIVE HANDLING
-// =========================================
-window.addEventListener('resize', () => {
-    // Reset displayed count based on screen size
-    if (displayedCount <= initialLoadCount() * 2) {
-        displayedCount = initialLoadCount();
-        displayPhotos();
-        updateButtons();
-    }
+    if (e.key === 'Escape') closeLightbox();
 });
 
 // =========================================
@@ -248,47 +213,19 @@ const leftBtn = document.getElementById('scrollLeftBtn');
 const rightBtn = document.getElementById('scrollRightBtn');
 
 if (tabsContainer && leftBtn && rightBtn) {
-
-    // Scroll Distance
     const SCROLL_AMOUNT = 300;
 
-    // 1. Click Handlers
-    rightBtn.onclick = () => {
-        tabsContainer.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
-    };
+    rightBtn.onclick = () => tabsContainer.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
+    leftBtn.onclick = () => tabsContainer.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
 
-    leftBtn.onclick = () => {
-        tabsContainer.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
-    };
-
-    // 2. Visibility Logic
     const handleScrollButtons = () => {
         const currentScroll = tabsContainer.scrollLeft;
         const maxScroll = tabsContainer.scrollWidth - tabsContainer.clientWidth;
-
-        // LEFT ARROW: Hide if at very start (0), show otherwise
-        if (currentScroll > 10) {
-            leftBtn.classList.remove('hidden');
-        } else {
-            leftBtn.classList.add('hidden');
-        }
-
-        // RIGHT ARROW: Hide if at very end, show otherwise
-        // We use >= maxScroll - 10 to account for pixel rounding
-        if (currentScroll >= maxScroll - 10) {
-            rightBtn.classList.add('hidden');
-        } else {
-            rightBtn.classList.remove('hidden');
-        }
+        leftBtn.classList.toggle('hidden', currentScroll <= 10);
+        rightBtn.classList.toggle('hidden', currentScroll >= maxScroll - 10);
     };
 
-    // 3. Listeners
     tabsContainer.addEventListener('scroll', handleScrollButtons);
     window.addEventListener('resize', handleScrollButtons);
-
-    // 4. INITIAL CHECK (Crucial for Right Arrow visibility)
-    // We add a small timeout to ensure buttons are rendered in DOM
-    setTimeout(() => {
-        handleScrollButtons();
-    }, 100);
+    setTimeout(handleScrollButtons, 100);
 }
