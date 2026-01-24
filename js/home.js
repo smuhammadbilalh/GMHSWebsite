@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         await Promise.all([
             loadHeroSlides(),
+            await initParticles(),
             loadStats(),
             loadNewsTicker(),
             loadAboutTicker(),
@@ -348,4 +349,57 @@ function animateCounter(element) {
         counterValue.textContent = displayText;
         if (frame === totalFrames) clearInterval(counter);
     }, 16);
+}
+
+// Add this inside your DOMContentLoaded listener:
+
+
+
+// ... existing code ...
+
+async function initParticles() {
+    await tsParticles.load("tsparticles", {
+        fullScreen: { enable: true, zIndex: -1 }, // Ensure it covers the whole background
+        fpsLimit: 120,
+        interactivity: {
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: "grab",
+                },
+            },
+            modes: {
+                grab: {
+                    distance: 200,
+                    links: { opacity: 0.4 }
+                }
+            }
+        },
+        particles: {
+            color: { value: "#94a3b8" },
+            links: {
+                color: "#94a3b8",
+                distance: 180,
+                enable: true,
+                opacity: 0.2, // Subtle lines
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1,
+                direction: "none",
+                outModes: { default: "out" }
+            },
+            number: {
+                density: { enable: true, area: 800 },
+                value: 40
+            },
+            opacity: {
+                value: { min: 0.1, max: 0.3 }, // Fainter particles so text is readable
+            },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 3 } }
+        },
+        detectRetina: true
+    });
 }
