@@ -1,16 +1,16 @@
 ﻿/* ============================================
-   VIDEO CAROUSEL SECTION - STRICT BLACK & WHITE
+   VIDEO CAROUSEL SECTION - COMPACT DARK THEME
    ============================================ */
 
 .video-carousel-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #000000;
     color: #ffffff;
     position: relative;
     overflow: hidden;
 }
 
-    /* White separator line at top */
+    /* Subtle divider at top */
     .video-carousel-section::before {
         content: '';
         position: absolute;
@@ -18,46 +18,35 @@
         left: 0;
         right: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     }
 
-    .video-carousel-section .container {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-    }
-
-/* =========================================
-   SECTION HEADER
-   ========================================= */
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
     .section-header h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 800;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         color: #ffffff;
-        letter-spacing: -0.5px;
         text-transform: uppercase;
     }
 
     .section-header p {
-        color: #a3a3a3; /* Light Gray */
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto;
+        color: #a3a3a3;
+        font-size: 1rem;
     }
 
 /* =========================================
-   OVERRIDE SLIDER CONTROLS FOR BLACK BG
+   WHITE CONTROLS & REDUCED MARGIN
    ========================================= */
 .video-carousel-section .slider-pill-controls {
+    margin: 15px auto 0 auto; /* Reduced top margin */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
 }
 
 .video-carousel-section .slider-arrow {
@@ -73,94 +62,48 @@
     }
 
 /* =========================================
-   CAROUSEL WRAPPER & NAVIGATION
-   ========================================= */
-.v-carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.v-nav-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #000000;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    z-index: 10;
-}
-
-    .v-nav-btn:hover {
-        background: #ffffff;
-        color: #000000;
-        transform: scale(1.1);
-    }
-
-    .v-nav-btn svg {
-        width: 24px;
-        height: 24px;
-    }
-
-/* =========================================
-   TRACK & CARDS
+   REDUCED SCALE CARDS & THUMBNAIL FIX
    ========================================= */
 .v-track-container {
-    flex: 1;
     overflow: hidden;
-    padding: 20px 0;
-    margin: -20px 0;
+    padding: 10px 0;
 }
 
 .v-track {
     display: flex;
-    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother transition for auto-play */
-    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .v-card {
     flex-shrink: 0;
-    padding: 0 12px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
 .v-card-inner {
-    background: #000000;
-    border-radius: 0;
-    overflow: hidden;
+    background: #0a0a0a;
     border: 1px solid #333333;
     transition: all 0.3s ease;
-    cursor: pointer;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
     .v-card-inner:hover {
-        transform: translateY(-8px);
+        transform: translateY(-5px);
         border-color: #ffffff;
-        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
     }
 
-/* =========================================
-   THUMBNAIL AREA
-   ========================================= */
 .v-thumbnail-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 */
+    padding-top: 56.25%; /* 16:9 ratio */
     background: #111;
     overflow: hidden;
-    border-bottom: 1px solid #333;
 }
 
+/* FIXED THUMBNAIL PROPERTIES */
 .v-thumbnail {
     position: absolute;
     top: 0;
@@ -168,150 +111,49 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-    opacity: 1;
-    filter: none;
+    display: block;
 }
 
-.v-card-inner:hover .v-thumbnail {
-    transform: scale(1.05);
+.v-content {
+    padding: 15px;
+    background: #0a0a0a;
 }
 
-/* Play Button Overlay */
+    .v-content h3 {
+        font-size: 0.95rem;
+        color: #ffffff;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .v-content p {
+        font-size: 0.8rem;
+        color: #a3a3a3;
+        line-height: 1.4;
+    }
+
+/* Play button overlay */
 .v-play-overlay {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
-}
-
-.v-card-inner:hover .v-play-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.2);
 }
 
 .v-play-btn {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.6);
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    border: 2px solid #ffffff;
 }
 
     .v-play-btn svg {
-        width: 24px;
-        height: 24px;
-        fill: #ffffff;
-        margin-left: 4px;
+        width: 20px;
+        height: 20px;
+        fill: #000;
     }
-
-.v-card-inner:hover .v-play-btn {
-    background: #ffffff;
-    transform: scale(1.15);
-}
-
-    .v-card-inner:hover .v-play-btn svg {
-        fill: #000000;
-    }
-
-.v-duration {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: #000000;
-    color: #ffffff;
-    padding: 4px 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border: 1px solid #ffffff;
-}
-
-/* =========================================
-   CARD CONTENT
-   ========================================= */
-.v-content {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: #0a0a0a;
-}
-
-    .v-content h3 {
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin: 0 0 8px 0;
-        color: #ffffff;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .v-content p {
-        font-size: 0.9rem;
-        color: #a3a3a3;
-        margin: 0;
-        line-height: 1.5;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-@media (max-width: 1024px) {
-    .section-header h2 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .video-carousel-section {
-        padding: 60px 0;
-    }
-
-    .v-carousel-wrapper {
-        gap: 10px;
-    }
-
-    .v-nav-btn {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #000;
-        border: 2px solid #fff;
-    }
-
-        .v-nav-btn:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-    .v-prev {
-        left: 0;
-    }
-
-    .v-next {
-        right: 0;
-    }
-
-    .v-track-container {
-        margin: 0;
-        padding: 0 10px;
-    }
-
-    .section-header h2 {
-        font-size: 1.8rem;
-    }
-}

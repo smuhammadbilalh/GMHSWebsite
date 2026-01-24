@@ -230,15 +230,37 @@ function moveDonorSlide(direction) {
     updateDonorPosition();
 }
 
+// =========================================
+// DONOR CAROUSEL - PRECISION CENTERING
+// =========================================
 function updateDonorPosition() {
     const track = document.getElementById('donorTrack');
-    const translateVal = -(donorIndex * donorCardWidth);
+    const cards = document.querySelectorAll('.donor-card');
+    if (!track || cards.length === 0) return;
+
+    const gap = 15;
+    const cardWidth = 280;
+    const totalCardStep = cardWidth + gap;
+
+    const containerWidth = track.parentElement.offsetWidth;
+    // Calculate center based on the specific card width
+    const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+
+    const translateVal = centerOffset - (donorIndex * totalCardStep);
     track.style.transform = `translateX(${translateVal}px)`;
 
+    cards.forEach((card, index) => {
+        card.classList.remove('active-donor');
+        if (index === donorIndex) {
+            card.classList.add('active-donor');
+        }
+    });
+
+    // Precision Dot Update
     const dots = document.querySelectorAll('#donorDots button');
     if (dots.length === 3) {
         dots.forEach(d => d.classList.remove('active'));
-        const maxIndex = donorsCount - visibleDonors;
+        const maxIndex = donorsCount - 1;
         const activeDot = Math.min(2, Math.floor((donorIndex / (maxIndex || 1)) * 3));
         dots[activeDot].classList.add('active');
     }
