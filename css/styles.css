@@ -241,29 +241,44 @@ a {
     }
 
 /* =========================================
-   4. STATS BAR SECTION
+   4. STATS BAR SECTION (Divided Grid Look)
    ========================================= */
 .stats-bar {
-    background: #fff;
-    padding: 0;
+    background: transparent !important;
+    padding: 60px 0;
     color: var(--text-dark);
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    /* Horizontal lines wrapping the section */
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .stat-item {
     text-align: center;
-    padding: 40px 10px;
+    padding: 50px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    position: relative;
 }
+
+    /* Vertical Line Dividers */
+    .stat-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 25%;
+        height: 50%;
+        width: 1px;
+        background: rgba(0,0,0,0.15);
+    }
 
     .stat-item.is-visible {
         opacity: 1;
@@ -271,7 +286,7 @@ a {
     }
 
     .stat-item strong {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         line-height: 1;
         color: #000000;
         font-weight: 900;
@@ -280,11 +295,12 @@ a {
     }
 
     .stat-item span {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #000000;
         text-transform: uppercase;
         font-weight: 700;
-        margin-top: 5px;
+        margin-top: 8px;
+        letter-spacing: 1px;
     }
 
 /* =========================================
@@ -417,11 +433,7 @@ a {
 }
 
 /* =========================================
-   7. VIDEO CAROUSEL SECTION (See videocarousel.css)
-   ========================================= */
-
-/* =========================================
-   8. DONORS CAROUSEL SECTION
+   7. DONORS CAROUSEL SECTION
    ========================================= */
 .donors-section {
     padding: 60px 0;
@@ -510,14 +522,26 @@ a {
 }
 
 /* =========================================
-   9. RESPONSIVE DESIGN
+   8. RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 900px) {
     .slide-content h1 {
         font-size: 2.2rem;
     }
 
-    .stats-grid, .square-grid {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Mobile Dividers Logic */
+    .stat-item:nth-child(1), .stat-item:nth-child(2) {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+        .stat-item:nth-child(2)::after, .stat-item:nth-child(4)::after {
+            display: none;
+        }
+
+    .square-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -541,12 +565,16 @@ a {
     }
 }
 
-/* PARTICLE SYSTEM OVERLAYS */
-/* Removed .video-carousel-section from the transparent list */
-.home-wrapper, .portals-section, .donors-section {
+/* =========================================
+   9. PARTICLE TRANSPARENCY RULES
+   ========================================= */
+
+/* Ensure only specific sections are transparent for neurons */
+.home-wrapper, .portals-section, .donors-section, .stats-bar {
     background-color: transparent !important;
 }
 
+/* Global Particle Container */
 #tsparticles {
     pointer-events: none;
     z-index: -1;
