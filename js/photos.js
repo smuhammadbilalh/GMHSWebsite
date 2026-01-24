@@ -240,20 +240,19 @@ window.addEventListener('resize', () => {
     }
 });
 
-
 // =========================================
-// TAB SCROLLING LOGIC (New)
+// TAB SCROLLING LOGIC
 // =========================================
 const tabsContainer = document.getElementById('categoryTabs');
 const leftBtn = document.getElementById('scrollLeftBtn');
 const rightBtn = document.getElementById('scrollRightBtn');
 
-// Scroll amount when button is clicked
-const SCROLL_AMOUNT = 200;
+if (tabsContainer && leftBtn && rightBtn) {
 
-if (leftBtn && rightBtn && tabsContainer) {
+    // Scroll Distance
+    const SCROLL_AMOUNT = 300;
 
-    // 1. Click Events
+    // 1. Click Handlers
     rightBtn.onclick = () => {
         tabsContainer.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
     };
@@ -262,31 +261,34 @@ if (leftBtn && rightBtn && tabsContainer) {
         tabsContainer.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
     };
 
-    // 2. Scroll Event (Show/Hide Arrows)
+    // 2. Visibility Logic
     const handleScrollButtons = () => {
-        // Show/Hide Left Button
-        if (tabsContainer.scrollLeft > 20) {
+        const currentScroll = tabsContainer.scrollLeft;
+        const maxScroll = tabsContainer.scrollWidth - tabsContainer.clientWidth;
+
+        // LEFT ARROW: Hide if at very start (0), show otherwise
+        if (currentScroll > 10) {
             leftBtn.classList.remove('hidden');
         } else {
             leftBtn.classList.add('hidden');
         }
 
-        // Show/Hide Right Button
-        const maxScroll = tabsContainer.scrollWidth - tabsContainer.clientWidth;
-        // Small buffer (20px) to ensure it works on all zooms
-        if (tabsContainer.scrollLeft >= maxScroll - 20) {
+        // RIGHT ARROW: Hide if at very end, show otherwise
+        // We use >= maxScroll - 10 to account for pixel rounding
+        if (currentScroll >= maxScroll - 10) {
             rightBtn.classList.add('hidden');
         } else {
             rightBtn.classList.remove('hidden');
         }
     };
 
-    // Listen for scroll events
+    // 3. Listeners
     tabsContainer.addEventListener('scroll', handleScrollButtons);
-
-    // Check initially (in case of page reload)
-    handleScrollButtons();
-
-    // Re-check on window resize
     window.addEventListener('resize', handleScrollButtons);
+
+    // 4. INITIAL CHECK (Crucial for Right Arrow visibility)
+    // We add a small timeout to ensure buttons are rendered in DOM
+    setTimeout(() => {
+        handleScrollButtons();
+    }, 100);
 }

@@ -66,16 +66,17 @@
 }
 
 
+
 /* =========================================
-   CATEGORY TABS (YouTube Style with Arrows)
+   CATEGORY TABS (YouTube Style - Exact Edges)
    ========================================= */
 .category-tabs-wrapper {
     background: #fff;
     padding: 15px 0;
     position: sticky;
     top: 70px;
-    z-index: 99; /* Just below nav */
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 90;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .tabs-container {
@@ -84,6 +85,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    overflow: hidden; /* Ensures no scrollbars appear outside */
 }
 
 .category-tabs {
@@ -91,13 +93,12 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 12px;
-    padding: 5px 50px; /* Padding for arrows */
+    padding: 0 50px; /* Space for arrows so text doesn't get cut off immediately */
     width: 100%;
     /* Hide scrollbar */
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 }
 
     .category-tabs::-webkit-scrollbar {
@@ -110,16 +111,16 @@
     background: #fff;
     color: #000;
     border: 1px solid #e0e0e0;
-    padding: 8px 20px;
+    padding: 10px 24px;
     font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 8px; /* Slightly rounded tabs */
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
     .tab-btn:hover {
-        background: #f0f0f0;
+        background: #f5f5f5;
         border-color: #000;
     }
 
@@ -136,79 +137,58 @@
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
+    /* Perfect Circle & Styling */
     border-radius: 50%;
+    background: #fff; /* Solid white to cover text passing under */
     border: 1px solid #e0e0e0;
-    background: #fff;
     color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
+    z-index: 2; /* Sit on top of tabs */
+    transition: opacity 0.3s ease, background 0.2s ease;
+    /* NO SHADOW as requested */
+    box-shadow: none;
 }
 
     .scroll-btn:hover {
-        background: #000;
-        color: #fff;
+        background: #f0f0f0;
         border-color: #000;
     }
 
     .scroll-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 
-/* Specific Positions & Gradient Masks */
+/* === EXACT POSITIONING === */
 .left-btn {
-    left: 10px;
+    left: 0; /* Pinned exactly to left edge */
 }
-    /* White fade behind left button */
-    .left-btn::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        width: 30px;
-        background: linear-gradient(to right, #fff, transparent);
-        pointer-events: none;
-        z-index: -1;
-    }
 
 .right-btn {
-    right: 10px;
+    right: 0; /* Pinned exactly to right edge */
 }
-    /* White fade behind right button */
-    .right-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 100%;
-        width: 30px;
-        background: linear-gradient(to left, #fff, transparent);
-        pointer-events: none;
-        z-index: -1;
-    }
 
-.hidden {
+/* Visibility State */
+.scroll-btn.hidden {
     opacity: 0;
-    pointer-events: none;
-    transform: translateY(-50%) scale(0.8);
+    pointer-events: none; /* Allows clicking tabs underneath if arrow is hidden */
 }
 
-/* Mobile: Hide arrows, let them swipe naturally */
+/* === MOBILE: HIDE ARROWS === */
+/* Standard UX: Phones use swipe (touch), Desktop uses Arrows */
 @media (max-width: 768px) {
     .scroll-btn {
         display: none;
     }
 
     .category-tabs {
-        padding: 5px 20px;
+        padding: 0 20px; /* Reset padding since arrows are gone */
     }
 }
+
 
 
 /* =========================================
