@@ -35,115 +35,788 @@
     "photos": [
         {
             "id": 1,
-            "category": "faculty",
-            "title": "Mr. Ahmed Retired 2020",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 1",
+            "thumbnail": "images/sports/pic1.jpeg",
+            "fullImage": "images/sports/pic1.jpeg"
         },
         {
             "id": 2,
-            "category": "faculty",
-            "title": "Mrs. Fatima Farewell 2019",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 2",
+            "thumbnail": "images/sports/pic2.jpeg",
+            "fullImage": "images/sports/pic2.jpeg"
         },
         {
             "id": 3,
             "category": "sports",
-            "title": "Cricket Champions 2025",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "title": "Sports Achievement 3",
+            "thumbnail": "images/sports/pic3.jpeg",
+            "fullImage": "images/sports/pic3.jpeg"
         },
         {
             "id": 4,
             "category": "sports",
-            "title": "Football Tournament Winners",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "title": "Sports Achievement 4",
+            "thumbnail": "images/sports/pic4.jpeg",
+            "fullImage": "images/sports/pic4.jpeg"
         },
         {
             "id": 5,
-            "category": "alumni",
-            "title": "Batch 2010 Reunion",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 5",
+            "thumbnail": "images/sports/pic5.jpeg",
+            "fullImage": "images/sports/pic5.jpeg"
         },
         {
             "id": 6,
-            "category": "alumni",
-            "title": "Class of 1995",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 6",
+            "thumbnail": "images/sports/pic6.jpeg",
+            "fullImage": "images/sports/pic6.jpeg"
         },
         {
             "id": 7,
-            "category": "events",
-            "title": "Annual Day Celebration",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 7",
+            "thumbnail": "images/sports/pic7.jpeg",
+            "fullImage": "images/sports/pic7.jpeg"
         },
         {
             "id": 8,
-            "category": "events",
-            "title": "Science Fair 2025",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 8",
+            "thumbnail": "images/sports/pic8.jpeg",
+            "fullImage": "images/sports/pic8.jpeg"
         },
         {
             "id": 9,
-            "category": "faculty",
-            "title": "Sir Bilal Retirement Ceremony",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 9",
+            "thumbnail": "images/sports/pic9.jpeg",
+            "fullImage": "images/sports/pic9.jpeg"
         },
         {
             "id": 10,
             "category": "sports",
-            "title": "Athletics Gold Medal 2024",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "title": "Sports Achievement 10",
+            "thumbnail": "images/sports/pic10.jpeg",
+            "fullImage": "images/sports/pic10.jpeg"
         },
         {
             "id": 11,
-            "category": "alumni",
-            "title": "Alumni Meetup 2024",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 11",
+            "thumbnail": "images/sports/pic11.jpeg",
+            "fullImage": "images/sports/pic11.jpeg"
         },
         {
             "id": 12,
-            "category": "events",
-            "title": "Independence Day 2025",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 12",
+            "thumbnail": "images/sports/pic12.jpeg",
+            "fullImage": "images/sports/pic12.jpeg"
         },
         {
             "id": 13,
-            "category": "faculty",
-            "title": "Teacher's Day Event 2023",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 13",
+            "thumbnail": "images/sports/pic13.jpeg",
+            "fullImage": "images/sports/pic13.jpeg"
         },
         {
             "id": 14,
             "category": "sports",
-            "title": "Basketball Championship",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "title": "Sports Achievement 14",
+            "thumbnail": "images/sports/pic14.jpeg",
+            "fullImage": "images/sports/pic14.jpeg"
         },
         {
             "id": 15,
-            "category": "alumni",
-            "title": "Golden Jubilee Batch",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "category": "sports",
+            "title": "Sports Achievement 15",
+            "thumbnail": "images/sports/pic15.jpeg",
+            "fullImage": "images/sports/pic15.jpeg"
         },
         {
             "id": 16,
+            "category": "sports",
+            "title": "Sports Achievement 16",
+            "thumbnail": "images/sports/pic16.jpeg",
+            "fullImage": "images/sports/pic16.jpeg"
+        },
+        {
+            "id": 17,
+            "category": "sports",
+            "title": "Sports Achievement 17",
+            "thumbnail": "images/sports/pic17.jpeg",
+            "fullImage": "images/sports/pic17.jpeg"
+        },
+        {
+            "id": 18,
+            "category": "sports",
+            "title": "Sports Achievement 18",
+            "thumbnail": "images/sports/pic18.jpeg",
+            "fullImage": "images/sports/pic18.jpeg"
+        },
+        {
+            "id": 19,
+            "category": "sports",
+            "title": "Sports Achievement 19",
+            "thumbnail": "images/sports/pic19.jpeg",
+            "fullImage": "images/sports/pic19.jpeg"
+        },
+        {
+            "id": 20,
+            "category": "sports",
+            "title": "Sports Achievement 20",
+            "thumbnail": "images/sports/pic20.jpeg",
+            "fullImage": "images/sports/pic20.jpeg"
+        },
+        {
+            "id": 21,
+            "category": "sports",
+            "title": "Sports Achievement 21",
+            "thumbnail": "images/sports/pic21.jpeg",
+            "fullImage": "images/sports/pic21.jpeg"
+        },
+        {
+            "id": 22,
+            "category": "sports",
+            "title": "Sports Achievement 22",
+            "thumbnail": "images/sports/pic22.jpeg",
+            "fullImage": "images/sports/pic22.jpeg"
+        },
+        {
+            "id": 23,
+            "category": "sports",
+            "title": "Sports Achievement 23",
+            "thumbnail": "images/sports/pic23.jpeg",
+            "fullImage": "images/sports/pic23.jpeg"
+        },
+        {
+            "id": 24,
+            "category": "sports",
+            "title": "Sports Achievement 24",
+            "thumbnail": "images/sports/pic24.jpeg",
+            "fullImage": "images/sports/pic24.jpeg"
+        },
+        {
+            "id": 25,
+            "category": "sports",
+            "title": "Sports Achievement 25",
+            "thumbnail": "images/sports/pic25.jpeg",
+            "fullImage": "images/sports/pic25.jpeg"
+        },
+        {
+            "id": 26,
+            "category": "sports",
+            "title": "Sports Achievement 26",
+            "thumbnail": "images/sports/pic26.jpeg",
+            "fullImage": "images/sports/pic26.jpeg"
+        },
+        {
+            "id": 27,
+            "category": "sports",
+            "title": "Sports Achievement 27",
+            "thumbnail": "images/sports/pic27.jpeg",
+            "fullImage": "images/sports/pic27.jpeg"
+        },
+        {
+            "id": 28,
+            "category": "sports",
+            "title": "Sports Achievement 28",
+            "thumbnail": "images/sports/pic28.jpeg",
+            "fullImage": "images/sports/pic28.jpeg"
+        },
+        {
+            "id": 29,
+            "category": "sports",
+            "title": "Sports Achievement 29",
+            "thumbnail": "images/sports/pic29.jpeg",
+            "fullImage": "images/sports/pic29.jpeg"
+        },
+        {
+            "id": 30,
+            "category": "sports",
+            "title": "Sports Achievement 30",
+            "thumbnail": "images/sports/pic30.jpeg",
+            "fullImage": "images/sports/pic30.jpeg"
+        },
+        {
+            "id": 31,
+            "category": "sports",
+            "title": "Sports Achievement 31",
+            "thumbnail": "images/sports/pic31.jpeg",
+            "fullImage": "images/sports/pic31.jpeg"
+        },
+        {
+            "id": 32,
+            "category": "sports",
+            "title": "Sports Achievement 32",
+            "thumbnail": "images/sports/pic32.jpeg",
+            "fullImage": "images/sports/pic32.jpeg"
+        },
+        {
+            "id": 33,
+            "category": "sports",
+            "title": "Sports Achievement 33",
+            "thumbnail": "images/sports/pic33.jpeg",
+            "fullImage": "images/sports/pic33.jpeg"
+        },
+        {
+            "id": 34,
+            "category": "sports",
+            "title": "Sports Achievement 34",
+            "thumbnail": "images/sports/pic34.jpeg",
+            "fullImage": "images/sports/pic34.jpeg"
+        },
+        {
+            "id": 35,
+            "category": "sports",
+            "title": "Sports Achievement 35",
+            "thumbnail": "images/sports/pic35.jpeg",
+            "fullImage": "images/sports/pic35.jpeg"
+        },
+        {
+            "id": 36,
+            "category": "sports",
+            "title": "Sports Achievement 36",
+            "thumbnail": "images/sports/pic36.jpeg",
+            "fullImage": "images/sports/pic36.jpeg"
+        },
+        {
+            "id": 37,
+            "category": "sports",
+            "title": "Sports Achievement 37",
+            "thumbnail": "images/sports/pic37.jpeg",
+            "fullImage": "images/sports/pic37.jpeg"
+        },
+        {
+            "id": 38,
+            "category": "sports",
+            "title": "Sports Achievement 38",
+            "thumbnail": "images/sports/pic38.jpeg",
+            "fullImage": "images/sports/pic38.jpeg"
+        },
+        {
+            "id": 39,
+            "category": "sports",
+            "title": "Sports Achievement 39",
+            "thumbnail": "images/sports/pic39.jpeg",
+            "fullImage": "images/sports/pic39.jpeg"
+        },
+        {
+            "id": 40,
+            "category": "sports",
+            "title": "Sports Achievement 40",
+            "thumbnail": "images/sports/pic40.jpeg",
+            "fullImage": "images/sports/pic40.jpeg"
+        },
+        {
+            "id": 41,
+            "category": "sports",
+            "title": "Sports Achievement 41",
+            "thumbnail": "images/sports/pic41.jpeg",
+            "fullImage": "images/sports/pic41.jpeg"
+        },
+        {
+            "id": 42,
+            "category": "sports",
+            "title": "Sports Achievement 42",
+            "thumbnail": "images/sports/pic42.jpeg",
+            "fullImage": "images/sports/pic42.jpeg"
+        },
+        {
+            "id": 43,
+            "category": "sports",
+            "title": "Sports Achievement 43",
+            "thumbnail": "images/sports/pic43.jpeg",
+            "fullImage": "images/sports/pic43.jpeg"
+        },
+        {
+            "id": 44,
+            "category": "sports",
+            "title": "Sports Achievement 44",
+            "thumbnail": "images/sports/pic44.jpeg",
+            "fullImage": "images/sports/pic44.jpeg"
+        },
+        {
+            "id": 45,
+            "category": "sports",
+            "title": "Sports Achievement 45",
+            "thumbnail": "images/sports/pic45.jpeg",
+            "fullImage": "images/sports/pic45.jpeg"
+        },
+        {
+            "id": 46,
+            "category": "sports",
+            "title": "Sports Achievement 46",
+            "thumbnail": "images/sports/pic46.jpeg",
+            "fullImage": "images/sports/pic46.jpeg"
+        },
+        {
+            "id": 47,
+            "category": "sports",
+            "title": "Sports Achievement 47",
+            "thumbnail": "images/sports/pic47.jpeg",
+            "fullImage": "images/sports/pic47.jpeg"
+        },
+        {
+            "id": 48,
+            "category": "sports",
+            "title": "Sports Achievement 48",
+            "thumbnail": "images/sports/pic48.jpeg",
+            "fullImage": "images/sports/pic48.jpeg"
+        },
+        {
+            "id": 49,
+            "category": "sports",
+            "title": "Sports Achievement 49",
+            "thumbnail": "images/sports/pic49.jpeg",
+            "fullImage": "images/sports/pic49.jpeg"
+        },
+        {
+            "id": 50,
+            "category": "sports",
+            "title": "Sports Achievement 50",
+            "thumbnail": "images/sports/pic50.jpeg",
+            "fullImage": "images/sports/pic50.jpeg"
+        },
+        {
+            "id": 51,
+            "category": "sports",
+            "title": "Sports Achievement 51",
+            "thumbnail": "images/sports/pic51.jpeg",
+            "fullImage": "images/sports/pic51.jpeg"
+        },
+        {
+            "id": 52,
+            "category": "sports",
+            "title": "Sports Achievement 52",
+            "thumbnail": "images/sports/pic52.jpeg",
+            "fullImage": "images/sports/pic52.jpeg"
+        },
+        {
+            "id": 53,
+            "category": "sports",
+            "title": "Sports Achievement 53",
+            "thumbnail": "images/sports/pic53.jpeg",
+            "fullImage": "images/sports/pic53.jpeg"
+        },
+        {
+            "id": 54,
+            "category": "sports",
+            "title": "Sports Achievement 54",
+            "thumbnail": "images/sports/pic54.jpeg",
+            "fullImage": "images/sports/pic54.jpeg"
+        },
+        {
+            "id": 55,
+            "category": "sports",
+            "title": "Sports Achievement 55",
+            "thumbnail": "images/sports/pic55.jpeg",
+            "fullImage": "images/sports/pic55.jpeg"
+        },
+        {
+            "id": 56,
+            "category": "sports",
+            "title": "Sports Achievement 56",
+            "thumbnail": "images/sports/pic56.jpeg",
+            "fullImage": "images/sports/pic56.jpeg"
+        },
+        {
+            "id": 57,
+            "category": "sports",
+            "title": "Sports Achievement 57",
+            "thumbnail": "images/sports/pic57.jpeg",
+            "fullImage": "images/sports/pic57.jpeg"
+        },
+        {
+            "id": 58,
+            "category": "sports",
+            "title": "Sports Achievement 58",
+            "thumbnail": "images/sports/pic58.jpeg",
+            "fullImage": "images/sports/pic58.jpeg"
+        },
+        {
+            "id": 59,
+            "category": "sports",
+            "title": "Sports Achievement 59",
+            "thumbnail": "images/sports/pic59.jpeg",
+            "fullImage": "images/sports/pic59.jpeg"
+        },
+        {
+            "id": 60,
+            "category": "sports",
+            "title": "Sports Achievement 60",
+            "thumbnail": "images/sports/pic60.jpeg",
+            "fullImage": "images/sports/pic60.jpeg"
+        },
+        {
+            "id": 61,
+            "category": "sports",
+            "title": "Sports Achievement 61",
+            "thumbnail": "images/sports/pic61.jpeg",
+            "fullImage": "images/sports/pic61.jpeg"
+        },
+        {
+            "id": 62,
+            "category": "sports",
+            "title": "Sports Achievement 62",
+            "thumbnail": "images/sports/pic62.jpeg",
+            "fullImage": "images/sports/pic62.jpeg"
+        },
+        {
+            "id": 63,
+            "category": "sports",
+            "title": "Sports Achievement 63",
+            "thumbnail": "images/sports/pic63.jpeg",
+            "fullImage": "images/sports/pic63.jpeg"
+        },
+        {
+            "id": 64,
+            "category": "sports",
+            "title": "Sports Achievement 64",
+            "thumbnail": "images/sports/pic64.jpeg",
+            "fullImage": "images/sports/pic64.jpeg"
+        },
+        {
+            "id": 65,
+            "category": "sports",
+            "title": "Sports Achievement 65",
+            "thumbnail": "images/sports/pic65.jpeg",
+            "fullImage": "images/sports/pic65.jpeg"
+        },
+        {
+            "id": 66,
+            "category": "sports",
+            "title": "Sports Achievement 66",
+            "thumbnail": "images/sports/pic66.jpeg",
+            "fullImage": "images/sports/pic66.jpeg"
+        },
+        {
+            "id": 67,
+            "category": "sports",
+            "title": "Sports Achievement 67",
+            "thumbnail": "images/sports/pic67.jpeg",
+            "fullImage": "images/sports/pic67.jpeg"
+        },
+        {
+            "id": 68,
+            "category": "sports",
+            "title": "Sports Achievement 68",
+            "thumbnail": "images/sports/pic68.jpeg",
+            "fullImage": "images/sports/pic68.jpeg"
+        },
+        {
+            "id": 69,
+            "category": "sports",
+            "title": "Sports Achievement 69",
+            "thumbnail": "images/sports/pic69.jpeg",
+            "fullImage": "images/sports/pic69.jpeg"
+        },
+        {
+            "id": 70,
+            "category": "sports",
+            "title": "Sports Achievement 70",
+            "thumbnail": "images/sports/pic70.jpeg",
+            "fullImage": "images/sports/pic70.jpeg"
+        },
+        {
+            "id": 71,
+            "category": "sports",
+            "title": "Sports Achievement 71",
+            "thumbnail": "images/sports/pic71.jpeg",
+            "fullImage": "images/sports/pic71.jpeg"
+        },
+        {
+            "id": 72,
+            "category": "sports",
+            "title": "Sports Achievement 72",
+            "thumbnail": "images/sports/pic72.jpeg",
+            "fullImage": "images/sports/pic72.jpeg"
+        },
+        {
+            "id": 73,
+            "category": "sports",
+            "title": "Sports Achievement 73",
+            "thumbnail": "images/sports/pic73.jpeg",
+            "fullImage": "images/sports/pic73.jpeg"
+        },
+        {
+            "id": 74,
+            "category": "sports",
+            "title": "Sports Achievement 74",
+            "thumbnail": "images/sports/pic74.jpeg",
+            "fullImage": "images/sports/pic74.jpeg"
+        },
+        {
+            "id": 75,
+            "category": "sports",
+            "title": "Sports Achievement 75",
+            "thumbnail": "images/sports/pic75.jpeg",
+            "fullImage": "images/sports/pic75.jpeg"
+        },
+        {
+            "id": 76,
+            "category": "sports",
+            "title": "Sports Achievement 76",
+            "thumbnail": "images/sports/pic76.jpeg",
+            "fullImage": "images/sports/pic76.jpeg"
+        },
+        {
+            "id": 77,
+            "category": "sports",
+            "title": "Sports Achievement 77",
+            "thumbnail": "images/sports/pic77.jpeg",
+            "fullImage": "images/sports/pic77.jpeg"
+        },
+        {
+            "id": 78,
+            "category": "sports",
+            "title": "Sports Achievement 78",
+            "thumbnail": "images/sports/pic78.jpeg",
+            "fullImage": "images/sports/pic78.jpeg"
+        },
+        {
+            "id": 79,
+            "category": "sports",
+            "title": "Sports Achievement 79",
+            "thumbnail": "images/sports/pic79.jpeg",
+            "fullImage": "images/sports/pic79.jpeg"
+        },
+        {
+            "id": 80,
+            "category": "sports",
+            "title": "Sports Achievement 80",
+            "thumbnail": "images/sports/pic80.jpeg",
+            "fullImage": "images/sports/pic80.jpeg"
+        },
+        {
+            "id": 81,
+            "category": "sports",
+            "title": "Sports Achievement 81",
+            "thumbnail": "images/sports/pic81.jpeg",
+            "fullImage": "images/sports/pic81.jpeg"
+        },
+        {
+            "id": 82,
+            "category": "sports",
+            "title": "Sports Achievement 82",
+            "thumbnail": "images/sports/pic82.jpeg",
+            "fullImage": "images/sports/pic82.jpeg"
+        },
+        {
+            "id": 83,
+            "category": "sports",
+            "title": "Sports Achievement 83",
+            "thumbnail": "images/sports/pic83.jpeg",
+            "fullImage": "images/sports/pic83.jpeg"
+        },
+        {
+            "id": 84,
+            "category": "sports",
+            "title": "Sports Achievement 84",
+            "thumbnail": "images/sports/pic84.jpeg",
+            "fullImage": "images/sports/pic84.jpeg"
+        },
+        {
+            "id": 85,
+            "category": "sports",
+            "title": "Sports Achievement 85",
+            "thumbnail": "images/sports/pic85.jpeg",
+            "fullImage": "images/sports/pic85.jpeg"
+        },
+        {
+            "id": 86,
+            "category": "sports",
+            "title": "Sports Achievement 86",
+            "thumbnail": "images/sports/pic86.jpeg",
+            "fullImage": "images/sports/pic86.jpeg"
+        },
+        {
+            "id": 87,
+            "category": "sports",
+            "title": "Sports Achievement 87",
+            "thumbnail": "images/sports/pic87.jpeg",
+            "fullImage": "images/sports/pic87.jpeg"
+        },
+        {
+            "id": 88,
+            "category": "sports",
+            "title": "Sports Achievement 88",
+            "thumbnail": "images/sports/pic88.jpeg",
+            "fullImage": "images/sports/pic88.jpeg"
+        },
+        {
+            "id": 89,
+            "category": "sports",
+            "title": "Sports Achievement 89",
+            "thumbnail": "images/sports/pic89.jpeg",
+            "fullImage": "images/sports/pic89.jpeg"
+        },
+        {
+            "id": 90,
+            "category": "sports",
+            "title": "Sports Achievement 90",
+            "thumbnail": "images/sports/pic90.jpeg",
+            "fullImage": "images/sports/pic90.jpeg"
+        },
+        {
+            "id": 91,
+            "category": "sports",
+            "title": "Sports Achievement 91",
+            "thumbnail": "images/sports/pic91.jpeg",
+            "fullImage": "images/sports/pic91.jpeg"
+        },
+        {
+            "id": 92,
+            "category": "sports",
+            "title": "Sports Achievement 92",
+            "thumbnail": "images/sports/pic92.jpeg",
+            "fullImage": "images/sports/pic92.jpeg"
+        },
+        {
+            "id": 93,
+            "category": "sports",
+            "title": "Sports Achievement 93",
+            "thumbnail": "images/sports/pic93.jpeg",
+            "fullImage": "images/sports/pic93.jpeg"
+        },
+        {
+            "id": 94,
+            "category": "sports",
+            "title": "Sports Achievement 94",
+            "thumbnail": "images/sports/pic94.jpeg",
+            "fullImage": "images/sports/pic94.jpeg"
+        },
+        {
+            "id": 95,
+            "category": "sports",
+            "title": "Sports Achievement 95",
+            "thumbnail": "images/sports/pic95.jpeg",
+            "fullImage": "images/sports/pic95.jpeg"
+        },
+        {
+            "id": 96,
+            "category": "sports",
+            "title": "Sports Achievement 96",
+            "thumbnail": "images/sports/pic96.jpeg",
+            "fullImage": "images/sports/pic96.jpeg"
+        },
+        {
+            "id": 97,
+            "category": "sports",
+            "title": "Sports Achievement 97",
+            "thumbnail": "images/sports/pic97.jpeg",
+            "fullImage": "images/sports/pic97.jpeg"
+        },
+        {
+            "id": 98,
+            "category": "sports",
+            "title": "Sports Achievement 98",
+            "thumbnail": "images/sports/pic98.jpeg",
+            "fullImage": "images/sports/pic98.jpeg"
+        },
+        {
+            "id": 99,
+            "category": "sports",
+            "title": "Sports Achievement 99",
+            "thumbnail": "images/sports/pic99.jpeg",
+            "fullImage": "images/sports/pic99.jpeg"
+        },
+        {
+            "id": 100,
+            "category": "sports",
+            "title": "Sports Achievement 100",
+            "thumbnail": "images/sports/pic100.jpeg",
+            "fullImage": "images/sports/pic100.jpeg"
+        },
+        {
+            "id": 101,
+            "category": "sports",
+            "title": "Sports Achievement 101",
+            "thumbnail": "images/sports/pic101.jpeg",
+            "fullImage": "images/sports/pic101.jpeg"
+        },
+        {
+            "id": 102,
+            "category": "sports",
+            "title": "Sports Achievement 102",
+            "thumbnail": "images/sports/pic102.jpeg",
+            "fullImage": "images/sports/pic102.jpeg"
+        },
+        {
+            "id": 103,
+            "category": "sports",
+            "title": "Sports Achievement 103",
+            "thumbnail": "images/sports/pic103.jpeg",
+            "fullImage": "images/sports/pic103.jpeg"
+        },
+        {
+            "id": 104,
+            "category": "sports",
+            "title": "Sports Achievement 104",
+            "thumbnail": "images/sports/pic104.jpeg",
+            "fullImage": "images/sports/pic104.jpeg"
+        },
+        {
+            "id": 105,
+            "category": "sports",
+            "title": "Sports Achievement 105",
+            "thumbnail": "images/sports/pic105.jpeg",
+            "fullImage": "images/sports/pic105.jpeg"
+        },
+        {
+            "id": 106,
+            "category": "sports",
+            "title": "Sports Achievement 106",
+            "thumbnail": "images/sports/pic106.jpeg",
+            "fullImage": "images/sports/pic106.jpeg"
+        },
+        {
+            "id": 107,
+            "category": "sports",
+            "title": "Sports Achievement 107",
+            "thumbnail": "images/sports/pic107.jpeg",
+            "fullImage": "images/sports/pic107.jpeg"
+        },
+        {
+            "id": 108,
+            "category": "sports",
+            "title": "Sports Achievement 108",
+            "thumbnail": "images/sports/pic108.jpeg",
+            "fullImage": "images/sports/pic108.jpeg"
+        },
+        {
+            "id": 109,
+            "category": "rfaculty",
+            "title": "Retired Faculty Member 1",
+            "thumbnail": "images/rfaculty/member1.jpg",
+            "fullImage": "images/rfaculty/member1.jpg"
+        },
+        {
+            "id": 110,
+            "category": "faculty",
+            "title": "Current Faculty Member 1",
+            "thumbnail": "images/faculty/member1.jpg",
+            "fullImage": "images/faculty/member1.jpg"
+        },
+        {
+            "id": 111,
+            "category": "alumni",
+            "title": "Alumni Memory 1",
+            "thumbnail": "images/alumni/mem1.jpg",
+            "fullImage": "images/alumni/mem1.jpg"
+        },
+        {
+            "id": 112,
             "category": "events",
-            "title": "Quran Competition 2024",
-            "thumbnail": "images/schoollogo.svg",
-            "fullImage": "images/schoollogo.svg"
+            "title": "School Event 1",
+            "thumbnail": "images/events/event1.jpg",
+            "fullImage": "images/events/event1.jpg"
         }
     ]
+}
 }
