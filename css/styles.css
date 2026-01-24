@@ -252,7 +252,6 @@ a {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* Horizontal lines wrapping the section */
     border-top: 1px solid rgba(0,0,0,0.1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -269,7 +268,6 @@ a {
     position: relative;
 }
 
-    /* Vertical Line Dividers */
     .stat-item:not(:last-child)::after {
         content: '';
         position: absolute;
@@ -304,17 +302,16 @@ a {
     }
 
 /* =========================================
-   5. DIGITAL CAMPUS (PORTALS)
+   5. DIGITAL CAMPUS (PORTALS - Glassmorphism)
    ========================================= */
 .portals-section {
-    padding: 60px 0;
-    background: var(--light-bg);
-    color: #000000;
+    padding: 80px 0;
+    background: transparent !important; /* Allow neurons to show through background */
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
     .section-header h2 {
@@ -324,10 +321,6 @@ a {
         font-weight: 800;
     }
 
-.accent-text {
-    color: #000000;
-}
-
 .header-line {
     width: 60px;
     height: 4px;
@@ -336,57 +329,71 @@ a {
     border-radius: 2px;
 }
 
+/* FLEXIBLE GRID: Auto-adjusts to available space */
 .square-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptive row */
+    gap: 25px;
+    justify-content: center;
 }
 
 .square-card {
-    background: white;
+    /* GLASSMORPHISM STYLES */
+    background: rgba(255, 255, 255, 0.4); /* Semi-transparent */
+    backdrop-filter: blur(12px); /* Frost effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white edge */
+
     width: 100%;
-    max-width: 220px;
     aspect-ratio: 1/1;
-    border-radius: 12px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
     text-align: center;
-    padding: 15px;
-    border-bottom: 5px solid #000000;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
+    /* Subtle top light effect */
+    .square-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+        pointer-events: none;
+    }
+
     .square-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        border-bottom-color: #000000;
+        transform: translateY(-10px) scale(1.02);
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.1);
     }
 
 .card-icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     margin-bottom: 15px;
     color: #000000;
-    transition: transform 0.3s, color 0.3s;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .square-card:hover .card-icon {
-    transform: scale(1.1);
-}
-
-.card-icon svg {
-    width: 100%;
-    height: 100%;
+    transform: scale(1.15) rotate(5deg);
 }
 
 .square-card h3 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #000000;
     font-weight: 700;
     line-height: 1.3;
@@ -522,8 +529,17 @@ a {
 }
 
 /* =========================================
-   8. RESPONSIVE DESIGN
+   8. RESPONSIVE DESIGN (Grid Optimization)
    ========================================= */
+
+/* Desktop & Laptops: Force Single Row */
+@media (min-width: 901px) {
+    .square-grid {
+        /* This ensures that all items sit in one row as long as there is room */
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
     .slide-content h1 {
         font-size: 2.2rem;
@@ -532,7 +548,7 @@ a {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    /* Mobile Dividers Logic */
+
     .stat-item:nth-child(1), .stat-item:nth-child(2) {
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
@@ -541,12 +557,22 @@ a {
             display: none;
         }
 
+    /* Small Tablets: Keep them flexible */
+    .square-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Phones: Exactly 2 Rows / 2 Columns */
+@media (max-width: 600px) {
     .square-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
-    .hero-controls-pos {
-        bottom: 100px;
+    .square-card {
+        padding: 15px;
+        border-radius: 15px;
     }
 }
 
@@ -566,15 +592,12 @@ a {
 }
 
 /* =========================================
-   9. PARTICLE TRANSPARENCY RULES
+   9. GLOBAL OVERLAYS (NEURONS)
    ========================================= */
-
-/* Ensure only specific sections are transparent for neurons */
 .home-wrapper, .portals-section, .donors-section, .stats-bar {
     background-color: transparent !important;
 }
 
-/* Global Particle Container */
 #tsparticles {
     pointer-events: none;
     z-index: -1;
