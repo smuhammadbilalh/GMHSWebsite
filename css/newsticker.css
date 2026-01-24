@@ -1,80 +1,103 @@
-﻿.news-ticker-bar {
+﻿/* =========================================
+   NEWS TICKER - SOLID BLACK HAIRLINES
+   ========================================= */
+
+.news-ticker-bar {
     display: flex;
-    background-color: #ffffff;
     height: 50px;
     align-items: center;
-    border-top: 2px solid #000000;
-    border-bottom: 2px solid #000000;
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
     margin: 0;
+    position: relative;
+    z-index: 5;
+    /* MATCHED NAV GLASS RATIOS (Background only) */
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    /* PERFECTLY SOLID BLACK BORDERS (Hairline width) */
+    /* Using 1px with 0.5px scaling for maximum sharpness */
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    /* MATCHED NAV SHADOW */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
 }
 
 .ticker-label {
+    /* SOLID BLACK LABEL */
     background-color: #000000;
     color: #ffffff;
     padding: 0 25px;
-    height: 100%;
+    /* OVERLAY LOGIC:
+       Covers the 1px borders exactly to prevent "leaking" lines */
+    height: calc(100% + 2px);
+    margin: -1px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
     font-size: 0.95rem;
-    z-index: 5;
+    z-index: 10;
     white-space: nowrap;
     min-width: 140px;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    /* Subtle depth over the glass */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .ticker-content {
     flex: 1;
     height: 100%;
     overflow: hidden;
-    color: #000000;
+    color: #111827;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 14px;
     display: flex;
     align-items: center;
 }
 
 .ticker-item {
-    margin-right: 50px;
+    margin-right: 60px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     white-space: nowrap;
 }
 
 .icon-inline {
-    width: 20px;
-    height: 20px;
-    stroke: #000000;
+    width: 16px;
+    height: 16px;
+    stroke: #000000; /* Solid Black Icon */
     fill: none;
-    stroke-width: 2;
+    stroke-width: 2.2px;
     vertical-align: middle;
     flex-shrink: 0;
 }
 
 .ticker-item strong {
     color: #000000;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
+    .news-ticker-bar {
+        height: 48px;
+    }
+
     .ticker-label {
-        min-width: 100px;
+        min-width: 110px;
         padding: 0 15px;
         font-size: 0.85rem;
     }
 
     .ticker-content {
-        font-size: 0.9rem;
+        font-size: 13px;
     }
 
     .icon-inline {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 }

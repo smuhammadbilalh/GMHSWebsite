@@ -160,27 +160,23 @@ async function loadPortals() {
     `).join('');
 }
 
+
+
 // =========================================
-// LOAD DONORS CAROUSEL (Updated with 3-Dot Logic)
+// LOAD DONORS CAROUSEL (Responsive Logic)
 // =========================================
 let donorIndex = 0;
-let donorCardWidth = 330;
 let donorsCount = 0;
-let visibleDonors = 3;
 
 async function loadDonors() {
     try {
         const response = await fetch('data/home/donors.json');
         const data = await response.json();
 
-        const titleEl = document.getElementById('donorSectionTitle');
-        titleEl.textContent = data.sectionTitle;
-        const descEl = document.getElementById('donorSectionDesc');
-        descEl.textContent = data.sectionDescription;
+        document.getElementById('donorSectionTitle').textContent = data.sectionTitle;
+        document.getElementById('donorSectionDesc').textContent = data.sectionDescription;
 
         const track = document.getElementById('donorTrack');
-        const dotsContainer = document.getElementById('donorDots');
-
         track.innerHTML = data.donors.map(donor => `
             <div class="donor-card">
                 <div class="donor-image-wrapper">
@@ -193,36 +189,39 @@ async function loadDonors() {
         `).join('');
 
         donorsCount = data.donors.length;
+        renderDonorDots();
 
-        // Render Exactly 3 Dots
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < 3; i++) {
-            const dot = document.createElement('button');
-            dot.className = i === 0 ? 'active' : '';
-            dot.onclick = () => {
-                const maxIndex = donorsCount - visibleDonors;
-                donorIndex = Math.round((i / 2) * maxIndex);
-                updateDonorPosition();
-            };
-            dotsContainer.appendChild(dot);
-        }
+        // Use a slight delay to ensure CSS styles are applied before calculating positions
+        setTimeout(updateDonorPosition, 200);
+        window.addEventListener('resize', updateDonorPosition);
 
-        setInterval(() => moveDonorSlide(1), 5000);
+        setInterval(() => moveDonorSlide(1), 6000);
     } catch (error) {
         console.error("Error loading donors:", error);
     }
 }
 
-function moveDonorSlide(direction) {
-    if (window.innerWidth < 768) {
-        visibleDonors = 1;
-        donorCardWidth = 295;
-    } else {
-        visibleDonors = 3;
-        donorCardWidth = 330;
+function renderDonorDots() {
+    const dotsContainer = document.getElementById('donorDots');
+    dotsContainer.innerHTML = '';
+    // Standard 3-dot navigation
+    for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('button');
+        dot.className = i === 0 ? 'active' : '';
+        dot.onclick = () => {
+            const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+            const maxIndex = donorsCount - itemsInView;
+            donorIndex = Math.round((i / 2) * maxIndex);
+            updateDonorPosition();
+        };
+        dotsContainer.appendChild(dot);
     }
+}
 
-    const maxIndex = donorsCount - visibleDonors;
+function moveDonorSlide(direction) {
+    const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+    const maxIndex = Math.max(0, donorsCount - itemsInView);
+
     donorIndex += direction;
 
     if (donorIndex > maxIndex) donorIndex = 0;
@@ -231,42 +230,46 @@ function moveDonorSlide(direction) {
     updateDonorPosition();
 }
 
-// =========================================
-// DONOR CAROUSEL - PRECISION CENTERING
-// =========================================
 function updateDonorPosition() {
     const track = document.getElementById('donorTrack');
     const cards = document.querySelectorAll('.donor-card');
     if (!track || cards.length === 0) return;
 
-    const gap = 15;
-    const cardWidth = 280;
-    const totalCardStep = cardWidth + gap;
+    // Dynamically calculate width and gap from CSS
+    const cardWidth = cards[0].offsetWidth;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 20;
 
+    // On mobile, we center the card. On desktop, we slide by card width.
     const containerWidth = track.parentElement.offsetWidth;
-    // Calculate center based on the specific card width
-    const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+    let translateVal;
 
-    const translateVal = centerOffset - (donorIndex * totalCardStep);
+    if (window.innerWidth < 600) {
+        // Mobile Precision Centering
+        const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+        translateVal = centerOffset - (donorIndex * (cardWidth + gap));
+    } else {
+        // Desktop Grid Sliding
+        translateVal = -(donorIndex * (cardWidth + gap));
+    }
+
     track.style.transform = `translateX(${translateVal}px)`;
 
+    // Update active visual state
     cards.forEach((card, index) => {
-        card.classList.remove('active-donor');
-        if (index === donorIndex) {
-            card.classList.add('active-donor');
-        }
+        card.classList.toggle('active-donor', index === donorIndex);
     });
 
-    // Precision Dot Update
+    // Precision Dot Mapping
     const dots = document.querySelectorAll('#donorDots button');
     if (dots.length === 3) {
         dots.forEach(d => d.classList.remove('active'));
-        const maxIndex = donorsCount - 1;
+        const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+        const maxIndex = donorsCount - itemsInView;
         const activeDot = Math.min(2, Math.floor((donorIndex / (maxIndex || 1)) * 3));
         dots[activeDot].classList.add('active');
     }
 }
-
 // =========================================
 // HERO SLIDER FUNCTIONALITY
 // =========================================

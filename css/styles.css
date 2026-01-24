@@ -440,94 +440,101 @@ a {
 }
 
 /* =========================================
-   7. DONORS CAROUSEL SECTION
+   7. DONORS CAROUSEL SECTION (Fixed & Matched)
    ========================================= */
 .donors-section {
-    padding: 60px 0;
-    background: #ffffff;
+    padding: 80px 0;
+    background: transparent !important;
     overflow: hidden;
 }
 
-    .donors-section .section-header {
-        margin-bottom: 30px;
+    .donors-section .section-header h2 {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #000000 !important; /* FORCED BLACK */
+        text-transform: uppercase;
     }
 
-        .donors-section .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #000000 !important;
-            text-transform: uppercase;
-        }
+    .donors-section .section-header p {
+        color: #000000 !important; /* FORCED BLACK */
+        font-weight: 600;
+    }
+
+.donor-track-wrapper {
+    width: 100%;
+    overflow: visible;
+    padding: 20px 0;
+}
 
 .donor-track {
     display: flex;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 15px;
-    padding: 20px 0;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    gap: 20px;
     align-items: stretch;
     will-change: transform;
 }
 
 .donor-card {
-    flex: 0 0 280px;
-    background: #ffffff;
-    border-radius: 12px;
+    /* MATCHED TO PORTAL CARD STYLE */
+    flex: 0 0 calc(25% - 15px);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid #f0f0f0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-    .donor-card.active-donor {
-        transform: scale(1.05);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        z-index: 5;
-        border-color: #000000;
+    .donor-card h3,
+    .donor-card .donor-contribution,
+    .donor-card .donor-message {
+        color: #000000 !important; /* ENSURE CARD TEXT IS BLACK */
+    }
+
+    .donor-card:hover, .donor-card.active-donor {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
 .donor-image-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto 15px;
     border-radius: 50%;
     overflow: hidden;
-    background: #f9f9f9;
+    border: 3px solid #fff;
 }
 
     .donor-image-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%);
-        display: block;
     }
 
-.donor-card h3 {
-    font-size: 1.15rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-    color: #000;
+/* RESPONSIVE GRID */
+@media (max-width: 1024px) {
+    .donor-card {
+        flex: 0 0 calc(33.333% - 14px);
+    }
 }
 
-.donor-contribution {
-    font-size: 0.75rem;
-    color: #000;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
-    display: block;
+@media (max-width: 900px) {
+    .donor-card {
+        flex: 0 0 calc(50% - 10px);
+    }
 }
 
-.donor-message {
-    font-size: 0.85rem;
-    color: #444;
-    line-height: 1.5;
-    font-style: italic;
-    margin: 0;
+@media (max-width: 600px) {
+    .donor-card {
+        flex: 0 0 100%;
+    }
 }
-
 /* =========================================
    8. RESPONSIVE DESIGN (Grid Optimization)
    ========================================= */
