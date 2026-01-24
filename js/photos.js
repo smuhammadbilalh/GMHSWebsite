@@ -239,3 +239,54 @@ window.addEventListener('resize', () => {
         updateButtons();
     }
 });
+
+
+// =========================================
+// TAB SCROLLING LOGIC (New)
+// =========================================
+const tabsContainer = document.getElementById('categoryTabs');
+const leftBtn = document.getElementById('scrollLeftBtn');
+const rightBtn = document.getElementById('scrollRightBtn');
+
+// Scroll amount when button is clicked
+const SCROLL_AMOUNT = 200;
+
+if (leftBtn && rightBtn && tabsContainer) {
+
+    // 1. Click Events
+    rightBtn.onclick = () => {
+        tabsContainer.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
+    };
+
+    leftBtn.onclick = () => {
+        tabsContainer.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
+    };
+
+    // 2. Scroll Event (Show/Hide Arrows)
+    const handleScrollButtons = () => {
+        // Show/Hide Left Button
+        if (tabsContainer.scrollLeft > 20) {
+            leftBtn.classList.remove('hidden');
+        } else {
+            leftBtn.classList.add('hidden');
+        }
+
+        // Show/Hide Right Button
+        const maxScroll = tabsContainer.scrollWidth - tabsContainer.clientWidth;
+        // Small buffer (20px) to ensure it works on all zooms
+        if (tabsContainer.scrollLeft >= maxScroll - 20) {
+            rightBtn.classList.add('hidden');
+        } else {
+            rightBtn.classList.remove('hidden');
+        }
+    };
+
+    // Listen for scroll events
+    tabsContainer.addEventListener('scroll', handleScrollButtons);
+
+    // Check initially (in case of page reload)
+    handleScrollButtons();
+
+    // Re-check on window resize
+    window.addEventListener('resize', handleScrollButtons);
+}

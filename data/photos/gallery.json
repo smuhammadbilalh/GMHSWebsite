@@ -25,6 +25,56 @@
             "id": "events",
             "name": "School Events",
             "slug": "school-events"
+        },
+        {
+            "id": "all",
+            "name": "All Photos",
+            "slug": "all"
+        },
+        {
+            "id": "faculty",
+            "name": "Retired Faculty",
+            "slug": "retired-faculty"
+        },
+        {
+            "id": "sports",
+            "name": "Sports Achievements",
+            "slug": "sports-achievements"
+        },
+        {
+            "id": "alumni",
+            "name": "Alumni Memories",
+            "slug": "alumni-memories"
+        },
+        {
+            "id": "events",
+            "name": "School Events",
+            "slug": "school-events"
+        },
+        {
+            "id": "all",
+            "name": "All Photos",
+            "slug": "all"
+        },
+        {
+            "id": "faculty",
+            "name": "Retired Faculty",
+            "slug": "retired-faculty"
+        },
+        {
+            "id": "sports",
+            "name": "Sports Achievements",
+            "slug": "sports-achievements"
+        },
+        {
+            "id": "alumni",
+            "name": "Alumni Memories",
+            "slug": "alumni-memories"
+        },
+        {
+            "id": "events",
+            "name": "School Events",
+            "slug": "school-events"
         }
     ],
     "photos": [
