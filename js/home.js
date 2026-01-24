@@ -28,6 +28,9 @@ async function loadHeroSlides() {
     const container = document.getElementById('heroSliderContainer');
     const dotsContainer = document.getElementById('sliderDots');
 
+    if (!container) return;
+
+    container.innerHTML = '';
     data.slides.forEach((slide, index) => {
         const slideDiv = document.createElement('div');
         slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
@@ -35,23 +38,22 @@ async function loadHeroSlides() {
             <div class="slide-bg" style="background-image: url('${slide.imageUrl}')"></div>
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                ${slide.badgeText ? `<span class="badge" style="background: #000000; color: #ffffff;">${slide.badgeText}</span>` : ''}
+                ${slide.badgeText ? `<span class="badge">${slide.badgeText}</span>` : ''}
                 <h1>${slide.title}</h1>
-                <p>${slide.description}</p>
-                ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary" style="background: #000000; border-color: #000000; color: #ffffff;">${slide.buttonText}</a>` : ''}
+                ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary">${slide.buttonText}</a>` : ''}
             </div>
         `;
         container.appendChild(slideDiv);
     });
 
-    // Persistent 3 Dots Logic
+    // Consistent 3-Dot Navigation Logic
     dotsContainer.innerHTML = '';
     for (let i = 0; i < 3; i++) {
         const dot = document.createElement('button');
         dot.className = i === 0 ? 'active' : '';
         dot.onclick = () => {
-            const total = document.querySelectorAll('.slide').length;
-            const targetIndex = Math.round((i / 2) * (total - 1));
+            const slides = document.querySelectorAll('.slide');
+            const targetIndex = Math.round((i / 2) * (slides.length - 1));
             goToSlide(targetIndex);
         };
         dotsContainer.appendChild(dot);
