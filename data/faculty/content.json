@@ -22,29 +22,93 @@
         {
             "id": 1,
             "category": "admin",
-            "name": "Chaudhary Muhammad Akram",
+            "name": "Dr. MUHAMMAD ARIF",
             "designation": "Principal",
-            "qualification": "M.A, M.Ed",
-            "phone": "+92 300 1234567",
-            "photo": "images/schoollogo.svg"
+            "qualification": "Ph.D. Education",
+            "phone": "+92 345 5686505",
+            "photo": "images/faculty/MuhammadArif.jpg"
         },
         {
             "id": 2,
             "category": "current",
-            "name": "Muhammad Bilal",
-            "designation": "IT Specialist",
-            "qualification": "BS Computer Science",
-            "phone": "+92 325 5806291",
-            "photo": "images/bilal.jpeg"
+            "name": "RAMIZ SHAUKAT",
+            "designation": "Teacher",
+            "qualification": "MSc. MATHEMATICS, M. Ed",
+            "phone": "+92 341 8066905",
+            "photo": "images/faculty/RamizShaukat.jpg"
         },
         {
             "id": 3,
-            "category": "retired",
-            "name": "Mr. Ahmed Ali",
-            "designation": "Senior Subject Specialist",
-            "qualification": "M.Sc Physics",
-            "phone": "N/A",
-            "photo": "images/schoollogo.svg"
+            "category": "current",
+            "name": "Tauseef Nazir ",
+            "designation": "Teacher",
+            "qualification": "M.Phil Mathematics ",
+            "phone": "+92 314 5411707",
+            "photo": "images/faculty/TauseefNazir.jpg"
+        },
+        {
+            "id": 4,
+            "category": "current",
+            "name": "Danial tayyab",
+            "designation": "Teacher",
+            "qualification": "M.Phil Chemistry",
+            "phone": "+92 334 8652546",
+            "photo": "images/faculty/DanialTayyab.jpeg"
+        },
+        {
+            "id": 5,
+            "category": "current",
+            "name": "MUHAMMAD NASIR",
+            "designation": "Teacher",
+            "qualification": "M Phil English, M.Ed",
+            "phone": "+92 344 5385788",
+            "photo": "images/faculty/MuhammadNasir.jpg"
+        },
+        {
+            "id": 6,
+            "category": "current",
+            "name": "Asim ur rehman ",
+            "designation": "Teacher",
+            "qualification": "MSC Maths",
+            "phone": "+92 341 5637387",
+            "photo": "images/faculty/AsimRehman.jpg"
+        },
+        {
+            "id": 7,
+            "category": "current",
+            "name": "Mahboob ul Hassan",
+            "designation": "Teacher",
+            "qualification": "M.A ,M .Ed",
+            "phone": "+92 345 5651761",
+            "photo": "images/faculty/MahboobUlHassan.jpg"
+        },
+        {
+            "id": 8,
+            "category": "current",
+            "name": "Mohammad Tofiq",
+            "designation": "Teacher",
+            "qualification": "B.Sc",
+            "phone": "+92 345 5650497",
+            "photo": "images/faculty/MohammadTofiq.jpg"
+        },
+        {
+            "id": 9,
+            "category": "current",
+            "name": "Muhammad Ajmal",
+            "designation": "Teacher",
+            "qualification": "Doctor of Philosophy(Islamic Studies)",
+            "phone": "+92 344 0591956",
+            "photo": "images/faculty/MuhammadAjmal.jpg"
+        },
+        {
+            "id": 10,
+            "category": "current",
+            "name": "Imran Iqbal",
+            "designation": "Teacher",
+            "qualification": "BS IT",
+            "phone": "+92 311 5871139",
+            "photo": "images/faculty/ImranIqbal.jpeg"
         }
+
     ]
 }
