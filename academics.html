@@ -14,7 +14,6 @@
 </head>
 <body>
 
-
     <div class="glass-nav-container">
         <nav class="glass-navbar">
             <div class="nav-brand">
@@ -23,7 +22,6 @@
                     <span class="brand-text">GHSS Sarai</span>
                 </a>
             </div>
-
             <ul class="nav-links">
                 <li><a href="index.html" data-page="home"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Home</a></li>
                 <li><a href="academics.html" data-page="academics"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>Academics</a></li>
@@ -33,59 +31,34 @@
                 <li><a href="faculty.html" data-page="faculty"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Faculty</a></li>
                 <li><a href="developer.html" data-page="developer"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Developer</a></li>
             </ul>
-
             <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span><span></span><span></span>
             </div>
         </nav>
     </div>
 
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-header">
-            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
-            <span class="mobile-brand-text">GHSS Sarai</span>
-            <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
-        </div>
-        <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
-        <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
-        <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
-        <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos</a>
-        <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
-        <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty</a>
-        <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
-    </div>
-    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
-
-    <!-- MAIN CONTENT -->
     <main class="main-content academics-page">
 
-        <!-- HERO SECTION -->
         <section class="acad-hero">
             <div class="hero-text">
                 <h5 id="heroSubtitle">EXCELLENCE IN EDUCATION</h5>
-                <h1 id="heroTitle">Academic <span class="gold-highlight" id="heroHighlight">Excellence</span></h1>
+                <h1 id="heroTitle">Academic Excellence</h1>
                 <p id="heroDescription">Building futures through quality education and comprehensive curriculum</p>
             </div>
-            <div class="hero-pattern"></div>
         </section>
 
-        <!-- HALL OF FAME - TOPPERS -->
         <section class="toppers-section">
             <div class="container">
                 <div class="section-badge">BISE GUJRANWALA</div>
                 <h2>Board Position Holders <span class="year">2024-25</span></h2>
-
                 <div class="podium-grid" id="toppersGrid">
-                    <!-- Loaded from JSON -->
                 </div>
             </div>
         </section>
 
-        <!-- CURRICULUM SECTION -->
         <section class="curriculum-section">
             <div class="container">
                 <div class="row-layout">
-                    <!-- MIDDLE SECTION -->
                     <div class="curriculum-box">
                         <div class="box-header">
                             <h3>Middle Section</h3>
@@ -94,12 +67,10 @@
                         <div class="box-body">
                             <p class="desc" id="middleDesc">Foundation building with comprehensive subjects</p>
                             <ul class="subject-list" id="middleSubjects">
-                                <!-- Loaded from JSON -->
                             </ul>
                         </div>
                     </div>
 
-                    <!-- SECONDARY SECTION -->
                     <div class="curriculum-box dark">
                         <div class="box-header">
                             <h3>Secondary Section</h3>
@@ -111,37 +82,51 @@
                                 <button class="tab" onclick="switchGroup('cs')">Computer</button>
                                 <button class="tab" onclick="switchGroup('arts')">Arts</button>
                             </div>
-
                             <div class="group-content">
                                 <div id="group-bio" class="group-panel active">
                                     <h4>Science (Biology)</h4>
                                     <p>For aspiring medical students</p>
-                                    <div class="tags" id="bioTags">
-                                        <!-- Loaded from JSON -->
-                                    </div>
+                                    <div class="tags" id="bioTags"></div>
                                 </div>
-
                                 <div id="group-cs" class="group-panel">
                                     <h4>Science (Computer)</h4>
                                     <p>Focus on Programming & IT skills</p>
-                                    <div class="tags" id="csTags">
-                                        <!-- Loaded from JSON -->
-                                    </div>
+                                    <div class="tags" id="csTags"></div>
                                 </div>
-
                                 <div id="group-arts" class="group-panel">
                                     <h4>Humanities (Arts)</h4>
                                     <p>Liberal arts and social sciences</p>
-                                    <div class="tags" id="artsTags">
-                                        <!-- Loaded from JSON -->
-                                    </div>
+                                    <div class="tags" id="artsTags"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- DOWNLOAD STRIP -->
+                <div class="row-layout" style="margin-top: 40px;">
+                    <div class="curriculum-box">
+                        <div class="box-header">
+                            <h3 id="uniformTitle">School Uniform</h3>
+                        </div>
+                        <div class="box-body">
+                            <p class="desc" id="uniformDesc">Standardised dress code for all students</p>
+                            <ul class="subject-list" id="uniformList">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-box dark">
+                        <div class="box-header">
+                            <h3 id="feeTitle">Fee Structure</h3>
+                        </div>
+                        <div class="box-body">
+                            <p class="desc" id="feeDesc">Government regulated fee policy</p>
+                            <ul class="subject-list" id="feeList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="download-strip">
                     <div class="dl-info">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -164,20 +149,17 @@
             </div>
         </section>
 
-        <!-- VIDEO CAROUSEL -->
         <section class="video-carousel-section">
             <div class="container">
                 <div class="section-header">
                     <h2 id="videoSectionTitle">Campus Life</h2>
                     <p id="videoSectionDesc">Experience our learning environment</p>
                 </div>
-
                 <div class="v-carousel-wrapper">
                     <div class="v-track-container">
                         <div class="v-track" id="videoTrack"></div>
                     </div>
                 </div>
-
                 <div class="slider-pill-controls content-controls-pos">
                     <button class="slider-arrow v-prev">❮</button>
                     <div class="slider-dots" id="videoDots"></div>
@@ -188,34 +170,10 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="modern-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col" id="footer-school-info">
-                    <h3>Loading...</h3>
-                </div>
-
-                <div class="footer-col" id="footer-contact-info">
-                    <h3>Contact Info</h3>
-                    <ul class="contact-list">
-                        <li>Loading contact details...</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-ticker-bar footer-developer-ticker">
-            <div class="ticker-label">DEVELOPER</div>
-            <div class="ticker-content">
-                <marquee behavior="scroll" direction="left" scrollamount="6" id="footer-ticker-content">
-                </marquee>
-            </div>
-        </div>
     </footer>
 
     <script src="js/footer.js"></script>
-
     <script src="js/navmenu.js"></script>
     <script src="js/videocarousel.js"></script>
     <script src="js/academics.js"></script>

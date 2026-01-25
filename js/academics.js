@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadHeroContent();
         loadToppers();
         loadCurriculum();
+        loadSchoolDetails(); // New Function
         loadLibraryLink();
 
     } catch (error) {
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 function loadHeroContent() {
     document.getElementById('heroSubtitle').textContent = academicsData.hero.subtitle;
     document.getElementById('heroTitle').textContent = academicsData.hero.title + ' ';
-    document.getElementById('heroHighlight').textContent = academicsData.hero.highlight;
     document.getElementById('heroDescription').textContent = academicsData.hero.description;
 }
 
@@ -46,20 +46,17 @@ function loadToppers() {
         const card = document.createElement('div');
         card.className = `podium-card ${classes[index]}`;
 
+        // Uses Dicebear API for dummy images if image is present in JSON
         card.innerHTML = `
             ${index === 1 ? `
                 <div class="crown-icon">
-                    <svg viewBox="0 0 24 24" fill="#fbbf24">
-                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path>
+                    <svg viewBox="0 0 24 24" fill="#e2e8f0"> <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path>
                     </svg>
                 </div>
             ` : ''}
             <div class="rank-badge ${badges[index]}">${topper.rank}</div>
             <div class="student-img-box ${index === 1 ? 'large' : ''}">
-                ${topper.image
-                ? `<img src="${topper.image}" alt="${topper.name}">`
-                : topper.name.charAt(0)
-            }
+                <img src="${topper.image}" alt="${topper.name}" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=${topper.name}'">
             </div>
             <h3>${topper.name}</h3>
             <p class="marks">${topper.marks}</p>
@@ -82,55 +79,63 @@ function loadCurriculum() {
         middleSubjects.appendChild(li);
     });
 
+    document.getElementById('middleDesc').textContent = academicsData.middleSection.description;
+
     // Secondary Section Groups
     const groups = academicsData.secondarySection.groups;
 
-    // Biology Group
-    const bioTags = document.getElementById('bioTags');
-    groups.biology.subjects.forEach(subject => {
-        const span = document.createElement('span');
-        span.textContent = subject;
-        bioTags.appendChild(span);
+    // Helper to populate tags
+    const populateTags = (elementId, subjects) => {
+        const container = document.getElementById(elementId);
+        subjects.forEach(subject => {
+            const span = document.createElement('span');
+            span.textContent = subject;
+            container.appendChild(span);
+        });
+    };
+
+    populateTags('bioTags', groups.biology.subjects);
+    populateTags('csTags', groups.computer.subjects);
+    populateTags('artsTags', groups.arts.subjects);
+}
+
+// =========================================
+// LOAD SCHOOL DETAILS (UNIFORM & FEES)
+// =========================================
+function loadSchoolDetails() {
+    // Uniform Section
+    document.getElementById('uniformTitle').textContent = academicsData.uniform.title;
+    document.getElementById('uniformDesc').textContent = academicsData.uniform.description;
+    const uniformList = document.getElementById('uniformList');
+
+    academicsData.uniform.items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        uniformList.appendChild(li);
     });
 
-    // Computer Science Group
-    const csTags = document.getElementById('csTags');
-    groups.computer.subjects.forEach(subject => {
-        const span = document.createElement('span');
-        span.textContent = subject;
-        csTags.appendChild(span);
-    });
+    // Fee Section
+    document.getElementById('feeTitle').textContent = academicsData.fees.title;
+    document.getElementById('feeDesc').textContent = academicsData.fees.description;
+    const feeList = document.getElementById('feeList');
 
-    // Arts Group
-    const artsTags = document.getElementById('artsTags');
-    groups.arts.subjects.forEach(subject => {
-        const span = document.createElement('span');
-        span.textContent = subject;
-        artsTags.appendChild(span);
+    academicsData.fees.details.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        feeList.appendChild(li);
     });
-
-    // Update descriptions
-    document.getElementById('middleDesc').textContent = academicsData.middleSection.description;
 }
 
 // =========================================
 // GROUP TAB SWITCHING
 // =========================================
 function switchGroup(groupName) {
-    // Update tab active states
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     event.target.classList.add('active');
 
-    // Update panel visibility
-    document.querySelectorAll('.group-panel').forEach(panel => {
-        panel.classList.remove('active');
-    });
+    document.querySelectorAll('.group-panel').forEach(panel => panel.classList.remove('active'));
     document.getElementById(`group-${groupName}`).classList.add('active');
 }
-
-// Make function global
 window.switchGroup = switchGroup;
 
 // =========================================
