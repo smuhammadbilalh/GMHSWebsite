@@ -1,4 +1,5 @@
 ﻿{
+    "pageTitle": "Academic Excellence",
     "hero": {
         "subtitle": "EXCELLENCE IN EDUCATION",
         "title": "Academic",
@@ -11,82 +12,68 @@
             "name": "Ahmed Raza",
             "marks": "1050/1100",
             "group": "Science Group",
-            "image": "images/hero/slide1.png"
+            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed"
         },
         {
             "rank": "2",
             "name": "Fatima Khan",
             "marks": "1045/1100",
             "group": "Computer Science",
-            "image": "images/hero/slide2.jpeg"
+            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Fatima"
         },
         {
             "rank": "3",
             "name": "Usman Ali",
             "marks": "1038/1100",
             "group": "Arts Group",
-            "image": "images/hero/slide3.jpg"
+            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Usman"
         }
     ],
     "middleSection": {
-        "description": "Foundation building with comprehensive subjects preparing students for secondary education",
+        "description": "Foundation building with comprehensive subjects following the PCTB curriculum.",
         "subjects": [
-            "Urdu & English",
+            "English",
+            "Urdu",
             "Mathematics",
             "General Science",
-            "Islamiyat & Quran",
-            "History & Geography",
+            "Islamiyat / Ethics",
+            "Geography",
+            "History",
             "Computer Education",
-            "Art & Drawing",
-            "Physical Education"
+            "Arabic / Persian",
+            "Art & Drawing"
+        ]
+    },
+    "uniform": {
+        "title": "School Uniform",
+        "description": "Standardised dress code for all students.",
+        "items": [
+            "White Shirt with School Badge",
+            "Grey Trousers (Khaki for Primary)",
+            "Black School Shoes with Socks",
+            "Maroon Sweater / Blazer (Winter)",
+            "School Tie and Belt"
+        ]
+    },
+    "fees": {
+        "title": "Fee Structure",
+        "description": "As per Government of Punjab education policy.",
+        "details": [
+            "Tuition Fee: Free of Cost",
+            "Admission Fee: Govt Prescribed",
+            "Farogh-e-Taleem Fund: Monthly",
+            "Board Registration: Per BISE Gujranwala",
+            "Textbooks: Provided Free of Cost"
         ]
     },
     "secondarySection": {
         "groups": {
-            "biology": {
-                "title": "Science (Biology)",
-                "description": "For aspiring medical students",
-                "subjects": [
-                    "Physics",
-                    "Chemistry",
-                    "Biology",
-                    "Mathematics",
-                    "Urdu",
-                    "English",
-                    "Islamiyat"
-                ]
-            },
-            "computer": {
-                "title": "Science (Computer)",
-                "description": "Focus on Programming & IT skills",
-                "subjects": [
-                    "Physics",
-                    "Chemistry",
-                    "Computer Science",
-                    "Mathematics",
-                    "Urdu",
-                    "English",
-                    "Islamiyat"
-                ]
-            },
-            "arts": {
-                "title": "Humanities (Arts)",
-                "description": "Liberal arts and social sciences",
-                "subjects": [
-                    "General Science",
-                    "General Math",
-                    "Education",
-                    "Islamic Studies",
-                    "Urdu",
-                    "English",
-                    "Pakistan Studies"
-                ]
-            }
+            "biology": { "subjects": [ "Physics", "Chemistry", "Biology", "Mathematics", "Urdu", "English", "Islamiyat" ] },
+            "computer": { "subjects": [ "Physics", "Chemistry", "Computer Science", "Mathematics", "Urdu", "English", "Islamiyat" ] },
+            "arts": { "subjects": [ "General Science", "General Math", "Education", "Islamic Studies", "Urdu", "English", "Pak Studies" ] }
         }
     },
     "digitalLibrary": {
-        "title": "Digital Library",
-        "description": "Download official PTB Textbooks (PDF) and Model Papers",
         "link": "https://www.ptb.gov.pk"
     }
 }
