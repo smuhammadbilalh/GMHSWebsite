@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadHeroContent();
         loadToppers();
         loadCurriculum();
-        loadSchoolDetails(); // New Function
+        loadSchoolDetails();
         loadLibraryLink();
 
     } catch (error) {
@@ -20,12 +20,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // =========================================
-// LOAD HERO CONTENT
+// LOAD HERO CONTENT (Simplified)
 // =========================================
 function loadHeroContent() {
-    document.getElementById('heroSubtitle').textContent = academicsData.hero.subtitle;
-    document.getElementById('heroTitle').textContent = academicsData.hero.title + ' ';
-    document.getElementById('heroDescription').textContent = academicsData.hero.description;
+    // Only set Title now, removed subtitle and description
+    document.getElementById('pageTitle').textContent = academicsData.pageTitle;
 }
 
 // =========================================
@@ -46,11 +45,11 @@ function loadToppers() {
         const card = document.createElement('div');
         card.className = `podium-card ${classes[index]}`;
 
-        // Uses Dicebear API for dummy images if image is present in JSON
         card.innerHTML = `
             ${index === 1 ? `
                 <div class="crown-icon">
-                    <svg viewBox="0 0 24 24" fill="#e2e8f0"> <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path>
+                    <svg viewBox="0 0 24 24" fill="#e2e8f0">
+                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path>
                     </svg>
                 </div>
             ` : ''}
@@ -71,7 +70,6 @@ function loadToppers() {
 // LOAD CURRICULUM
 // =========================================
 function loadCurriculum() {
-    // Middle Section Subjects
     const middleSubjects = document.getElementById('middleSubjects');
     academicsData.middleSection.subjects.forEach(subject => {
         const li = document.createElement('li');
@@ -81,10 +79,7 @@ function loadCurriculum() {
 
     document.getElementById('middleDesc').textContent = academicsData.middleSection.description;
 
-    // Secondary Section Groups
     const groups = academicsData.secondarySection.groups;
-
-    // Helper to populate tags
     const populateTags = (elementId, subjects) => {
         const container = document.getElementById(elementId);
         subjects.forEach(subject => {
@@ -103,18 +98,35 @@ function loadCurriculum() {
 // LOAD SCHOOL DETAILS (UNIFORM & FEES)
 // =========================================
 function loadSchoolDetails() {
-    // Uniform Section
+    // UNIFORM SECTION (Side-by-Side Layout)
     document.getElementById('uniformTitle').textContent = academicsData.uniform.title;
     document.getElementById('uniformDesc').textContent = academicsData.uniform.description;
-    const uniformList = document.getElementById('uniformList');
 
+    const uniformBody = document.getElementById('uniformBody');
+    const uniformContainer = document.createElement('div');
+    uniformContainer.className = 'uniform-layout';
+
+    // 1. Create List
+    const uniformList = document.createElement('ul');
+    uniformList.className = 'subject-list';
     academicsData.uniform.items.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
         uniformList.appendChild(li);
     });
 
-    // Fee Section
+    // 2. Create Image
+    const uniformImg = document.createElement('img');
+    uniformImg.className = 'uniform-img';
+    uniformImg.src = academicsData.uniform.image || 'images/uniform_placeholder.jpg';
+    uniformImg.alt = 'School Uniform';
+
+    // 3. Assemble
+    uniformContainer.appendChild(uniformList);
+    uniformContainer.appendChild(uniformImg);
+    uniformBody.appendChild(uniformContainer);
+
+    // FEE SECTION
     document.getElementById('feeTitle').textContent = academicsData.fees.title;
     document.getElementById('feeDesc').textContent = academicsData.fees.description;
     const feeList = document.getElementById('feeList');

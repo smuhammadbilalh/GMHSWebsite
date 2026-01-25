@@ -1,10 +1,7 @@
 ﻿{
-    "pageTitle": "Academic Excellence",
+    "pageTitle": "Academics",
     "hero": {
-        "subtitle": "EXCELLENCE IN EDUCATION",
-        "title": "Academic",
-        "highlight": "Excellence",
-        "description": "Building futures through quality education and comprehensive curriculum"
+        "title": "Academics"
     },
     "toppers": [
         {
@@ -47,11 +44,12 @@
     "uniform": {
         "title": "School Uniform",
         "description": "Standardised dress code for all students.",
+        "image": "https://img.freepik.com/free-photo/portrait-schoolboy-posing-with-backpack_23-2148206233.jpg?w=740&t=st=1706000000~exp=1706000600~hmac=dummy",
         "items": [
-            "White Shirt with School Badge",
-            "Grey Trousers (Khaki for Primary)",
-            "Black School Shoes with Socks",
-            "Maroon Sweater / Blazer (Winter)",
+            "White Shirt with Badge",
+            "Grey Trousers",
+            "Black School Shoes",
+            "Maroon Sweater (Winter)",
             "School Tie and Belt"
         ]
     },
@@ -59,11 +57,11 @@
         "title": "Fee Structure",
         "description": "As per Government of Punjab education policy.",
         "details": [
-            "Tuition Fee: Free of Cost",
-            "Admission Fee: Govt Prescribed",
-            "Farogh-e-Taleem Fund: Monthly",
-            "Board Registration: Per BISE Gujranwala",
-            "Textbooks: Provided Free of Cost"
+            "Tuition Fee: Free",
+            "Admission: Govt Rate",
+            "Farogh-e-Taleem: Monthly",
+            "Board Reg: Per BISE",
+            "Textbooks: Free"
         ]
     },
     "secondarySection": {

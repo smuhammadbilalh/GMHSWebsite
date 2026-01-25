@@ -15,9 +15,9 @@
 }
 
 /* =========================================
-   HERO SECTION (Synced with Photos/Sports)
+   PAGE TITLE SECTION (Matches Photos Page)
    ========================================= */
-.acad-hero {
+.page-title-section {
     background: #000000; /* Strict Black */
     padding: 120px 20px 80px;
     text-align: center;
@@ -26,7 +26,7 @@
     margin-top: 0;
 }
 
-    .acad-hero::before {
+    .page-title-section::before {
         content: '';
         position: absolute;
         top: 0;
@@ -47,13 +47,18 @@
     }
 }
 
-.hero-text {
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
     position: relative;
-    z-index: 2;
-    animation: heroFadeIn 1s ease-out;
+    z-index: 1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    animation: titleFadeIn 1s ease-out;
 }
 
-@keyframes heroFadeIn {
+@keyframes titleFadeIn {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -63,29 +68,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.hero-text h5 {
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-.hero-text h1 {
-    font-size: 3.5rem;
-    margin: 0;
-    font-weight: 900;
-    color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.hero-text p {
-    color: #9ca3af;
-    font-size: 1.1rem;
-    margin-top: 15px;
 }
 
 /* =========================================
@@ -145,11 +127,10 @@
         transform: translateY(-10px);
     }
 
-    /* REMOVED GOLD BORDER */
     .podium-card.center {
         width: 320px;
         padding: 35px;
-        border-top: 5px solid #000000; /* Black for #1 */
+        border-top: 5px solid #000000;
         z-index: 2;
         transform: translateY(-20px);
     }
@@ -179,7 +160,7 @@
     .student-img-box.large {
         width: 120px;
         height: 120px;
-        border-color: #000000; /* Black ring */
+        border-color: #000000;
     }
 
     .student-img-box img {
@@ -205,17 +186,16 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-    /* REMOVED GOLD BADGE */
     .rank-badge.gold {
-        background: #000000; /* Black for 1st */
+        background: #000000;
     }
 
     .rank-badge.silver {
-        background: #94a3b8; /* Slate for 2nd */
+        background: #94a3b8;
     }
 
     .rank-badge.bronze {
-        background: #64748b; /* Dark slate for 3rd */
+        background: #64748b;
     }
 
 .crown-icon {
@@ -337,25 +317,28 @@
     color: #94a3b8;
 }
 
+/* LIST COLUMNS (TWO COLUMNS) */
 .subject-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    columns: 2; /* Forces 2 columns to reduce height */
+    column-gap: 20px;
 }
 
     .subject-list li {
-        margin-bottom: 12px;
+        margin-bottom: 8px; /* Reduced spacing */
         font-weight: 500;
         position: relative;
-        padding-left: 20px;
+        padding-left: 18px;
         color: #334155;
+        break-inside: avoid; /* Prevents item splitting */
     }
 
 .curriculum-box.dark .subject-list li {
     color: #e2e8f0;
 }
 
-/* REMOVED GOLD BULLETS */
 .subject-list li::before {
     content: "•";
     color: #000000;
@@ -363,10 +346,33 @@
     left: 0;
     font-weight: bold;
     font-size: 1.2rem;
+    line-height: 1;
 }
 
 .curriculum-box.dark .subject-list li::before {
     color: #ffffff;
+}
+
+/* UNIFORM LAYOUT (Side-by-Side) */
+.uniform-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+    .uniform-layout .subject-list {
+        flex: 1;
+        columns: 1; /* Reset columns for uniform list */
+    }
+
+.uniform-img {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f1f5f9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* GROUP TABS */
@@ -381,12 +387,12 @@
     background: #333333;
     border: 1px solid #444444;
     color: #aaaaaa;
-    padding: 12px;
+    padding: 10px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
@@ -395,14 +401,6 @@
         background: #ffffff;
         color: #000000;
         border-color: #ffffff;
-    }
-
-    .tab:hover {
-        background: #444444;
-    }
-
-    .tab.active:hover {
-        background: #ffffff;
     }
 
 .group-panel {
@@ -425,88 +423,88 @@
 }
 
 .group-panel h4 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 0 0 8px 0;
     font-weight: 800;
 }
 
 .group-panel p {
     color: #9ca3af;
-    margin-bottom: 18px;
-    font-size: 1rem;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
     .tags span {
         background: rgba(255,255,255,0.1);
-        padding: 8px 14px;
+        padding: 6px 12px;
         border-radius: 6px;
         font-size: 0.85rem;
         font-weight: 600;
         border: 1px solid rgba(255,255,255,0.2);
     }
 
-/* DOWNLOAD STRIP */
+/* COMPACT DOWNLOAD STRIP */
 .download-strip {
     background: #000000;
     color: #ffffff;
     border-radius: 12px;
-    padding: 35px;
+    padding: 20px 30px; /* Reduced padding for compact look */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 2px solid #333333;
     max-width: 1200px;
-    margin: 40px auto 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 .dl-info {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
 }
 
     .dl-info svg {
-        width: 45px;
-        height: 45px;
+        width: 35px; /* Smaller icon */
+        height: 35px;
         color: #ffffff;
         flex-shrink: 0;
     }
 
     .dl-info h4 {
-        margin: 0 0 5px 0;
-        font-size: 1.3rem;
+        margin: 0 0 2px 0;
+        font-size: 1.1rem;
         font-weight: 800;
     }
 
     .dl-info p {
         margin: 0;
         color: #9ca3af;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
 .btn-download {
     background: #ffffff;
     color: #000000;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     border: 2px solid #ffffff;
 }
 
     .btn-download:hover {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         background: #e2e8f0;
     }
 
@@ -514,12 +512,11 @@
    RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
-    .acad-hero {
-        height: auto;
+    .page-title-section {
         padding: 100px 20px 60px;
     }
 
-    .hero-text h1 {
+    .page-title {
         font-size: 2.5rem;
     }
 
@@ -545,10 +542,21 @@
         grid-template-columns: 1fr;
     }
 
+    .uniform-layout {
+        flex-direction: column;
+    }
+
+    .uniform-img {
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+    }
+
     .download-strip {
         flex-direction: column;
         text-align: center;
-        gap: 25px;
+        gap: 20px;
+        padding: 25px;
     }
 
     .dl-info {
