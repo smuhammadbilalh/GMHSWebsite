@@ -1,95 +1,77 @@
 ﻿{
-    "pageTitle": "Sports & Athletics",
-    "sportsNews": [
-        {
-            "icon": "<path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path>",
-            "text": "🏆 District Champions - Our cricket team won the inter-school championship 2025!"
-        },
-        {
-            "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path>",
-            "text": "⚽ Football Tournament - Secured 2nd position in regional football league."
-        },
-        {
-            "icon": "<polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline>",
-            "text": "🏃 Athletics Meet - 5 Gold medals in district athletics championship."
-        },
-        {
-            "icon": "<rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"></rect><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path>",
-            "text": "🥇 Volleyball Victory - Won zonal volleyball tournament for 3rd consecutive year."
-        }
-    ],
+    "pageTitle": "Sports",
     "sportsCategories": [
         {
             "name": "Cricket",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path>",
-            "achievements": "District Champions 2025, 15+ Inter-school Trophies"
+            "achievements": "District Champions 2025"
         },
         {
             "name": "Football",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path>",
-            "achievements": "Regional Runners-up, 10+ Tournament Wins"
+            "achievements": "Regional Runners-up"
         },
         {
             "name": "Volleyball",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"22\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10\"></path>",
-            "achievements": "Zonal Champions 3 Years Running"
+            "achievements": "Zonal Champions"
         },
         {
             "name": "Athletics",
             "icon": "<polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline>",
-            "achievements": "20+ Gold Medals, Multiple Records"
+            "achievements": "20+ Gold Medals"
         },
         {
             "name": "Basketball",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20\"></path>",
-            "achievements": "District Semi-finalists, Rising Stars"
+            "achievements": "District Semi-finalists"
         },
         {
             "name": "Badminton",
             "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
-            "achievements": "Individual Champions, 8+ Medals"
+            "achievements": "Individual Champions"
         }
     ],
     "recentAchievements": [
         {
             "year": "2025",
-            "title": "District Cricket Championship",
-            "description": "Our cricket team dominated the district championship, defeating 12 schools to claim the trophy. Outstanding performance by captain Ahmed Ali who scored 450+ runs in the tournament.",
+            "title": "District Cricket Win",
+            "description": "Defeated 12 schools to claim the trophy.",
             "medal": "GOLD",
             "image": "images/hero/slide1.png"
         },
         {
             "year": "2025",
-            "title": "Regional Football League",
-            "description": "Secured 2nd position in the highly competitive regional football league. Team showed exceptional teamwork and sportsmanship throughout the season with 15 wins out of 18 matches.",
+            "title": "Football League",
+            "description": "Secured 2nd position in regional league.",
             "medal": "SILVER",
             "image": "images/hero/slide2.jpeg"
         },
         {
             "year": "2024",
-            "title": "Athletics Championship Excellence",
-            "description": "Brought home 5 Gold, 3 Silver, and 2 Bronze medals from the district athletics meet. Set new records in 100m sprint and long jump categories.",
+            "title": "Athletics Gold",
+            "description": "5 Gold medals in district athletics meet.",
             "medal": "GOLD",
             "image": "images/hero/slide3.jpg"
         },
         {
             "year": "2024",
-            "title": "Volleyball Zonal Champions",
-            "description": "Third consecutive year winning the zonal volleyball championship. Our team's coordination and strategy proved unbeatable, winning all matches in straight sets.",
+            "title": "Volleyball Victory",
+            "description": "Third consecutive year winning zonal.",
             "medal": "GOLD",
             "image": "images/hero/slide1.png"
         },
         {
             "year": "2024",
-            "title": "Basketball Tournament Runners-up",
-            "description": "Reached the finals of the inter-district basketball tournament. Despite being one of the youngest teams, we showcased tremendous potential and fighting spirit.",
+            "title": "Basketball Finals",
+            "description": "Reached finals of inter-district tournament.",
             "medal": "SILVER",
             "image": "images/hero/slide2.jpeg"
         },
         {
             "year": "2023",
-            "title": "Badminton Singles Championship",
-            "description": "Muhammad Bilal won the district badminton singles championship, defeating the defending champion in an thrilling final. First gold for GMHS in badminton in 5 years.",
+            "title": "Badminton Champ",
+            "description": "Won district singles championship.",
             "medal": "GOLD",
             "image": "images/hero/slide3.jpg"
         }

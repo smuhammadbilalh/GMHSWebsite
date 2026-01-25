@@ -1,21 +1,25 @@
 ﻿// =========================================
-// SPORTS PAGE - MODERN REBUILD
+// SPORTS PAGE - CAROUSEL LOGIC
 // =========================================
 let sportsData = null;
+
+// State Variables
+let catIndex = 0;
+let achIndex = 0;
+let catCount = 0;
+let achCount = 0;
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('data/sports/achievements.json');
         sportsData = await response.json();
 
-        // Update page title if provided
         if (sportsData.pageTitle) {
             document.getElementById('pageTitle').textContent = sportsData.pageTitle;
         }
 
-        loadSportsNews();
-        loadCategories();
-        loadAchievements();
+        loadCategoryCarousel();
+        loadAchievementCarousel();
 
     } catch (error) {
         console.error('Error loading sports data:', error);
@@ -23,114 +27,157 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // =========================================
-// LOAD SPORTS NEWS TICKER
+// 1. SPORTS CATEGORIES CAROUSEL
 // =========================================
-function loadSportsNews() {
-    const ticker = document.getElementById('sportsNewsTicker');
+function loadCategoryCarousel() {
+    const track = document.getElementById('categoriesTrack');
+    const categories = sportsData.sportsCategories;
+    catCount = categories.length;
 
-    const newsItems = sportsData.sportsNews.map(news =>
-        `<span class="ticker-item">
-            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                ${news.icon}
-            </svg>
-            ${news.text}
-        </span>`
-    ).join('');
-
-    ticker.innerHTML = newsItems;
-}
-
-// =========================================
-// LOAD SPORTS CATEGORIES
-// =========================================
-function loadCategories() {
-    const grid = document.getElementById('categoriesGrid');
-
-    sportsData.sportsCategories.forEach((category, index) => {
-        const card = document.createElement('div');
-        card.className = 'category-card-modern';
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        card.innerHTML = `
-            <div class="category-icon-modern">
+    track.innerHTML = categories.map(cat => `
+        <div class="sports-card-carousel">
+            <div class="cat-icon-carousel">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    ${category.icon}
+                    ${cat.icon}
                 </svg>
             </div>
-            <h3>${category.name}</h3>
-            <p>${category.achievements}</p>
-        `;
+            <h3>${cat.name}</h3>
+            <p>${cat.achievements}</p>
+        </div>
+    `).join('');
 
-        grid.appendChild(card);
+    renderDots('categoryDots', catCount, 'moveCategorySlide');
+    updateCategoryCarousel();
+
+    // Resize Listener (Shared)
+    window.addEventListener('resize', () => {
+        updateCategoryCarousel();
+        updateAchievementCarousel();
     });
 
-    // Add fade-in animation
-    const style = document.createElement('style');
-    style.textContent = `
-        .category-card-modern {
-            opacity: 0;
-            animation: cardFadeIn 0.6s ease-out forwards;
-        }
-        @keyframes cardFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Auto Slide
+    setInterval(() => moveCategorySlide(1), 5000);
+}
+
+function moveCategorySlide(dir) {
+    const itemsInView = getItemsInView();
+    const maxIndex = Math.max(0, catCount - itemsInView);
+    catIndex += dir;
+    if (catIndex > maxIndex) catIndex = 0;
+    if (catIndex < 0) catIndex = maxIndex;
+    updateCategoryCarousel();
+}
+
+function updateCategoryCarousel() {
+    updateTrack('categoriesTrack', 'categoryDots', catIndex, catCount);
 }
 
 // =========================================
-// LOAD ACHIEVEMENTS
+// 2. HALL OF FAME CAROUSEL
 // =========================================
-function loadAchievements() {
-    const grid = document.getElementById('achievementsGrid');
+function loadAchievementCarousel() {
+    const track = document.getElementById('achievementsTrack');
+    const achievements = sportsData.recentAchievements;
+    achCount = achievements.length;
 
-    sportsData.recentAchievements.forEach((achievement, index) => {
-        const card = document.createElement('div');
-        card.className = 'achievement-card-modern';
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        card.innerHTML = `
-            <div class="achievement-image-modern">
-                ${achievement.image
-                ? `<img src="${achievement.image}" alt="${achievement.title}">`
-                : achievement.title.charAt(0)
-            }
-                <div class="achievement-medal-modern ${achievement.medal.toLowerCase()}">${achievement.medal}</div>
+    track.innerHTML = achievements.map(ach => `
+        <div class="achievement-card-carousel">
+            <div class="ach-img-wrapper">
+                <img src="${ach.image}" alt="${ach.title}" onerror="this.src='images/schoollogo.svg'">
+                <div class="ach-medal ${ach.medal.toLowerCase()}">${ach.medal}</div>
             </div>
-            <div class="achievement-content-modern">
-                <span class="achievement-year-modern">${achievement.year}</span>
-                <h3>${achievement.title}</h3>
-                <p>${achievement.description}</p>
+            <div class="ach-content">
+                <span class="ach-year">${ach.year}</span>
+                <h3>${ach.title}</h3>
+                <p>${ach.description}</p>
             </div>
-        `;
+        </div>
+    `).join('');
 
-        grid.appendChild(card);
-    });
+    renderDots('achievementDots', achCount, 'moveAchievementSlide');
+    updateAchievementCarousel();
 
-    // Add fade-in animation
-    const style = document.createElement('style');
-    style.textContent = `
-        .achievement-card-modern {
-            opacity: 0;
-            animation: achievementFadeIn 0.6s ease-out forwards;
-        }
-        @keyframes achievementFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Auto Slide
+    setInterval(() => moveAchievementSlide(1), 6000);
 }
+
+function moveAchievementSlide(dir) {
+    const itemsInView = getItemsInView();
+    const maxIndex = Math.max(0, achCount - itemsInView);
+    achIndex += dir;
+    if (achIndex > maxIndex) achIndex = 0;
+    if (achIndex < 0) achIndex = maxIndex;
+    updateAchievementCarousel();
+}
+
+function updateAchievementCarousel() {
+    updateTrack('achievementsTrack', 'achievementDots', achIndex, achCount);
+}
+
+// =========================================
+// SHARED CAROUSEL UTILS
+// =========================================
+function getItemsInView() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 901) return 2;
+    return 3;
+}
+
+function renderDots(containerId, count, funcName) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('button');
+        dot.className = i === 0 ? 'active' : '';
+        dot.onclick = () => {
+            const itemsInView = getItemsInView();
+            const maxIndex = Math.max(0, count - itemsInView);
+            const targetIndex = Math.round((i / 2) * maxIndex);
+
+            if (funcName === 'moveCategorySlide') {
+                catIndex = targetIndex;
+                updateCategoryCarousel();
+            } else {
+                achIndex = targetIndex;
+                updateAchievementCarousel();
+            }
+        };
+        container.appendChild(dot);
+    }
+}
+
+function updateTrack(trackId, dotsId, index, totalCount) {
+    const track = document.getElementById(trackId);
+    if (!track || !track.children.length) return;
+
+    const card = track.children[0];
+    const cardWidth = card.offsetWidth;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 20;
+    const itemsInView = getItemsInView();
+    const maxIndex = Math.max(0, totalCount - itemsInView);
+
+    let translateVal;
+    if (window.innerWidth < 600) {
+        // Center active card on mobile
+        const containerWidth = track.parentElement.offsetWidth;
+        const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+        translateVal = centerOffset - (index * (cardWidth + gap));
+    } else {
+        translateVal = -(index * (cardWidth + gap));
+    }
+
+    track.style.transform = `translateX(${translateVal}px)`;
+
+    // Update Dots
+    const dots = document.querySelectorAll(`#${dotsId} button`);
+    if (dots.length === 3) {
+        dots.forEach(d => d.classList.remove('active'));
+        const activeDot = Math.min(2, Math.floor((index / (maxIndex || 1)) * 3));
+        dots[activeDot].classList.add('active');
+    }
+}
+
+// Global scope for HTML onclick
+window.moveCategorySlide = moveCategorySlide;
+window.moveAchievementSlide = moveAchievementSlide;

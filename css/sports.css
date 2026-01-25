@@ -10,10 +10,10 @@
 }
 
 /* =========================================
-   PAGE TITLE HERO (Synchronized with Photos)
+   PAGE TITLE SECTION (Matches Photos)
    ========================================= */
-.sports-hero {
-    background: #000000; /* Strict Black */
+.page-title-section {
+    background: #000000;
     padding: 120px 20px 80px;
     text-align: center;
     position: relative;
@@ -21,8 +21,7 @@
     margin-top: 0;
 }
 
-    /* Animated background pattern matching Photos page */
-    .sports-hero::before {
+    .page-title-section::before {
         content: '';
         position: absolute;
         top: 0;
@@ -43,30 +42,27 @@
     }
 }
 
-.sports-hero-title {
-    font-size: 3.5rem; /* Standardized Title Size */
+.page-title {
+    font-size: 3.5rem;
     font-weight: 900;
     color: #fff;
     margin: 0;
     position: relative;
     z-index: 1;
     text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    text-transform: none; /* Keep natural casing like Photos page */
-}
-
-.sports-hero-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.8);
-    font-weight: 400;
-    margin-top: 10px;
-    position: relative;
-    z-index: 1;
-    letter-spacing: 1px;
 }
 
 /* =========================================
-   SECTION HEADERS
+   COMMON CAROUSEL STYLES
    ========================================= */
+.sports-categories, .achievements-timeline {
+    padding: 60px 20px;
+}
+
+.achievements-timeline {
+    background: #f8fafc;
+}
+
 .section-header-modern {
     text-align: center;
     margin-bottom: 40px;
@@ -77,7 +73,6 @@
         font-weight: 800;
         color: #000000;
         margin-bottom: 10px;
-        letter-spacing: -1px;
     }
 
     .section-header-modern p {
@@ -85,203 +80,210 @@
         color: #64748b;
     }
 
-/* =========================================
-   OUR SPORTS - COMPACT GRID
-   ========================================= */
-.sports-categories {
-    padding: 60px 20px;
-}
-
-.categories-grid-modern {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Increased count per row */
-    gap: 20px;
+.carousel-container-modern {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
 }
 
-.category-card-modern {
+.carousel-track-wrapper {
+    width: 100%;
+    overflow: visible; /* Show shadows */
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    align-items: stretch;
+}
+
+/* =========================================
+   1. SPORTS CATEGORY CARD (CAROUSEL)
+   ========================================= */
+.sports-card-carousel {
+    flex: 0 0 calc(33.333% - 14px); /* 3 cards visible */
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    padding: 35px 20px;
+    padding: 35px 25px;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-    .category-card-modern:hover {
-        transform: translateY(-5px);
+    .sports-card-carousel:hover {
+        transform: translateY(-8px);
         border-color: #000;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
 
-.category-icon-modern {
-    width: 48px; /* Professional Smaller Sizing */
-    height: 48px;
-    margin: 0 auto 15px;
+.cat-icon-carousel {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
     color: #000;
 }
 
-    .category-icon-modern svg {
+    .cat-icon-carousel svg {
         width: 100%;
         height: 100%;
-        stroke: currentColor;
     }
 
-.category-card-modern h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
+.sports-card-carousel h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
     color: #000;
-    margin-bottom: 8px;
 }
 
-.category-card-modern p {
-    font-size: 0.9rem;
+.sports-card-carousel p {
+    font-size: 0.95rem;
     color: #64748b;
+    margin: 0;
     font-weight: 500;
 }
 
 /* =========================================
-   HALL OF FAME - COMPACT CARDS
+   2. ACHIEVEMENT CARD (CAROUSEL)
    ========================================= */
-.achievements-timeline {
-    padding: 60px 20px;
-    background: #f8fafc;
-}
-
-.timeline-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.achievement-card-modern {
+.achievement-card-carousel {
+    flex: 0 0 calc(33.333% - 14px);
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 0;
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-    .achievement-card-modern:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    .achievement-card-carousel:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         border-color: #000;
     }
 
-.achievement-image-modern {
+.ach-img-wrapper {
     width: 100%;
-    height: 200px; /* Compact height for professionalism */
+    height: 200px;
     background: #000;
+    position: relative;
     overflow: hidden;
 }
 
-    .achievement-image-modern img {
+    .ach-img-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
 
-.achievement-card-modern:hover .achievement-image-modern img {
+.achievement-card-carousel:hover img {
     transform: scale(1.05);
 }
 
-.achievement-medal-modern {
+.ach-medal {
     position: absolute;
     top: 15px;
     right: 15px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
-    font-size: 0.75rem;
+    font-weight: 800;
+    font-size: 0.7rem;
     border: 2px solid #000;
     z-index: 2;
     background: #fff;
     color: #000;
 }
 
-    .achievement-medal-modern.gold {
-        background: #fff;
-        color: #000;
+    .ach-medal.gold {
+        background: #000;
+        color: #fff;
+        border-color: #fff;
     }
 
-    .achievement-medal-modern.silver {
-        background: #f1f5f9;
-        color: #000;
+    .ach-medal.silver {
+        background: #94a3b8;
+        color: #fff;
+        border-color: #fff;
     }
 
-    .achievement-medal-modern.bronze {
-        background: #e2e8f0;
-        color: #000;
+    .ach-medal.bronze {
+        background: #64748b;
+        color: #fff;
+        border-color: #fff;
     }
 
-.achievement-content-modern {
+.ach-content {
     padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.achievement-year-modern {
-    display: inline-block;
+.ach-year {
+    align-self: flex-start;
     background: #000;
     color: #fff;
-    padding: 4px 12px;
+    padding: 4px 10px;
     font-size: 0.75rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
-.achievement-content-modern h3 {
-    font-size: 1.25rem;
+.ach-content h3 {
+    font-size: 1.2rem;
     font-weight: 800;
     margin-bottom: 10px;
     color: #000;
 }
 
-.achievement-content-modern p {
-    font-size: 0.95rem;
+.ach-content p {
+    font-size: 0.9rem;
     color: #475569;
-    line-height: 1.6;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* =========================================
-   RESPONSIVE FIXES
+   RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
-    .sports-hero-title {
+    .page-title {
         font-size: 2.5rem;
     }
 
-    .section-header-modern h2 {
-        font-size: 1.8rem;
-    }
-
-    .categories-grid-modern {
-        grid-template-columns: repeat(2, 1fr);
+    /* 2 Cards per row */
+    .sports-card-carousel, .achievement-card-carousel {
+        flex: 0 0 calc(50% - 10px);
     }
 }
 
 @media (max-width: 600px) {
-    .sports-hero {
-        padding: 100px 20px 60px;
+    /* 1 Card per row (Mobile) */
+    .sports-card-carousel, .achievement-card-carousel {
+        flex: 0 0 100%;
     }
 
-    .categories-grid-modern {
-        grid-template-columns: 1fr;
+    /* Enable Horizontal Scroll on Mobile */
+    .carousel-track-wrapper {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
     }
 
-    .timeline-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .achievement-image-modern {
-        height: 180px;
+    .sports-card-carousel, .achievement-card-carousel {
+        scroll-snap-align: center;
     }
 }
