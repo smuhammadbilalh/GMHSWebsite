@@ -74,7 +74,8 @@
    TOPPERS CAROUSEL SECTION
    ========================================= */
 .toppers-section {
-    padding: 80px 0; /* Full width flow */
+    /* UPDATED: Reduced bottom padding from 80px to 10px */
+    padding: 80px 0 10px 0;
     background: #ffffff;
     text-align: center;
     overflow: hidden;
@@ -115,7 +116,7 @@
 
 .position-track-wrapper {
     width: 100%;
-    overflow: visible; /* Allows shadows to show */
+    overflow: visible;
     padding: 20px 0;
 }
 
@@ -129,7 +130,6 @@
 
 /* POSITION CARD */
 .position-card {
-    /* 3 Items per row default */
     flex: 0 0 calc(33.333% - 14px);
     background: #ffffff;
     border: 1px solid var(--border-color);
@@ -211,7 +211,8 @@
    ========================================= */
 .curriculum-section {
     background: #f8fafc;
-    padding: 80px 20px;
+    /* UPDATED: Reduced top padding from 80px to 40px */
+    padding: 40px 20px 80px 20px;
 }
 
 .row-layout {

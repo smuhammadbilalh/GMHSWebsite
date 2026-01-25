@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports & Achievements - GMHS Sarai Alamgir</title>
+    <title>Sports - GMHS Sarai Alamgir</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/newsticker.css">
@@ -13,11 +13,6 @@
     <link rel="icon" type="image/svg+xml" href="images/schoollogo.svg">
 </head>
 <body>
-
-
-
-
-
 
     <div class="glass-nav-container">
         <nav class="glass-navbar">
@@ -44,57 +39,56 @@
         </nav>
     </div>
 
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-header">
-            <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
-            <span class="mobile-brand-text">GHSS Sarai</span>
-            <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
-        </div>
-        <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
-        <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
-        <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
-        <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos</a>
-        <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
-        <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty</a>
-        <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
-    </div>
-    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
-
-
-    <!-- MAIN CONTENT -->
     <main class="main-content sports-page">
 
-        <!-- HERO SECTION -->
-        <section class="sports-hero">
-            <div class="sports-hero-content">
-                <h1 class="sports-hero-title" id="pageTitle">Sports & Athletics</h1>
-                <p class="sports-hero-subtitle">Excellence Beyond the Classroom</p>
-            </div>
+        <section class="page-title-section">
+            <h1 class="page-title" id="pageTitle">Sports</h1>
         </section>
 
-        <!-- NEWS TICKER -->
-        <div class="news-ticker-bar">
-            <div class="ticker-label" id="sportsNewsLabel">LATEST NEWS</div>
-            <div class="ticker-content">
-                <marquee behavior="scroll" direction="left" scrollamount="6" id="sportsNewsTicker">
-                </marquee>
-            </div>
-        </div>
-
-        <!-- SPORTS CATEGORIES GRID -->
         <section class="sports-categories">
             <div class="container">
                 <div class="section-header-modern">
                     <h2>Our Sports</h2>
                     <p>Discover excellence across multiple disciplines</p>
                 </div>
-                <div class="categories-grid-modern" id="categoriesGrid">
-                    <!-- Loaded from JSON -->
+
+                <div class="carousel-container-modern">
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="categoriesTrack">
+                        </div>
+                    </div>
+
+                    <div class="slider-pill-controls content-controls-pos">
+                        <button class="slider-arrow" onclick="moveCategorySlide(-1)">❮</button>
+                        <div class="slider-dots" id="categoryDots"></div>
+                        <button class="slider-arrow" onclick="moveCategorySlide(1)">❯</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIDEO CAROUSEL SECTION -->
+        <section class="achievements-timeline">
+            <div class="container">
+                <div class="section-header-modern">
+                    <h2>Hall of Fame</h2>
+                    <p>Celebrating our sporting victories</p>
+                </div>
+
+                <div class="carousel-container-modern">
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="achievementsTrack">
+                        </div>
+                    </div>
+
+                    <div class="slider-pill-controls content-controls-pos">
+                        <button class="slider-arrow" onclick="moveAchievementSlide(-1)">❮</button>
+                        <div class="slider-dots" id="achievementDots"></div>
+                        <button class="slider-arrow" onclick="moveAchievementSlide(1)">❯</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="video-carousel-section">
             <div class="container">
                 <div class="section-header">
@@ -112,19 +106,6 @@
                     <button class="slider-arrow v-prev">❮</button>
                     <div class="slider-dots" id="videoDots"></div>
                     <button class="slider-arrow v-next">❯</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS TIMELINE -->
-        <section class="achievements-timeline">
-            <div class="container">
-                <div class="section-header-modern">
-                    <h2>Hall of Fame</h2>
-                    <p>Celebrating our sporting victories</p>
-                </div>
-                <div class="timeline-grid" id="achievementsGrid">
-                    <!-- Loaded from JSON -->
                 </div>
             </div>
         </section>
