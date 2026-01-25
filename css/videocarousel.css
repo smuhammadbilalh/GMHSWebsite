@@ -4,13 +4,13 @@
 
 .video-carousel-section {
     padding: 60px 0;
-    /* Force solid black background to fix the neural network overlap */
+    /* Force solid black background */
     background: #000000 !important;
     color: #ffffff;
     position: relative;
     overflow: hidden;
-    /* Ensure it stays above the global particle container */
-    z-index: 1;
+    /* Ensure it stays above global layers */
+    z-index: 10;
 }
 
     /* Subtle divider at top */
@@ -26,27 +26,27 @@
 
 .section-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
     .section-header h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 800;
         margin-bottom: 10px;
-        color: #ffffff;
+        color: #ffffff !important; /* Force White */
         text-transform: uppercase;
     }
 
     .section-header p {
-        color: #a3a3a3;
+        color: #a3a3a3 !important; /* Light Grey */
         font-size: 1rem;
     }
 
 /* =========================================
-   WHITE CONTROLS
+   WHITE CONTROLS (Inverted for Dark Theme)
    ========================================= */
 .video-carousel-section .slider-pill-controls {
-    margin: 15px auto 0 auto;
+    margin: 25px auto 0 auto;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 16px;
@@ -67,6 +67,13 @@
 /* =========================================
    CARDS & THUMBNAILS
    ========================================= */
+.v-carousel-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
 .v-track-container {
     overflow: hidden;
     padding: 10px 0;
@@ -83,6 +90,7 @@
     box-sizing: border-box;
 }
 
+/* CARD INNER - DARK MODE STYLE */
 .v-card-inner {
     background: #0a0a0a;
     border: 1px solid #333333;
@@ -90,6 +98,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 12px; /* Match standard border radius */
+    overflow: hidden;
+    cursor: pointer;
 }
 
     .v-card-inner:hover {
@@ -114,47 +125,88 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
 }
 
-.v-content {
-    padding: 15px;
-    background: #0a0a0a;
+.v-card-inner:hover .v-thumbnail {
+    transform: scale(1.05);
 }
 
-    .v-content h3 {
-        font-size: 0.95rem;
-        color: #ffffff;
-        margin-bottom: 5px;
-        font-weight: 700;
-    }
-
-    .v-content p {
-        font-size: 0.8rem;
-        color: #a3a3a3;
-        line-height: 1.4;
-    }
-
+/* PLAY BUTTON OVERLAY */
 .v-play-overlay {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.v-card-inner:hover .v-play-overlay {
+    opacity: 1;
 }
 
 .v-play-btn {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-    .v-play-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: #000;
+.v-card-inner:hover .v-play-btn {
+    transform: scale(1);
+}
+
+.v-play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #000;
+    margin-left: 2px; /* Visual optical center fix */
+}
+
+.v-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* TEXT CONTENT - DARK MODE */
+.v-content {
+    padding: 20px;
+    background: #0a0a0a;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    .v-content h3 {
+        font-size: 1.1rem;
+        color: #ffffff;
+        margin: 0 0 8px 0;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .v-content p {
+        font-size: 0.9rem;
+        color: #a3a3a3;
+        line-height: 1.5;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit text lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
