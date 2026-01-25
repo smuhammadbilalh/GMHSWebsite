@@ -24,6 +24,20 @@
             "marks": "1038/1100",
             "group": "Arts Group",
             "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Usman"
+        },
+        {
+            "rank": "4",
+            "name": "Zainab Bibi",
+            "marks": "1025/1100",
+            "group": "Pre-Medical",
+            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Zainab"
+        },
+        {
+            "rank": "5",
+            "name": "Hassan Ali",
+            "marks": "1010/1100",
+            "group": "ICS",
+            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Hassan"
         }
     ],
     "middleSection": {
