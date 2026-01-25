@@ -47,8 +47,20 @@
             <div class="container">
                 <div class="section-badge">BISE GUJRANWALA</div>
                 <h2>Board Position Holders <span class="year">2024-25</span></h2>
-                <div class="podium-grid" id="toppersGrid">
+
+                <div class="position-carousel-container">
+                    <div class="position-track-wrapper">
+                        <div class="position-track" id="positionTrack">
+                        </div>
+                    </div>
+
+                    <div class="slider-pill-controls content-controls-pos">
+                        <button class="slider-arrow" onclick="movePositionSlide(-1)">❮</button>
+                        <div class="slider-dots" id="positionDots"></div>
+                        <button class="slider-arrow" onclick="movePositionSlide(1)">❯</button>
+                    </div>
                 </div>
+
             </div>
         </section>
 

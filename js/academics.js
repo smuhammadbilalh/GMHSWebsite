@@ -3,13 +3,17 @@
 // =========================================
 let academicsData = null;
 
+// Carousel State
+let positionIndex = 0;
+let positionsCount = 0;
+
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('data/academics/content.json');
         academicsData = await response.json();
 
         loadHeroContent();
-        loadToppers();
+        loadToppersCarousel(); // Updated to Carousel
         loadCurriculum();
         loadSchoolDetails();
         loadLibraryLink();
@@ -19,52 +23,110 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// =========================================
-// LOAD HERO CONTENT (Simplified)
-// =========================================
 function loadHeroContent() {
-    // Only set Title now, removed subtitle and description
     document.getElementById('pageTitle').textContent = academicsData.pageTitle;
 }
 
 // =========================================
-// LOAD TOPPERS (PODIUM LAYOUT)
+// TOPPERS CAROUSEL LOGIC
 // =========================================
-function loadToppers() {
-    const grid = document.getElementById('toppersGrid');
+function loadToppersCarousel() {
+    const track = document.getElementById('positionTrack');
     const toppers = academicsData.toppers;
+    positionsCount = toppers.length;
 
-    if (toppers.length < 3) return;
+    if (!track) return;
 
-    // Order: 2nd, 1st, 3rd (Podium style)
-    const orderedToppers = [toppers[1], toppers[0], toppers[2]];
-    const classes = ['side', 'center', 'side'];
-    const badges = ['silver', 'gold', 'bronze'];
-
-    orderedToppers.forEach((topper, index) => {
-        const card = document.createElement('div');
-        card.className = `podium-card ${classes[index]}`;
-
-        card.innerHTML = `
-            ${index === 1 ? `
-                <div class="crown-icon">
-                    <svg viewBox="0 0 24 24" fill="#e2e8f0">
-                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"></path>
-                    </svg>
-                </div>
-            ` : ''}
-            <div class="rank-badge ${badges[index]}">${topper.rank}</div>
-            <div class="student-img-box ${index === 1 ? 'large' : ''}">
+    // Render Cards
+    track.innerHTML = toppers.map((topper, index) => `
+        <div class="position-card">
+            <div class="pos-rank-badge">#${topper.rank}</div>
+            <div class="pos-img-wrapper">
                 <img src="${topper.image}" alt="${topper.name}" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=${topper.name}'">
             </div>
             <h3>${topper.name}</h3>
-            <p class="marks">${topper.marks}</p>
-            <span class="group">${topper.group}</span>
-        `;
+            <p class="pos-marks">${topper.marks}</p>
+            <span class="pos-group">${topper.group}</span>
+        </div>
+    `).join('');
 
-        grid.appendChild(card);
-    });
+    renderPositionDots();
+    updatePositionCarousel();
+
+    // Responsive Listener
+    window.addEventListener('resize', updatePositionCarousel);
+
+    // Auto-slide every 5 seconds
+    setInterval(() => movePositionSlide(1), 5000);
 }
+
+function renderPositionDots() {
+    const dotsContainer = document.getElementById('positionDots');
+    dotsContainer.innerHTML = '';
+
+    for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('button');
+        dot.className = i === 0 ? 'active' : '';
+        dot.onclick = () => {
+            const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 3);
+            const maxIndex = Math.max(0, positionsCount - itemsInView);
+            positionIndex = Math.round((i / 2) * maxIndex);
+            updatePositionCarousel();
+        };
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function movePositionSlide(direction) {
+    const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 3);
+    const maxIndex = Math.max(0, positionsCount - itemsInView);
+
+    positionIndex += direction;
+
+    if (positionIndex > maxIndex) positionIndex = 0;
+    if (positionIndex < 0) positionIndex = maxIndex;
+
+    updatePositionCarousel();
+}
+
+function updatePositionCarousel() {
+    const track = document.getElementById('positionTrack');
+    const cards = document.querySelectorAll('.position-card');
+
+    if (!track || cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 20;
+
+    const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 3);
+    const maxIndex = Math.max(0, positionsCount - itemsInView);
+
+    let translateVal;
+
+    if (window.innerWidth < 600) {
+        // Center active card on mobile
+        const containerWidth = track.parentElement.offsetWidth;
+        const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+        translateVal = centerOffset - (positionIndex * (cardWidth + gap));
+    } else {
+        // Align left on desktop
+        translateVal = -(positionIndex * (cardWidth + gap));
+    }
+
+    track.style.transform = `translateX(${translateVal}px)`;
+
+    // Update Dots
+    const dots = document.querySelectorAll('#positionDots button');
+    if (dots.length === 3) {
+        dots.forEach(d => d.classList.remove('active'));
+        const activeDot = Math.min(2, Math.floor((positionIndex / (maxIndex || 1)) * 3));
+        dots[activeDot].classList.add('active');
+    }
+}
+
+// Make globally available for HTML buttons
+window.movePositionSlide = movePositionSlide;
 
 // =========================================
 // LOAD CURRICULUM
@@ -95,10 +157,9 @@ function loadCurriculum() {
 }
 
 // =========================================
-// LOAD SCHOOL DETAILS (UNIFORM & FEES)
+// LOAD SCHOOL DETAILS
 // =========================================
 function loadSchoolDetails() {
-    // UNIFORM SECTION (Side-by-Side Layout)
     document.getElementById('uniformTitle').textContent = academicsData.uniform.title;
     document.getElementById('uniformDesc').textContent = academicsData.uniform.description;
 
@@ -106,7 +167,6 @@ function loadSchoolDetails() {
     const uniformContainer = document.createElement('div');
     uniformContainer.className = 'uniform-layout';
 
-    // 1. Create List
     const uniformList = document.createElement('ul');
     uniformList.className = 'subject-list';
     academicsData.uniform.items.forEach(item => {
@@ -115,18 +175,15 @@ function loadSchoolDetails() {
         uniformList.appendChild(li);
     });
 
-    // 2. Create Image
     const uniformImg = document.createElement('img');
     uniformImg.className = 'uniform-img';
     uniformImg.src = academicsData.uniform.image || 'images/uniform_placeholder.jpg';
     uniformImg.alt = 'School Uniform';
 
-    // 3. Assemble
     uniformContainer.appendChild(uniformList);
     uniformContainer.appendChild(uniformImg);
     uniformBody.appendChild(uniformContainer);
 
-    // FEE SECTION
     document.getElementById('feeTitle').textContent = academicsData.fees.title;
     document.getElementById('feeDesc').textContent = academicsData.fees.description;
     const feeList = document.getElementById('feeList');
@@ -139,20 +196,16 @@ function loadSchoolDetails() {
 }
 
 // =========================================
-// GROUP TAB SWITCHING
+// UTILS
 // =========================================
 function switchGroup(groupName) {
     document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     event.target.classList.add('active');
-
     document.querySelectorAll('.group-panel').forEach(panel => panel.classList.remove('active'));
     document.getElementById(`group-${groupName}`).classList.add('active');
 }
 window.switchGroup = switchGroup;
 
-// =========================================
-// LOAD LIBRARY LINK
-// =========================================
 function loadLibraryLink() {
     const link = document.getElementById('libraryLink');
     link.href = academicsData.digitalLibrary.link;
