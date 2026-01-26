@@ -7,16 +7,6 @@
             "slug": "all"
         },
         {
-            "id": "rfaculty",
-            "name": "Retired Faculty",
-            "slug": "retired-faculty"
-        },
-        {
-            "id": "faculty",
-            "name": "Faculty",
-            "slug": "faculty"
-        },
-        {
             "id": "sports",
             "name": "Sports Achievements",
             "slug": "sports-achievements"
@@ -30,6 +20,11 @@
             "id": "events",
             "name": "School Events",
             "slug": "school-events"
+        },
+        {
+            "id": "champions",
+            "name": "ChampionShips",
+            "slug": "champions"
         }
     ],
     "photos": [

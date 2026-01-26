@@ -143,21 +143,24 @@ async function loadVideo() {
 }
 
 // =========================================
-// LOAD PORTALS
+// LOAD PORTALS (Strictly Black Text)
 // =========================================
 async function loadPortals() {
     const response = await fetch('data/home/portals.json');
     const data = await response.json();
     const header = document.getElementById('portalsHeader');
+
+    // Explicit inline styles added as a fallback to CSS
     header.innerHTML = `
-        <h2 style="color: #000000;">${data.title} <span class="accent-text" style="color: #000000;">${data.accent}</span></h2>
+        <h2 style="color: #000000 !important;">${data.title} <span class="accent-text" style="color: #000000 !important;">${data.accent}</span></h2>
         <div class="header-line" style="background-color: #000000;"></div>
     `;
+
     const grid = document.getElementById('portalsGrid');
     grid.innerHTML = data.cards.map(card => `
-        <a href="${card.url}" target="${card.target}" class="square-card" style="color: #000000;">
+        <a href="${card.url}" target="${card.target}" class="square-card" style="color: #000000 !important;">
             <div class="card-icon" style="color: #000000;"><svg viewBox="0 0 24 24" fill="currentColor">${card.iconSvg}</svg></div>
-            <h3 style="color: #000000;">${card.title}</h3>
+            <h3 style="color: #000000 !important;">${card.title}</h3>
         </a>
     `).join('');
 }
@@ -165,7 +168,7 @@ async function loadPortals() {
 
 
 // =========================================
-// LOAD DONORS CAROUSEL (Responsive Logic)
+// LOAD DONORS CAROUSEL
 // =========================================
 let donorIndex = 0;
 let donorsCount = 0;
@@ -175,8 +178,12 @@ async function loadDonors() {
         const response = await fetch('data/home/donors.json');
         const data = await response.json();
 
-        document.getElementById('donorSectionTitle').textContent = data.sectionTitle;
-        document.getElementById('donorSectionDesc').textContent = data.sectionDescription;
+        // Ensure title and description exist before setting content
+        const titleEl = document.getElementById('donorSectionTitle');
+        const descEl = document.getElementById('donorSectionDesc');
+
+        if (titleEl) titleEl.textContent = data.sectionTitle;
+        if (descEl) descEl.textContent = data.sectionDescription;
 
         const track = document.getElementById('donorTrack');
         track.innerHTML = data.donors.map(donor => `
