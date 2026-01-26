@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
-// LOAD HERO SLIDES (Updated with 3-Dot Logic)
+// LOAD HERO SLIDES (Updated with Lazy Loading)
 // =========================================
 async function loadHeroSlides() {
     try {
@@ -39,8 +39,16 @@ async function loadHeroSlides() {
         data.slides.forEach((slide, index) => {
             const slideDiv = document.createElement('div');
             slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
+
+            // LAZY LOADING LOGIC:
+            // First slide: Eager load + High priority (LCP Boost)
+            // Other slides: Lazy load (Bandwidth saving)
+            const loadingAttr = index === 0
+                ? 'loading="eager" fetchpriority="high"'
+                : 'loading="lazy"';
+
             slideDiv.innerHTML = `
-                <div class="slide-bg" style="background-image: url('${slide.imageUrl}')"></div>
+                <img src="${slide.imageUrl}" class="slide-bg" alt="${slide.title}" ${loadingAttr}>
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     ${slide.badgeText ? `<span class="badge">${slide.badgeText}</span>` : ''}
@@ -180,7 +188,7 @@ async function loadPortals() {
 
 
 // =========================================
-// LOAD DONORS CAROUSEL
+// LOAD DONORS CAROUSEL (Updated with Lazy Loading)
 // =========================================
 let donorIndex = 0;
 let donorsCount = 0;
@@ -201,7 +209,7 @@ async function loadDonors() {
         track.innerHTML = data.donors.map(donor => `
             <div class="donor-card">
                 <div class="donor-image-wrapper">
-                    <img src="${donor.image}" alt="${donor.name}" onerror="this.src='images/schoollogo.svg'">
+                    <img src="${donor.image}" alt="${donor.name}" loading="lazy" onerror="this.src='images/schoollogo.svg'">
                 </div>
                 <h3>${donor.name}</h3>
                 <span class="donor-contribution">${donor.contribution}</span>
