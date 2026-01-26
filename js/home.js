@@ -1,66 +1,78 @@
 ﻿// =========================================
-// LOAD ALL JSON DATA ON PAGE LOAD
+// LOAD ALL JSON DATA ON PAGE LOAD (PARALLEL & ROBUST)
 // =========================================
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        await Promise.all([
-            loadHeroSlides(),
-            await initParticles(),
-            loadStats(),
-            loadNewsTicker(),
-            loadAboutTicker(),
-            loadPortals(),
-            loadVideo(),
-            loadDonors()
-        ]);
-        startAutoSlide();
-    } catch (error) {
-        console.error('Error loading data:', error);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    // We use Promise.allSettled to ensure that if one fails (e.g. particles),
+    // the others still load successfully.
+    Promise.allSettled([
+        loadHeroSlides(),      // Starts slider internally on success
+        initParticles(),       // safely checks for library now
+        loadStats(),
+        loadNewsTicker(),
+        loadAboutTicker(),
+        loadPortals(),
+        loadVideo(),
+        loadDonors()
+    ]).then((results) => {
+        // Optional: Log any failures for debugging without stopping the app
+        results.forEach((result, index) => {
+            if (result.status === 'rejected') {
+                console.warn(`Module at index ${index} failed to load:`, result.reason);
+            }
+        });
+    });
 });
 
 // =========================================
 // LOAD HERO SLIDES (Updated with 3-Dot Logic)
 // =========================================
 async function loadHeroSlides() {
-    const response = await fetch('data/home/hero.json');
-    const data = await response.json();
-    const container = document.getElementById('heroSliderContainer');
-    const dotsContainer = document.getElementById('sliderDots');
+    try {
+        const response = await fetch('data/home/hero.json');
+        const data = await response.json();
+        const container = document.getElementById('heroSliderContainer');
+        const dotsContainer = document.getElementById('sliderDots');
 
-    if (!container) return;
+        if (!container) return;
 
-    container.innerHTML = '';
-    data.slides.forEach((slide, index) => {
-        const slideDiv = document.createElement('div');
-        slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
-        slideDiv.innerHTML = `
-            <div class="slide-bg" style="background-image: url('${slide.imageUrl}')"></div>
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                ${slide.badgeText ? `<span class="badge">${slide.badgeText}</span>` : ''}
-                <h1>${slide.title}</h1>
-                ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary">${slide.buttonText}</a>` : ''}
-            </div>
-        `;
-        container.appendChild(slideDiv);
-    });
+        container.innerHTML = '';
+        data.slides.forEach((slide, index) => {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
+            slideDiv.innerHTML = `
+                <div class="slide-bg" style="background-image: url('${slide.imageUrl}')"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    ${slide.badgeText ? `<span class="badge">${slide.badgeText}</span>` : ''}
+                    <h1>${slide.title}</h1>
+                    ${slide.buttonText ? `<a href="${slide.buttonLink}" class="btn-primary">${slide.buttonText}</a>` : ''}
+                </div>
+            `;
+            container.appendChild(slideDiv);
+        });
 
-    // Consistent 3-Dot Navigation Logic
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < 3; i++) {
-        const dot = document.createElement('button');
-        dot.className = i === 0 ? 'active' : '';
-        dot.onclick = () => {
-            const slides = document.querySelectorAll('.slide');
-            const targetIndex = Math.round((i / 2) * (slides.length - 1));
-            goToSlide(targetIndex);
-        };
-        dotsContainer.appendChild(dot);
-    }
+        // Consistent 3-Dot Navigation Logic
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < 3; i++) {
+            const dot = document.createElement('button');
+            dot.className = i === 0 ? 'active' : '';
+            dot.onclick = () => {
+                const slides = document.querySelectorAll('.slide');
+                const targetIndex = Math.round((i / 2) * (slides.length - 1));
+                goToSlide(targetIndex);
+            };
+            dotsContainer.appendChild(dot);
+        }
 
-    if (data.slides.length > 1) {
-        document.getElementById('sliderControls').style.display = 'flex';
+        if (data.slides.length > 1) {
+            document.getElementById('sliderControls').style.display = 'flex';
+        }
+
+        // Start animation immediately after slides are ready
+        startAutoSlide();
+
+    } catch (error) {
+        console.error("Hero Slides failed:", error);
     }
 }
 
@@ -363,7 +375,16 @@ function animateCounter(element) {
     }, 16);
 }
 
+// =========================================
+// PARTICLES (Safe Loading)
+// =========================================
 async function initParticles() {
+    // Safety check: If the CDN failed, tsParticles won't be defined.
+    if (typeof tsParticles === 'undefined') {
+        console.warn("tsParticles library failed to load or is blocked. Background effect skipped.");
+        return;
+    }
+
     await tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
         fpsLimit: 120,
@@ -377,18 +398,18 @@ async function initParticles() {
             modes: {
                 grab: {
                     distance: 220,
-                    links: { opacity: 0.8 } // Brightens connections on hover
+                    links: { opacity: 0.8 }
                 }
             }
         },
         particles: {
-            color: { value: "#cbd5e1" }, // Lighter slate for better contrast
+            color: { value: "#cbd5e1" },
             links: {
                 color: "#cbd5e1",
                 distance: 150,
                 enable: true,
-                opacity: 0.5, // Increased from 0.2 for much clearer lines
-                width: 1.5    // Slightly thicker lines
+                opacity: 0.5,
+                width: 1.5
             },
             move: {
                 enable: true,
@@ -398,13 +419,13 @@ async function initParticles() {
             },
             number: {
                 density: { enable: true, area: 800 },
-                value: 60 // Increased density for a fuller "network" look
+                value: 60
             },
             opacity: {
-                value: { min: 0.4, max: 0.7 }, // Increased from 0.3 max for "glowing" nodes
+                value: { min: 0.4, max: 0.7 },
             },
             shape: { type: "circle" },
-            size: { value: { min: 2, max: 5 } } // Larger, more visible nodes
+            size: { value: { min: 2, max: 5 } }
         },
         detectRetina: true
     });
