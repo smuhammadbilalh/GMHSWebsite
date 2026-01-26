@@ -34,8 +34,9 @@ function loadCategoryCarousel() {
     const categories = sportsData.sportsCategories;
     catCount = categories.length;
 
-    track.innerHTML = categories.map(cat => `
-        <div class="sports-card-carousel">
+    // Added animation style with staggered delay
+    track.innerHTML = categories.map((cat, index) => `
+        <div class="sports-card-carousel" style="animation: fadeInUp 0.6s ease-out ${index * 0.15}s forwards;">
             <div class="cat-icon-carousel">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     ${cat.icon}
@@ -80,8 +81,9 @@ function loadAchievementCarousel() {
     const achievements = sportsData.recentAchievements;
     achCount = achievements.length;
 
-    track.innerHTML = achievements.map(ach => `
-        <div class="achievement-card-carousel">
+    // Added animation style with staggered delay
+    track.innerHTML = achievements.map((ach, index) => `
+        <div class="achievement-card-carousel" style="animation: fadeInUp 0.6s ease-out ${index * 0.15}s forwards;">
             <div class="ach-img-wrapper">
                 <img src="${ach.image}" alt="${ach.title}" onerror="this.src='images/schoollogo.svg'">
                 <div class="ach-medal ${ach.medal.toLowerCase()}">${ach.medal}</div>
