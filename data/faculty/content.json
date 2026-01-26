@@ -6,8 +6,8 @@
             "name": "All Staff"
         },
         {
-            "id": "admin",
-            "name": "Administration"
+            "id": "principals",
+            "name": "Principals"
         },
         {
             "id": "current",
@@ -21,7 +21,7 @@
     "staff": [
         {
             "id": 1,
-            "category": "admin",
+            "category": "principals",
             "name": "Dr. MUHAMMAD ARIF",
             "designation": "Principal",
             "qualification": "Ph.D. Education",
@@ -225,7 +225,32 @@
             "qualification": "M.A.M.ED.",
             "phone": "+92 345 5702281",
             "photo": "images/faculty/Shahbaz.jpg"
+        },
+        {
+            "id": 24,
+            "category": "current",
+            "name": "SHAHROZ TARIQ",
+            "designation": "Teacher",
+            "qualification": "BS (hons) Chemistry",
+            "phone": "+92 326 4011100",
+            "photo": "images/faculty/ShahrozTariq.jpg"
+        },
+
+
+
+
+
+        {
+            "id": 25,
+            "category": "principals",
+            "name": "Recent Principals",
+            "designation": "Recent Principals",
+            "qualification": "Recent Principals",
+            "phone": "N/A",
+            "photo": "images/faculty/principals.jpeg"
         }
+
+
         
 
     ]
