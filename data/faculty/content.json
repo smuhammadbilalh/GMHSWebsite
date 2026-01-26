@@ -216,6 +216,15 @@
             "qualification": "M.phil Urdu .B.Ed",
             "phone": "+92 347 5200351",
             "photo": "images/faculty/ZarqZeb.jpg"
+        },
+        {
+            "id": 23,
+            "category": "current",
+            "name": "SHAHBAZ QALANDAR",
+            "designation": "Teacher",
+            "qualification": "M.A.M.ED.",
+            "phone": "+92 345 5702281",
+            "photo": "images/faculty/Shahbaz.jpg"
         }
         
 
