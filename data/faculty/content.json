@@ -108,7 +108,116 @@
             "qualification": "BS IT",
             "phone": "+92 311 5871139",
             "photo": "images/faculty/ImranIqbal.jpeg"
+        },
+        {
+            "id": 11,
+            "category": "current",
+            "name": "Muddasser Hussain Shabbir",
+            "designation": "Teacher",
+            "qualification": "M.Sc  M.Ed",
+            "phone": "+92 345 5640903",
+            "photo": "images/faculty/MuddaserHussain.jpg"
+        },
+        {
+            "id": 12,
+            "category": "current",
+            "name": "USMAN NAZIR",
+            "designation": "Teacher",
+            "qualification": "M.Sc  M.Ed",
+            "phone": "+92 342 1575128",
+            "photo": "images/faculty/UsmanNazir.jpg"
+        },
+        {
+            "id": 13,
+            "category": "current",
+            "name": "Afzaal ahmed chaudhary",
+            "designation": "Teacher",
+            "qualification": "MA political Science",
+            "phone": "+92 333 5824410",
+            "photo": "images/faculty/AfzaalChaudhry.jpg"
+        },
+        {
+            "id": 14,
+            "category": "current",
+            "name": "Muhammad Rafiq",
+            "designation": "Teacher",
+            "qualification": "M.A. Urdu",
+            "phone": "+92 331 5800657",
+            "photo": "images/faculty/MUHAMMADRAFIQ.jpg"
+        },
+        {
+            "id": 15,
+            "category": "current",
+            "name": "Afzaal Ur Rehman",
+            "designation": "Teacher",
+            "qualification": "Bsc, BEd",
+            "phone": "+92 300 9525616",
+            "photo": "images/faculty/AfzaalUrRehman.jpg"
+        },
+        {
+            "id": 16,
+            "category": "current",
+            "name": "Ghulam Mustafa",
+            "designation": "Teacher",
+            "qualification": "MA History M.Ed",
+            "phone": "+92 344 5723866",
+            "photo": "images/faculty/GhulamMustafa.jpg"
+        },
+        {
+            "id": 17,
+            "category": "current",
+            "name": "YASIR MAHMOOD",
+            "designation": "Teacher",
+            "qualification": "M.phill Maths+ B.Ed",
+            "phone": "+92 332 8843143",
+            "photo": "images/faculty/YasirMahmood.jpg"
+        },
+        {
+            "id": 18,
+            "category": "current",
+            "name": "Anwar Hussain",
+            "designation": "Teacher",
+            "qualification": "M.A., M.Ed",
+            "phone": "+92 345 5672124",
+            "photo": "images/faculty/AnwarHussain.jpg"
+        },
+        {
+            "id": 19,
+            "category": "current",
+            "name": "Muhammad Rafi",
+            "designation": "Teacher",
+            "qualification": "M.A., M.Ed",
+            "phone": "+92 321 5445865 ",
+            "photo": "images/faculty/MuhammadRafi.jpg"
+        },
+        {
+            "id": 20,
+            "category": "current",
+            "name": "ATA UL MUSTAFA",
+            "designation": "Teacher",
+            "qualification": "M.Phil  B.ed",
+            "phone": "+92 343 0875133",
+            "photo": "images/faculty/Mustafa.png"
+        },
+        {
+            "id": 21,
+            "category": "current",
+            "name": "Muhammad Tufail",
+            "designation": "Teacher",
+            "qualification": "Ms Mathematics",
+            "phone": "+92 344 5303184",
+            "photo": "images/faculty/MuhammadTufail.jpeg"
+        },
+        {
+            "id": 22,
+            "category": "current",
+            "name": "Zarq Zeb",
+            "designation": "Teacher",
+            "qualification": "M.phil Urdu .B.Ed",
+            "phone": "+92 347 5200351",
+            "photo": "images/faculty/ZarqZeb.jpg"
         }
+        
 
     ]
 }
