@@ -4,76 +4,99 @@
         {
             "name": "Cricket",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path>",
-            "achievements": "District Champions 2025"
+            "achievements": "Runner Up District"
         },
         {
             "name": "Football",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path>",
-            "achievements": "Regional Runners-up"
+            "achievements": "District Champions"
         },
         {
             "name": "Volleyball",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"22\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10\"></path>",
-            "achievements": "Zonal Champions"
+            "achievements": "Tehsil Runner Up"
         },
         {
             "name": "Athletics",
             "icon": "<polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline>",
-            "achievements": "20+ Gold Medals"
+            "achievements": "District Runner Up"
         },
         {
             "name": "Basketball",
             "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20\"></path>",
-            "achievements": "District Semi-finalists"
+            "achievements": "District Runner Up"
         },
         {
             "name": "Badminton",
             "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
-            "achievements": "Individual Champions"
+            "achievements": "Division Champions"
+        },
+        {
+            "name": "Hockey",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "District Runner Up"
+        },
+        {
+            "name": "Hand Ball",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "District Champions"
+        },
+        {
+            "name": "Gymnastics",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "District Runner Up"
+        },
+        {
+            "name": "Cycling",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "Tehsil Champions"
+        },
+        {
+            "name": "Cross Country Race",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "Tehsil Champions"
+        },
+        {
+            "name": "Kabadi",
+            "icon": "<line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"></line><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><line x1=\"18\" y1=\"9\" x2=\"18\" y2=\"21\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle>",
+            "achievements": "Tehsil Champions"
         }
     ],
     "recentAchievements": [
         {
             "year": "2025",
-            "title": "District Cricket Win",
-            "description": "Defeated 12 schools to claim the trophy.",
+            "title": "Punjab Level Badminton Champion",
+            "description": "Champions keep playing until they get it right.",
             "medal": "GOLD",
-            "image": "images/hero/slide1.png"
+            "image": "images/sports/pic13.jpeg"
+        },
+        {
+            "year": "2024 + 25",
+            "title": "District Football Champion",
+            "description": "If you're commited! you can achieve it!",
+            "medal": "GOLD",
+            "image": "images/sports/pic42.jpeg"
         },
         {
             "year": "2025",
-            "title": "Football League",
-            "description": "Secured 2nd position in regional league.",
-            "medal": "SILVER",
-            "image": "images/hero/slide2.jpeg"
-        },
-        {
-            "year": "2024",
-            "title": "Athletics Gold",
-            "description": "5 Gold medals in district athletics meet.",
+            "title": "District HandBall Champions",
+            "description": "But man is not made for defeat",
             "medal": "GOLD",
-            "image": "images/hero/slide3.jpg"
+            "image": "images/sports/pic37.jpeg"
         },
         {
-            "year": "2024",
-            "title": "Volleyball Victory",
-            "description": "Third consecutive year winning zonal.",
+            "year": "2025",
+            "title": "Divison Level VolleyBall Champions ",
+            "description": "Passion chase the target!",
             "medal": "GOLD",
-            "image": "images/hero/slide1.png"
+            "image": "images/sports/pic14.jpeg"
         },
         {
-            "year": "2024",
-            "title": "Basketball Finals",
-            "description": "Reached finals of inter-district tournament.",
-            "medal": "SILVER",
-            "image": "images/hero/slide2.jpeg"
-        },
-        {
-            "year": "2023",
-            "title": "Badminton Champ",
-            "description": "Won district singles championship.",
+            "year": "2025",
+            "title": "District Karate Champions",
+            "description": "When you fall, get right back up. ...",
             "medal": "GOLD",
-            "image": "images/hero/slide3.jpg"
+            "image": "images/sports/pic109.jpeg"
         }
     ]
 }
