@@ -125,7 +125,7 @@
             "designation": "Teacher",
             "qualification": "M.Sc  M.Ed",
             "phone": "+92 342 1575128",
-            "photo": "images/faculty/UsmanNazir.jpg"
+            "photo": "images/faculty/UsmanNazir.jpeg"
         },
         {
             "id": 13,
@@ -240,6 +240,9 @@
 
 
 
+
+
+
         {
             "id": 25,
             "category": "principals",
@@ -248,10 +251,147 @@
             "qualification": "Recent Principals",
             "phone": "N/A",
             "photo": "images/faculty/principals.jpeg"
+        },
+
+        {
+            "id": 26,
+            "category": "current",
+            "name": "Muhammad Ashraf",
+            "designation": "Teacher",
+            "qualification": "MA Med",
+            "phone": "+92 300 5412899",
+            "photo": "images/faculty/MuhammadAshraf.jpg"
+        },
+
+        {
+            "id": 27,
+            "category": "current",
+            "name": "Muhammad Ilyas",
+            "designation": "Teacher",
+            "qualification": "BSc,MA Islamic study,MEd",
+            "phone": "+92 344 5748917",
+            "photo": "images/faculty/MuhammadIlyas.jpg"
+        },
+        {
+            "id": 28,
+            "category": "current",
+            "name": "Naveez ahmed",
+            "designation": "Teacher",
+            "qualification": "Msc health and physical education M A islamyat B ed",
+            "phone": "+92 347 5708370",
+            "photo": "images/faculty/NovaizAhmed.jpg"
+        },
+        {
+            "id": 29,
+            "category": "current",
+            "name": "Shakeel Mahmood",
+            "designation": "Teacher",
+            "qualification": "MA, B. Ed",
+            "phone": "+92 300 6219417",
+            "photo": "images/faculty/Shakeel.jpg"
+        },
+        {
+            "id": 30,
+            "category": "current",
+            "name": "Shakeel Mahmood",
+            "designation": "Teacher",
+            "qualification": "MA, B. Ed",
+            "phone": "+92 300 6219417",
+            "photo": "images/faculty/Shakeel.jpg"
+        },
+        {
+            "id": 31,
+            "category": "current",
+            "name": "Qamar Rizwan",
+            "designation": "Teacher",
+            "qualification": "MA history Med",
+            "phone": "+92 344 5978516",
+            "photo": "images/faculty/qamar.jpg"
+        },
+        {
+            "id": 32,
+            "category": "current",
+            "name": "Amjad Mehmood",
+            "designation": "Teacher",
+            "qualification": "MA B. Ed",
+            "phone": "+92 333 5801567",
+            "photo": "images/faculty/AmjadMehmood.jpg"
+        },
+        {
+            "id": 34,
+            "category": "current",
+            "name": "Rizwan Arif",
+            "designation": "Junior Clerk",
+            "qualification": "B.A",
+            "phone": "+92 346 5353192",
+            "photo": "images/faculty/RizwanArif.jpg"
+        },
+        {
+            "id": 35,
+            "category": "current",
+            "name": "Waqar Gill",
+            "designation": "Junior Clerk",
+            "qualification": "MSc MEd",
+            "phone": "+92 336 2074707",
+            "photo": "images/faculty/WaqarGill.jpg"
+        },
+        {
+            "id": 33,
+            "category": "current",
+            "name": "Hufsa Zubair",
+            "designation": "EST (Science)",
+            "qualification": "MSc Chemistry",
+            "phone": "N/A",
+            "photo": "images/faculty/.jpg"
+        },
+        {
+            "id": 36,
+            "category": "Security",
+            "name": "Muhammad Yaqoob",
+            "designation": "Security Guard",
+            "qualification": "Intermediate",
+            "phone": "+92 345 8384929",
+            "photo": "images/faculty/Muhammad Yaqoob.jpeg"
+        },
+        {
+            "id": 37,
+            "category": "Security",
+            "name": "Naveed Akhtar",
+            "designation": "Security Guard",
+            "qualification": "Intermediate",
+            "phone": "+92 307 8295686",
+            "photo": "images/faculty/NaveedAkhtar.jpeg"
+        },
+
+        {
+            "id": 38,
+            "category": "Principal Attendant",
+            "name": "Muhammad Javed",
+            "designation": "Principal Attendant",
+            "qualification": "Intermediate",
+            "phone": "+92 346 5827902",
+            "photo": "images/faculty/NaveedAkhtar.jpeg"
+        },
+
+        {
+            "id": 39,
+            "category": "current",
+            "name": "NAVEED AHMED ",
+            "designation": "Sports Incharge and Co-currucicualr Activities",
+            "qualification": "M.Sc (Sports Science),M.A (Pol.sci)M.A Edu,AE-Mechanical Prod.",
+            "phone": "+92 347 5769405",
+            "photo": "images/faculty/NaveedAhmed.jpeg"
+        },
+
+        {
+            "id": 40,
+            "category": "current",
+            "name": "Ansir Ali ",
+            "designation": "SST",
+            "qualification": "M.A(Eng), M.Ed.",
+            "phone": "+92 300 5434982",
+            "photo": "images/faculty/AnsarAli.jpeg"
         }
-
-
-        
 
     ]
 }

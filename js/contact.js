@@ -74,13 +74,23 @@ function loadFormTypes() {
 // =========================================
 // LOAD GOOGLE MAP
 // =========================================
+// =========================================
+// LOAD GOOGLE MAP
+// =========================================
 function loadMap() {
     const mapContainer = document.getElementById('mapContainer');
 
     const iframe = document.createElement('iframe');
-    iframe.src = contactData.mapLocation.embedUrl;
+
+    // Updated to use the specific hardcoded URL provided
+    iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1674.9717738798543!2d73.75519632252828!3d32.89966079459924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f99fda557f7db%3A0xb9027cf2f719252!2sGovt%20Model%20High%20School!5e0!3m2!1sen!2s!4v1769501971690!5m2!1sen!2s";
+
     iframe.loading = 'lazy';
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.allowFullscreen = true; // Added allowfullscreen support
+
+    // Note: Width, Height, and Border styles are already handled 
+    // by your contact.css (.map-container iframe) to ensure responsiveness.
 
     mapContainer.appendChild(iframe);
 }
