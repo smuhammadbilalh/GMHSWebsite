@@ -293,15 +293,6 @@
         {
             "id": 30,
             "category": "current",
-            "name": "Shakeel Mahmood",
-            "designation": "Teacher",
-            "qualification": "MA, B. Ed",
-            "phone": "+92 300 6219417",
-            "photo": "images/faculty/Shakeel.jpg"
-        },
-        {
-            "id": 31,
-            "category": "current",
             "name": "Qamar Rizwan",
             "designation": "Teacher",
             "qualification": "MA history Med",
@@ -309,7 +300,7 @@
             "photo": "images/faculty/qamar.jpg"
         },
         {
-            "id": 32,
+            "id": 31,
             "category": "current",
             "name": "Amjad Mehmood",
             "designation": "Teacher",
@@ -318,7 +309,7 @@
             "photo": "images/faculty/AmjadMehmood.jpg"
         },
         {
-            "id": 33,
+            "id": 32,
             "category": "current",
             "name": "Rizwan Arif",
             "designation": "Junior Clerk",
@@ -327,7 +318,7 @@
             "photo": "images/faculty/RizwanArif.jpg"
         },
         {
-            "id": 34,
+            "id": 33,
             "category": "current",
             "name": "Waqar Gill",
             "designation": "Junior Clerk",
@@ -336,7 +327,7 @@
             "photo": "images/faculty/WaqarGill.jpg"
         },
         {
-            "id": 35,
+            "id": 34,
             "category": "current",
             "name": "NAVEED AHMED ",
             "designation": "Sports Incharge and Co-currucicualr Activities",
@@ -346,7 +337,7 @@
         },
 
         {
-            "id": 36,
+            "id": 35,
             "category": "current",
             "name": "Ansir Ali ",
             "designation": "SST",
@@ -355,7 +346,7 @@
             "photo": "images/faculty/AnsarAli.jpeg"
         },
         {
-            "id": 37,
+            "id": 36,
             "category": "current",
             "name": "Muhammad Ansar ",
             "designation": "EST",
@@ -364,7 +355,7 @@
             "photo": "images/faculty/MuhammadAnsar.jpeg"
         },
         {
-            "id": 38,
+            "id": 37,
             "category": "current",
             "name": "Hufsa Zubair",
             "designation": "EST (Science)",
@@ -373,7 +364,7 @@
             "photo": "images/faculty/femaleicon.png"
         },
         {
-            "id": 39,
+            "id": 38,
             "category": "Security",
             "name": "Muhammad Yaqoob",
             "designation": "Security Guard",
@@ -382,7 +373,7 @@
             "photo": "images/faculty/MuhammadYaqoob.jpeg"
         },
         {
-            "id": 40,
+            "id": 39,
             "category": "Security",
             "name": "Naveed Akhtar",
             "designation": "Security Guard",
@@ -392,7 +383,7 @@
         },
 
         {
-            "id": 41,
+            "id": 40,
             "category": "Principal Attendant",
             "name": "Muhammad Javed",
             "designation": "Principal Attendant",
@@ -401,7 +392,7 @@
             "photo": "images/faculty/MuhammadJaved.jpeg"
         },
         {
-            "id": 42,
+            "id": 41,
             "category": "Lab Attendant",
             "name": "Muhammad Zia Ur Rehman",
             "designation": "Principal Attendant",
