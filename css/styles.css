@@ -62,16 +62,15 @@ a {
         visibility: visible;
     }
 
-/* CHANGED: Updated for <img> tag support */
 .slide-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers area like background-size: cover */
-    object-position: center; /* Ensures centering like background-position: center */
+    object-fit: cover;
+    object-position: center;
     transform: scale(1.1);
     transition: transform 6s ease;
     display: block;
-    position: absolute; /* Fixes position within slide */
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -84,8 +83,8 @@ a {
 .slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
-    z-index: 1; /* Ensures overlay sits on top of image */
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
 }
 
 .slide-content {
@@ -100,104 +99,117 @@ a {
     text-align: center;
 }
 
+/* --- GLASSMORPHISM BADGE --- */
 .badge {
-    background: #000000;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 50px;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.85rem;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 .slide-content h1 {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 15px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
     color: white;
 }
 
 .slide-content p {
     font-size: 1.25rem;
-    margin-bottom: 25px;
-    color: white;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
+/* --- GLASSMORPHISM BUTTON --- */
 .btn-primary {
-    background: #000;
-    color: white;
-    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #000000;
+    padding: 14px 35px;
     font-weight: 700;
-    border-radius: 6px;
+    border-radius: 50px;
     display: inline-block;
-    transition: all 0.3s;
-    border: 2px solid #000;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
 }
 
     .btn-primary:hover {
-        transform: translateY(-2px);
-        background: #fff;
-        color: #000;
-        border-color: #000;
+        transform: translateY(-3px);
+        background: #ffffff;
+        box-shadow: 0 12px 30px rgba(255,255,255,0.3);
+        color: #000000;
+        border-color: #ffffff;
     }
 
 /* ----------------------------------------------------
-   SHARED SLIDER CONTROLS (Pill Style)
+   SHARED SLIDER CONTROLS
 ---------------------------------------------------- */
 .slider-pill-controls {
     display: flex;
     align-items: center;
     gap: 20px;
     z-index: 20;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+    padding: 8px 24px;
     border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.2);
     width: fit-content;
 }
 
 .hero-controls-pos {
     position: absolute;
-    bottom: 120px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .content-controls-pos {
     margin: 30px auto 0 auto;
-    background: rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .slider-arrow {
     background: transparent;
     border: none;
-    color: white;
-    font-size: 1.5rem;
+    color: #111827;
+    font-size: 1.2rem;
     cursor: pointer;
     line-height: 1;
     padding: 0 5px;
     transition: transform 0.3s ease, color 0.3s;
+    opacity: 0.7;
 }
 
-.content-controls-pos .slider-arrow {
-    color: #000;
-}
+    .slider-arrow:hover {
+        color: #000000;
+        transform: scale(1.2);
+        opacity: 1;
+    }
 
-.slider-arrow:hover {
-    color: #888;
-    transform: scale(1.2);
-}
-
-.slider-arrow:active {
-    transform: scale(0.9);
-}
+    .slider-arrow:active {
+        transform: scale(0.9);
+    }
 
 .slider-dots {
     display: flex;
@@ -206,32 +218,22 @@ a {
 }
 
     .slider-dots button {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        border: 2px solid white;
-        background: transparent;
+        border: none;
+        background: rgba(0, 0, 0, 0.3);
         cursor: pointer;
         padding: 0;
         transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
         .slider-dots button.active {
-            background: white;
-            width: 28px;
+            background: #000000;
+            width: 24px;
             border-radius: 10px;
             transform: scale(1.05);
         }
-
-.content-controls-pos .slider-dots button {
-    border-color: #000;
-}
-
-    .content-controls-pos .slider-dots button.active {
-        background: #000;
-        width: 28px;
-        border-radius: 10px;
-    }
 
 /* =========================================
    3. SCROLL ANIMATIONS
@@ -248,7 +250,7 @@ a {
     }
 
 /* =========================================
-   4. STATS BAR SECTION (Divided Grid Look)
+   4. STATS BAR SECTION
    ========================================= */
 .stats-bar {
     background: transparent !important;
@@ -309,19 +311,17 @@ a {
     }
 
 /* =========================================
-   5. DIGITAL CAMPUS (PORTALS - Glassmorphism)
+   5. DIGITAL CAMPUS (PORTALS)
    ========================================= */
 .portals-section {
     padding: 80px 0;
-    background: transparent !important; /* Allow neurons to show through background */
+    background: transparent !important;
 }
 
-/* --- FORCE BLACK HEADERS (ID SELECTORS HAVE HIGHER PRIORITY) --- */
+/* FIXED: REMOVED #videoSectionTitle AND #videoSectionDesc FROM THIS LIST */
 #portalsHeader h2,
 #portalsHeader p,
 #portalsHeader .accent-text,
-#videoSectionTitle,
-#videoSectionDesc,
 #donorSectionTitle,
 #donorSectionDesc {
     color: #000000 !important;
@@ -347,21 +347,18 @@ a {
     border-radius: 2px;
 }
 
-/* FLEXIBLE GRID: Auto-adjusts to available space */
 .square-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptive row */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 25px;
     justify-content: center;
 }
 
 .square-card {
-    /* GLASSMORPHISM STYLES */
-    background: rgba(255, 255, 255, 0.4); /* Semi-transparent */
-    backdrop-filter: blur(12px); /* Frost effect */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white edge */
-
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 20px;
@@ -375,10 +372,9 @@ a {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
-    color: #000000 !important; /* Force card text black */
+    color: #000000 !important;
 }
 
-    /* Subtle top light effect */
     .square-card::before {
         content: '';
         position: absolute;
@@ -459,7 +455,7 @@ a {
 }
 
 /* =========================================
-   7. DONORS CAROUSEL SECTION (Fixed & Matched)
+   7. DONORS CAROUSEL SECTION
    ========================================= */
 .donors-section {
     padding: 80px 0;
@@ -467,7 +463,6 @@ a {
     overflow: hidden;
 }
 
-    /* SPECIFIC BLACK OVERRIDE FOR DONORS HEADER */
     .donors-section .section-header h2 {
         font-size: 2.2rem;
         font-weight: 900;
@@ -495,7 +490,6 @@ a {
 }
 
 .donor-card {
-    /* MATCHED TO PORTAL CARD STYLE */
     flex: 0 0 calc(25% - 15px);
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(12px);
@@ -513,7 +507,7 @@ a {
     .donor-card h3,
     .donor-card .donor-contribution,
     .donor-card .donor-message {
-        color: #000000 !important; /* ENSURE CARD TEXT IS BLACK */
+        color: #000000 !important;
     }
 
     .donor-card:hover, .donor-card.active-donor {
@@ -555,14 +549,12 @@ a {
         flex: 0 0 100%;
     }
 }
-/* =========================================
-   8. RESPONSIVE DESIGN (Grid Optimization)
-   ========================================= */
 
-/* Desktop & Laptops: Force Single Row */
+/* =========================================
+   8. RESPONSIVE DESIGN
+   ========================================= */
 @media (min-width: 901px) {
     .square-grid {
-        /* This ensures that all items sit in one row as long as there is room */
         grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     }
 }
@@ -584,13 +576,11 @@ a {
             display: none;
         }
 
-    /* Small Tablets: Keep them flexible */
     .square-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Phones: Exactly 2 Rows / 2 Columns */
 @media (max-width: 600px) {
     .square-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -619,7 +609,7 @@ a {
 }
 
 /* =========================================
-   9. GLOBAL OVERLAYS (NEURONS)
+   9. GLOBAL OVERLAYS
    ========================================= */
 .home-wrapper, .portals-section, .donors-section, .stats-bar {
     background-color: transparent !important;

@@ -1,35 +1,107 @@
 ﻿{
-    "sectionTitle": "Our Generous Contributors",
-    "sectionDescription": "Honoring the visionaries who helped build our infrastructure and solar energy systems.",
+    "sectionTitle": "Our Generous Donors",
+    "sectionDescription": "Honoring the visionaries who helped build our infrastructure and support needy students",
     "donors": [
         {
-            "name": "Ch. Muhammad Akram",
+            "name": "Nauman Iftikhar",
             "contribution": "Solar Plant Installation",
-            "image": "images/donors/donor1.jpg",
+            "image": "images/donors/NaumanIftikhar.png",
             "message": "Investing in energy is investing in the future of education."
         },
         {
-            "name": "Haji Riaz Ahmed",
+            "name": "Muhammad Ajmal",
             "contribution": "Main Hall Renovation",
-            "image": "images/donors/donor2.jpg",
+            "image": "images/donors/MuhammadAjmal.png",
             "message": "Proud to serve the school that served our community for decades."
         },
         {
-            "name": "Mrs. Nasreen Bibi",
+            "name": "Malik Naeem",
             "contribution": "Library Books & Furniture",
-            "image": "images/donors/donor3.jpg",
+            "image": "images/donors/MalikNaeem.png",
             "message": "Books are the quietest and most constant of friends."
         },
         {
-            "name": "Dr. Touseef Khan",
+            "name": "Chaudhary Abid",
             "contribution": "Science Lab Equipment",
-            "image": "images/donors/donor4.jpg",
+            "image": "images/donors/ChAbid.png",
             "message": "Science is the key to unlocking the potential of our youth."
         },
         {
-            "name": "Alumni Batch 1995",
+            "name": "Imran Gujjar",
             "contribution": "Water Filtration Plant",
-            "image": "images/donors/donor5.jpg",
+            "image": "images/donors/ImranGujjar.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Wajid Munir",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/WajidMunir.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Sabir Hussain",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/SabirHussain.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Wazir Ali",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/WazirAli.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Imran Butt",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/ImranButt.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Amir Ameen",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/AmirAmeen.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Raja Aftab",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/RajaAftab.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Tariq Nazir",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/TariqNazir.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Muhammad Asif",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/MuhammadAsif.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Tariq Mehmood",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/TariqMehmood.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Saeed Ahmed",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/SaeedAhmed.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Saqib Ur Rehman",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/SaqibUrRehman.png",
+            "message": "Giving back to our alma mater with pride."
+        },
+        {
+            "name": "Faisal Nadeem",
+            "contribution": "Water Filtration Plant",
+            "image": "images/donors/FaisalNadeem.png",
             "message": "Giving back to our alma mater with pride."
         }
     ]

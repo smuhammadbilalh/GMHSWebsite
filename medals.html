@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - GMHS Sarai Alamgir</title>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <title>Medals of Honor - GHSS Sarai</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
-    <link rel="icon" type="image/svg+xml" href="images/schoollogo.svg">
     <link rel="stylesheet" href="css/newsticker.css">
+    <link rel="stylesheet" href="css/medals.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" type="image/svg+xml" href="images/schoollogo.svg">
 </head>
 <body>
-
+    <div id="tsparticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
 
     <div class="glass-nav-container">
         <nav class="glass-navbar">
@@ -32,7 +31,7 @@
                 <li><a href="sports.html" data-page="sports"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>Sports</a></li>
 
                 <li class="dropdown-parent">
-                    <a href="#" class="dropdown-trigger" onclick="return false;">
+                    <a href="#" class="dropdown-trigger parent-active" onclick="return false;">
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         More
                     </a>
@@ -58,96 +57,47 @@
 
     <div class="mobile-nav" id="mobileNav">
         <div id="mobile-nav-particles"></div>
-
         <div class="mobile-header">
             <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
             <span class="mobile-brand-text">GHSS Sarai</span>
             <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
         </div>
-
         <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
         <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
         <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
-
         <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos Gallery</a>
         <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty Members</a>
         <a href="co-curricular.html" data-page="co-curricular" onclick="closeMobileMenu()">Co-curricular</a>
-        <a href="medals.html" data-page="medals" onclick="closeMobileMenu()">Medals of Honor</a>
+        <a href="medals.html" data-page="medals" class="active" onclick="closeMobileMenu()">Medals of Honor</a>
         <a href="alumni.html" data-page="alumni" onclick="closeMobileMenu()">Alumni Network</a>
-
         <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
         <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
-    <main class="main-content contact-page">
+    <div class="medals-wrapper">
+        <div class="medals-container">
 
-        <section class="page-title-section">
-            <h1 class="page-title" id="pageTitle">Contact Us</h1>
-        </section>
-
-        <section class="contact-cards-section">
-            <div class="contact-cards-grid" id="contactCardsGrid">
+            <div class="year-picker-container">
+                <div class="timeline-line"></div>
+                <ul class="year-list" id="yearList">
+                </ul>
             </div>
-        </section>
 
-        <div class="contact-content">
-            <div class="contact-form-section">
-                <h2>Send Us a Message</h2>
-                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-
-                <div class="form-success" id="formSuccess">
-                    ✓ Thank you! Your message has been sent successfully.
+            <div class="winners-display">
+                <div class="section-header-left">
+                    <h1 id="pageTitle">Medals of Honor</h1>
+                    <p id="pageDesc">Loading...</p>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="formType">Inquiry Type *</label>
-                        <select id="formType" name="formType" required>
-                            <option value="">Select Type</option>
-                        </select>
-                    </div>
+                <div class="mobile-year-tabs" id="mobileTabs">
+                </div>
 
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">
-                        <span>Send Message</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-
-            <div class="contact-map-section">
-                <h2>Find Us on Map</h2>
-                <p>Visit our campus located on GT Road, Sarai Alamgir.</p>
-
-                <div class="map-container" id="mapContainer">
+                <div class="medal-grid" id="medalGrid">
                 </div>
             </div>
         </div>
-
-    </main>
+    </div>
 
     <footer class="modern-footer">
         <div class="container">
@@ -155,28 +105,25 @@
                 <div class="footer-col" id="footer-school-info">
                     <h3>Loading...</h3>
                 </div>
-
                 <div class="footer-col" id="footer-contact-info">
                     <h3>Contact Info</h3>
                     <ul class="contact-list">
-                        <li>Loading contact details...</li>
+                        <li>Loading...</li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="news-ticker-bar footer-developer-ticker">
             <div class="ticker-label">DEVELOPER</div>
             <div class="ticker-content">
-                <marquee behavior="scroll" direction="left" scrollamount="6" id="footer-ticker-content">
-                </marquee>
+                <marquee behavior="scroll" direction="left" scrollamount="6" id="footer-ticker-content"></marquee>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="js/footer.js"></script>
-
     <script src="js/navmenu.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/medals.js"></script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+﻿{
+    "pageTitle": "Co-curricular Activities",
+    "description": "Beyond the classroom: Fostering spirituality, confidence, and leadership.",
+    "categories": [
+        {
+            "id": "all",
+            "name": "All Activities"
+        },
+        {
+            "id": "assembly",
+            "name": "Morning Assembly"
+        },
+        {
+            "id": "naat",
+            "name": "Naat & Qirat"
+        },
+        {
+            "id": "speech",
+            "name": "Debates & Speeches"
+        },
+        {
+            "id": "events",
+            "name": "Special Events"
+        }
+    ],
+    "activities": [
+        {
+            "title": "Annual Naat Competition",
+            "category": "naat",
+            "date": "Rabi-ul-Awal 2024",
+            "image": "images/activities/naat_comp.jpg",
+            "description": "Students expressing their love for the Holy Prophet (PBUH) with beautiful voices."
+        },
+        {
+            "title": "Independence Day Speech",
+            "category": "speech",
+            "date": "14th August 2024",
+            "image": "images/activities/speech_day.jpg",
+            "description": "Passionate speeches highlighting the sacrifices of our forefathers."
+        },
+        {
+            "title": "Daily Morning Assembly",
+            "category": "assembly",
+            "date": "Daily Routine",
+            "image": "images/activities/assembly.jpg",
+            "description": "Starting the day with the name of Allah and the National Anthem."
+        },
+        {
+            "title": "Seerat-un-Nabi Conference",
+            "category": "events",
+            "date": "Oct 2023",
+            "image": "images/activities/seerat_conf.jpg",
+            "description": "A spiritual gathering to learn from the life of the Prophet (PBUH)."
+        },
+        {
+            "title": "Quran Recitation Contest",
+            "category": "naat",
+            "date": "Ramadan 2024",
+            "image": "images/activities/qirat.jpg",
+            "description": "Showcasing the beautiful recitation of the Holy Quran by our students."
+        }
+    ]
+}

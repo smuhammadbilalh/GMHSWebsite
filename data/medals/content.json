@@ -1,0 +1,71 @@
+﻿{
+    "pageTitle": "Medals of Honor",
+    "description": "Celebrating excellence and academic brilliance at GHSS Sarai.",
+    "years": [
+        {
+            "year": "2024",
+            "winners": [
+                {
+                    "name": "Ali Hassan",
+                    "award": "Gold Medal",
+                    "category": "Computer Science",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "1st Position in District Board"
+                },
+                {
+                    "name": "Ahmed Raza",
+                    "award": "Silver Medal",
+                    "category": "Pre-Engineering",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "Best Sportsman of the Year"
+                },
+                {
+                    "name": "Sarah Khan",
+                    "award": "Gold Medal",
+                    "category": "Medical",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "100% Attendance Record"
+                }
+            ]
+        },
+        {
+            "year": "2023",
+            "winners": [
+                {
+                    "name": "Usman Zafar",
+                    "award": "Gold Medal",
+                    "category": "Academics",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "Top Scorer in Mathematics"
+                },
+                {
+                    "name": "Bilal Ahmed",
+                    "award": "Bronze Medal",
+                    "category": "Debate",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "Provincial Debate Champion"
+                }
+            ]
+        },
+        {
+            "year": "2022",
+            "winners": [
+                {
+                    "name": "Hamza Ali",
+                    "award": "Silver Medal",
+                    "category": "Sports",
+                    "image": "images/developer/bilal.jpeg",
+                    "details": "Cricket Team Captain"
+                }
+            ]
+        },
+        {
+            "year": "2021",
+            "winners": []
+        },
+        {
+            "year": "2020",
+            "winners": []
+        }
+    ]
+}

@@ -1,0 +1,338 @@
+﻿/* =========================================
+   MEDALS PAGE LAYOUT
+   ========================================= */
+.medals-wrapper {
+    padding-top: 100px; /* Space for Navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Premium dark or light theme base - using light to match site */
+    background: #f8fafc;
+}
+
+.medals-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    gap: 60px;
+    flex: 1;
+}
+
+/* =========================================
+   LEFT SIDE: VERTICAL TIMELINE (DESKTOP)
+   ========================================= */
+.year-picker-container {
+    position: sticky;
+    top: 120px;
+    height: 400px; /* Fixed height for the "Wheel" feel */
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.1) 80%, transparent );
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* The Scrollable Year List */
+.year-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Hide Scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Snap Logic */
+    scroll-snap-type: y mandatory;
+    padding-top: 150px; /* Padding to center the first item */
+    padding-bottom: 150px;
+}
+
+    .year-list::-webkit-scrollbar {
+        display: none;
+    }
+
+.year-item {
+    height: 80px; /* Distance between years */
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    scroll-snap-align: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.year-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #94a3b8; /* Inactive Color */
+    transition: all 0.4s ease;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #f8fafc; /* Match bg to hide line behind text */
+}
+
+/* Active / Centered State */
+.year-item.active .year-btn {
+    font-size: 2.2rem; /* Larger */
+    font-weight: 900;
+    color: #000000;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: scale(1.1);
+}
+
+/* Items adjacent to active (Optional subtle effect) */
+.year-item:not(.active) .year-btn:hover {
+    color: #475569;
+}
+
+/* =========================================
+   RIGHT SIDE: WINNERS GRID
+   ========================================= */
+.winners-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header-left {
+    margin-bottom: 40px;
+}
+
+    .section-header-left h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0 0 10px 0;
+        color: #000;
+    }
+
+    .section-header-left p {
+        font-size: 1.1rem;
+        color: #64748b;
+    }
+
+.medal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Premium Medal Card */
+.medal-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInSlide 0.6s forwards;
+}
+
+    .medal-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+.medal-img-wrapper {
+    width: 100%;
+    height: 280px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+    .medal-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+.medal-card:hover .medal-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Medal Badge overlay */
+.medal-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffd700; /* Gold */
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .medal-badge.silver {
+        color: #c0c0c0;
+    }
+
+    .medal-badge.bronze {
+        color: #cd7f32;
+    }
+
+.medal-info {
+    padding: 10px 15px 20px;
+    width: 100%;
+}
+
+    .medal-info h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0 0 5px 0;
+    }
+
+    .medal-info .category {
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .medal-info .details {
+        font-size: 0.95rem;
+        color: #334155;
+        line-height: 1.5;
+    }
+
+/* Empty State */
+.no-data {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    text-align: center;
+    padding: 50px;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   MOBILE LAYOUT
+   ========================================= */
+@media (max-width: 900px) {
+    .medals-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    /* Hide Vertical Timeline */
+    .year-picker-container {
+        display: none;
+    }
+
+    /* Show Horizontal Tabs */
+    .mobile-year-tabs {
+        display: flex; /* Visible on mobile */
+        overflow-x: auto;
+        gap: 12px;
+        padding: 10px 5px 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        position: sticky;
+        top: 60px; /* Below Navbar */
+        z-index: 40;
+        background: rgba(248, 250, 252, 0.95);
+        backdrop-filter: blur(10px);
+        margin: 0 -20px; /* Bleed to edges */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+        .mobile-year-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .mobile-tab-btn {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #64748b;
+        white-space: nowrap;
+        transition: all 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+        .mobile-tab-btn.active {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+    .section-header-left h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .section-header-left p {
+        text-align: center;
+    }
+}
+
+@media (min-width: 901px) {
+    .mobile-year-tabs {
+        display: none; /* Hide horizontal tabs on desktop */
+    }
+}
