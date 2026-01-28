@@ -15,9 +15,10 @@ function closeMobileMenu() {
     document.body.classList.remove('menu-open');
 }
 
-// Active Link Detection
+// Active Link Detection & Parent Highlighting
 function setActiveLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
     const pageMap = {
         'index.html': 'home', '': 'home',
         'academics.html': 'academics',
@@ -25,15 +26,40 @@ function setActiveLink() {
         'photos.html': 'photos',
         'contact.html': 'contact',
         'faculty.html': 'faculty',
-        'developer.html': 'developer'
+        'developer.html': 'developer',
+        'co-curricular.html': 'co-curricular',
+        'medals.html': 'medals',
+        'alumni.html': 'alumni'
     };
+
     const activePage = pageMap[currentPage] || 'home';
 
+    // 1. Reset all states first
+    document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
+        link.classList.remove('active');
+        link.classList.remove('parent-active');
+    });
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+        trigger.classList.remove('parent-active');
+    });
+
+    // 2. Set Active States
     document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
         if (link.getAttribute('data-page') === activePage) {
+            // Activate the direct link
             link.classList.add('active');
-        } else {
-            link.classList.remove('active');
+
+            // 3. Desktop: If inside dropdown, highlight Parent (More) with underline
+            const desktopDropdown = link.closest('.dropdown-menu');
+            if (desktopDropdown) {
+                const parentLi = desktopDropdown.closest('.dropdown-parent');
+                if (parentLi) {
+                    const parentTrigger = parentLi.querySelector('.dropdown-trigger');
+                    if (parentTrigger) {
+                        parentTrigger.classList.add('parent-active');
+                    }
+                }
+            }
         }
     });
 }
@@ -51,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// PARTICLES CONFIGURATION - HIGH DENSITY & VERY SUBTLE
+// PARTICLES CONFIGURATION - LIGHT & SUBTLE
 (async function initNavParticles() {
     const waitForLib = new Promise((resolve, reject) => {
         let attempts = 0;

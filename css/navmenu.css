@@ -47,16 +47,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
     animation: fadeIn 0.4s ease forwards;
-    /* Ensure particles don't spill out */
-    overflow: hidden;
-}
-
-/* Revert overflow for dropdowns to work visually if needed, 
-   but strictly standard behavior suggests hidden for pill shape. 
-   We keep it visible for the dropdown menus to appear. */
-.glass-navbar {
+    /* VISIBILITY: Overflow visible allows Dropdowns to appear outside */
     overflow: visible;
-    border-radius: 12px;
 }
 
 /* --- NEURONS BACKGROUND --- */
@@ -67,9 +59,9 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    border-radius: 12px;
+    border-radius: 50px; /* Matches navbar radius */
     pointer-events: none;
-    opacity: 1;
+    overflow: hidden; /* Clips particles to the pill shape */
 }
 
 /* --- BRAND SECTION (Updated for Divider & Size) --- */
@@ -103,7 +95,7 @@ body {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    padding: 0; /* Removed padding to allow max image size */
+    padding: 0;
     height: 100%;
     transition: opacity 0.2s ease;
     z-index: 5;
@@ -215,7 +207,7 @@ body {
             width: 60%;
         }
 
-    /* Active State */
+    /* Active State (Standard Black Pill) */
     .nav-links > li > a.active {
         background: #000000;
         color: #ffffff;
@@ -227,16 +219,33 @@ body {
             display: none;
         }
 
+    /* --- PARENT ACTIVE STATE (The "More" Tab Logic) --- */
+    /* This specific class is added via JS when a child page is active */
+
+    .nav-links > li > a.parent-active {
+        background: transparent !important; /* Force transparent background */
+        color: #000000 !important; /* Force black text */
+        box-shadow: none !important; /* No shadow */
+        transform: none !important;
+    }
+
+        /* Make the hover line PERSISTENT for parent active state */
+        .nav-links > li > a.parent-active::after {
+            display: block !important;
+            width: 60% !important; /* Keeps the underline visible */
+        }
+
 /* --- DROPDOWN --- */
 .dropdown-parent {
     position: relative;
 }
 
 .arrow-icon {
-    width: 14px;
-    height: 14px;
+    width: 20px; /* Bigger arrow */
+    height: 20px;
     margin-right: 6px;
     transition: transform 0.3s ease;
+    stroke-width: 2.2px;
 }
 
 .dropdown-parent:hover .arrow-icon {
