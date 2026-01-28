@@ -384,7 +384,7 @@
 
         {
             "id": 40,
-            "category": "Principal Attendant",
+            "category": "helpers",
             "name": "Muhammad Javed",
             "designation": "Principal Attendant",
             "qualification": "Intermediate",
@@ -393,7 +393,7 @@
         },
         {
             "id": 41,
-            "category": "Lab Attendant",
+            "category": "helpers",
             "name": "Muhammad Zia Ur Rehman",
             "designation": "Principal Attendant",
             "qualification": "Intermediate",
