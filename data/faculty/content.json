@@ -14,8 +14,8 @@
             "name": "Current Faculty"
         },
         {
-            "id": "retired",
-            "name": "Retired Faculty"
+            "id": "helpers",
+            "name": "Helpers"
         }
     ],
     "staff": [
@@ -318,7 +318,7 @@
             "photo": "images/faculty/AmjadMehmood.jpg"
         },
         {
-            "id": 34,
+            "id": 33,
             "category": "current",
             "name": "Rizwan Arif",
             "designation": "Junior Clerk",
@@ -327,7 +327,7 @@
             "photo": "images/faculty/RizwanArif.jpg"
         },
         {
-            "id": 35,
+            "id": 34,
             "category": "current",
             "name": "Waqar Gill",
             "designation": "Junior Clerk",
@@ -336,45 +336,7 @@
             "photo": "images/faculty/WaqarGill.jpg"
         },
         {
-            "id": 33,
-            "category": "current",
-            "name": "Hufsa Zubair",
-            "designation": "EST (Science)",
-            "qualification": "MSc Chemistry",
-            "phone": "N/A",
-            "photo": "images/faculty/.jpg"
-        },
-        {
-            "id": 36,
-            "category": "Security",
-            "name": "Muhammad Yaqoob",
-            "designation": "Security Guard",
-            "qualification": "Intermediate",
-            "phone": "+92 345 8384929",
-            "photo": "images/faculty/Muhammad Yaqoob.jpeg"
-        },
-        {
-            "id": 37,
-            "category": "Security",
-            "name": "Naveed Akhtar",
-            "designation": "Security Guard",
-            "qualification": "Intermediate",
-            "phone": "+92 307 8295686",
-            "photo": "images/faculty/NaveedAkhtar.jpeg"
-        },
-
-        {
-            "id": 38,
-            "category": "Principal Attendant",
-            "name": "Muhammad Javed",
-            "designation": "Principal Attendant",
-            "qualification": "Intermediate",
-            "phone": "+92 346 5827902",
-            "photo": "images/faculty/NaveedAkhtar.jpeg"
-        },
-
-        {
-            "id": 39,
+            "id": 35,
             "category": "current",
             "name": "NAVEED AHMED ",
             "designation": "Sports Incharge and Co-currucicualr Activities",
@@ -384,14 +346,68 @@
         },
 
         {
-            "id": 40,
+            "id": 36,
             "category": "current",
             "name": "Ansir Ali ",
             "designation": "SST",
             "qualification": "M.A(Eng), M.Ed.",
             "phone": "+92 300 5434982",
             "photo": "images/faculty/AnsarAli.jpeg"
-        }
+        },
+        {
+            "id": 37,
+            "category": "current",
+            "name": "Muhammad Ansar ",
+            "designation": "EST",
+            "qualification": "M.Phil Education",
+            "phone": "+92 347 5625325",
+            "photo": "images/faculty/MuhammadAnsar.jpeg"
+        },
+        {
+            "id": 38,
+            "category": "current",
+            "name": "Hufsa Zubair",
+            "designation": "EST (Science)",
+            "qualification": "MSc Chemistry",
+            "phone": "null",
+            "photo": "images/faculty/femaleicon.png"
+        },
+        {
+            "id": 39,
+            "category": "Security",
+            "name": "Muhammad Yaqoob",
+            "designation": "Security Guard",
+            "qualification": "Intermediate",
+            "phone": "+92 345 8384929",
+            "photo": "images/faculty/MuhammadYaqoob.jpeg"
+        },
+        {
+            "id": 40,
+            "category": "Security",
+            "name": "Naveed Akhtar",
+            "designation": "Security Guard",
+            "qualification": "Intermediate",
+            "phone": "+92 307 8295686",
+            "photo": "images/faculty/NaveedAkhtar.jpeg"
+        },
 
+        {
+            "id": 41,
+            "category": "Principal Attendant",
+            "name": "Muhammad Javed",
+            "designation": "Principal Attendant",
+            "qualification": "Intermediate",
+            "phone": "+92 346 5827902",
+            "photo": "images/faculty/MuhammadJaved.jpeg"
+        },
+        {
+            "id": 42,
+            "category": "Lab Attendant",
+            "name": "Muhammad Zia Ur Rehman",
+            "designation": "Principal Attendant",
+            "qualification": "Intermediate",
+            "phone": "+92 344 5737471",
+            "photo": "images/faculty/Zia.jpeg"
+        }
     ]
 }
