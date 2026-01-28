@@ -34,7 +34,7 @@ function setActiveLink() {
 
     const activePage = pageMap[currentPage] || 'home';
 
-    // 1. Reset all states first
+    // Reset states
     document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
         link.classList.remove('active');
         link.classList.remove('parent-active');
@@ -43,13 +43,12 @@ function setActiveLink() {
         trigger.classList.remove('parent-active');
     });
 
-    // 2. Set Active States
+    // Set Active States
     document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
         if (link.getAttribute('data-page') === activePage) {
-            // Activate the direct link
             link.classList.add('active');
 
-            // 3. Desktop: If inside dropdown, highlight Parent (More) with underline
+            // Desktop Parent Logic
             const desktopDropdown = link.closest('.dropdown-menu');
             if (desktopDropdown) {
                 const parentLi = desktopDropdown.closest('.dropdown-parent');
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// PARTICLES CONFIGURATION - LIGHT & SUBTLE
+// PARTICLES CONFIGURATION - LOAD FOR DESKTOP & MOBILE
 (async function initNavParticles() {
     const waitForLib = new Promise((resolve, reject) => {
         let attempts = 0;
@@ -95,17 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
         await waitForLib;
-        await tsParticles.load("nav-particles", {
+
+        const particleConfig = {
             fullScreen: { enable: false },
             fpsLimit: 60,
             particles: {
-                // LIGHT GRAY COLOR for subtlety
                 color: { value: "#94a3b8" },
                 links: {
                     color: "#94a3b8",
                     distance: 100,
                     enable: true,
-                    opacity: 0.15, // Very faint connections
+                    opacity: 0.15,
                     width: 1
                 },
                 move: {
@@ -115,31 +114,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     outModes: { default: "bounce" }
                 },
                 number: {
-                    // DENSITY DISABLED: Forces exactly 45 particles to appear
                     density: { enable: false },
                     value: 45
                 },
                 opacity: {
-                    value: { min: 0.1, max: 0.3 } // Very low opacity
+                    value: { min: 0.1, max: 0.3 }
                 },
                 shape: { type: "circle" },
                 size: { value: { min: 1, max: 3 } }
             },
             detectRetina: true
-        });
+        };
+
+        // 1. Load for Desktop Navbar
+        await tsParticles.load("nav-particles", particleConfig);
+
+        // 2. Load for Mobile Panel
+        await tsParticles.load("mobile-nav-particles", particleConfig);
+
     } catch (e) {
         console.log("Nav particles skipped");
     }
 })();
-
-function toggleMobileDropdown(btn) {
-    const content = btn.nextElementSibling;
-    const arrow = btn.querySelector('.mobile-arrow');
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        arrow.style.transform = 'rotate(0deg)';
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        arrow.style.transform = 'rotate(180deg)';
-    }
-}
