@@ -12,19 +12,19 @@
             "slug": "sports-achievements"
         },
         {
-            "id": "alumni",
-            "name": "Alumni Memories",
-            "slug": "alumni-memories"
+            "id": "labs",
+            "name": "Laborataries",
+            "slug": "laboratory experiments"
         },
         {
-            "id": "events",
-            "name": "School Events",
-            "slug": "school-events"
+            "id": "admin",
+            "name": "Faculty Activities",
+            "slug": "admin"
         },
         {
-            "id": "champions",
-            "name": "ChampionShips",
-            "slug": "champions"
+            "id": "students",
+            "name": "Students Activities",
+            "slug": "Students Activities"
         }
     ],
     "photos": [
@@ -811,6 +811,609 @@
             "title": "School Event 1",
             "thumbnail": "images/events/event1.jpg",
             "fullImage": "images/events/event1.jpg"
+        },
+        {
+            "id": 113,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic1.jpeg",
+            "fullImage": "images/labs/pic1.jpeg"
+        },
+
+        {
+            "id": 114,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic2.jpeg",
+            "fullImage": "images/labs/pic2.jpeg"
+        },
+        {
+            "id": 115,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic3.jpeg",
+            "fullImage": "images/labs/pic3.jpeg"
+        },
+        {
+            "id": 116,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic4.jpeg",
+            "fullImage": "images/labs/pic4.jpeg"
+        },
+        {
+            "id": 117,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic5.jpeg",
+            "fullImage": "images/labs/pic5.jpeg"
+        },
+        {
+            "id": 118,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic6.jpeg",
+            "fullImage": "images/labs/pic6.jpeg"
+        },
+        {
+            "id": 119,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic7.jpeg",
+            "fullImage": "images/labs/pic7.jpeg"
+        },
+        {
+            "id": 120,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic8.jpeg",
+            "fullImage": "images/labs/pic8.jpeg"
+        },
+        {
+            "id": 121,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic9.jpeg",
+            "fullImage": "images/labs/pic9.jpeg"
+        },
+        {
+            "id": 122,
+            "category": "labs",
+            "title": "Physics Lab",
+            "thumbnail": "images/labs/pic10.jpeg",
+            "fullImage": "images/labs/pic10.jpeg"
+        },
+        {
+            "id": 123,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic1.jpeg",
+            "fullImage": "images/facultyactivities/pic1.jpeg"
+        },
+        {
+            "id": 124,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic2.jpeg",
+            "fullImage": "images/facultyactivities/pic2.jpeg"
+        },
+        {
+            "id": 125,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic3.jpeg",
+            "fullImage": "images/facultyactivities/pic3.jpeg"
+        },
+        {
+            "id": 126,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic4.jpeg",
+            "fullImage": "images/facultyactivities/pic4.jpeg"
+        },
+        {
+            "id": 127,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic5.jpeg",
+            "fullImage": "images/facultyactivities/pic5.jpeg"
+        },
+        {
+            "id": 128,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic6.jpeg",
+            "fullImage": "images/facultyactivities/pic6.jpeg"
+        },
+        {
+            "id": 129,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic7.jpeg",
+            "fullImage": "images/facultyactivities/pic7.jpeg"
+        },
+        {
+            "id": 130,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic8.jpeg",
+            "fullImage": "images/facultyactivities/pic8.jpeg"
+        },
+        {
+            "id": 131,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic9.jpeg",
+            "fullImage": "images/facultyactivities/pic9.jpeg"
+        },
+        {
+            "id": 132,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic10.jpeg",
+            "fullImage": "images/facultyactivities/pic10.jpeg"
+        },
+        {
+            "id": 133,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic11.jpeg",
+            "fullImage": "images/facultyactivities/pic11.jpeg"
+        },
+        {
+            "id": 134,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic12.jpeg",
+            "fullImage": "images/facultyactivities/pic12.jpeg"
+        },
+        {
+            "id": 135,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic13.jpeg",
+            "fullImage": "images/facultyactivities/pic13.jpeg"
+        },
+        {
+            "id": 136,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic14.jpeg",
+            "fullImage": "images/facultyactivities/pic14.jpeg"
+        },
+        {
+            "id": 137,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic15.jpeg",
+            "fullImage": "images/facultyactivities/pic15.jpeg"
+        },
+        {
+            "id": 138,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic16.jpeg",
+            "fullImage": "images/facultyactivities/pic16.jpeg"
+        },
+        {
+            "id": 139,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic17.jpeg",
+            "fullImage": "images/facultyactivities/pic17.jpeg"
+        },
+        {
+            "id": 140,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic18.jpeg",
+            "fullImage": "images/facultyactivities/pic18.jpeg"
+        },
+        {
+            "id": 141,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic19.jpeg",
+            "fullImage": "images/facultyactivities/pic19.jpeg"
+        },
+        {
+            "id": 142,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic20.jpeg",
+            "fullImage": "images/facultyactivities/pic20.jpeg"
+        },
+        {
+            "id": 143,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic21.jpeg",
+            "fullImage": "images/facultyactivities/pic21.jpeg"
+        },
+        {
+            "id": 144,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic22.jpeg",
+            "fullImage": "images/facultyactivities/pic22.jpeg"
+        },
+        {
+            "id": 145,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic23.jpeg",
+            "fullImage": "images/facultyactivities/pic23.jpeg"
+        },
+        {
+            "id": 146,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic24.jpeg",
+            "fullImage": "images/facultyactivities/pic24.jpeg"
+        },
+        {
+            "id": 147,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic25.jpeg",
+            "fullImage": "images/facultyactivities/pic25.jpeg"
+        },
+        {
+            "id": 148,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic26.jpeg",
+            "fullImage": "images/facultyactivities/pic26.jpeg"
+        },
+        {
+            "id": 149,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic27.jpeg",
+            "fullImage": "images/facultyactivities/pic27.jpeg"
+        },
+        {
+            "id": 150,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic28.jpeg",
+            "fullImage": "images/facultyactivities/pic28.jpeg"
+        },
+        {
+            "id": 151,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic29.jpeg",
+            "fullImage": "images/facultyactivities/pic29.jpeg"
+        },
+        {
+            "id": 152,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic30.jpeg",
+            "fullImage": "images/facultyactivities/pic30.jpeg"
+        },
+        {
+            "id": 153,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic31.jpeg",
+            "fullImage": "images/facultyactivities/pic31.jpeg"
+        },
+        {
+            "id": 154,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic32.jpeg",
+            "fullImage": "images/facultyactivities/pic32.jpeg"
+        },
+        {
+            "id": 155,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic33.jpeg",
+            "fullImage": "images/facultyactivities/pic33.jpeg"
+        },
+        {
+            "id": 156,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic34.jpeg",
+            "fullImage": "images/facultyactivities/pic34.jpeg"
+        },
+        {
+            "id": 157,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic35.jpeg",
+            "fullImage": "images/facultyactivities/pic35.jpeg"
+        },
+        {
+            "id": 123,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic1.jpeg",
+            "fullImage": "images/facultyactivities/pic1.jpeg"
+        },
+        {
+            "id": 124,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic2.jpeg",
+            "fullImage": "images/facultyactivities/pic2.jpeg"
+        },
+        {
+            "id": 125,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic3.jpeg",
+            "fullImage": "images/facultyactivities/pic3.jpeg"
+        },
+        {
+            "id": 126,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic4.jpeg",
+            "fullImage": "images/facultyactivities/pic4.jpeg"
+        },
+        {
+            "id": 127,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic5.jpeg",
+            "fullImage": "images/facultyactivities/pic5.jpeg"
+        },
+        {
+            "id": 128,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic6.jpeg",
+            "fullImage": "images/facultyactivities/pic6.jpeg"
+        },
+        {
+            "id": 129,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic7.jpeg",
+            "fullImage": "images/facultyactivities/pic7.jpeg"
+        },
+        {
+            "id": 130,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic8.jpeg",
+            "fullImage": "images/facultyactivities/pic8.jpeg"
+        },
+        {
+            "id": 131,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic9.jpeg",
+            "fullImage": "images/facultyactivities/pic9.jpeg"
+        },
+        {
+            "id": 132,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic10.jpeg",
+            "fullImage": "images/facultyactivities/pic10.jpeg"
+        },
+        {
+            "id": 133,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic11.jpeg",
+            "fullImage": "images/facultyactivities/pic11.jpeg"
+        },
+        {
+            "id": 134,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic12.jpeg",
+            "fullImage": "images/facultyactivities/pic12.jpeg"
+        },
+        {
+            "id": 135,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic13.jpeg",
+            "fullImage": "images/facultyactivities/pic13.jpeg"
+        },
+        {
+            "id": 136,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic14.jpeg",
+            "fullImage": "images/facultyactivities/pic14.jpeg"
+        },
+        {
+            "id": 137,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic15.jpeg",
+            "fullImage": "images/facultyactivities/pic15.jpeg"
+        },
+        {
+            "id": 138,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic16.jpeg",
+            "fullImage": "images/facultyactivities/pic16.jpeg"
+        },
+        {
+            "id": 139,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic17.jpeg",
+            "fullImage": "images/facultyactivities/pic17.jpeg"
+        },
+        {
+            "id": 140,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic18.jpeg",
+            "fullImage": "images/facultyactivities/pic18.jpeg"
+        },
+        {
+            "id": 141,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic19.jpeg",
+            "fullImage": "images/facultyactivities/pic19.jpeg"
+        },
+        {
+            "id": 142,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic20.jpeg",
+            "fullImage": "images/facultyactivities/pic20.jpeg"
+        },
+        {
+            "id": 143,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic21.jpeg",
+            "fullImage": "images/facultyactivities/pic21.jpeg"
+        },
+        {
+            "id": 144,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic22.jpeg",
+            "fullImage": "images/facultyactivities/pic22.jpeg"
+        },
+        {
+            "id": 145,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic23.jpeg",
+            "fullImage": "images/facultyactivities/pic23.jpeg"
+        },
+        {
+            "id": 146,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic24.jpeg",
+            "fullImage": "images/facultyactivities/pic24.jpeg"
+        },
+        {
+            "id": 147,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic25.jpeg",
+            "fullImage": "images/facultyactivities/pic25.jpeg"
+        },
+        {
+            "id": 148,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic26.jpeg",
+            "fullImage": "images/facultyactivities/pic26.jpeg"
+        },
+        {
+            "id": 149,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic27.jpeg",
+            "fullImage": "images/facultyactivities/pic27.jpeg"
+        },
+        {
+            "id": 150,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic28.jpeg",
+            "fullImage": "images/facultyactivities/pic28.jpeg"
+        },
+        {
+            "id": 151,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic29.jpeg",
+            "fullImage": "images/facultyactivities/pic29.jpeg"
+        },
+        {
+            "id": 152,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic30.jpeg",
+            "fullImage": "images/facultyactivities/pic30.jpeg"
+        },
+        {
+            "id": 153,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic31.jpeg",
+            "fullImage": "images/facultyactivities/pic31.jpeg"
+        },
+        {
+            "id": 154,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic32.jpeg",
+            "fullImage": "images/facultyactivities/pic32.jpeg"
+        },
+        {
+            "id": 155,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic33.jpeg",
+            "fullImage": "images/facultyactivities/pic33.jpeg"
+        },
+        {
+            "id": 156,
+            "category": "admin",
+            "title": "Faculty Activities",
+            "thumbnail": "images/facultyactivities/pic34.jpeg",
+            "fullImage": "images/facultyactivities/pic34.jpeg"
+        },
+        {
+            "id": 158,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic1.jpeg",
+            "fullImage": "images/studentactivities/pic1.jpeg"
+        },
+        {
+            "id": 159,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic2.jpeg",
+            "fullImage": "images/studentactivities/pic2.jpeg"
+        },
+        {
+            "id": 160,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic3.jpeg",
+            "fullImage": "images/studentactivities/pic3.jpeg"
+        },
+        {
+            "id": 161,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic4.jpeg",
+            "fullImage": "images/studentactivities/pic4.jpeg"
+        },
+        {
+            "id": 162,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic5.jpeg",
+            "fullImage": "images/studentactivities/pic5.jpeg"
+        },
+        {
+            "id": 163,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic6.jpeg",
+            "fullImage": "images/studentactivities/pic6.jpeg"
+        },
+        {
+            "id": 164,
+            "category": "students",
+            "title": "Student Activities",
+            "thumbnail": "images/studentactivities/pic7.jpeg",
+            "fullImage": "images/studentactivities/pic7.jpeg"
         }
     ]
 }
