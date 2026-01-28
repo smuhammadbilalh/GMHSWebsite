@@ -1,6 +1,6 @@
 ﻿{
-    "schoolName": "GMHS Sarai Alamgir",
-    "description": "Government Model High School, GT Road Sarai Alamgir, District Gujrat.",
+    "schoolName": "GHSS Sarai Alamgir",
+    "description": "Government Higher Secondary School, GT Road Sarai Alamgir, District Gujrat.",
     "socialLinks": [
         {
             "name": "whatsapp",
@@ -9,7 +9,7 @@
         },
         {
             "name": "facebook",
-            "url": "#",
+            "url": "https://www.facebook.com/GHSSaraiAlamgir",
             "icon": "<path d=\"M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.971.956-2.971 3.594v.376h3.428l-.342 3.667h-3.086v7.98c-.453.076-1.522.247-2.922.247-1.127 0-1.685-.052-1.922-.095z\" />"
         },
         {
@@ -20,9 +20,10 @@
     ],
     "contactInfo": {
         "address": "GT Road, Sarai Alamgir",
-        "phone": "+92 325 5806291",
-        "email": "info@gmhs-sarai.edu.pk"
+        "phone": "0544 653149",
+        "email": "gmhssagir@gmail.com"
     },
+
     "developerTicker": [
         {
             "label": "Muhammad Bilal",

@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         developerData = await response.json();
 
         loadHero();
-        loadSkills();
+        // Removed loadSkills();
         startTypingAnimation();
-        setupScrollAnimations();
+        // Removed setupScrollAnimations(); - Not needed without skills section
 
     } catch (error) {
         console.error('Error loading developer data:', error);
@@ -52,11 +52,8 @@ function loadHero() {
         a.title = social.name;
 
         // ---------------------------------------------------------
-        // SVG RENDERING LOGIC (The Fix)
+        // SVG RENDERING LOGIC
         // ---------------------------------------------------------
-        // The JSON has mixed icon types. 
-        // WhatsApp is a "Filled" icon. Others (GitHub/LinkedIn) are "Stroked" icons.
-
         let svgAttributes = '';
 
         if (brandName === 'whatsapp') {
@@ -66,7 +63,7 @@ function loadHero() {
                 fill="currentColor" 
                 stroke="none"`;
         } else {
-            // Others (Feather icons) need STROKE, no fill
+            // Others need STROKE, no fill
             svgAttributes = `
                 viewBox="0 0 24 24" 
                 fill="none" 
@@ -124,66 +121,7 @@ function startTypingAnimation() {
 }
 
 // =========================================
-// LOAD SKILLS SECTION
-// =========================================
-function loadSkills() {
-    const skillsGrid = document.getElementById('skillsGrid');
-    if (!skillsGrid) return;
-
-    developerData.skills.forEach((category) => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'skill-category';
-
-        let skillsHTML = '';
-        category.technologies.forEach(tech => {
-            skillsHTML += `
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">${tech.name}</span>
-                        <span class="skill-percentage">${tech.level}%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-level="${tech.level}"></div>
-                    </div>
-                </div>
-            `;
-        });
-
-        categoryDiv.innerHTML = `
-            <h3>${category.category}</h3>
-            ${skillsHTML}
-        `;
-
-        skillsGrid.appendChild(categoryDiv);
-    });
-}
-
-// =========================================
-// SCROLL ANIMATIONS
-// =========================================
-function setupScrollAnimations() {
-    const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -100px 0px' };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                if (entry.target.classList.contains('skill-category')) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const level = bar.getAttribute('data-level');
-                        setTimeout(() => { bar.style.width = level + '%'; }, 100);
-                    });
-                }
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.section-title, .skill-category').forEach(el => observer.observe(el));
-}
-
-// =========================================
-// SMOOTH SCROLL
+// SMOOTH SCROLL (Optional - kept for links)
 // =========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
