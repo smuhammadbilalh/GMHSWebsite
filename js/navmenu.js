@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// PARTICLES CONFIGURATION - UPDATED FOR VISIBILITY
+// PARTICLES CONFIGURATION - HIGH DENSITY & VERY SUBTLE
 (async function initNavParticles() {
     const waitForLib = new Promise((resolve, reject) => {
         let attempts = 0;
@@ -73,13 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
             fullScreen: { enable: false },
             fpsLimit: 60,
             particles: {
-                color: { value: "#334155" }, // Dark slate for better visibility than pure black
+                // LIGHT GRAY COLOR for subtlety
+                color: { value: "#94a3b8" },
                 links: {
-                    color: "#334155",
-                    distance: 120,
+                    color: "#94a3b8",
+                    distance: 100,
                     enable: true,
-                    opacity: 0.4, // Increased from 0.15
-                    width: 1.5
+                    opacity: 0.15, // Very faint connections
+                    width: 1
                 },
                 move: {
                     enable: true,
@@ -88,14 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     outModes: { default: "bounce" }
                 },
                 number: {
-                    density: { enable: true, area: 400 },
-                    value: 20
+                    // DENSITY DISABLED: Forces exactly 45 particles to appear
+                    density: { enable: false },
+                    value: 45
                 },
                 opacity: {
-                    value: { min: 0.3, max: 0.6 } // Varied opacity like homepage
+                    value: { min: 0.1, max: 0.3 } // Very low opacity
                 },
                 shape: { type: "circle" },
-                size: { value: { min: 1, max: 4 } }
+                size: { value: { min: 1, max: 3 } }
             },
             detectRetina: true
         });
