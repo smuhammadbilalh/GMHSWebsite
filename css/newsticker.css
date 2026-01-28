@@ -17,7 +17,6 @@
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     /* PERFECTLY SOLID BLACK BORDERS (Hairline width) */
-    /* Using 1px with 0.5px scaling for maximum sharpness */
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
     /* MATCHED NAV SHADOW */
@@ -29,8 +28,10 @@
     background-color: #000000;
     color: #ffffff;
     padding: 0 25px;
-    /* OVERLAY LOGIC:
-       Covers the 1px borders exactly to prevent "leaking" lines */
+    /* ROUNDED CORNERS - RIGHT SIDE ONLY */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* OVERLAY LOGIC: Covers the 1px borders exactly */
     height: calc(100% + 2px);
     margin: -1px 0;
     display: flex;
@@ -54,7 +55,16 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    /* Added slight padding so text doesn't hit the rounded label immediately */
+    padding-left: 10px;
 }
+
+    /* Ensure marquee (if used) takes full height */
+    .ticker-content marquee {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
 
 .ticker-item {
     margin-right: 60px;

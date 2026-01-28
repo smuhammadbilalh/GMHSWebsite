@@ -34,7 +34,7 @@
                 <li class="dropdown-parent">
                     <a href="#" class="dropdown-trigger" onclick="return false;">
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        Others
+                        More
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="photos.html" data-page="photos">Photos Gallery</a></li>
@@ -57,27 +57,23 @@
     </div>
 
     <div class="mobile-nav" id="mobileNav">
+        <div id="mobile-nav-particles"></div>
+
         <div class="mobile-header">
             <img src="images/schoollogo.svg" alt="GHSS Logo" class="mobile-logo" />
             <span class="mobile-brand-text">GHSS Sarai</span>
             <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
         </div>
+
         <a href="index.html" data-page="home" onclick="closeMobileMenu()">Home</a>
         <a href="academics.html" data-page="academics" onclick="closeMobileMenu()">Academics</a>
         <a href="sports.html" data-page="sports" onclick="closeMobileMenu()">Sports</a>
 
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
-                Others <span class="mobile-arrow">▼</span>
-            </button>
-            <div class="mobile-dropdown-content">
-                <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos Gallery</a>
-                <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty</a>
-                <a href="co-curricular.html" data-page="co-curricular" onclick="closeMobileMenu()">Co-curricular</a>
-                <a href="medals.html" data-page="medals" onclick="closeMobileMenu()">Medals of Honor</a>
-                <a href="alumni.html" data-page="alumni" onclick="closeMobileMenu()">Alumni</a>
-            </div>
-        </div>
+        <a href="photos.html" data-page="photos" onclick="closeMobileMenu()">Photos Gallery</a>
+        <a href="faculty.html" data-page="faculty" onclick="closeMobileMenu()">Faculty Members</a>
+        <a href="co-curricular.html" data-page="co-curricular" onclick="closeMobileMenu()">Co-curricular</a>
+        <a href="medals.html" data-page="medals" onclick="closeMobileMenu()">Medals of Honor</a>
+        <a href="alumni.html" data-page="alumni" onclick="closeMobileMenu()">Alumni Network</a>
 
         <a href="contact.html" data-page="contact" onclick="closeMobileMenu()">Contact</a>
         <a href="developer.html" data-page="developer" onclick="closeMobileMenu()">Developer</a>
