@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports - GMHS Sarai Alamgir</title>
+    <title>Contact Us - GMHS Sarai Alamgir</title>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="icon" type="image/svg+xml" href="images/schoollogo.svg">
     <link rel="stylesheet" href="css/newsticker.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/sports.css">
-    <link rel="stylesheet" href="css/videocarousel.css">
-    <link rel="icon" type="image/svg+xml" href="images/schoollogo.svg">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
@@ -85,78 +84,75 @@
     </div>
     <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 
-    <main class="main-content sports-page">
+    <main class="main-content contact-page">
 
         <section class="page-title-section">
-            <h1 class="page-title" id="pageTitle">Sports</h1>
+            <h1 class="page-title" id="pageTitle">Contact Us</h1>
         </section>
 
-        <section class="sports-categories">
-            <div class="container">
-                <div class="section-header-modern">
-                    <h2>Our Sports</h2>
-                    <p>Discover excellence across multiple disciplines</p>
-                </div>
-
-                <div class="carousel-container-modern">
-                    <div class="carousel-track-wrapper">
-                        <div class="carousel-track" id="categoriesTrack">
-                        </div>
-                    </div>
-
-                    <div class="slider-pill-controls content-controls-pos">
-                        <button class="slider-arrow" onclick="moveCategorySlide(-1)">❮</button>
-                        <div class="slider-dots" id="categoryDots"></div>
-                        <button class="slider-arrow" onclick="moveCategorySlide(1)">❯</button>
-                    </div>
-                </div>
+        <section class="contact-cards-section">
+            <div class="contact-cards-grid" id="contactCardsGrid">
             </div>
         </section>
 
-        <section class="achievements-timeline">
-            <div class="container">
-                <div class="section-header-modern">
-                    <h2>Hall of Fame</h2>
-                    <p>Celebrating our sporting victories</p>
+        <div class="contact-content">
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <div class="form-success" id="formSuccess">
+                    ✓ Thank you! Your message has been sent successfully.
                 </div>
 
-                <div class="carousel-container-modern">
-                    <div class="carousel-track-wrapper">
-                        <div class="carousel-track" id="achievementsTrack">
-                        </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="formType">Inquiry Type *</label>
+                        <select id="formType" name="formType" required>
+                            <option value="">Select Type</option>
+                        </select>
                     </div>
 
-                    <div class="slider-pill-controls content-controls-pos">
-                        <button class="slider-arrow" onclick="moveAchievementSlide(-1)">❮</button>
-                        <div class="slider-dots" id="achievementDots"></div>
-                        <button class="slider-arrow" onclick="moveAchievementSlide(1)">❯</button>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="contact-map-section">
+                <h2>Find Us on Map</h2>
+                <p>Visit our campus located on GT Road, Sarai Alamgir.</p>
+
+                <div class="map-container" id="mapContainer">
                 </div>
             </div>
-        </section>
-
-        <section class="video-carousel-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="videoSectionTitle">Sports Highlights</h2>
-                    <p id="videoSectionDesc">Watch our athletes in action</p>
-                </div>
-
-                <div class="v-carousel-wrapper">
-                    <div class="v-track-container">
-                        <div class="v-track" id="videoTrack"></div>
-                    </div>
-                </div>
-
-                <div class="slider-pill-controls content-controls-pos">
-                    <button class="slider-arrow v-prev">❮</button>
-                    <div class="slider-dots" id="videoDots"></div>
-                    <button class="slider-arrow v-next">❯</button>
-                </div>
-            </div>
-        </section>
+        </div>
 
     </main>
+
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-grid">
@@ -183,8 +179,8 @@
     </footer>
 
     <script src="js/footer.js"></script>
+
     <script src="js/navmenu.js"></script>
-    <script src="js/sports.js"></script>
-    <script src="js/videocarousel.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
