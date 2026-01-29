@@ -8,7 +8,9 @@ let currentPointer = 0; // Tracks the next photo to load
 
 // Detect if mobile
 const isMobile = () => window.innerWidth <= 900;
-const initialLoadCount = () => isMobile() ? 4 : 8;
+
+// UPDATED: Page size doubled (16 for desktop, 8 for mobile)
+const initialLoadCount = () => isMobile() ? 8 : 16;
 
 // =========================================
 // LOAD ALL JSON DATA ON PAGE LOAD
@@ -71,6 +73,11 @@ function filterByCategory(categoryId, clickedBtn) {
     // Clear grid and load first batch
     const grid = document.getElementById('galleryGrid');
     if (grid) grid.innerHTML = '';
+
+    // Reset Footer Visibility
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'block';
+
     loadMorePhotos();
 }
 
@@ -101,7 +108,7 @@ function loadMorePhotos() {
 function createGalleryItem(photo, index) {
     const item = document.createElement('div');
     item.className = 'gallery-item';
-    item.style.animationDelay = `${(index % initialLoadCount()) * 0.1}s`;
+    item.style.animationDelay = `${(index % initialLoadCount()) * 0.05}s`; // Faster staggered animation
     item.classList.add('loading');
 
     // Browser-native lazy loading for performance
@@ -150,10 +157,14 @@ function updateButtons() {
 }
 
 // =========================================
-// BUTTON HANDLERS
+// BUTTON HANDLERS (FOOTER TOGGLING INCLUDED)
 // =========================================
 document.getElementById('btnShowMore').onclick = () => {
     loadMorePhotos();
+
+    // HIDE footer when expanding
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'none';
 
     // Optional: Smooth scroll to the start of the NEW content
     setTimeout(() => {
@@ -170,6 +181,11 @@ document.getElementById('btnShowLess').onclick = () => {
     currentPointer = 0;
     const grid = document.getElementById('galleryGrid');
     if (grid) grid.innerHTML = '';
+
+    // RESTORE Footer when collapsing
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'block';
+
     loadMorePhotos();
 
     // Scroll back to gallery top

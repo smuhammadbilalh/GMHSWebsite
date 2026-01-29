@@ -4,7 +4,10 @@
 .developer-page {
     background: #fff;
     color: #1e293b;
+    /* RESTORE SCROLL */
     overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 60px; /* Space for the fixed ticker so content isn't hidden */
 }
 
 /* =========================================
@@ -128,6 +131,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 800;
 }
 
     .hero-profile img {
@@ -169,11 +175,11 @@
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: #000; /* Fallback */
+    background: #000;
     border: 2px solid transparent;
 }
 
-    /* BRAND COLORS - EXACT HEX CODES */
+    /* BRAND COLORS */
     .social-link.github {
         background-color: #333333 !important;
         border-color: #333333 !important;
@@ -315,111 +321,14 @@
     }
 
 /* =========================================
-   SKILLS SECTION (SMALLER & RESPONSIVE)
+   STICKY TICKER (BOTTOM)
    ========================================= */
-.skills-section {
-    padding: 50px 20px; /* Reduced vertical padding */
-    background: #f8f8f8;
-    border-top: 1px solid #e5e5e5;
-}
-
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2.2rem; /* Slightly smaller title */
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-    .section-title.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-/* DESKTOP: 4 Columns (1 Row) */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
-    gap: 20px; /* Tighter gap */
-    margin-top: 30px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.skill-category {
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 0;
-    padding: 20px; /* Compact padding (was 28px) */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-    box-shadow: 4px 4px 0px rgba(0,0,0,1); /* Slightly smaller shadow */
-}
-
-    .skill-category.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .skill-category:hover {
-        transform: translateY(-2px);
-        box-shadow: 6px 6px 0px rgba(0,0,0,1);
-    }
-
-    .skill-category h3 {
-        font-size: 1rem; /* Smaller header (was 1.2rem) */
-        color: #000;
-        margin-bottom: 15px;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-.skill-item {
-    margin-bottom: 12px;
-}
-
-    .skill-item:last-child {
-        margin-bottom: 0;
-    }
-
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.skill-name, .skill-percentage {
-    font-size: 0.85rem; /* Smaller text */
-    color: #000;
-    font-weight: 700;
-}
-
-.skill-bar {
-    height: 6px; /* Thinner bar */
-    background: #e5e5e5;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #000;
-}
-
-.skill-progress {
-    height: 100%;
-    background: #000;
-    border-radius: 0;
-    width: 0;
-    transition: width 1.5s ease;
-    position: relative;
+.developer-footer-ticker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 /* =========================================
@@ -427,7 +336,7 @@
    ========================================= */
 @media (max-width: 900px) {
     .hero-section {
-        padding: 90px 20px 50px;
+        padding: 90px 20px 80px; /* Space for ticker */
     }
 
     .hero-content {
@@ -487,12 +396,6 @@
     .hero-cta {
         justify-content: center;
     }
-
-    /* TABLET: 2 Columns */
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -510,28 +413,5 @@
     .social-link {
         width: 45px;
         height: 45px;
-    }
-
-    /* PHONE: 2 Columns (Side by Side) */
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
-        gap: 10px; /* Tight gap */
-    }
-
-    .skill-category {
-        padding: 12px; /* Very compact padding */
-    }
-
-        .skill-category h3 {
-            font-size: 0.85rem; /* Tiny header to prevent wrapping */
-            margin-bottom: 10px;
-        }
-
-    .skill-name {
-        font-size: 0.75rem; /* Tiny text */
-    }
-
-    .skill-percentage {
-        display: none; /* Optional: Hide % on very small screens to save space */
     }
 }

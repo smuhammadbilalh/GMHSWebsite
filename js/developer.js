@@ -5,16 +5,18 @@ let developerData = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Load Developer Profile
         const response = await fetch('data/developer/profile.json');
         developerData = await response.json();
 
         loadHero();
-        // Removed loadSkills();
         startTypingAnimation();
-        // Removed setupScrollAnimations(); - Not needed without skills section
+
+        // Load Developer Ticker (From Footer Data)
+        loadDeveloperTicker();
 
     } catch (error) {
-        console.error('Error loading developer data:', error);
+        console.error('Error loading data:', error);
     }
 });
 
@@ -37,7 +39,7 @@ function loadHero() {
         profile.textContent = initials;
     }
 
-    // 3. Social Icons (Strictly from JSON)
+    // 3. Social Icons
     const socialContainer = document.getElementById('socialLinks');
     socialContainer.innerHTML = '';
 
@@ -45,43 +47,54 @@ function loadHero() {
         const a = document.createElement('a');
         a.href = social.url;
 
-        // Generate class name (e.g. "github", "whatsapp")
+        // Generate class name
         const brandName = social.name.toLowerCase().trim();
         a.className = `social-link ${brandName}`;
         a.target = '_blank';
         a.title = social.name;
 
-        // ---------------------------------------------------------
-        // SVG RENDERING LOGIC
-        // ---------------------------------------------------------
+        // SVG attributes
         let svgAttributes = '';
-
         if (brandName === 'whatsapp') {
-            // WhatsApp needs FILL, no stroke
-            svgAttributes = `
-                viewBox="0 0 24 24" 
-                fill="currentColor" 
-                stroke="none"`;
+            svgAttributes = `viewBox="0 0 24 24" fill="currentColor" stroke="none"`;
         } else {
-            // Others need STROKE, no fill
-            svgAttributes = `
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                stroke-width="2" 
-                stroke-linecap="round" 
-                stroke-linejoin="round"`;
+            svgAttributes = `viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`;
         }
 
-        a.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                 width="24" height="24" 
-                 ${svgAttributes}>
-                 ${social.icon}
-            </svg>`;
-
+        a.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" ${svgAttributes}>${social.icon}</svg>`;
         socialContainer.appendChild(a);
     });
+}
+
+// =========================================
+// LOAD DEVELOPER TICKER (Footer Data)
+// =========================================
+async function loadDeveloperTicker() {
+    try {
+        // Fetching from footer.json where the developer ticker data lives
+        const response = await fetch('data/footer.json');
+        const data = await response.json();
+
+        const label = document.getElementById('devTickerLabel');
+        const marquee = document.getElementById('devTickerContent');
+
+        if (label && marquee && data.developerTicker) {
+            // Set fixed label
+            label.textContent = "DEVELOPER";
+
+            // Render Items
+            marquee.innerHTML = data.developerTicker.map(item => `
+                <span class="ticker-item">
+                    <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        ${item.icon}
+                    </svg>
+                    <strong>${item.label}:</strong> ${item.text}
+                </span>
+            `).join('');
+        }
+    } catch (error) {
+        console.error("Error loading developer ticker:", error);
+    }
 }
 
 // =========================================
@@ -119,14 +132,3 @@ function startTypingAnimation() {
 
     setTimeout(startTypingAnimation, typingSpeed);
 }
-
-// =========================================
-// SMOOTH SCROLL (Optional - kept for links)
-// =========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
