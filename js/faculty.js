@@ -8,8 +8,9 @@ let currentPointer = 0;
 
 // Detect if mobile
 const isMobile = () => window.innerWidth <= 768;
-// Load 8 at a time (2 rows of 4), or 4 on mobile
-const initialLoadCount = () => isMobile() ? 4 : 8;
+
+// UPDATED: Page size doubled (16 for desktop, 8 for mobile)
+const initialLoadCount = () => isMobile() ? 8 : 16;
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -62,6 +63,11 @@ function filterByCategory(categoryId, clickedBtn) {
 
     const grid = document.getElementById('facultyGrid');
     if (grid) grid.innerHTML = '';
+
+    // Reset Footer Visibility
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'block';
+
     loadMoreFaculty();
 }
 
@@ -87,9 +93,8 @@ function loadMoreFaculty() {
 function createFacultyCard(member, index) {
     const card = document.createElement('div');
     card.className = 'faculty-card';
-    card.style.animationDelay = `${(index % initialLoadCount()) * 0.1}s`;
+    card.style.animationDelay = `${(index % initialLoadCount()) * 0.05}s`; // Faster staggered delay
 
-    // CHANGED: Replaced Emoji with SVG Icon inside the contact-badge anchor
     card.innerHTML = `
         <div class="faculty-img-container">
             <img src="${member.photo}" alt="${member.name}" loading="lazy">
@@ -137,12 +142,20 @@ function updateButtons() {
 
 document.getElementById('btnShowMore').onclick = () => {
     loadMoreFaculty();
+
+    // Hide footer
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'none';
 };
 
 document.getElementById('btnShowLess').onclick = () => {
     currentPointer = 0;
     const grid = document.getElementById('facultyGrid');
     if (grid) grid.innerHTML = '';
+
+    // Show footer
+    const footer = document.querySelector('.modern-footer');
+    if (footer) footer.style.display = 'block';
 
     loadMoreFaculty();
     document.querySelector('.gallery-section').scrollIntoView({ behavior: 'smooth' });
