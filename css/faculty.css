@@ -65,7 +65,7 @@
 }
 
 /* =========================================
-   CATEGORY TABS
+   CATEGORY TABS (Updated Radius)
    ========================================= */
 .category-tabs-wrapper {
     background: #fff;
@@ -110,7 +110,8 @@
     padding: 10px 24px;
     font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 8px;
+    /* UPDATED: Rounded Pill Shape (Matches Navmenu) */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -267,7 +268,6 @@
         color: #000;
     }
 
-/* --- UPDATED PREMIUM BADGE --- */
 .contact-badge {
     margin-top: 10px;
     background: #000;
@@ -278,11 +278,10 @@
     font-weight: 600;
     text-decoration: none;
     transition: opacity 0.2s;
-    /* Flex alignment for SVG */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px;
 }
 
     .contact-badge:hover {
@@ -295,76 +294,72 @@
     }
 
 /* =========================================
-   BUTTONS
+   GLASSMORPHISM BUTTONS
    ========================================= */
 .gallery-actions {
     text-align: center;
     margin-top: 30px;
 }
 
-.btn-show-more {
-    background: #000000;
-    color: #fff;
-    border: none;
-    padding: 12px 35px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 50px;
+/* Base Glass Button Style */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+    color: #000;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+    .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.85);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+    }
+
+/* SHOW MORE: Pill Shape */
+.btn-show-more {
+    padding: 12px 35px;
+    font-size: 1rem;
+    border-radius: 50px;
     gap: 10px;
 }
 
-    .btn-show-more:hover {
-        background: #333;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
+/* SHOW LESS: Circular Button Bottom Right */
 .btn-show-less {
     position: fixed;
-    top: 90px;
-    right: 20px;
-    background: #000000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
     z-index: 999;
-    animation: slideInFromRight 0.4s ease-out;
+    animation: slideUpFade 0.4s ease-out;
 }
 
-@keyframes slideInFromRight {
+@keyframes slideUpFade {
     from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-.btn-show-less:hover {
-    background: #333;
-    transform: translateY(-2px);
-}
-
 .btn-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5px;
 }
 
 .hidden {
@@ -395,6 +390,11 @@
 
     .category-tabs {
         padding: 0 20px;
+    }
+
+    .btn-show-less {
+        bottom: 20px;
+        right: 20px;
     }
 }
 
