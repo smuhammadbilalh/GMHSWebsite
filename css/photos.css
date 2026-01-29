@@ -65,8 +65,6 @@
     }
 }
 
-
-
 /* =========================================
    CATEGORY TABS (YouTube Style - Exact Edges)
    ========================================= */
@@ -114,7 +112,8 @@
     padding: 10px 24px;
     font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 8px; /* Slightly rounded tabs */
+    /* UPDATED: Rounded Pill Shape (Matches Navmenu) */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -188,8 +187,6 @@
         padding: 0 20px; /* Reset padding since arrows are gone */
     }
 }
-
-
 
 /* =========================================
    GALLERY GRID
@@ -284,98 +281,76 @@
 }
 
 /* =========================================
-   SHOW MORE / SHOW LESS BUTTONS
+   GLASSMORPHISM BUTTONS
    ========================================= */
 .gallery-actions {
     text-align: center;
     margin-top: 40px;
 }
 
-.btn-show-more {
-    background: #000000; /* Black */
-    color: #fff;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 50px;
+/* Base Glass Button Style */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+    color: #000;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+    .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.85);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+    }
+
+/* SHOW MORE: Pill Shape */
+.btn-show-more {
+    padding: 12px 35px;
+    font-size: 1rem;
+    border-radius: 50px;
     gap: 10px;
 }
 
-    .btn-show-more:hover {
-        background: #333333; /* Dark Gray Hover */
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
-/* STICKY SHOW LESS BUTTON */
+/* SHOW LESS: Circular Button Bottom Right */
 .btn-show-less {
     position: fixed;
-    top: 90px;
-    right: 20px;
-    background: #000000; /* Black */
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
     z-index: 999;
-    animation: slideInFromRight 0.4s ease-out;
+    animation: slideUpFade 0.4s ease-out;
 }
 
-@keyframes slideInFromRight {
+@keyframes slideUpFade {
     from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
-}
-
-.btn-show-less:hover {
-    background: #333333; /* Dark Gray */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
 .btn-icon {
     width: 20px;
     height: 20px;
+    stroke-width: 2.5px;
 }
 
-/* Hide buttons when not needed */
 .hidden {
     display: none !important;
-}
-
-/* Pulse animation for Show Less button */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    50% {
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-    }
-}
-
-.btn-show-less.active {
-    animation: pulse 2s ease-in-out infinite;
 }
 
 /* =========================================
@@ -503,61 +478,6 @@
 }
 
 /* =========================================
-   RESPONSIVE LIGHTBOX
-   ========================================= */
-@media (max-width: 900px) {
-    .lightbox {
-        padding: 10px;
-    }
-
-    .lightbox-content {
-        max-width: 100vw;
-        max-height: 100vh;
-    }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 4px;
-        }
-
-    .lightbox-close {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.8rem;
-    }
-
-    .lightbox::after {
-        bottom: 20px;
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .lightbox {
-        padding: 5px;
-    }
-
-    .lightbox-content img {
-        max-height: 85vh;
-    }
-
-    .lightbox-close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.6rem;
-    }
-
-    .lightbox::after {
-        display: none; /* Hide hint on small screens */
-    }
-}
-
-/* =========================================
    RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 900px) {
@@ -583,21 +503,24 @@
         font-size: 0.9rem;
     }
 
+    /* Fixed position adjustments for show less */
     .btn-show-less {
-        top: 75px;
-        right: 15px;
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        bottom: 20px;
+        right: 20px;
     }
 
-    .btn-show-more {
-        padding: 12px 30px;
-        font-size: 1rem;
+    /* Lightbox */
+    .lightbox {
+        padding: 10px;
     }
 
-    .btn-icon {
-        width: 18px;
-        height: 18px;
+    .lightbox-content img {
+        max-height: 90vh;
+    }
+
+    .lightbox-close {
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -614,15 +537,7 @@
         padding: 40px 15px;
     }
 
-    .btn-show-less {
-        top: 70px;
-        right: 10px;
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-
-    .btn-show-more {
-        padding: 12px 30px;
-        font-size: 1rem;
+    .lightbox::after {
+        display: none;
     }
 }

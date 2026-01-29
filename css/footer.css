@@ -57,8 +57,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    border: 2px solid #e2e8f0; /* Subtle default border */
+    /* Default background removed, now handled by specific classes below */
+    border: none;
     border-radius: 50%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -66,43 +66,38 @@
     .social-link svg {
         width: 20px;
         height: 20px;
+        fill: currentColor; /* Ensure SVG takes the text color */
     }
 
-    /* WhatsApp: Official Green */
+    /* WhatsApp: Constant Green Background */
     .social-link.whatsapp {
-        color: var(--whatsapp);
-        border-color: var(--whatsapp);
+        background: var(--whatsapp);
+        color: var(--white);
     }
 
         .social-link.whatsapp:hover {
-            background: var(--whatsapp);
-            color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
         }
 
-    /* Facebook: Official Blue */
+    /* Facebook: Constant Blue Background */
     .social-link.facebook {
-        color: var(--facebook);
-        border-color: var(--facebook);
+        background: var(--facebook);
+        color: var(--white);
     }
 
         .social-link.facebook:hover {
-            background: var(--facebook);
-            color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
         }
 
-    /* LinkedIn: Official Blue */
+    /* LinkedIn: Constant Blue Background */
     .social-link.linkedin {
-        color: var(--linkedin);
-        border-color: var(--linkedin);
+        background: var(--linkedin);
+        color: var(--white);
     }
 
         .social-link.linkedin:hover {
-            background: var(--linkedin);
-            color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0, 119, 181, 0.4);
         }
