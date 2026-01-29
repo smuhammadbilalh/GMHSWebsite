@@ -72,13 +72,13 @@
     "uniform": {
         "title": "School Uniform",
         "description": "Standardised dress code for all students.",
-        "image": "https://img.freepik.com/free-photo/portrait-schoolboy-posing-with-backpack_23-2148206233.jpg?w=740&t=st=1706000000~exp=1706000600~hmac=dummy",
+        "image": "images/SchoolUniform.jpeg",
         "items": [
-            "White Shirt with Badge",
+            "Sky Blue Shirt with Badge",
             "Grey Trousers",
             "Black School Shoes",
-            "Maroon Sweater (Winter)",
-            "School Tie and Belt"
+            "Green Sweater (Winter)",
+            "School Tie(Green & Yellow High School) and Blue Silver(Elementary)"
         ]
     },
     "fees": {
