@@ -6,38 +6,52 @@
     "toppers": [
         {
             "rank": "1",
-            "name": "Ahmed Raza",
-            "marks": "1050/1100",
-            "group": "Science Group",
-            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed"
+            "name": "Sahil Khan",
+            "marks": "1077/1200",
+            "group": "Biology Group",
+            "image": "images/toppers/SahilKhan.jpeg"
         },
         {
             "rank": "2",
-            "name": "Fatima Khan",
-            "marks": "1045/1100",
-            "group": "Computer Science",
-            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Fatima"
+            "name": "Hamza Tariq",
+            "marks": "1073/1100",
+            "group": "Biology Science",
+            "image": "images/toppers/HamzaTariq.jpeg"
         },
         {
             "rank": "3",
-            "name": "Usman Ali",
-            "marks": "1038/1100",
-            "group": "Arts Group",
-            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Usman"
+            "name": "Haseeb Ur Rehman",
+            "marks": "1027/1100",
+            "group": "Computer Group",
+            "image": "images/toppers/HaseebUrRehman.jpeg"
         },
         {
             "rank": "4",
-            "name": "Zainab Bibi",
-            "marks": "1025/1100",
-            "group": "Pre-Medical",
-            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Zainab"
+            "name": "Abdullah Ramzan",
+            "marks": "1017/1100",
+            "group": "Biology Group",
+            "image": "images/toppers/AbdullahRamzan.jpeg"
         },
         {
             "rank": "5",
-            "name": "Hassan Ali",
-            "marks": "1010/1100",
-            "group": "ICS",
-            "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Hassan"
+            "name": "Khayam Abid",
+            "marks": "1013/1100",
+            "group": "Computer Science",
+            "image": "images/toppers/KhayamAbid.jpeg"
+        },
+        {
+            "rank": "6",
+            "name": "Ashir Abbas",
+            "marks": "1005/1100",
+            "group": "Biology Group",
+            "image": "images/toppers/AshirAbbas.jpeg"
+        },
+        {
+            "rank": "7",
+            "name": "Muhammad Salar",
+            "marks": "988/1100",
+            "group": "Computer Group",
+            "image": "images/toppers/MuhammadSalar.jpeg"
         }
     ],
     "middleSection": {
