@@ -2,7 +2,7 @@
     "slides": [
         {
             "imageUrl": "images/hero/slide1.jpg",
-            "badgeText": "Our Mission",
+            "badgeText": "Our Missionssssss",
             "title": "Building Future Leaders",
             "buttonText": "Explore Academics",
             "buttonLink": "academics.html"
@@ -15,6 +15,7 @@
             "buttonText": "View Sports",
             "buttonLink": "sports.html"
         },
+        
         {
             "imageUrl": "images/hero/slide3.jpeg",
             "badgeText": "MODERN FACILITIES",
@@ -24,4 +25,5 @@
             "buttonLink": "contact.html"
         }
     ]
+
 }
