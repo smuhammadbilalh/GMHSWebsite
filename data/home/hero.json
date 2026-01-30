@@ -2,7 +2,7 @@
     "slides": [
         {
             "imageUrl": "images/hero/slide1.jpg",
-            "badgeText": "Our Missionssssss",
+            "badgeText": "Our Mission",
             "title": "Building Future Leaders",
             "buttonText": "Explore Academics",
             "buttonLink": "academics.html"
