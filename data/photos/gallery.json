@@ -25,6 +25,11 @@
             "id": "students",
             "name": "Students Activities",
             "slug": "Students Activities"
+        },
+        {
+            "id": "donations",
+            "name": "Donations...",
+            "slug": "School Maintenance and Improved Services"
         }
     ],
     "photos": [
@@ -1414,6 +1419,230 @@
             "title": "Student Activities",
             "thumbnail": "images/studentactivities/pic7.jpeg",
             "fullImage": "images/studentactivities/pic7.jpeg"
+        },
+        {
+            "id": 165,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic1.jpeg",
+            "fullImage": "images/donations/pic1.jpeg"
+        },
+        {
+            "id": 166,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic2.jpeg",
+            "fullImage": "images/donations/pic2.jpeg"
+        },
+        {
+            "id": 167,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic3.jpeg",
+            "fullImage": "images/donations/pic3.jpeg"
+        },
+        {
+            "id": 168,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic4.jpeg",
+            "fullImage": "images/donations/pic4.jpeg"
+        },
+        {
+            "id": 169,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic5.jpeg",
+            "fullImage": "images/donations/pic5.jpeg"
+        },
+        {
+            "id": 170,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic6.jpeg",
+            "fullImage": "images/donations/pic6.jpeg"
+        },
+        {
+            "id": 171,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic7.jpeg",
+            "fullImage": "images/donations/pic7.jpeg"
+        },
+        {
+            "id": 172,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic8.jpeg",
+            "fullImage": "images/donations/pic8.jpeg"
+        },
+        {
+            "id": 173,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic9.jpeg",
+            "fullImage": "images/donations/pic9.jpeg"
+        },
+        {
+            "id": 174,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic10.jpeg",
+            "fullImage": "images/donations/pic10.jpeg"
+        },
+        {
+            "id": 175,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic11.jpeg",
+            "fullImage": "images/donations/pic11.jpeg"
+        },
+        {
+            "id": 176,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic12.jpeg",
+            "fullImage": "images/donations/pic12.jpeg"
+        },
+        {
+            "id": 177,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic13.jpeg",
+            "fullImage": "images/donations/pic13.jpeg"
+        },
+        {
+            "id": 178,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic14.jpeg",
+            "fullImage": "images/donations/pic14.jpeg"
+        },
+        {
+            "id": 179,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic15.jpeg",
+            "fullImage": "images/donations/pic15.jpeg"
+        },
+        {
+            "id": 180,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic16.jpeg",
+            "fullImage": "images/donations/pic16.jpeg"
+        },
+        {
+            "id": 181,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic17.jpeg",
+            "fullImage": "images/donations/pic17.jpeg"
+        },
+        {
+            "id": 182,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic18.jpeg",
+            "fullImage": "images/donations/pic18.jpeg"
+        },
+        {
+            "id": 183,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic19.jpeg",
+            "fullImage": "images/donations/pic19.jpeg"
+        },
+        {
+            "id": 184,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic20.jpeg",
+            "fullImage": "images/donations/pic20.jpeg"
+        },
+        {
+            "id": 185,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic21.jpeg",
+            "fullImage": "images/donations/pic21.jpeg"
+        },
+        {
+            "id": 186,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic22.jpeg",
+            "fullImage": "images/donations/pic22.jpeg"
+        },
+        {
+            "id": 187,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic23.jpeg",
+            "fullImage": "images/donations/pic23.jpeg"
+        },
+        {
+            "id": 188,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic24.jpeg",
+            "fullImage": "images/donations/pic24.jpeg"
+        },
+        {
+            "id": 189,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic25.jpeg",
+            "fullImage": "images/donations/pic25.jpeg"
+        },
+        {
+            "id": 190,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic26.jpeg",
+            "fullImage": "images/donations/pic26.jpeg"
+        },
+        {
+            "id": 191,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic27.jpeg",
+            "fullImage": "images/donations/pic27.jpeg"
+        },
+        {
+            "id": 192,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic28.jpeg",
+            "fullImage": "images/donations/pic28.jpeg"
+        },
+        {
+            "id": 193,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic29.jpeg",
+            "fullImage": "images/donations/pic29.jpeg"
+        },
+        {
+            "id": 194,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic30.jpeg",
+            "fullImage": "images/donations/pic30.jpeg"
+        },
+        {
+            "id": 195,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic31.jpeg",
+            "fullImage": "images/donations/pic31.jpeg"
+        },
+        {
+            "id": 196,
+            "category": "donations",
+            "title": "Our Donor Hero",
+            "thumbnail": "images/donations/pic32.jpeg",
+            "fullImage": "images/donations/pic32.jpeg"
         }
     ]
 }
