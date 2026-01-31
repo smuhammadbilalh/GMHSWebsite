@@ -1,0 +1,188 @@
+﻿backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your main branch is named master
+
+# These settings map the Admin upload button to your existing "images" folder
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  # ===========================================================
+  # 1. HOME PAGE DATA (Folder: data/home/)
+  # ===========================================================
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "hero"
+        label: "Hero Slider"
+        file: "data/home/hero.json"
+        fields:
+          - name: "slides"
+            label: "Slides"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "imageUrl", widget: "image"}
+              - {label: "Badge Text", name: "badgeText", widget: "string", required: false}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Button Text", name: "buttonText", widget: "string", required: false}
+              - {label: "Button Link", name: "buttonLink", widget: "string", required: false}
+
+      - name: "donors"
+        label: "Donors List"
+        file: "data/home/donors.json"
+        fields:
+          - {label: "Section Title", name: "sectionTitle", widget: "string"}
+          - {label: "Description", name: "sectionDescription", widget: "text"}
+          - name: "donors"
+            label: "Donors"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Contribution", name: "contribution", widget: "string"}
+              - {label: "Donor Image", name: "image", widget: "image"}
+              - {label: "Message", name: "message", widget: "text", required: false}
+
+      - name: "about_ticker"
+        label: "About Ticker"
+        file: "data/home/about_ticker.json"
+        fields:
+          - {label: "Label", name: "label", widget: "string"}
+          - name: "items"
+            label: "Items"
+            widget: "list"
+            fields:
+              - {label: "Icon (SVG)", name: "iconSvg", widget: "code", default_language: "html"}
+              - {label: "Bold Text", name: "boldText", widget: "string"}
+              - {label: "Normal Text", name: "normalText", widget: "string"}
+
+      - name: "news_ticker"
+        label: "News Ticker"
+        file: "data/home/news_ticker.json"
+        fields:
+          - {label: "Label", name: "label", widget: "string"}
+          - name: "items"
+            label: "Items"
+            widget: "list"
+            fields:
+              - {label: "Icon (SVG)", name: "iconSvg", widget: "code", default_language: "html"}
+              - {label: "Bold Text", name: "boldText", widget: "string"}
+              - {label: "Normal Text", name: "normalText", widget: "string"}
+
+      - name: "stats"
+        label: "Stats"
+        file: "data/home/stats.json"
+        fields:
+          - name: "stats"
+            label: "Statistics"
+            widget: "list"
+            fields:
+              - {label: "Value", name: "value", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Highlight", name: "highlight", widget: "boolean"}
+
+      - name: "video"
+        label: "Main Video"
+        file: "data/home/video.json"
+        fields:
+          - {label: "Video File", name: "videoPath", widget: "file"}
+          - {label: "Autoplay", name: "autoplay", widget: "boolean"}
+          - {label: "Muted", name: "muted", widget: "boolean"}
+          - {label: "Loop", name: "loop", widget: "boolean"}
+
+      - name: "videocarousel"
+        label: "Video Carousel"
+        file: "data/home/videocarousel.json"
+        fields:
+          - {label: "Title", name: "sectionTitle", widget: "string"}
+          - {label: "Description", name: "sectionDescription", widget: "text"}
+          - name: "videos"
+            label: "Videos"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "number"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+              - {label: "Video URL", name: "videoUrl", widget: "string"}
+              - {label: "Duration", name: "duration", widget: "string"}
+
+      - name: "portals"
+        label: "Portals"
+        file: "data/home/portals.json"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Accent", name: "accent", widget: "string"}
+          - name: "cards"
+            label: "Cards"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icon (SVG)", name: "iconSvg", widget: "code"}
+
+  # ===========================================================
+  # 2. SPORTS PAGE (Folder: data/sports/)
+  # ===========================================================
+  - name: "sports"
+    label: "Sports Page"
+    files:
+      - name: "achievements"
+        label: "Achievements"
+        file: "data/sports/achievements.json"
+        fields:
+          - {label: "Content", name: "items", widget: "list", fields: [{label: "Data", name: "data", widget: "string"}]} # Simplified since I don't see content
+      - name: "sportsvideos"
+        label: "Sports Videos"
+        file: "data/sports/sportsvideos.json"
+        fields:
+          - {label: "Videos", name: "videos", widget: "list", fields: [{label: "Data", name: "data", widget: "string"}]}
+
+  # ===========================================================
+  # 3. OTHER PAGES (Mapped to specific folders)
+  # ===========================================================
+  - name: "academics"
+    label: "Academics"
+    files:
+      - name: "content"
+        label: "Content"
+        file: "data/academics/content.json"
+        fields:
+           # Using code widget as fallback so you can edit raw JSON safely
+           - {label: "Raw JSON", name: "body", widget: "code", default_language: "json"}
+
+  - name: "faculty"
+    label: "Faculty"
+    files:
+      - name: "content"
+        label: "Content"
+        file: "data/faculty/content.json"
+        fields:
+           - {label: "Raw JSON", name: "body", widget: "code", default_language: "json"}
+
+  - name: "photos"
+    label: "Gallery"
+    files:
+      - name: "gallery"
+        label: "Photo Gallery"
+        file: "data/photos/gallery.json"
+        fields:
+           - {label: "Raw JSON", name: "body", widget: "code", default_language: "json"}
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - name: "info"
+        label: "Info"
+        file: "data/contact/info.json"
+        fields:
+           - {label: "Raw JSON", name: "body", widget: "code", default_language: "json"}
+
+  - name: "global"
+    label: "Global Settings"
+    files:
+      - name: "footer"
+        label: "Footer"
+        file: "data/footer.json"
+        fields:
+           - {label: "Raw JSON", name: "body", widget: "code", default_language: "json"}
