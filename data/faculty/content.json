@@ -26,7 +26,7 @@
             "designation": "Principal",
             "qualification": "Ph.D. Education",
             "phone": "+92 345 5686505",
-            "photo": "images/faculty/MuhammadArif.jpg"
+            "photo": "images/faculty/MuhammadArif.png"
         },
         {
             "id": 2,
@@ -129,9 +129,9 @@
         },
         {
             "id": 13,
-            "category": "current",
+            "category": "principals",
             "name": "Afzaal ahmed chaudhary",
-            "designation": "Teacher",
+            "designation": "Vice Principal",
             "qualification": "MA political Science",
             "phone": "+92 333 5824410",
             "photo": "images/faculty/AfzaalChaudhry.jpg"
