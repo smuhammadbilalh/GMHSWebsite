@@ -210,13 +210,13 @@ async function loadPortals() {
             <h3 style="color: #000000 !important;">${card.title}</h3>
         </a>
     `).join('');
-    
+
     // Refresh static observer for newly added portal section elements if needed
     initStaticScrollAnimations();
 }
 
 // =========================================
-// LOAD DONORS CAROUSEL
+// LOAD DONORS CAROUSEL (Updated: 6 Desktop / 2 Mobile)
 // =========================================
 let donorIndex = 0;
 let donorsCount = 0;
@@ -233,14 +233,14 @@ async function loadDonors() {
         if (descEl) descEl.textContent = data.sectionDescription;
 
         const track = document.getElementById('donorTrack');
+
+        // Only rendering Image and Name
         track.innerHTML = data.donors.map(donor => `
             <div class="donor-card">
                 <div class="donor-image-wrapper">
-                    <img src="${donor.image}" alt="${donor.name}" loading="lazy" onerror="this.src='images/schoollogo.png'">
+                    <img src="${donor.image}" alt="${donor.name}" loading="lazy" onerror="this.src='images/schoollogo.svg'">
                 </div>
                 <h3>${donor.name}</h3>
-                <span class="donor-contribution">${donor.contribution}</span>
-                <p class="donor-message">"${donor.message}"</p>
             </div>
         `).join('');
 
@@ -248,7 +248,12 @@ async function loadDonors() {
         renderDonorDots();
 
         setTimeout(updateDonorPosition, 200);
-        window.addEventListener('resize', updateDonorPosition);
+
+        // Update on resize to switch between 2 and 6 items
+        window.addEventListener('resize', () => {
+            renderDonorDots();
+            updateDonorPosition();
+        });
 
         setInterval(() => moveDonorSlide(1), 6000);
     } catch (error) {
@@ -256,14 +261,21 @@ async function loadDonors() {
     }
 }
 
+function getItemsInView() {
+    // 6 items on Desktop (>=768px), 2 items on Mobile (<768px)
+    return window.innerWidth < 768 ? 2 : 6;
+}
+
 function renderDonorDots() {
     const dotsContainer = document.getElementById('donorDots');
     dotsContainer.innerHTML = '';
+
+    // Standard 3-dot navigation
     for (let i = 0; i < 3; i++) {
         const dot = document.createElement('button');
         dot.className = i === 0 ? 'active' : '';
         dot.onclick = () => {
-            const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+            const itemsInView = getItemsInView();
             const maxIndex = donorsCount - itemsInView;
             donorIndex = Math.round((i / 2) * maxIndex);
             updateDonorPosition();
@@ -273,7 +285,7 @@ function renderDonorDots() {
 }
 
 function moveDonorSlide(direction) {
-    const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+    const itemsInView = getItemsInView();
     const maxIndex = Math.max(0, donorsCount - itemsInView);
 
     donorIndex += direction;
@@ -293,26 +305,21 @@ function updateDonorPosition() {
     const style = window.getComputedStyle(track);
     const gap = parseFloat(style.gap) || 20;
 
-    const containerWidth = track.parentElement.offsetWidth;
-    let translateVal;
-
-    if (window.innerWidth < 600) {
-        const centerOffset = (containerWidth / 2) - (cardWidth / 2);
-        translateVal = centerOffset - (donorIndex * (cardWidth + gap));
-    } else {
-        translateVal = -(donorIndex * (cardWidth + gap));
-    }
+    // Standard slide calculation for both Desktop and Mobile
+    const translateVal = -(donorIndex * (cardWidth + gap));
 
     track.style.transform = `translateX(${translateVal}px)`;
 
+    // Update active class for the "primary" item in view
     cards.forEach((card, index) => {
         card.classList.toggle('active-donor', index === donorIndex);
     });
 
+    // Update Dots
     const dots = document.querySelectorAll('#donorDots button');
     if (dots.length === 3) {
         dots.forEach(d => d.classList.remove('active'));
-        const itemsInView = window.innerWidth < 600 ? 1 : (window.innerWidth < 901 ? 2 : 4);
+        const itemsInView = getItemsInView();
         const maxIndex = donorsCount - itemsInView;
         const activeDot = Math.min(2, Math.floor((donorIndex / (maxIndex || 1)) * 3));
         dots[activeDot].classList.add('active');
@@ -363,7 +370,7 @@ if (heroSlider) {
 function initStaticScrollAnimations() {
     const observerOptions = { root: null, threshold: 0.1 };
     const scrollObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => { 
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);

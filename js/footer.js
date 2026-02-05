@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         renderSchoolCol(footerData);
         renderContactCol(footerData);
-        renderDeveloperTicker(footerData);
+        // Developer ticker render call removed
 
     } catch (error) {
         console.error('Error loading footer data:', error);
@@ -54,18 +54,4 @@ function renderContactCol(data) {
             </li>
         </ul>
     `;
-}
-
-function renderDeveloperTicker(data) {
-    const marquee = document.querySelector('.footer-developer-ticker marquee');
-    if (!marquee) return;
-
-    marquee.innerHTML = data.developerTicker.map(item => `
-        <span class="ticker-item">
-            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                ${item.icon}
-            </svg>
-            <strong>${item.label}:</strong> ${item.text}
-        </span>
-    `).join('');
 }
