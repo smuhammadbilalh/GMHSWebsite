@@ -32,7 +32,7 @@
             "id": 2,
             "category": "current",
             "name": "RAMIZ SHAUKAT",
-            "designation": "Teacher",
+            "designation": "SSE Maths",
             "qualification": "MSc. MATHEMATICS, M. Ed",
             "phone": "+92 341 8066905",
             "photo": "images/faculty/RamizShaukat.jpg"
@@ -41,7 +41,7 @@
             "id": 3,
             "category": "current",
             "name": "Tauseef Nazir ",
-            "designation": "Teacher",
+            "designation": "SST",
             "qualification": "M.Phil Mathematics ",
             "phone": "+92 314 5411707",
             "photo": "images/faculty/TauseefNazir.jpg"
@@ -50,7 +50,7 @@
             "id": 4,
             "category": "current",
             "name": "Danial tayyab",
-            "designation": "Teacher",
+            "designation": "EST Science",
             "qualification": "M.Phil Chemistry",
             "phone": "+92 334 8652546",
             "photo": "images/faculty/DanialTayyab.jpeg"
@@ -59,7 +59,7 @@
             "id": 5,
             "category": "current",
             "name": "MUHAMMAD NASIR",
-            "designation": "Teacher",
+            "designation": "SST English",
             "qualification": "M Phil English, M.Ed",
             "phone": "+92 344 5385788",
             "photo": "images/faculty/MuhammadNasir.jpg"
@@ -77,7 +77,7 @@
             "id": 7,
             "category": "current",
             "name": "Mahboob ul Hassan",
-            "designation": "Teacher",
+            "designation": "EST(Vernacoular)",
             "qualification": "M.A ,M .Ed",
             "phone": "+92 345 5651761",
             "photo": "images/faculty/MahboobUlHassan.jpg"
@@ -86,7 +86,7 @@
             "id": 8,
             "category": "current",
             "name": "Mohammad Tofiq",
-            "designation": "Teacher",
+            "designation": "EST Math",
             "qualification": "B.Sc",
             "phone": "+92 345 5650497",
             "photo": "images/faculty/MohammadTofiq.jpg"
@@ -104,7 +104,7 @@
             "id": 10,
             "category": "current",
             "name": "Imran Iqbal",
-            "designation": "Teacher",
+            "designation": "EST",
             "qualification": "BS IT",
             "phone": "+92 311 5871139",
             "photo": "images/faculty/ImranIqbal.jpeg"
@@ -113,7 +113,7 @@
             "id": 11,
             "category": "current",
             "name": "Muddasser Hussain Shabbir",
-            "designation": "Teacher",
+            "designation": "EST Science",
             "qualification": "M.Sc  M.Ed",
             "phone": "+92 345 5640903",
             "photo": "images/faculty/MuddaserHussain.jpg"
@@ -122,16 +122,16 @@
             "id": 12,
             "category": "current",
             "name": "USMAN NAZIR",
-            "designation": "Teacher",
+            "designation": "SST Computer Science",
             "qualification": "M.Sc  M.Ed",
             "phone": "+92 342 1575128",
             "photo": "images/faculty/UsmanNazir.jpeg"
         },
         {
             "id": 13,
-            "category": "principals",
+            "category": "current",
             "name": "Afzaal ahmed chaudhary",
-            "designation": "Vice Principal",
+            "designation": "EST",
             "qualification": "MA political Science",
             "phone": "+92 333 5824410",
             "photo": "images/faculty/AfzaalChaudhry.jpg"
@@ -140,16 +140,16 @@
             "id": 14,
             "category": "current",
             "name": "Muhammad Rafiq",
-            "designation": "Teacher",
+            "designation": "EST",
             "qualification": "M.A. Urdu",
             "phone": "+92 331 5800657",
             "photo": "images/faculty/MUHAMMADRAFIQ.jpg"
         },
         {
             "id": 15,
-            "category": "current",
+            "category": "principals",
             "name": "Afzaal Ur Rehman",
-            "designation": "Teacher",
+            "designation": "Vice Principal",
             "qualification": "Bsc, BEd",
             "phone": "+92 300 9525616",
             "photo": "images/faculty/AfzaalUrRehman.jpg"
@@ -158,7 +158,7 @@
             "id": 16,
             "category": "current",
             "name": "Ghulam Mustafa",
-            "designation": "Teacher",
+            "designation": "EST",
             "qualification": "MA History M.Ed",
             "phone": "+92 344 5723866",
             "photo": "images/faculty/GhulamMustafa.jpg"
@@ -167,7 +167,7 @@
             "id": 17,
             "category": "current",
             "name": "YASIR MAHMOOD",
-            "designation": "Teacher",
+            "designation": "EST MATHS",
             "qualification": "M.phill Maths+ B.Ed",
             "phone": "+92 332 8843143",
             "photo": "images/faculty/YasirMahmood.jpg"
@@ -176,7 +176,7 @@
             "id": 18,
             "category": "current",
             "name": "Anwar Hussain",
-            "designation": "Teacher",
+            "designation": "EST English",
             "qualification": "M.A., M.Ed",
             "phone": "+92 345 5672124",
             "photo": "images/faculty/AnwarHussain.jpg"
@@ -185,7 +185,7 @@
             "id": 19,
             "category": "current",
             "name": "Muhammad Rafi",
-            "designation": "Teacher",
+            "designation": "EST Arts",
             "qualification": "M.A., M.Ed",
             "phone": "+92 321 5445865 ",
             "photo": "images/faculty/MuhammadRafi.jpg"
@@ -194,7 +194,7 @@
             "id": 20,
             "category": "current",
             "name": "ATA UL MUSTAFA",
-            "designation": "Teacher",
+            "designation": "EST AT",
             "qualification": "M.Phil  B.ed",
             "phone": "+92 343 0875133",
             "photo": "images/faculty/Mustafa.png"
@@ -203,7 +203,7 @@
             "id": 21,
             "category": "current",
             "name": "Muhammad Tufail",
-            "designation": "Teacher",
+            "designation": "SST",
             "qualification": "Ms Mathematics",
             "phone": "+92 344 5303184",
             "photo": "images/faculty/MuhammadTufail.jpeg"
@@ -212,7 +212,7 @@
             "id": 22,
             "category": "current",
             "name": "Zarq Zeb",
-            "designation": "Teacher",
+            "designation": "Sse Urdu",
             "qualification": "M.phil Urdu .B.Ed",
             "phone": "+92 347 5200351",
             "photo": "images/faculty/ZarqZeb.jpg"
@@ -221,7 +221,7 @@
             "id": 23,
             "category": "current",
             "name": "SHAHBAZ QALANDAR",
-            "designation": "Teacher",
+            "designation": "S.S.T. Arts",
             "qualification": "M.A.M.ED.",
             "phone": "+92 345 5702281",
             "photo": "images/faculty/Shahbaz.jpg"
@@ -230,7 +230,7 @@
             "id": 24,
             "category": "current",
             "name": "SHAHROZ TARIQ",
-            "designation": "Teacher",
+            "designation": "SSE Chemistry",
             "qualification": "BS (hons) Chemistry",
             "phone": "+92 326 4011100",
             "photo": "images/faculty/ShahrozTariq.jpg"
@@ -257,7 +257,7 @@
             "id": 26,
             "category": "current",
             "name": "Muhammad Ashraf",
-            "designation": "Teacher",
+            "designation": "SST",
             "qualification": "MA Med",
             "phone": "+92 300 5412899",
             "photo": "images/faculty/MuhammadAshraf.jpg"
@@ -267,7 +267,7 @@
             "id": 27,
             "category": "current",
             "name": "Muhammad Ilyas",
-            "designation": "Teacher",
+            "designation": "SST",
             "qualification": "BSc,MA Islamic study,MEd",
             "phone": "+92 344 5748917",
             "photo": "images/faculty/MuhammadIlyas.jpg"
@@ -294,7 +294,7 @@
             "id": 30,
             "category": "current",
             "name": "Qamar Rizwan",
-            "designation": "Teacher",
+            "designation": "EST DM",
             "qualification": "MA history Med",
             "phone": "+92 344 5978516",
             "photo": "images/faculty/qamar.jpg"
@@ -303,7 +303,7 @@
             "id": 31,
             "category": "current",
             "name": "Amjad Mehmood",
-            "designation": "Teacher",
+            "designation": "SST",
             "qualification": "MA B. Ed",
             "phone": "+92 333 5801567",
             "photo": "images/faculty/AmjadMehmood.jpg"
@@ -321,7 +321,7 @@
             "id": 33,
             "category": "current",
             "name": "Waqar Gill",
-            "designation": "Junior Clerk",
+            "designation": "EST Science Math",
             "qualification": "MSc MEd",
             "phone": "+92 336 2074707",
             "photo": "images/faculty/WaqarGill.jpg"
@@ -330,7 +330,7 @@
             "id": 34,
             "category": "current",
             "name": "NAVEED AHMED ",
-            "designation": "Sports Incharge and Co-currucicualr Activities",
+            "designation": "EST PET",
             "qualification": "M.Sc (Sports Science),M.A (Pol.sci)M.A Edu,AE-Mechanical Prod.",
             "phone": "+92 347 5769405",
             "photo": "images/faculty/NaveedAhmed.jpeg"
