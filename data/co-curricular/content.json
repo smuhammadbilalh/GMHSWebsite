@@ -28,35 +28,35 @@
             "title": "Annual Naat Competition",
             "category": "naat",
             "date": "Rabi-ul-Awal 2024",
-            "image": "images/activities/naat_comp.jpg",
+            "image": "images/studentactivities/pic5.jpeg",
             "description": "Students expressing their love for the Holy Prophet (PBUH) with beautiful voices."
         },
         {
             "title": "Independence Day Speech",
             "category": "speech",
             "date": "14th August 2024",
-            "image": "images/activities/speech_day.jpg",
+            "image": "images/studentactivities/pic4.jpeg",
             "description": "Passionate speeches highlighting the sacrifices of our forefathers."
         },
         {
             "title": "Daily Morning Assembly",
             "category": "assembly",
             "date": "Daily Routine",
-            "image": "images/activities/assembly.jpg",
+            "image": "images/studentactivities/pic3.jpeg",
             "description": "Starting the day with the name of Allah and the National Anthem."
         },
         {
             "title": "Seerat-un-Nabi Conference",
             "category": "events",
             "date": "Oct 2023",
-            "image": "images/activities/seerat_conf.jpg",
+            "image": "images/studentactivities/pic2.jpeg",
             "description": "A spiritual gathering to learn from the life of the Prophet (PBUH)."
         },
         {
             "title": "Quran Recitation Contest",
             "category": "naat",
             "date": "Ramadan 2024",
-            "image": "images/activities/qirat.jpg",
+            "image": "images/studentactivities/pic1.jpeg",
             "description": "Showcasing the beautiful recitation of the Holy Quran by our students."
         }
     ]
