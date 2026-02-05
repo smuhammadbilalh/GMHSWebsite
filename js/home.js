@@ -236,7 +236,7 @@ async function loadDonors() {
         track.innerHTML = data.donors.map(donor => `
             <div class="donor-card">
                 <div class="donor-image-wrapper">
-                    <img src="${donor.image}" alt="${donor.name}" loading="lazy" onerror="this.src='images/schoollogo.svg'">
+                    <img src="${donor.image}" alt="${donor.name}" loading="lazy" onerror="this.src='images/schoollogo.png'">
                 </div>
                 <h3>${donor.name}</h3>
                 <span class="donor-contribution">${donor.contribution}</span>

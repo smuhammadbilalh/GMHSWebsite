@@ -89,7 +89,7 @@ function renderActivities(filter) {
 
         card.innerHTML = `
             <div class="activity-img-wrapper">
-                <img src="${item.image}" alt="${item.title}" class="activity-img" loading="lazy" onerror="this.src='images/schoollogo.svg'">
+                <img src="${item.image}" alt="${item.title}" class="activity-img" loading="lazy" onerror="this.src='images/schoollogo.png'">
                 <div class="category-badge">${getCategoryName(item.category)}</div>
             </div>
             <div class="activity-content">
