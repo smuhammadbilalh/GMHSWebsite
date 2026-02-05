@@ -85,7 +85,7 @@ function loadAchievementCarousel() {
     track.innerHTML = achievements.map((ach, index) => `
         <div class="achievement-card-carousel" style="animation: fadeInUp 0.6s ease-out ${index * 0.15}s forwards;">
             <div class="ach-img-wrapper">
-                <img src="${ach.image}" alt="${ach.title}" onerror="this.src='images/schoollogo.svg'">
+                <img src="${ach.image}" alt="${ach.title}" onerror="this.src='images/schoollogo.png'">
                 <div class="ach-medal ${ach.medal.toLowerCase()}">${ach.medal}</div>
             </div>
             <div class="ach-content">

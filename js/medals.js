@@ -145,7 +145,7 @@ function renderWinners(winners) {
     grid.innerHTML = winners.map((winner, i) => `
         <div class="medal-card" style="animation-delay: ${i * 0.1}s">
             <div class="medal-img-wrapper">
-                <img src="${winner.image}" alt="${winner.name}" loading="lazy" onerror="this.src='images/schoollogo.svg'">
+                <img src="${winner.image}" alt="${winner.name}" loading="lazy" onerror="this.src='images/schoollogo.png'">
                 <div class="medal-badge ${getMedalClass(winner.award)}">
                     ${getMedalIcon(winner.award)} ${winner.award}
                 </div>
