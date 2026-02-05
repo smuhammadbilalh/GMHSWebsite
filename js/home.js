@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Promise.allSettled([
         loadHeroSlides(),      // Starts slider internally on success
         initParticles(),       // safely checks for library now
-        loadStats(),
+        loadStats(),           // Includes the fix for invisible stats
         loadNewsTicker(),
         loadAboutTicker(),
         loadPortals(),
@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Initialize static scroll animations immediately
+    initStaticScrollAnimations();
 });
 
 // =========================================
@@ -41,8 +44,6 @@ async function loadHeroSlides() {
             slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
 
             // LAZY LOADING LOGIC:
-            // First slide: Eager load + High priority (LCP Boost)
-            // Other slides: Lazy load (Bandwidth saving)
             const loadingAttr = index === 0
                 ? 'loading="eager" fetchpriority="high"'
                 : 'loading="lazy"';
@@ -76,7 +77,6 @@ async function loadHeroSlides() {
             document.getElementById('sliderControls').style.display = 'flex';
         }
 
-        // Start animation immediately after slides are ready
         startAutoSlide();
 
     } catch (error) {
@@ -85,23 +85,51 @@ async function loadHeroSlides() {
 }
 
 // =========================================
-// LOAD STATS
+// LOAD STATS (FIXED: Race Condition Resolved)
 // =========================================
 async function loadStats() {
-    const response = await fetch('data/home/stats.json');
-    const data = await response.json();
-    const container = document.getElementById('statsContainer');
+    try {
+        const response = await fetch('data/home/stats.json');
+        const data = await response.json();
+        const container = document.getElementById('statsContainer');
 
-    data.stats.forEach(stat => {
-        const statDiv = document.createElement('div');
-        statDiv.className = `stat-item ${stat.highlight ? 'highlight' : ''}`;
-        statDiv.setAttribute('data-counter', stat.value);
-        statDiv.innerHTML = `
-            <strong class="counter-value" style="color: #000000;">0</strong>
-            <span style="color: #000000;">${stat.label}</span>
-        `;
-        container.appendChild(statDiv);
-    });
+        if (!container) return;
+
+        data.stats.forEach(stat => {
+            const statDiv = document.createElement('div');
+            statDiv.className = `stat-item ${stat.highlight ? 'highlight' : ''}`;
+            statDiv.setAttribute('data-counter', stat.value);
+            statDiv.innerHTML = `
+                <strong class="counter-value" style="color: #000000;">0</strong>
+                <span style="color: #000000;">${stat.label}</span>
+            `;
+            container.appendChild(statDiv);
+        });
+
+        // FIX: Trigger the observer explicitly AFTER items are added to DOM
+        initStatsObserver();
+
+    } catch (error) {
+        console.error("Error loading stats:", error);
+    }
+}
+
+// =========================================
+// STATS OBSERVER (New Function)
+// =========================================
+function initStatsObserver() {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('is-visible', 'counted');
+                animateCounter(entry.target);
+                observer.unobserve(entry.target); // Stop watching once animated
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const items = document.querySelectorAll('.stat-item');
+    items.forEach(item => counterObserver.observe(item));
 }
 
 // =========================================
@@ -170,7 +198,6 @@ async function loadPortals() {
     const data = await response.json();
     const header = document.getElementById('portalsHeader');
 
-    // Explicit inline styles added as a fallback to CSS
     header.innerHTML = `
         <h2 style="color: #000000 !important;">${data.title} <span class="accent-text" style="color: #000000 !important;">${data.accent}</span></h2>
         <div class="header-line" style="background-color: #000000;"></div>
@@ -183,12 +210,13 @@ async function loadPortals() {
             <h3 style="color: #000000 !important;">${card.title}</h3>
         </a>
     `).join('');
+    
+    // Refresh static observer for newly added portal section elements if needed
+    initStaticScrollAnimations();
 }
 
-
-
 // =========================================
-// LOAD DONORS CAROUSEL (Updated with Lazy Loading)
+// LOAD DONORS CAROUSEL
 // =========================================
 let donorIndex = 0;
 let donorsCount = 0;
@@ -198,7 +226,6 @@ async function loadDonors() {
         const response = await fetch('data/home/donors.json');
         const data = await response.json();
 
-        // Ensure title and description exist before setting content
         const titleEl = document.getElementById('donorSectionTitle');
         const descEl = document.getElementById('donorSectionDesc');
 
@@ -220,7 +247,6 @@ async function loadDonors() {
         donorsCount = data.donors.length;
         renderDonorDots();
 
-        // Use a slight delay to ensure CSS styles are applied before calculating positions
         setTimeout(updateDonorPosition, 200);
         window.addEventListener('resize', updateDonorPosition);
 
@@ -233,7 +259,6 @@ async function loadDonors() {
 function renderDonorDots() {
     const dotsContainer = document.getElementById('donorDots');
     dotsContainer.innerHTML = '';
-    // Standard 3-dot navigation
     for (let i = 0; i < 3; i++) {
         const dot = document.createElement('button');
         dot.className = i === 0 ? 'active' : '';
@@ -264,32 +289,26 @@ function updateDonorPosition() {
     const cards = document.querySelectorAll('.donor-card');
     if (!track || cards.length === 0) return;
 
-    // Dynamically calculate width and gap from CSS
     const cardWidth = cards[0].offsetWidth;
     const style = window.getComputedStyle(track);
     const gap = parseFloat(style.gap) || 20;
 
-    // On mobile, we center the card. On desktop, we slide by card width.
     const containerWidth = track.parentElement.offsetWidth;
     let translateVal;
 
     if (window.innerWidth < 600) {
-        // Mobile Precision Centering
         const centerOffset = (containerWidth / 2) - (cardWidth / 2);
         translateVal = centerOffset - (donorIndex * (cardWidth + gap));
     } else {
-        // Desktop Grid Sliding
         translateVal = -(donorIndex * (cardWidth + gap));
     }
 
     track.style.transform = `translateX(${translateVal}px)`;
 
-    // Update active visual state
     cards.forEach((card, index) => {
         card.classList.toggle('active-donor', index === donorIndex);
     });
 
-    // Precision Dot Mapping
     const dots = document.querySelectorAll('#donorDots button');
     if (dots.length === 3) {
         dots.forEach(d => d.classList.remove('active'));
@@ -299,6 +318,7 @@ function updateDonorPosition() {
         dots[activeDot].classList.add('active');
     }
 }
+
 // =========================================
 // HERO SLIDER FUNCTIONALITY
 // =========================================
@@ -318,7 +338,6 @@ function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
     slides[heroCurrentSlide].classList.add('active');
 
-    // Update the 3 Hero Dots
     if (dots.length === 3) {
         dots.forEach(d => d.classList.remove('active'));
         const activeDot = Math.min(2, Math.floor((heroCurrentSlide / slides.length) * 3));
@@ -339,27 +358,21 @@ if (heroSlider) {
 }
 
 // =========================================
-// SCROLL & COUNTER ANIMATIONS
+// ANIMATION UTILITIES
 // =========================================
-const observerOptions = { root: null, threshold: 0.1 };
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
-}, observerOptions);
+function initStaticScrollAnimations() {
+    const observerOptions = { root: null, threshold: 0.1 };
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => { 
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-setTimeout(() => {
     document.querySelectorAll('.animate-on-scroll').forEach((el) => scrollObserver.observe(el));
-    document.querySelectorAll('.stat-item').forEach((item) => {
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    entry.target.classList.add('is-visible', 'counted');
-                    animateCounter(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        counterObserver.observe(item);
-    });
-}, 500);
+}
 
 function animateCounter(element) {
     const counterValue = element.querySelector('.counter-value');
@@ -387,9 +400,8 @@ function animateCounter(element) {
 // PARTICLES (Safe Loading)
 // =========================================
 async function initParticles() {
-    // Safety check: If the CDN failed, tsParticles won't be defined.
     if (typeof tsParticles === 'undefined') {
-        console.warn("tsParticles library failed to load or is blocked. Background effect skipped.");
+        console.warn("tsParticles library failed to load. Background effect skipped.");
         return;
     }
 
@@ -398,16 +410,10 @@ async function initParticles() {
         fpsLimit: 120,
         interactivity: {
             events: {
-                onHover: {
-                    enable: true,
-                    mode: "grab",
-                },
+                onHover: { enable: true, mode: "grab" },
             },
             modes: {
-                grab: {
-                    distance: 220,
-                    links: { opacity: 0.8 }
-                }
+                grab: { distance: 220, links: { opacity: 0.8 } }
             }
         },
         particles: {
@@ -429,9 +435,7 @@ async function initParticles() {
                 density: { enable: true, area: 800 },
                 value: 60
             },
-            opacity: {
-                value: { min: 0.4, max: 0.7 },
-            },
+            opacity: { value: { min: 0.4, max: 0.7 } },
             shape: { type: "circle" },
             size: { value: { min: 2, max: 5 } }
         },
