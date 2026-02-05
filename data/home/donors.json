@@ -4,105 +4,71 @@
     "donors": [
         {
             "name": "Nauman Iftikhar",
-            "contribution": "Construction Work",
-            "image": "images/donors/NaumanIftikhar.png",
-            "message": ""
+            "image": "images/donors/NaumanIftikhar.png"
         },
         {
             "name": "Muhammad Ajmal",
-            "contribution": "Construction Work",
-            "image": "images/donors/MuhammadAjmal.png",
-            "message": ""
+            "image": "images/donors/MuhammadAjmal.png"
         },
         {
             "name": "Malik Naeem",
-            "contribution": "Construction Work",
-            "image": "images/donors/MalikNaeem.png",
-            "message": ""
+            "image": "images/donors/MalikNaeem.png"
         },
         {
             "name": "Chaudhary Abid",
-            "contribution": "Construction Work",
-            "image": "images/donors/ChAbid.png",
-            "message": ""
+            "image": "images/donors/ChAbid.png"
         },
         {
             "name": "Imran Gujjar",
-            "contribution": "Construction Work",
-            "image": "images/donors/ImranGujjar.png",
-            "message": ""
+            "image": "images/donors/ImranGujjar.png"
         },
         {
             "name": "Wajid Munir",
-            "contribution": "Construction Work",
-            "image": "images/donors/WajidMunir.png",
-            "message": ""
+            "image": "images/donors/WajidMunir.png"
         },
         {
             "name": "Sabir Hussain",
-            "contribution": "Construction Work",
-            "image": "images/donors/SabirHussain.png",
-            "message": ""
+            "image": "images/donors/SabirHussain.png"
         },
         {
             "name": "Wazir Ali",
-            "contribution": "Construction Work",
-            "image": "images/donors/WazirAli.png",
-            "message": ""
+            "image": "images/donors/WazirAli.png"
         },
         {
             "name": "Imran Butt",
-            "contribution": "Construction Work",
-            "image": "images/donors/ImranButt.png",
-            "message": ""
+            "image": "images/donors/ImranButt.png"
         },
         {
             "name": "Amir Ameen",
-            "contribution": "Construction Work",
-            "image": "images/donors/AmirAmeen.png",
-            "message": ""
+            "image": "images/donors/AmirAmeen.png"
         },
         {
             "name": "Raja Aftab",
-            "contribution": "Construction Work",
-            "image": "images/donors/RajaAftab.png",
-            "message": ""
+            "image": "images/donors/RajaAftab.png"
         },
         {
             "name": "Tariq Nazir",
-            "contribution": "Construction Work",
-            "image": "images/donors/TariqNazir.png",
-            "message": ""
+            "image": "images/donors/TariqNazir.png"
         },
         {
             "name": "Muhammad Asif",
-            "contribution": "Construction Work",
-            "image": "images/donors/MuhammadAsif.png",
-            "message": ""
+            "image": "images/donors/MuhammadAsif.png"
         },
         {
             "name": "Tariq Mehmood",
-            "contribution": "Construction Work",
-            "image": "images/donors/TariqMehmood.png",
-            "message": ""
+            "image": "images/donors/TariqMehmood.png"
         },
         {
             "name": "Saeed Ahmed",
-            "contribution": "Construction Work",
-            "image": "images/donors/SaeedAhmed.png",
-            "message": ""
+            "image": "images/donors/SaeedAhmed.png"
         },
         {
             "name": "Saqib Ur Rehman",
-            "contribution": "Construction Work",
-            "image": "images/donors/SaqibUrRehman.png",
-            "message": ""
+            "image": "images/donors/SaqibUrRehman.png"
         },
         {
             "name": "Faisal Nadeem",
-            "contribution": "Construction Work",
-            "image": "images/donors/FaisalNadeem.png",
-            "message": ""
+            "image": "images/donors/FaisalNadeem.png"
         }
     ]
 }
