@@ -162,195 +162,63 @@
 }
 
 /* =========================================
-   MAIN CONTENT AREA (OPTIMIZED)
+   MAIN CONTENT AREA
    ========================================= */
 .contact-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
+    display: block;
 }
 
 /* =========================================
-   CONTACT FORM (OPTIMIZED SPACING)
-   ========================================= */
-.contact-form-section {
-    background: #fff;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    border: 1px solid #e2e8f0;
-}
-
-    .contact-form-section h2 {
-        font-size: 2rem;
-        color: #000;
-        margin: 0 0 8px 0;
-        font-weight: 800;
-    }
-
-    .contact-form-section > p {
-        font-size: 0.95rem;
-        color: #666;
-        margin: 0 0 25px 0;
-    }
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-    .form-group label {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: #000;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 12px 16px;
-        border: 2px solid #e2e8f0;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: all 0.3s ease;
-        background: #fff;
-    }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000000;
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
-        }
-
-    .form-group textarea {
-        resize: vertical;
-        min-height: 120px;
-    }
-
-.btn-submit {
-    background: #000000; /* Strict Black */
-    color: #fff;
-    border: none;
-    padding: 14px 35px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-    .btn-submit:hover {
-        transform: translateY(-3px);
-        background: #333333; /* Dark Gray Hover */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .btn-submit:active {
-        transform: translateY(-1px);
-    }
-
-    .btn-submit svg {
-        width: 18px;
-        height: 18px;
-    }
-
-/* Success Message */
-.form-success {
-    display: none;
-    background: #000000; /* Black Success Box */
-    color: #fff;
-    padding: 14px 18px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-    animation: slideDown 0.4s ease-out;
-}
-
-    .form-success.show {
-        display: block;
-    }
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================================
-   GOOGLE MAP SECTION (MATCHED HEIGHT)
+   GOOGLE MAP SECTION
    ========================================= */
 .contact-map-section {
     background: #fff;
-    padding: 35px;
+    padding: 0; /* NO PADDING for full-width map */
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     border: 1px solid #e2e8f0;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow: hidden;
 }
 
-    .contact-map-section h2 {
+/* Wrapper for text content above the map */
+.map-header-content {
+    padding: 40px 40px 30px 40px;
+    text-align: center;
+}
+
+    .map-header-content h2 {
         font-size: 2rem;
         color: #000;
         margin: 0 0 8px 0;
         font-weight: 800;
     }
 
-    .contact-map-section > p {
-        font-size: 0.95rem;
+    .map-header-content p {
+        font-size: 1.1rem;
         color: #666;
-        margin: 0 0 25px 0;
+        margin: 0;
     }
 
 .map-container {
-    flex: 1;
-    min-height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    border: 2px solid #e2e8f0;
-    transition: all 0.3s ease;
+    width: 100%;
+    /* FIXED HEIGHT: Ensures map is visible and doesn't collapse */
+    height: 500px;
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    background: #eee;
 }
-
-    .map-container:hover {
-        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-        border-color: #000000;
-    }
 
     .map-container iframe {
         width: 100%;
         height: 100%;
         border: none;
+        display: block;
     }
 
 /* =========================================
@@ -371,18 +239,16 @@
     }
 
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
         padding: 50px 20px;
     }
 
-    .contact-form-section,
-    .contact-map-section {
-        padding: 30px;
+    .map-header-content {
+        padding: 30px 25px;
     }
 
+    /* Adjust map height for tablets */
     .map-container {
-        min-height: 400px;
+        height: 400px;
     }
 }
 
@@ -407,28 +273,16 @@
         padding: 40px 15px;
     }
 
-    .contact-form-section,
-    .contact-map-section {
-        padding: 25px;
+    .map-header-content {
+        padding: 25px 20px;
     }
 
-        .contact-form-section h2,
-        .contact-map-section h2 {
+        .map-header-content h2 {
             font-size: 1.6rem;
         }
 
+    /* Adjust map height for mobile */
     .map-container {
-        min-height: 350px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 10px 14px;
-    }
-
-    .btn-submit {
-        padding: 12px 30px;
-        font-size: 1rem;
+        height: 350px;
     }
 }
