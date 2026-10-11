@@ -4,11 +4,11 @@
 
 ### A fast, content-managed static site for a public school community
 
-[![Live Site](https://img.shields.io/badge/LIVE-ghss--sarai.edu.pk-2ea44f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ghss-sarai.edu.pk/)
+[![Live Site](https://img.shields.io/badge/LIVE-ghss--sarai.edu.pk-0a0a0a?style=for-the-badge&logo=googlechrome&logoColor=fafafa)](https://ghss-sarai.edu.pk/)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/smuhammadbilalh/GMHSWebsite/static.yml?style=for-the-badge&label=GitHub%20Pages)](https://github.com/smuhammadbilalh/GMHSWebsite/actions)
-[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
-[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![HTML](https://img.shields.io/badge/HTML5-0a0a0a?style=for-the-badge&logo=html5&logoColor=fafafa)](#)
+[![CSS](https://img.shields.io/badge/CSS3-0a0a0a?style=for-the-badge&logo=css&logoColor=fafafa)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-0a0a0a?style=for-the-badge&logo=javascript&logoColor=fafafa)](#)
 
 <a href="https://ghss-sarai.edu.pk/"><img src="docs/screenshot.jpg" alt="GHSS Sarai Alamgir — Academics page" width="90%"/></a>
 
@@ -73,9 +73,9 @@ python3 -m http.server 8080
 
 **Muhammad Bilal** — IT Specialist & App Developer · Gujrat, Pakistan
 
-[![GitHub](https://img.shields.io/badge/GitHub-smuhammadbilalh-181717?style=for-the-badge&logo=github)](https://github.com/smuhammadbilalh)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadbilaltech-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/muhammadbilaltech)
-[![Email](https://img.shields.io/badge/Email-smuhammadbilalh%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:smuhammadbilalh@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-smuhammadbilalh-0a0a0a?style=for-the-badge&logo=github)](https://github.com/smuhammadbilalh)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadbilaltech-0a0a0a?style=for-the-badge)](https://www.linkedin.com/in/muhammadbilaltech)
+[![Email](https://img.shields.io/badge/Email-smuhammadbilalh%40gmail.com-0a0a0a?style=for-the-badge&logo=gmail&logoColor=fafafa)](mailto:smuhammadbilalh@gmail.com)
 
 ⭐ If this project helped you, please consider giving it a star!
 
